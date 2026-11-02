@@ -2,6 +2,7 @@
 
 Usage:  python campaign.py            (writes into ../out/campaign)
 """
+import json
 import os
 import shutil
 import struct
@@ -152,6 +153,34 @@ def main():
         if os.path.isdir(steam_data):
             tex_targets.append(os.path.join(steam_data, "widgetui", "textures", "campaign", "swarajya"))
             snd_targets.append(os.path.join(steam_data, "resources", "_common", "drs", "sounds"))
+            mat_path = os.path.join(steam_data, "widgetui", "materials.json")
+            if os.path.isfile(mat_path):
+                mat_data = json.load(open(mat_path, "r", encoding="utf-8"))
+                mats = mat_data.get("Materials", [])
+                texs = mat_data.get("GlobalTextures", [])
+                changed = False
+                if not any(m.get("MaterialDef", {}).get("Name") == "CampaignBackgroundSwarajya" for m in mats):
+                    mats.append({
+                        "MaterialDef": {
+                            "Name": "CampaignBackgroundSwarajya",
+                            "Type": "Texture",
+                            "Blend": "None",
+                            "TextureRef": "CampaignBackgroundSwarajya"
+                        }
+                    })
+                    changed = True
+                if not any(t.get("TextureDef", {}).get("Name") == "CampaignBackgroundSwarajya" for t in texs):
+                    texs.append({
+                        "TextureDef": {
+                            "Name": "CampaignBackgroundSwarajya",
+                            "FileName": "textures/campaign/swarajya/swarajya_map.dds",
+                            "Cached": "none"
+                        }
+                    })
+                    changed = True
+                if changed:
+                    with open(mat_path, "w", encoding="utf-8") as mf:
+                        json.dump(mat_data, mf, indent=2)
         if os.path.isdir(src_tex):
             for tt in tex_targets:
                 if os.path.isdir(tt):

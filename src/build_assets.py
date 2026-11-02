@@ -9,7 +9,7 @@ import wave
 import tempfile
 import subprocess
 from concurrent.futures import ThreadPoolExecutor
-from PIL import Image, ImageDraw, ImageFont, ImageOps, ImageChops
+from PIL import Image, ImageDraw, ImageFont, ImageOps, ImageChops, ImageFilter
 
 import aoe_lib
 from campaign import CHAPTERS
@@ -318,10 +318,18 @@ def main():
                 custom_im = draw_maratha_emblem(im, idx, s_i, is_outro=(sub == "outro"))
                 custom_im.save(os.path.join(seq_dir, f"{s_i}.png"))
 
+                # Smooth pan/zoom ImageRect per slide (JSON Kungfu SlideShow technique)
+                img_rects = [
+                    {"x": 910, "y": 540, "width": 2000, "height": 1048},
+                    {"x": 945, "y": 525, "width": 2036, "height": 1066},
+                    {"x": 885, "y": 555, "width": 2000, "height": 1048},
+                    {"x": 925, "y": 535, "width": 2020, "height": 1058},
+                ]
                 slide_obj = {
                     "Duration": round(max(4.5, s_dur), 2),
                     "TextFadeDuration": round(max(3.5, s_dur - 1.0), 2),
                     "String": s_txt,
+                    "ImageRect": img_rects[(s_i - 1) % len(img_rects)],
                     "TextRect": {
                         "x": 1020,
                         "y": 560 if s_i % 2 == 1 else 620,
@@ -329,13 +337,6 @@ def main():
                         "height": 420,
                     },
                 }
-                if s_i == 1:
-                    slide_obj["ImageRect"] = {
-                        "x": 910,
-                        "y": 550,
-                        "width": 2000,
-                        "height": 1048,
-                    }
                 slides_arr.append(slide_obj)
 
             scen_entry[seq_key] = {
@@ -365,7 +366,295 @@ def main():
     with open(os.path.join(ROOT, "Rise_of_Swarajya.json"), "w") as f:
         json.dump({"Scenarios": scenarios_json}, f, indent=2)
 
-    print("Saved Rise_of_Swarajya.json and all storyboard PNGs + .wem voiceovers.")
+    build_campaign_map_dds()
+    build_layout_json()
+
+    print("Saved Rise_of_Swarajya.json, Rise_of_Swarajya_layout.json, swarajya_map.dds, and all storyboard PNGs + .wem voiceovers.")
+
+
+def build_campaign_map_dds():
+    """Generate a 5672x2160 DXT1 .dds custom Maratha / Sahyadri parchment campaign map."""
+    import ctypes
+    dds_out = os.path.join(TEX_DIR, "swarajya_map.dds")
+    if os.path.exists(dds_out) and os.path.getsize(dds_out) > 6_000_000:
+        return
+    raj_path = os.path.join(GAME_DATA_CAMPAIGN_TEX, "incam2", "rajendra.dds")
+    pri_path = os.path.join(GAME_DATA_CAMPAIGN_TEX, "fcam6", "prithviraj.dds")
+    if not (os.path.exists(raj_path) and os.path.exists(pri_path)):
+        return
+
+    with open(raj_path, "rb") as f:
+        dds_header = f.read(128)
+
+    raj = Image.open(raj_path).convert("RGBA")
+    pri = Image.open(pri_path).convert("RGBA")
+
+    canvas = raj.copy()
+    mask = Image.new("L", (5672, 2160), 0)
+    md = ImageDraw.Draw(mask)
+    md.polygon([
+        (276, 0), (2600, 0), (2600, 260), (4250, 560),
+        (4050, 2160), (276, 2160)
+    ], fill=255)
+    mask = mask.filter(ImageFilter.GaussianBlur(radius=50))
+
+    pri_padded = Image.new("RGBA", (5672, 2160), (0, 0, 0, 255))
+    pri_padded.paste(pri, (276, 0))
+    comp = Image.composite(pri_padded, canvas, mask)
+
+    overlay = Image.new("RGBA", (5672, 2160), (0, 0, 0, 0))
+    d = ImageDraw.Draw(overlay)
+    cx, cy = 3680, 760
+    for r_oct, w_line, alpha in ((195, 7, 105), (175, 4, 85)):
+        pts = [
+            (cx + r_oct * math.cos(math.radians(22.5 + 45 * k)),
+             cy + r_oct * math.sin(math.radians(22.5 + 45 * k)))
+            for k in range(8)
+        ]
+        d.polygon(pts, outline=(72, 34, 18, alpha), width=w_line)
+
+    d.line([(cx, cy - 110), (cx, cy + 115)], fill=(72, 34, 18, 110), width=6)
+    d.polygon([
+        (cx + 3, cy - 105), (cx + 115, cy - 80), (cx + 75, cy - 42),
+        (cx + 120, cy - 5), (cx + 3, cy + 15)
+    ], fill=(140, 55, 18, 75), outline=(72, 34, 18, 115))
+
+    out_im = Image.alpha_composite(comp, overlay)
+
+    c_code = """
+    #include <stdint.h>
+    void encode_dxt1(const uint8_t* rgba, int w, int h, uint8_t* out) {
+        int bw = w / 4, bh = h / 4;
+        for (int by = 0; by < bh; by++) {
+            for (int bx = 0; bx < bw; bx++) {
+                uint8_t min_r = 255, min_g = 255, min_b = 255;
+                uint8_t max_r = 0, max_g = 0, max_b = 0;
+                uint8_t px[16][3];
+                int idx = 0;
+                for (int py = 0; py < 4; py++) {
+                    const uint8_t* row = rgba + ((by * 4 + py) * w + (bx * 4)) * 4;
+                    for (int x = 0; x < 4; x++) {
+                        uint8_t r = row[x*4+0], g = row[x*4+1], b = row[x*4+2];
+                        px[idx][0] = r; px[idx][1] = g; px[idx][2] = b; idx++;
+                        if (r < min_r) min_r = r; if (r > max_r) max_r = r;
+                        if (g < min_g) min_g = g; if (g > max_g) max_g = g;
+                        if (b < min_b) min_b = b; if (b > max_b) max_b = b;
+                    }
+                }
+                uint16_t c0 = ((max_r >> 3) << 11) | ((max_g >> 2) << 5) | (max_b >> 3);
+                uint16_t c1 = ((min_r >> 3) << 11) | ((min_g >> 2) << 5) | (min_b >> 3);
+                if (c0 < c1) {
+                    uint16_t t = c0; c0 = c1; c1 = t;
+                    uint8_t tr = max_r, tg = max_g, tb = max_b;
+                    max_r = min_r; max_g = min_g; max_b = min_b;
+                    min_r = tr; min_g = tg; min_b = tb;
+                } else if (c0 == c1) {
+                    uint8_t* dst = out + (by * bw + bx) * 8;
+                    dst[0] = c0 & 0xFF; dst[1] = c0 >> 8;
+                    dst[2] = c1 & 0xFF; dst[3] = c1 >> 8;
+                    dst[4] = dst[5] = dst[6] = dst[7] = 0;
+                    continue;
+                }
+                int pal[4][3] = {
+                    {max_r, max_g, max_b},
+                    {min_r, min_g, min_b},
+                    {(2*max_r + min_r)/3, (2*max_g + min_g)/3, (2*max_b + min_b)/3},
+                    {(max_r + 2*min_r)/3, (max_g + 2*min_g)/3, (max_b + 2*min_b)/3}
+                };
+                uint32_t bits = 0;
+                for (int i = 0; i < 16; i++) {
+                    int best = 0, best_d = 1000000;
+                    for (int k = 0; k < 4; k++) {
+                        int dr = (int)px[i][0] - pal[k][0];
+                        int dg = (int)px[i][1] - pal[k][1];
+                        int db = (int)px[i][2] - pal[k][2];
+                        int d = dr*dr + dg*dg + db*db;
+                        if (d < best_d) { best_d = d; best = k; }
+                    }
+                    bits |= ((uint32_t)best << (i * 2));
+                }
+                uint8_t* dst = out + (by * bw + bx) * 8;
+                dst[0] = c0 & 0xFF; dst[1] = c0 >> 8;
+                dst[2] = c1 & 0xFF; dst[3] = c1 >> 8;
+                dst[4] = bits & 0xFF; dst[5] = (bits >> 8) & 0xFF;
+                dst[6] = (bits >> 16) & 0xFF; dst[7] = (bits >> 24) & 0xFF;
+            }
+        }
+    }
+    """
+    with tempfile.TemporaryDirectory() as td:
+        c_path = os.path.join(td, "dxt1.c")
+        so_path = os.path.join(td, "dxt1.so")
+        with open(c_path, "w") as f:
+            f.write(c_code)
+        subprocess.run(["clang", "-O3", "-shared", "-fPIC", c_path, "-o", so_path], check=True)
+        lib = ctypes.CDLL(so_path)
+        w, h = out_im.size
+        raw = out_im.tobytes()
+        buf = ctypes.create_string_buffer((w // 4) * (h // 4) * 8)
+        lib.encode_dxt1(raw, w, h, buf)
+        with open(dds_out, "wb") as f:
+            f.write(dds_header)
+            f.write(buf.raw)
+
+
+def build_layout_json():
+    """Generate Rise_of_Swarajya_layout.json using latest AoE2 DE CampaignTitle + ClippingOverride + NextIndicators."""
+    widgets = [
+        {
+            "Widget": {
+                "Type": "Label",
+                "Name": "TitleLabel",
+                "ViewPort": {
+                    "xorigin": 1920,
+                    "yorigin": 110,
+                    "width": 1600,
+                    "height": 100,
+                    "alignment": "CentreCentre",
+                },
+                "ZPlane": 2,
+                "StateMaterials": {
+                    "StateNormal": {
+                        "Font": {
+                            "FontIndex": 0,
+                            "PointSize": 70,
+                            "Style": "Normal",
+                            "TextColor": {"r": 57, "g": 28, "b": 27, "a": 255},
+                        }
+                    }
+                },
+                "Text": "Rise of Swarajya (1646 - 1689)",
+                "TextAnchor": "CentreCentre",
+                "ChildWidgets": [],
+            }
+        }
+    ]
+
+    # Place 15 scenarios in 3 rows of 5 over the open parchment map (x: 960..2800, y: 310..1230)
+    coords = []
+    for idx, (_, _, _, _, title, year) in enumerate(CHAPTERS, 1):
+        row = (idx - 1) // 5
+        col = (idx - 1) % 5
+        x = 960 + col * 450 + (40 if row == 1 else 0)
+        y = 310 + row * 450 + (30 if col % 2 == 1 else 0)
+        coords.append((x, y))
+
+        font_def = {
+            "FontIndex": 0,
+            "PointSize": 34,
+            "Style": "Normal",
+            "TextColor": {"r": 42, "g": 10, "b": 82, "a": 255},
+        }
+        font_dis = {
+            "FontIndex": 0,
+            "PointSize": 34,
+            "Style": "Normal",
+            "TextColor": {"r": 42, "g": 10, "b": 82, "a": 128},
+        }
+        widgets.append(
+            {
+                "Widget": {
+                    "Type": "Button",
+                    "Name": f"ScenarioButton{idx}",
+                    "SpecialMessage": 1 if idx == 1 else 0,
+                    "ViewPort": {
+                        "xorigin": x,
+                        "yorigin": y,
+                        "width": 260,
+                        "height": 260,
+                        "alignment": "TopLeft",
+                    },
+                    "Image": {
+                        "xorigin": 0,
+                        "yorigin": 0,
+                        "width": 260,
+                        "height": 260,
+                        "alignment": "TopLeft",
+                    },
+                    "ZPlane": 1,
+                    "StateMaterials": {
+                        "StateDisabled": {"Material": "CampaignIcon35RajendraDisabled", "Font": font_dis},
+                        "StateNormal": {"Material": "CampaignIcon35RajendraNormal", "Font": font_def},
+                        "StateHover": {"Material": "CampaignIcon35RajendraHover", "Font": font_def},
+                        "StatePressed": {"Material": "CampaignIcon35RajendraPressed", "Font": font_def},
+                    },
+                    "ChildWidgets": [
+                        {
+                            "Widget": {
+                                "Type": "CampaignTitle",
+                                "Name": f"CampaignButton{idx}Label",
+                                "ViewPort": {
+                                    "xorigin": -25,
+                                    "yorigin": 225,
+                                    "width": 440,
+                                    "height": 90,
+                                    "alignment": "TopLeft",
+                                },
+                                "ClippingOverride": "Background",
+                                "ZPlane": 2,
+                                "Level": 0,
+                                "StateMaterials": {
+                                    "StateNormal": {
+                                        "Font": {
+                                            "FontIndex": 0,
+                                            "PointSize": 30,
+                                            "Style": "Normal",
+                                            "TextColor": {"r": 255, "g": 255, "b": 255, "a": 255},
+                                        }
+                                    }
+                                },
+                                "Text": f"{idx}. {title} ({year})",
+                                "TextAnchor": "TopLeft",
+                                "ChildWidgets": [],
+                            }
+                        }
+                    ],
+                }
+            }
+        )
+
+    # Add NextIndicator trail widgets between consecutive chapters on the same row
+    for i in range(len(coords) - 1):
+        if i % 5 == 4:
+            continue
+        x1, y1 = coords[i]
+        x2, y2 = coords[i + 1]
+        widgets.append(
+            {
+                "Widget": {
+                    "Type": "Base",
+                    "Name": f"NextIndicator{i + 1}",
+                    "ViewPort": {
+                        "xorigin": x1 + 210,
+                        "yorigin": min(y1, y2) + 80,
+                        "width": 260,
+                        "height": 140,
+                        "alignment": "TopLeft",
+                    },
+                    "ZPlane": 0,
+                    "Wrap": {"width": 0, "height": 0},
+                    "StateMaterials": {
+                        "StateNormal": {
+                            "Material": "GenghisKhanIndicator3" if i % 2 == 0 else "GenghisKhanIndicator5"
+                        }
+                    },
+                }
+            }
+        )
+
+    layout_obj = {
+        "UserMaterials": [
+            {
+                "Name": "CampaignBackgroundSwarajya",
+                "Texture": "textures/campaign/swarajya/swarajya_map.dds",
+            }
+        ],
+        "BackgroundMaterial": "CampaignBackgroundSwarajya",
+        "UnlockScenarios": True,
+        "Widgets": widgets,
+    }
+    with open(os.path.join(ROOT, "Rise_of_Swarajya_layout.json"), "w") as f:
+        json.dump(layout_obj, f, indent=2)
 
 
 if __name__ == "__main__":

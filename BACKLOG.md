@@ -54,5 +54,12 @@ Status Legend:
 
 ---
 
+## Phase 7: Latest AoE2 DE v1.59 Campaign UI & Storyboard Upgrades
+- `[DONE]` **Official DE `"CampaignTitle"` & `"ClippingOverride"` Schema (`Rise_of_Swarajya_layout.json`, `src/build_assets.py`):** Upgraded all 15 scenario button child labels from legacy `"Type": "Label"` to `"Type": "CampaignTitle"` with `"ClippingOverride": "Background"`, `"ZPlane": 2`, and `"Level": 0`, added `"UnlockScenarios": true` so all 15 chapters can be selected freely, and added `"NextIndicator"` trail arrows connecting chapters.
+- `[DONE]` **Custom 4K Maratha / Sahyadri Parchment Campaign Map (`assets/textures/campaign/swarajya/swarajya_map.dds`, `src/build_assets.py`, `src/campaign.py`):** Generated a custom `5672x2160` DXT1 `.dds` campaign map featuring the parchment map of India/Maharashtra/Deccan stamped with the Octagonal Rajmudra and Bhagwa Dhwaj, framed by the bronze Nataraja Mahadev statue, Maratha Khanda sword, sacred marigold bowl, and ornate dagger, registered as `CampaignBackgroundSwarajya` in `Rise_of_Swarajya_layout.json` and `AgeOfEmpires2Data/widgetui/materials.json`.
+- `[DONE]` **Per-Slide `ImageRect` Pan & Zoom Motion (`Rise_of_Swarajya.json`, `src/build_assets.py`):** Added progressive pan/zoom `ImageRect` coordinates across Slides 1–4 in all 30 Intro/Outro storyboards so illustrations pan and zoom smoothly alongside the narrator's voiceover.
+
+---
+
 ## User Playtest Notes / Future Additions
 *(Add any playtest feedback or new ideas below)*
