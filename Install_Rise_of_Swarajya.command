@@ -15,9 +15,16 @@ if [ -z "$PROFILE" ]; then
 fi
 SC="${PROFILE}resources/_common/scenario"
 CP="${PROFILE}resources/_common/campaign"
-mkdir -p "$SC" "$CP"
+WU="${PROFILE}widgetui"
+mkdir -p "$SC" "$CP" "$WU"
 cp scenarios/RS*.aoe2scenario "$SC/"
 cp Rise_of_Swarajya.aoe2campaign "$CP/"
+cp "Rise_of_Swarajya.json" "$CP/Rise_of_Swarajya.json"
+cp "Rise_of_Swarajya.json" "$CP/Rise of Swarajya.json"
+cp "Rise_of_Swarajya_layout.json" "$CP/Rise_of_Swarajya_layout.json"
+cp "Rise_of_Swarajya_layout.json" "$CP/Rise of Swarajya_layout.json"
+cp "Rise_of_Swarajya_layout.json" "$WU/Rise_of_Swarajya_layout.json"
+cp "Rise_of_Swarajya_layout.json" "$WU/Rise of Swarajya_layout.json"
 echo "Installed 15 scenarios to:"; echo "  $SC"
 echo "Installed campaign to:"; echo "  $CP"
 echo

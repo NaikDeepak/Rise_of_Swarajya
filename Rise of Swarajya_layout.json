@@ -1,0 +1,2039 @@
+{
+  "BackgroundMaterial": "CampaignBackgroundSwarajya",
+  "UnlockScenarios": true,
+  "Widgets": [
+    {
+      "Widget": {
+        "Type": "Label",
+        "Name": "TitleLabel",
+        "ViewPort": {
+          "xorigin": 1920,
+          "yorigin": 110,
+          "width": 1600,
+          "height": 100,
+          "alignment": "CentreCentre"
+        },
+        "ZPlane": 2,
+        "StateMaterials": {
+          "StateNormal": {
+            "Font": {
+              "FontIndex": 0,
+              "PointSize": 70,
+              "Style": "Normal",
+              "TextColor": {
+                "r": 57,
+                "g": 28,
+                "b": 27,
+                "a": 255
+              }
+            }
+          }
+        },
+        "Text": "Rise of Swarajya (1646 - 1689)",
+        "TextAnchor": "CentreCentre",
+        "ChildWidgets": []
+      }
+    },
+    {
+      "Widget": {
+        "Type": "Button",
+        "Name": "ScenarioButton1",
+        "ViewPort": {
+          "xorigin": 960,
+          "yorigin": 310,
+          "width": 260,
+          "height": 260,
+          "alignment": "TopLeft"
+        },
+        "Image": {
+          "xorigin": 0,
+          "yorigin": 0,
+          "width": 260,
+          "height": 260,
+          "alignment": "TopLeft"
+        },
+        "ZPlane": 1,
+        "StateMaterials": {
+          "StateDisabled": {
+            "Material": "CampaignIcon35RajendraDisabled",
+            "Font": {
+              "FontIndex": 0,
+              "PointSize": 34,
+              "Style": "Normal",
+              "TextColor": {
+                "r": 42,
+                "g": 10,
+                "b": 82,
+                "a": 128
+              }
+            }
+          },
+          "StateNormal": {
+            "Material": "CampaignIcon35RajendraNormal",
+            "Font": {
+              "FontIndex": 0,
+              "PointSize": 34,
+              "Style": "Normal",
+              "TextColor": {
+                "r": 42,
+                "g": 10,
+                "b": 82,
+                "a": 255
+              }
+            }
+          },
+          "StateHover": {
+            "Material": "CampaignIcon35RajendraHover",
+            "Font": {
+              "FontIndex": 0,
+              "PointSize": 34,
+              "Style": "Normal",
+              "TextColor": {
+                "r": 42,
+                "g": 10,
+                "b": 82,
+                "a": 255
+              }
+            }
+          },
+          "StatePressed": {
+            "Material": "CampaignIcon35RajendraPressed",
+            "Font": {
+              "FontIndex": 0,
+              "PointSize": 34,
+              "Style": "Normal",
+              "TextColor": {
+                "r": 42,
+                "g": 10,
+                "b": 82,
+                "a": 255
+              }
+            }
+          }
+        },
+        "ChildWidgets": [
+          {
+            "Widget": {
+              "Type": "CampaignTitle",
+              "Name": "ScenarioButtonLabel",
+              "ViewPort": {
+                "xorigin": -25,
+                "yorigin": 225,
+                "width": 440,
+                "height": 90,
+                "alignment": "TopLeft"
+              },
+              "ClippingOverride": "Background",
+              "ZPlane": 2,
+              "Level": 0,
+              "StateMaterials": {
+                "StateNormal": {
+                  "Font": {
+                    "FontIndex": 0,
+                    "PointSize": 30,
+                    "Style": "Normal",
+                    "TextColor": {
+                      "r": 255,
+                      "g": 255,
+                      "b": 255,
+                      "a": 255
+                    }
+                  }
+                }
+              },
+              "Text": "1. The First Flame - Torna (1646)",
+              "TextAnchor": "TopLeft",
+              "ChildWidgets": []
+            }
+          }
+        ]
+      }
+    },
+    {
+      "Widget": {
+        "Type": "Button",
+        "Name": "ScenarioButton2",
+        "ViewPort": {
+          "xorigin": 1410,
+          "yorigin": 340,
+          "width": 260,
+          "height": 260,
+          "alignment": "TopLeft"
+        },
+        "Image": {
+          "xorigin": 0,
+          "yorigin": 0,
+          "width": 260,
+          "height": 260,
+          "alignment": "TopLeft"
+        },
+        "ZPlane": 1,
+        "StateMaterials": {
+          "StateDisabled": {
+            "Material": "CampaignIcon35RajendraDisabled",
+            "Font": {
+              "FontIndex": 0,
+              "PointSize": 34,
+              "Style": "Normal",
+              "TextColor": {
+                "r": 42,
+                "g": 10,
+                "b": 82,
+                "a": 128
+              }
+            }
+          },
+          "StateNormal": {
+            "Material": "CampaignIcon35RajendraNormal",
+            "Font": {
+              "FontIndex": 0,
+              "PointSize": 34,
+              "Style": "Normal",
+              "TextColor": {
+                "r": 42,
+                "g": 10,
+                "b": 82,
+                "a": 255
+              }
+            }
+          },
+          "StateHover": {
+            "Material": "CampaignIcon35RajendraHover",
+            "Font": {
+              "FontIndex": 0,
+              "PointSize": 34,
+              "Style": "Normal",
+              "TextColor": {
+                "r": 42,
+                "g": 10,
+                "b": 82,
+                "a": 255
+              }
+            }
+          },
+          "StatePressed": {
+            "Material": "CampaignIcon35RajendraPressed",
+            "Font": {
+              "FontIndex": 0,
+              "PointSize": 34,
+              "Style": "Normal",
+              "TextColor": {
+                "r": 42,
+                "g": 10,
+                "b": 82,
+                "a": 255
+              }
+            }
+          }
+        },
+        "ChildWidgets": [
+          {
+            "Widget": {
+              "Type": "CampaignTitle",
+              "Name": "ScenarioButtonLabel",
+              "ViewPort": {
+                "xorigin": -25,
+                "yorigin": 225,
+                "width": 440,
+                "height": 90,
+                "alignment": "TopLeft"
+              },
+              "ClippingOverride": "Background",
+              "ZPlane": 2,
+              "Level": 0,
+              "StateMaterials": {
+                "StateNormal": {
+                  "Font": {
+                    "FontIndex": 0,
+                    "PointSize": 30,
+                    "Style": "Normal",
+                    "TextColor": {
+                      "r": 255,
+                      "g": 255,
+                      "b": 255,
+                      "a": 255
+                    }
+                  }
+                }
+              },
+              "Text": "2. The Tiger of Pratapgad (1659)",
+              "TextAnchor": "TopLeft",
+              "ChildWidgets": []
+            }
+          }
+        ]
+      }
+    },
+    {
+      "Widget": {
+        "Type": "Button",
+        "Name": "ScenarioButton3",
+        "ViewPort": {
+          "xorigin": 1860,
+          "yorigin": 310,
+          "width": 260,
+          "height": 260,
+          "alignment": "TopLeft"
+        },
+        "Image": {
+          "xorigin": 0,
+          "yorigin": 0,
+          "width": 260,
+          "height": 260,
+          "alignment": "TopLeft"
+        },
+        "ZPlane": 1,
+        "StateMaterials": {
+          "StateDisabled": {
+            "Material": "CampaignIcon35RajendraDisabled",
+            "Font": {
+              "FontIndex": 0,
+              "PointSize": 34,
+              "Style": "Normal",
+              "TextColor": {
+                "r": 42,
+                "g": 10,
+                "b": 82,
+                "a": 128
+              }
+            }
+          },
+          "StateNormal": {
+            "Material": "CampaignIcon35RajendraNormal",
+            "Font": {
+              "FontIndex": 0,
+              "PointSize": 34,
+              "Style": "Normal",
+              "TextColor": {
+                "r": 42,
+                "g": 10,
+                "b": 82,
+                "a": 255
+              }
+            }
+          },
+          "StateHover": {
+            "Material": "CampaignIcon35RajendraHover",
+            "Font": {
+              "FontIndex": 0,
+              "PointSize": 34,
+              "Style": "Normal",
+              "TextColor": {
+                "r": 42,
+                "g": 10,
+                "b": 82,
+                "a": 255
+              }
+            }
+          },
+          "StatePressed": {
+            "Material": "CampaignIcon35RajendraPressed",
+            "Font": {
+              "FontIndex": 0,
+              "PointSize": 34,
+              "Style": "Normal",
+              "TextColor": {
+                "r": 42,
+                "g": 10,
+                "b": 82,
+                "a": 255
+              }
+            }
+          }
+        },
+        "ChildWidgets": [
+          {
+            "Widget": {
+              "Type": "CampaignTitle",
+              "Name": "ScenarioButtonLabel",
+              "ViewPort": {
+                "xorigin": -25,
+                "yorigin": 225,
+                "width": 440,
+                "height": 90,
+                "alignment": "TopLeft"
+              },
+              "ClippingOverride": "Background",
+              "ZPlane": 2,
+              "Level": 0,
+              "StateMaterials": {
+                "StateNormal": {
+                  "Font": {
+                    "FontIndex": 0,
+                    "PointSize": 30,
+                    "Style": "Normal",
+                    "TextColor": {
+                      "r": 255,
+                      "g": 255,
+                      "b": 255,
+                      "a": 255
+                    }
+                  }
+                }
+              },
+              "Text": "3. The Sacrifice of Pavan Khind (1660)",
+              "TextAnchor": "TopLeft",
+              "ChildWidgets": []
+            }
+          }
+        ]
+      }
+    },
+    {
+      "Widget": {
+        "Type": "Button",
+        "Name": "ScenarioButton4",
+        "ViewPort": {
+          "xorigin": 2310,
+          "yorigin": 340,
+          "width": 260,
+          "height": 260,
+          "alignment": "TopLeft"
+        },
+        "Image": {
+          "xorigin": 0,
+          "yorigin": 0,
+          "width": 260,
+          "height": 260,
+          "alignment": "TopLeft"
+        },
+        "ZPlane": 1,
+        "StateMaterials": {
+          "StateDisabled": {
+            "Material": "CampaignIcon35RajendraDisabled",
+            "Font": {
+              "FontIndex": 0,
+              "PointSize": 34,
+              "Style": "Normal",
+              "TextColor": {
+                "r": 42,
+                "g": 10,
+                "b": 82,
+                "a": 128
+              }
+            }
+          },
+          "StateNormal": {
+            "Material": "CampaignIcon35RajendraNormal",
+            "Font": {
+              "FontIndex": 0,
+              "PointSize": 34,
+              "Style": "Normal",
+              "TextColor": {
+                "r": 42,
+                "g": 10,
+                "b": 82,
+                "a": 255
+              }
+            }
+          },
+          "StateHover": {
+            "Material": "CampaignIcon35RajendraHover",
+            "Font": {
+              "FontIndex": 0,
+              "PointSize": 34,
+              "Style": "Normal",
+              "TextColor": {
+                "r": 42,
+                "g": 10,
+                "b": 82,
+                "a": 255
+              }
+            }
+          },
+          "StatePressed": {
+            "Material": "CampaignIcon35RajendraPressed",
+            "Font": {
+              "FontIndex": 0,
+              "PointSize": 34,
+              "Style": "Normal",
+              "TextColor": {
+                "r": 42,
+                "g": 10,
+                "b": 82,
+                "a": 255
+              }
+            }
+          }
+        },
+        "ChildWidgets": [
+          {
+            "Widget": {
+              "Type": "CampaignTitle",
+              "Name": "ScenarioButtonLabel",
+              "ViewPort": {
+                "xorigin": -25,
+                "yorigin": 225,
+                "width": 440,
+                "height": 90,
+                "alignment": "TopLeft"
+              },
+              "ClippingOverride": "Background",
+              "ZPlane": 2,
+              "Level": 0,
+              "StateMaterials": {
+                "StateNormal": {
+                  "Font": {
+                    "FontIndex": 0,
+                    "PointSize": 30,
+                    "Style": "Normal",
+                    "TextColor": {
+                      "r": 255,
+                      "g": 255,
+                      "b": 255,
+                      "a": 255
+                    }
+                  }
+                }
+              },
+              "Text": "4. The Night of Shaista Khan (1663)",
+              "TextAnchor": "TopLeft",
+              "ChildWidgets": []
+            }
+          }
+        ]
+      }
+    },
+    {
+      "Widget": {
+        "Type": "Button",
+        "Name": "ScenarioButton5",
+        "ViewPort": {
+          "xorigin": 2760,
+          "yorigin": 310,
+          "width": 260,
+          "height": 260,
+          "alignment": "TopLeft"
+        },
+        "Image": {
+          "xorigin": 0,
+          "yorigin": 0,
+          "width": 260,
+          "height": 260,
+          "alignment": "TopLeft"
+        },
+        "ZPlane": 1,
+        "StateMaterials": {
+          "StateDisabled": {
+            "Material": "CampaignIcon35RajendraDisabled",
+            "Font": {
+              "FontIndex": 0,
+              "PointSize": 34,
+              "Style": "Normal",
+              "TextColor": {
+                "r": 42,
+                "g": 10,
+                "b": 82,
+                "a": 128
+              }
+            }
+          },
+          "StateNormal": {
+            "Material": "CampaignIcon35RajendraNormal",
+            "Font": {
+              "FontIndex": 0,
+              "PointSize": 34,
+              "Style": "Normal",
+              "TextColor": {
+                "r": 42,
+                "g": 10,
+                "b": 82,
+                "a": 255
+              }
+            }
+          },
+          "StateHover": {
+            "Material": "CampaignIcon35RajendraHover",
+            "Font": {
+              "FontIndex": 0,
+              "PointSize": 34,
+              "Style": "Normal",
+              "TextColor": {
+                "r": 42,
+                "g": 10,
+                "b": 82,
+                "a": 255
+              }
+            }
+          },
+          "StatePressed": {
+            "Material": "CampaignIcon35RajendraPressed",
+            "Font": {
+              "FontIndex": 0,
+              "PointSize": 34,
+              "Style": "Normal",
+              "TextColor": {
+                "r": 42,
+                "g": 10,
+                "b": 82,
+                "a": 255
+              }
+            }
+          }
+        },
+        "ChildWidgets": [
+          {
+            "Widget": {
+              "Type": "CampaignTitle",
+              "Name": "ScenarioButtonLabel",
+              "ViewPort": {
+                "xorigin": -25,
+                "yorigin": 225,
+                "width": 440,
+                "height": 90,
+                "alignment": "TopLeft"
+              },
+              "ClippingOverride": "Background",
+              "ZPlane": 2,
+              "Level": 0,
+              "StateMaterials": {
+                "StateNormal": {
+                  "Font": {
+                    "FontIndex": 0,
+                    "PointSize": 30,
+                    "Style": "Normal",
+                    "TextColor": {
+                      "r": 255,
+                      "g": 255,
+                      "b": 255,
+                      "a": 255
+                    }
+                  }
+                }
+              },
+              "Text": "5. The Wealth of Surat (1664)",
+              "TextAnchor": "TopLeft",
+              "ChildWidgets": []
+            }
+          }
+        ]
+      }
+    },
+    {
+      "Widget": {
+        "Type": "Button",
+        "Name": "ScenarioButton6",
+        "ViewPort": {
+          "xorigin": 1000,
+          "yorigin": 760,
+          "width": 260,
+          "height": 260,
+          "alignment": "TopLeft"
+        },
+        "Image": {
+          "xorigin": 0,
+          "yorigin": 0,
+          "width": 260,
+          "height": 260,
+          "alignment": "TopLeft"
+        },
+        "ZPlane": 1,
+        "StateMaterials": {
+          "StateDisabled": {
+            "Material": "CampaignIcon35RajendraDisabled",
+            "Font": {
+              "FontIndex": 0,
+              "PointSize": 34,
+              "Style": "Normal",
+              "TextColor": {
+                "r": 42,
+                "g": 10,
+                "b": 82,
+                "a": 128
+              }
+            }
+          },
+          "StateNormal": {
+            "Material": "CampaignIcon35RajendraNormal",
+            "Font": {
+              "FontIndex": 0,
+              "PointSize": 34,
+              "Style": "Normal",
+              "TextColor": {
+                "r": 42,
+                "g": 10,
+                "b": 82,
+                "a": 255
+              }
+            }
+          },
+          "StateHover": {
+            "Material": "CampaignIcon35RajendraHover",
+            "Font": {
+              "FontIndex": 0,
+              "PointSize": 34,
+              "Style": "Normal",
+              "TextColor": {
+                "r": 42,
+                "g": 10,
+                "b": 82,
+                "a": 255
+              }
+            }
+          },
+          "StatePressed": {
+            "Material": "CampaignIcon35RajendraPressed",
+            "Font": {
+              "FontIndex": 0,
+              "PointSize": 34,
+              "Style": "Normal",
+              "TextColor": {
+                "r": 42,
+                "g": 10,
+                "b": 82,
+                "a": 255
+              }
+            }
+          }
+        },
+        "ChildWidgets": [
+          {
+            "Widget": {
+              "Type": "CampaignTitle",
+              "Name": "ScenarioButtonLabel",
+              "ViewPort": {
+                "xorigin": -25,
+                "yorigin": 225,
+                "width": 440,
+                "height": 90,
+                "alignment": "TopLeft"
+              },
+              "ClippingOverride": "Background",
+              "ZPlane": 2,
+              "Level": 0,
+              "StateMaterials": {
+                "StateNormal": {
+                  "Font": {
+                    "FontIndex": 0,
+                    "PointSize": 30,
+                    "Style": "Normal",
+                    "TextColor": {
+                      "r": 255,
+                      "g": 255,
+                      "b": 255,
+                      "a": 255
+                    }
+                  }
+                }
+              },
+              "Text": "6. The Treaty of Purandar (1665)",
+              "TextAnchor": "TopLeft",
+              "ChildWidgets": []
+            }
+          }
+        ]
+      }
+    },
+    {
+      "Widget": {
+        "Type": "Button",
+        "Name": "ScenarioButton7",
+        "ViewPort": {
+          "xorigin": 1450,
+          "yorigin": 790,
+          "width": 260,
+          "height": 260,
+          "alignment": "TopLeft"
+        },
+        "Image": {
+          "xorigin": 0,
+          "yorigin": 0,
+          "width": 260,
+          "height": 260,
+          "alignment": "TopLeft"
+        },
+        "ZPlane": 1,
+        "StateMaterials": {
+          "StateDisabled": {
+            "Material": "CampaignIcon35RajendraDisabled",
+            "Font": {
+              "FontIndex": 0,
+              "PointSize": 34,
+              "Style": "Normal",
+              "TextColor": {
+                "r": 42,
+                "g": 10,
+                "b": 82,
+                "a": 128
+              }
+            }
+          },
+          "StateNormal": {
+            "Material": "CampaignIcon35RajendraNormal",
+            "Font": {
+              "FontIndex": 0,
+              "PointSize": 34,
+              "Style": "Normal",
+              "TextColor": {
+                "r": 42,
+                "g": 10,
+                "b": 82,
+                "a": 255
+              }
+            }
+          },
+          "StateHover": {
+            "Material": "CampaignIcon35RajendraHover",
+            "Font": {
+              "FontIndex": 0,
+              "PointSize": 34,
+              "Style": "Normal",
+              "TextColor": {
+                "r": 42,
+                "g": 10,
+                "b": 82,
+                "a": 255
+              }
+            }
+          },
+          "StatePressed": {
+            "Material": "CampaignIcon35RajendraPressed",
+            "Font": {
+              "FontIndex": 0,
+              "PointSize": 34,
+              "Style": "Normal",
+              "TextColor": {
+                "r": 42,
+                "g": 10,
+                "b": 82,
+                "a": 255
+              }
+            }
+          }
+        },
+        "ChildWidgets": [
+          {
+            "Widget": {
+              "Type": "CampaignTitle",
+              "Name": "ScenarioButtonLabel",
+              "ViewPort": {
+                "xorigin": -25,
+                "yorigin": 225,
+                "width": 440,
+                "height": 90,
+                "alignment": "TopLeft"
+              },
+              "ClippingOverride": "Background",
+              "ZPlane": 2,
+              "Level": 0,
+              "StateMaterials": {
+                "StateNormal": {
+                  "Font": {
+                    "FontIndex": 0,
+                    "PointSize": 30,
+                    "Style": "Normal",
+                    "TextColor": {
+                      "r": 255,
+                      "g": 255,
+                      "b": 255,
+                      "a": 255
+                    }
+                  }
+                }
+              },
+              "Text": "7. The Great Escape - Agra (1666)",
+              "TextAnchor": "TopLeft",
+              "ChildWidgets": []
+            }
+          }
+        ]
+      }
+    },
+    {
+      "Widget": {
+        "Type": "Button",
+        "Name": "ScenarioButton8",
+        "ViewPort": {
+          "xorigin": 1900,
+          "yorigin": 760,
+          "width": 260,
+          "height": 260,
+          "alignment": "TopLeft"
+        },
+        "Image": {
+          "xorigin": 0,
+          "yorigin": 0,
+          "width": 260,
+          "height": 260,
+          "alignment": "TopLeft"
+        },
+        "ZPlane": 1,
+        "StateMaterials": {
+          "StateDisabled": {
+            "Material": "CampaignIcon35RajendraDisabled",
+            "Font": {
+              "FontIndex": 0,
+              "PointSize": 34,
+              "Style": "Normal",
+              "TextColor": {
+                "r": 42,
+                "g": 10,
+                "b": 82,
+                "a": 128
+              }
+            }
+          },
+          "StateNormal": {
+            "Material": "CampaignIcon35RajendraNormal",
+            "Font": {
+              "FontIndex": 0,
+              "PointSize": 34,
+              "Style": "Normal",
+              "TextColor": {
+                "r": 42,
+                "g": 10,
+                "b": 82,
+                "a": 255
+              }
+            }
+          },
+          "StateHover": {
+            "Material": "CampaignIcon35RajendraHover",
+            "Font": {
+              "FontIndex": 0,
+              "PointSize": 34,
+              "Style": "Normal",
+              "TextColor": {
+                "r": 42,
+                "g": 10,
+                "b": 82,
+                "a": 255
+              }
+            }
+          },
+          "StatePressed": {
+            "Material": "CampaignIcon35RajendraPressed",
+            "Font": {
+              "FontIndex": 0,
+              "PointSize": 34,
+              "Style": "Normal",
+              "TextColor": {
+                "r": 42,
+                "g": 10,
+                "b": 82,
+                "a": 255
+              }
+            }
+          }
+        },
+        "ChildWidgets": [
+          {
+            "Widget": {
+              "Type": "CampaignTitle",
+              "Name": "ScenarioButtonLabel",
+              "ViewPort": {
+                "xorigin": -25,
+                "yorigin": 225,
+                "width": 440,
+                "height": 90,
+                "alignment": "TopLeft"
+              },
+              "ClippingOverride": "Background",
+              "ZPlane": 2,
+              "Level": 0,
+              "StateMaterials": {
+                "StateNormal": {
+                  "Font": {
+                    "FontIndex": 0,
+                    "PointSize": 30,
+                    "Style": "Normal",
+                    "TextColor": {
+                      "r": 255,
+                      "g": 255,
+                      "b": 255,
+                      "a": 255
+                    }
+                  }
+                }
+              },
+              "Text": "8. The Lion of Sinhagad (1670)",
+              "TextAnchor": "TopLeft",
+              "ChildWidgets": []
+            }
+          }
+        ]
+      }
+    },
+    {
+      "Widget": {
+        "Type": "Button",
+        "Name": "ScenarioButton9",
+        "ViewPort": {
+          "xorigin": 2350,
+          "yorigin": 790,
+          "width": 260,
+          "height": 260,
+          "alignment": "TopLeft"
+        },
+        "Image": {
+          "xorigin": 0,
+          "yorigin": 0,
+          "width": 260,
+          "height": 260,
+          "alignment": "TopLeft"
+        },
+        "ZPlane": 1,
+        "StateMaterials": {
+          "StateDisabled": {
+            "Material": "CampaignIcon35RajendraDisabled",
+            "Font": {
+              "FontIndex": 0,
+              "PointSize": 34,
+              "Style": "Normal",
+              "TextColor": {
+                "r": 42,
+                "g": 10,
+                "b": 82,
+                "a": 128
+              }
+            }
+          },
+          "StateNormal": {
+            "Material": "CampaignIcon35RajendraNormal",
+            "Font": {
+              "FontIndex": 0,
+              "PointSize": 34,
+              "Style": "Normal",
+              "TextColor": {
+                "r": 42,
+                "g": 10,
+                "b": 82,
+                "a": 255
+              }
+            }
+          },
+          "StateHover": {
+            "Material": "CampaignIcon35RajendraHover",
+            "Font": {
+              "FontIndex": 0,
+              "PointSize": 34,
+              "Style": "Normal",
+              "TextColor": {
+                "r": 42,
+                "g": 10,
+                "b": 82,
+                "a": 255
+              }
+            }
+          },
+          "StatePressed": {
+            "Material": "CampaignIcon35RajendraPressed",
+            "Font": {
+              "FontIndex": 0,
+              "PointSize": 34,
+              "Style": "Normal",
+              "TextColor": {
+                "r": 42,
+                "g": 10,
+                "b": 82,
+                "a": 255
+              }
+            }
+          }
+        },
+        "ChildWidgets": [
+          {
+            "Widget": {
+              "Type": "CampaignTitle",
+              "Name": "ScenarioButtonLabel",
+              "ViewPort": {
+                "xorigin": -25,
+                "yorigin": 225,
+                "width": 440,
+                "height": 90,
+                "alignment": "TopLeft"
+              },
+              "ClippingOverride": "Background",
+              "ZPlane": 2,
+              "Level": 0,
+              "StateMaterials": {
+                "StateNormal": {
+                  "Font": {
+                    "FontIndex": 0,
+                    "PointSize": 30,
+                    "Style": "Normal",
+                    "TextColor": {
+                      "r": 255,
+                      "g": 255,
+                      "b": 255,
+                      "a": 255
+                    }
+                  }
+                }
+              },
+              "Text": "9. The Crown of Swarajya - Raigad (1674)",
+              "TextAnchor": "TopLeft",
+              "ChildWidgets": []
+            }
+          }
+        ]
+      }
+    },
+    {
+      "Widget": {
+        "Type": "Button",
+        "Name": "ScenarioButton10",
+        "ViewPort": {
+          "xorigin": 2800,
+          "yorigin": 760,
+          "width": 260,
+          "height": 260,
+          "alignment": "TopLeft"
+        },
+        "Image": {
+          "xorigin": 0,
+          "yorigin": 0,
+          "width": 260,
+          "height": 260,
+          "alignment": "TopLeft"
+        },
+        "ZPlane": 1,
+        "StateMaterials": {
+          "StateDisabled": {
+            "Material": "CampaignIcon35RajendraDisabled",
+            "Font": {
+              "FontIndex": 0,
+              "PointSize": 34,
+              "Style": "Normal",
+              "TextColor": {
+                "r": 42,
+                "g": 10,
+                "b": 82,
+                "a": 128
+              }
+            }
+          },
+          "StateNormal": {
+            "Material": "CampaignIcon35RajendraNormal",
+            "Font": {
+              "FontIndex": 0,
+              "PointSize": 34,
+              "Style": "Normal",
+              "TextColor": {
+                "r": 42,
+                "g": 10,
+                "b": 82,
+                "a": 255
+              }
+            }
+          },
+          "StateHover": {
+            "Material": "CampaignIcon35RajendraHover",
+            "Font": {
+              "FontIndex": 0,
+              "PointSize": 34,
+              "Style": "Normal",
+              "TextColor": {
+                "r": 42,
+                "g": 10,
+                "b": 82,
+                "a": 255
+              }
+            }
+          },
+          "StatePressed": {
+            "Material": "CampaignIcon35RajendraPressed",
+            "Font": {
+              "FontIndex": 0,
+              "PointSize": 34,
+              "Style": "Normal",
+              "TextColor": {
+                "r": 42,
+                "g": 10,
+                "b": 82,
+                "a": 255
+              }
+            }
+          }
+        },
+        "ChildWidgets": [
+          {
+            "Widget": {
+              "Type": "CampaignTitle",
+              "Name": "ScenarioButtonLabel",
+              "ViewPort": {
+                "xorigin": -25,
+                "yorigin": 225,
+                "width": 440,
+                "height": 90,
+                "alignment": "TopLeft"
+              },
+              "ClippingOverride": "Background",
+              "ZPlane": 2,
+              "Level": 0,
+              "StateMaterials": {
+                "StateNormal": {
+                  "Font": {
+                    "FontIndex": 0,
+                    "PointSize": 30,
+                    "Style": "Normal",
+                    "TextColor": {
+                      "r": 255,
+                      "g": 255,
+                      "b": 255,
+                      "a": 255
+                    }
+                  }
+                }
+              },
+              "Text": "10. The Crown of Conflict (1680-81)",
+              "TextAnchor": "TopLeft",
+              "ChildWidgets": []
+            }
+          }
+        ]
+      }
+    },
+    {
+      "Widget": {
+        "Type": "Button",
+        "Name": "ScenarioButton11",
+        "ViewPort": {
+          "xorigin": 960,
+          "yorigin": 1210,
+          "width": 260,
+          "height": 260,
+          "alignment": "TopLeft"
+        },
+        "Image": {
+          "xorigin": 0,
+          "yorigin": 0,
+          "width": 260,
+          "height": 260,
+          "alignment": "TopLeft"
+        },
+        "ZPlane": 1,
+        "StateMaterials": {
+          "StateDisabled": {
+            "Material": "CampaignIcon35RajendraDisabled",
+            "Font": {
+              "FontIndex": 0,
+              "PointSize": 34,
+              "Style": "Normal",
+              "TextColor": {
+                "r": 42,
+                "g": 10,
+                "b": 82,
+                "a": 128
+              }
+            }
+          },
+          "StateNormal": {
+            "Material": "CampaignIcon35RajendraNormal",
+            "Font": {
+              "FontIndex": 0,
+              "PointSize": 34,
+              "Style": "Normal",
+              "TextColor": {
+                "r": 42,
+                "g": 10,
+                "b": 82,
+                "a": 255
+              }
+            }
+          },
+          "StateHover": {
+            "Material": "CampaignIcon35RajendraHover",
+            "Font": {
+              "FontIndex": 0,
+              "PointSize": 34,
+              "Style": "Normal",
+              "TextColor": {
+                "r": 42,
+                "g": 10,
+                "b": 82,
+                "a": 255
+              }
+            }
+          },
+          "StatePressed": {
+            "Material": "CampaignIcon35RajendraPressed",
+            "Font": {
+              "FontIndex": 0,
+              "PointSize": 34,
+              "Style": "Normal",
+              "TextColor": {
+                "r": 42,
+                "g": 10,
+                "b": 82,
+                "a": 255
+              }
+            }
+          }
+        },
+        "ChildWidgets": [
+          {
+            "Widget": {
+              "Type": "CampaignTitle",
+              "Name": "ScenarioButtonLabel",
+              "ViewPort": {
+                "xorigin": -25,
+                "yorigin": 225,
+                "width": 440,
+                "height": 90,
+                "alignment": "TopLeft"
+              },
+              "ClippingOverride": "Background",
+              "ZPlane": 2,
+              "Level": 0,
+              "StateMaterials": {
+                "StateNormal": {
+                  "Font": {
+                    "FontIndex": 0,
+                    "PointSize": 30,
+                    "Style": "Normal",
+                    "TextColor": {
+                      "r": 255,
+                      "g": 255,
+                      "b": 255,
+                      "a": 255
+                    }
+                  }
+                }
+              },
+              "Text": "11. The Riches of Burhanpur (1681)",
+              "TextAnchor": "TopLeft",
+              "ChildWidgets": []
+            }
+          }
+        ]
+      }
+    },
+    {
+      "Widget": {
+        "Type": "Button",
+        "Name": "ScenarioButton12",
+        "ViewPort": {
+          "xorigin": 1410,
+          "yorigin": 1240,
+          "width": 260,
+          "height": 260,
+          "alignment": "TopLeft"
+        },
+        "Image": {
+          "xorigin": 0,
+          "yorigin": 0,
+          "width": 260,
+          "height": 260,
+          "alignment": "TopLeft"
+        },
+        "ZPlane": 1,
+        "StateMaterials": {
+          "StateDisabled": {
+            "Material": "CampaignIcon35RajendraDisabled",
+            "Font": {
+              "FontIndex": 0,
+              "PointSize": 34,
+              "Style": "Normal",
+              "TextColor": {
+                "r": 42,
+                "g": 10,
+                "b": 82,
+                "a": 128
+              }
+            }
+          },
+          "StateNormal": {
+            "Material": "CampaignIcon35RajendraNormal",
+            "Font": {
+              "FontIndex": 0,
+              "PointSize": 34,
+              "Style": "Normal",
+              "TextColor": {
+                "r": 42,
+                "g": 10,
+                "b": 82,
+                "a": 255
+              }
+            }
+          },
+          "StateHover": {
+            "Material": "CampaignIcon35RajendraHover",
+            "Font": {
+              "FontIndex": 0,
+              "PointSize": 34,
+              "Style": "Normal",
+              "TextColor": {
+                "r": 42,
+                "g": 10,
+                "b": 82,
+                "a": 255
+              }
+            }
+          },
+          "StatePressed": {
+            "Material": "CampaignIcon35RajendraPressed",
+            "Font": {
+              "FontIndex": 0,
+              "PointSize": 34,
+              "Style": "Normal",
+              "TextColor": {
+                "r": 42,
+                "g": 10,
+                "b": 82,
+                "a": 255
+              }
+            }
+          }
+        },
+        "ChildWidgets": [
+          {
+            "Widget": {
+              "Type": "CampaignTitle",
+              "Name": "ScenarioButtonLabel",
+              "ViewPort": {
+                "xorigin": -25,
+                "yorigin": 225,
+                "width": 440,
+                "height": 90,
+                "alignment": "TopLeft"
+              },
+              "ClippingOverride": "Background",
+              "ZPlane": 2,
+              "Level": 0,
+              "StateMaterials": {
+                "StateNormal": {
+                  "Font": {
+                    "FontIndex": 0,
+                    "PointSize": 30,
+                    "Style": "Normal",
+                    "TextColor": {
+                      "r": 255,
+                      "g": 255,
+                      "b": 255,
+                      "a": 255
+                    }
+                  }
+                }
+              },
+              "Text": "12. The Lion Against the Empire - Ramsej (1682)",
+              "TextAnchor": "TopLeft",
+              "ChildWidgets": []
+            }
+          }
+        ]
+      }
+    },
+    {
+      "Widget": {
+        "Type": "Button",
+        "Name": "ScenarioButton13",
+        "ViewPort": {
+          "xorigin": 1860,
+          "yorigin": 1210,
+          "width": 260,
+          "height": 260,
+          "alignment": "TopLeft"
+        },
+        "Image": {
+          "xorigin": 0,
+          "yorigin": 0,
+          "width": 260,
+          "height": 260,
+          "alignment": "TopLeft"
+        },
+        "ZPlane": 1,
+        "StateMaterials": {
+          "StateDisabled": {
+            "Material": "CampaignIcon35RajendraDisabled",
+            "Font": {
+              "FontIndex": 0,
+              "PointSize": 34,
+              "Style": "Normal",
+              "TextColor": {
+                "r": 42,
+                "g": 10,
+                "b": 82,
+                "a": 128
+              }
+            }
+          },
+          "StateNormal": {
+            "Material": "CampaignIcon35RajendraNormal",
+            "Font": {
+              "FontIndex": 0,
+              "PointSize": 34,
+              "Style": "Normal",
+              "TextColor": {
+                "r": 42,
+                "g": 10,
+                "b": 82,
+                "a": 255
+              }
+            }
+          },
+          "StateHover": {
+            "Material": "CampaignIcon35RajendraHover",
+            "Font": {
+              "FontIndex": 0,
+              "PointSize": 34,
+              "Style": "Normal",
+              "TextColor": {
+                "r": 42,
+                "g": 10,
+                "b": 82,
+                "a": 255
+              }
+            }
+          },
+          "StatePressed": {
+            "Material": "CampaignIcon35RajendraPressed",
+            "Font": {
+              "FontIndex": 0,
+              "PointSize": 34,
+              "Style": "Normal",
+              "TextColor": {
+                "r": 42,
+                "g": 10,
+                "b": 82,
+                "a": 255
+              }
+            }
+          }
+        },
+        "ChildWidgets": [
+          {
+            "Widget": {
+              "Type": "CampaignTitle",
+              "Name": "ScenarioButtonLabel",
+              "ViewPort": {
+                "xorigin": -25,
+                "yorigin": 225,
+                "width": 440,
+                "height": 90,
+                "alignment": "TopLeft"
+              },
+              "ClippingOverride": "Background",
+              "ZPlane": 2,
+              "Level": 0,
+              "StateMaterials": {
+                "StateNormal": {
+                  "Font": {
+                    "FontIndex": 0,
+                    "PointSize": 30,
+                    "Style": "Normal",
+                    "TextColor": {
+                      "r": 255,
+                      "g": 255,
+                      "b": 255,
+                      "a": 255
+                    }
+                  }
+                }
+              },
+              "Text": "13. The Island Fortress - Janjira (1682)",
+              "TextAnchor": "TopLeft",
+              "ChildWidgets": []
+            }
+          }
+        ]
+      }
+    },
+    {
+      "Widget": {
+        "Type": "Button",
+        "Name": "ScenarioButton14",
+        "ViewPort": {
+          "xorigin": 2310,
+          "yorigin": 1240,
+          "width": 260,
+          "height": 260,
+          "alignment": "TopLeft"
+        },
+        "Image": {
+          "xorigin": 0,
+          "yorigin": 0,
+          "width": 260,
+          "height": 260,
+          "alignment": "TopLeft"
+        },
+        "ZPlane": 1,
+        "StateMaterials": {
+          "StateDisabled": {
+            "Material": "CampaignIcon35RajendraDisabled",
+            "Font": {
+              "FontIndex": 0,
+              "PointSize": 34,
+              "Style": "Normal",
+              "TextColor": {
+                "r": 42,
+                "g": 10,
+                "b": 82,
+                "a": 128
+              }
+            }
+          },
+          "StateNormal": {
+            "Material": "CampaignIcon35RajendraNormal",
+            "Font": {
+              "FontIndex": 0,
+              "PointSize": 34,
+              "Style": "Normal",
+              "TextColor": {
+                "r": 42,
+                "g": 10,
+                "b": 82,
+                "a": 255
+              }
+            }
+          },
+          "StateHover": {
+            "Material": "CampaignIcon35RajendraHover",
+            "Font": {
+              "FontIndex": 0,
+              "PointSize": 34,
+              "Style": "Normal",
+              "TextColor": {
+                "r": 42,
+                "g": 10,
+                "b": 82,
+                "a": 255
+              }
+            }
+          },
+          "StatePressed": {
+            "Material": "CampaignIcon35RajendraPressed",
+            "Font": {
+              "FontIndex": 0,
+              "PointSize": 34,
+              "Style": "Normal",
+              "TextColor": {
+                "r": 42,
+                "g": 10,
+                "b": 82,
+                "a": 255
+              }
+            }
+          }
+        },
+        "ChildWidgets": [
+          {
+            "Widget": {
+              "Type": "CampaignTitle",
+              "Name": "ScenarioButtonLabel",
+              "ViewPort": {
+                "xorigin": -25,
+                "yorigin": 225,
+                "width": 440,
+                "height": 90,
+                "alignment": "TopLeft"
+              },
+              "ClippingOverride": "Background",
+              "ZPlane": 2,
+              "Level": 0,
+              "StateMaterials": {
+                "StateNormal": {
+                  "Font": {
+                    "FontIndex": 0,
+                    "PointSize": 30,
+                    "Style": "Normal",
+                    "TextColor": {
+                      "r": 255,
+                      "g": 255,
+                      "b": 255,
+                      "a": 255
+                    }
+                  }
+                }
+              },
+              "Text": "14. The Gates of Goa (1683)",
+              "TextAnchor": "TopLeft",
+              "ChildWidgets": []
+            }
+          }
+        ]
+      }
+    },
+    {
+      "Widget": {
+        "Type": "Button",
+        "Name": "ScenarioButton15",
+        "ViewPort": {
+          "xorigin": 2760,
+          "yorigin": 1210,
+          "width": 260,
+          "height": 260,
+          "alignment": "TopLeft"
+        },
+        "Image": {
+          "xorigin": 0,
+          "yorigin": 0,
+          "width": 260,
+          "height": 260,
+          "alignment": "TopLeft"
+        },
+        "ZPlane": 1,
+        "StateMaterials": {
+          "StateDisabled": {
+            "Material": "CampaignIcon35RajendraDisabled",
+            "Font": {
+              "FontIndex": 0,
+              "PointSize": 34,
+              "Style": "Normal",
+              "TextColor": {
+                "r": 42,
+                "g": 10,
+                "b": 82,
+                "a": 128
+              }
+            }
+          },
+          "StateNormal": {
+            "Material": "CampaignIcon35RajendraNormal",
+            "Font": {
+              "FontIndex": 0,
+              "PointSize": 34,
+              "Style": "Normal",
+              "TextColor": {
+                "r": 42,
+                "g": 10,
+                "b": 82,
+                "a": 255
+              }
+            }
+          },
+          "StateHover": {
+            "Material": "CampaignIcon35RajendraHover",
+            "Font": {
+              "FontIndex": 0,
+              "PointSize": 34,
+              "Style": "Normal",
+              "TextColor": {
+                "r": 42,
+                "g": 10,
+                "b": 82,
+                "a": 255
+              }
+            }
+          },
+          "StatePressed": {
+            "Material": "CampaignIcon35RajendraPressed",
+            "Font": {
+              "FontIndex": 0,
+              "PointSize": 34,
+              "Style": "Normal",
+              "TextColor": {
+                "r": 42,
+                "g": 10,
+                "b": 82,
+                "a": 255
+              }
+            }
+          }
+        },
+        "ChildWidgets": [
+          {
+            "Widget": {
+              "Type": "CampaignTitle",
+              "Name": "ScenarioButtonLabel",
+              "ViewPort": {
+                "xorigin": -25,
+                "yorigin": 225,
+                "width": 440,
+                "height": 90,
+                "alignment": "TopLeft"
+              },
+              "ClippingOverride": "Background",
+              "ZPlane": 2,
+              "Level": 0,
+              "StateMaterials": {
+                "StateNormal": {
+                  "Font": {
+                    "FontIndex": 0,
+                    "PointSize": 30,
+                    "Style": "Normal",
+                    "TextColor": {
+                      "r": 255,
+                      "g": 255,
+                      "b": 255,
+                      "a": 255
+                    }
+                  }
+                }
+              },
+              "Text": "15. The Flame That Would Not Die (1689)",
+              "TextAnchor": "TopLeft",
+              "ChildWidgets": []
+            }
+          }
+        ]
+      }
+    },
+    {
+      "Widget": {
+        "Type": "Base",
+        "Name": "NextIndicator1",
+        "ViewPort": {
+          "xorigin": 1170,
+          "yorigin": 390,
+          "width": 260,
+          "height": 140,
+          "alignment": "TopLeft"
+        },
+        "ZPlane": 0,
+        "Wrap": {
+          "width": 0,
+          "height": 0
+        },
+        "StateMaterials": {
+          "StateNormal": {
+            "Material": "GenghisKhanIndicator3"
+          }
+        }
+      }
+    },
+    {
+      "Widget": {
+        "Type": "Base",
+        "Name": "NextIndicator2",
+        "ViewPort": {
+          "xorigin": 1620,
+          "yorigin": 390,
+          "width": 260,
+          "height": 140,
+          "alignment": "TopLeft"
+        },
+        "ZPlane": 0,
+        "Wrap": {
+          "width": 0,
+          "height": 0
+        },
+        "StateMaterials": {
+          "StateNormal": {
+            "Material": "GenghisKhanIndicator5"
+          }
+        }
+      }
+    },
+    {
+      "Widget": {
+        "Type": "Base",
+        "Name": "NextIndicator3",
+        "ViewPort": {
+          "xorigin": 2070,
+          "yorigin": 390,
+          "width": 260,
+          "height": 140,
+          "alignment": "TopLeft"
+        },
+        "ZPlane": 0,
+        "Wrap": {
+          "width": 0,
+          "height": 0
+        },
+        "StateMaterials": {
+          "StateNormal": {
+            "Material": "GenghisKhanIndicator3"
+          }
+        }
+      }
+    },
+    {
+      "Widget": {
+        "Type": "Base",
+        "Name": "NextIndicator4",
+        "ViewPort": {
+          "xorigin": 2520,
+          "yorigin": 390,
+          "width": 260,
+          "height": 140,
+          "alignment": "TopLeft"
+        },
+        "ZPlane": 0,
+        "Wrap": {
+          "width": 0,
+          "height": 0
+        },
+        "StateMaterials": {
+          "StateNormal": {
+            "Material": "GenghisKhanIndicator5"
+          }
+        }
+      }
+    },
+    {
+      "Widget": {
+        "Type": "Base",
+        "Name": "NextIndicator6",
+        "ViewPort": {
+          "xorigin": 1210,
+          "yorigin": 840,
+          "width": 260,
+          "height": 140,
+          "alignment": "TopLeft"
+        },
+        "ZPlane": 0,
+        "Wrap": {
+          "width": 0,
+          "height": 0
+        },
+        "StateMaterials": {
+          "StateNormal": {
+            "Material": "GenghisKhanIndicator5"
+          }
+        }
+      }
+    },
+    {
+      "Widget": {
+        "Type": "Base",
+        "Name": "NextIndicator7",
+        "ViewPort": {
+          "xorigin": 1660,
+          "yorigin": 840,
+          "width": 260,
+          "height": 140,
+          "alignment": "TopLeft"
+        },
+        "ZPlane": 0,
+        "Wrap": {
+          "width": 0,
+          "height": 0
+        },
+        "StateMaterials": {
+          "StateNormal": {
+            "Material": "GenghisKhanIndicator3"
+          }
+        }
+      }
+    },
+    {
+      "Widget": {
+        "Type": "Base",
+        "Name": "NextIndicator8",
+        "ViewPort": {
+          "xorigin": 2110,
+          "yorigin": 840,
+          "width": 260,
+          "height": 140,
+          "alignment": "TopLeft"
+        },
+        "ZPlane": 0,
+        "Wrap": {
+          "width": 0,
+          "height": 0
+        },
+        "StateMaterials": {
+          "StateNormal": {
+            "Material": "GenghisKhanIndicator5"
+          }
+        }
+      }
+    },
+    {
+      "Widget": {
+        "Type": "Base",
+        "Name": "NextIndicator9",
+        "ViewPort": {
+          "xorigin": 2560,
+          "yorigin": 840,
+          "width": 260,
+          "height": 140,
+          "alignment": "TopLeft"
+        },
+        "ZPlane": 0,
+        "Wrap": {
+          "width": 0,
+          "height": 0
+        },
+        "StateMaterials": {
+          "StateNormal": {
+            "Material": "GenghisKhanIndicator3"
+          }
+        }
+      }
+    },
+    {
+      "Widget": {
+        "Type": "Base",
+        "Name": "NextIndicator11",
+        "ViewPort": {
+          "xorigin": 1170,
+          "yorigin": 1290,
+          "width": 260,
+          "height": 140,
+          "alignment": "TopLeft"
+        },
+        "ZPlane": 0,
+        "Wrap": {
+          "width": 0,
+          "height": 0
+        },
+        "StateMaterials": {
+          "StateNormal": {
+            "Material": "GenghisKhanIndicator3"
+          }
+        }
+      }
+    },
+    {
+      "Widget": {
+        "Type": "Base",
+        "Name": "NextIndicator12",
+        "ViewPort": {
+          "xorigin": 1620,
+          "yorigin": 1290,
+          "width": 260,
+          "height": 140,
+          "alignment": "TopLeft"
+        },
+        "ZPlane": 0,
+        "Wrap": {
+          "width": 0,
+          "height": 0
+        },
+        "StateMaterials": {
+          "StateNormal": {
+            "Material": "GenghisKhanIndicator5"
+          }
+        }
+      }
+    },
+    {
+      "Widget": {
+        "Type": "Base",
+        "Name": "NextIndicator13",
+        "ViewPort": {
+          "xorigin": 2070,
+          "yorigin": 1290,
+          "width": 260,
+          "height": 140,
+          "alignment": "TopLeft"
+        },
+        "ZPlane": 0,
+        "Wrap": {
+          "width": 0,
+          "height": 0
+        },
+        "StateMaterials": {
+          "StateNormal": {
+            "Material": "GenghisKhanIndicator3"
+          }
+        }
+      }
+    },
+    {
+      "Widget": {
+        "Type": "Base",
+        "Name": "NextIndicator14",
+        "ViewPort": {
+          "xorigin": 2520,
+          "yorigin": 1290,
+          "width": 260,
+          "height": 140,
+          "alignment": "TopLeft"
+        },
+        "ZPlane": 0,
+        "Wrap": {
+          "width": 0,
+          "height": 0
+        },
+        "StateMaterials": {
+          "StateNormal": {
+            "Material": "GenghisKhanIndicator5"
+          }
+        }
+      }
+    }
+  ]
+}

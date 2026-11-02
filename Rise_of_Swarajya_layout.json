@@ -1,10 +1,4 @@
 {
-  "UserMaterials": [
-    {
-      "Name": "CampaignBackgroundSwarajya",
-      "Texture": "textures/campaign/swarajya/swarajya_map.dds"
-    }
-  ],
   "BackgroundMaterial": "CampaignBackgroundSwarajya",
   "UnlockScenarios": true,
   "Widgets": [
@@ -44,7 +38,6 @@
       "Widget": {
         "Type": "Button",
         "Name": "ScenarioButton1",
-        "SpecialMessage": 1,
         "ViewPort": {
           "xorigin": 960,
           "yorigin": 310,
@@ -122,7 +115,7 @@
           {
             "Widget": {
               "Type": "CampaignTitle",
-              "Name": "CampaignButton1Label",
+              "Name": "ScenarioButtonLabel",
               "ViewPort": {
                 "xorigin": -25,
                 "yorigin": 225,
@@ -160,7 +153,6 @@
       "Widget": {
         "Type": "Button",
         "Name": "ScenarioButton2",
-        "SpecialMessage": 0,
         "ViewPort": {
           "xorigin": 1410,
           "yorigin": 340,
@@ -238,7 +230,7 @@
           {
             "Widget": {
               "Type": "CampaignTitle",
-              "Name": "CampaignButton2Label",
+              "Name": "ScenarioButtonLabel",
               "ViewPort": {
                 "xorigin": -25,
                 "yorigin": 225,
@@ -276,7 +268,6 @@
       "Widget": {
         "Type": "Button",
         "Name": "ScenarioButton3",
-        "SpecialMessage": 0,
         "ViewPort": {
           "xorigin": 1860,
           "yorigin": 310,
@@ -354,7 +345,7 @@
           {
             "Widget": {
               "Type": "CampaignTitle",
-              "Name": "CampaignButton3Label",
+              "Name": "ScenarioButtonLabel",
               "ViewPort": {
                 "xorigin": -25,
                 "yorigin": 225,
@@ -392,7 +383,6 @@
       "Widget": {
         "Type": "Button",
         "Name": "ScenarioButton4",
-        "SpecialMessage": 0,
         "ViewPort": {
           "xorigin": 2310,
           "yorigin": 340,
@@ -470,7 +460,7 @@
           {
             "Widget": {
               "Type": "CampaignTitle",
-              "Name": "CampaignButton4Label",
+              "Name": "ScenarioButtonLabel",
               "ViewPort": {
                 "xorigin": -25,
                 "yorigin": 225,
@@ -508,7 +498,6 @@
       "Widget": {
         "Type": "Button",
         "Name": "ScenarioButton5",
-        "SpecialMessage": 0,
         "ViewPort": {
           "xorigin": 2760,
           "yorigin": 310,
@@ -586,7 +575,7 @@
           {
             "Widget": {
               "Type": "CampaignTitle",
-              "Name": "CampaignButton5Label",
+              "Name": "ScenarioButtonLabel",
               "ViewPort": {
                 "xorigin": -25,
                 "yorigin": 225,
@@ -624,7 +613,6 @@
       "Widget": {
         "Type": "Button",
         "Name": "ScenarioButton6",
-        "SpecialMessage": 0,
         "ViewPort": {
           "xorigin": 1000,
           "yorigin": 760,
@@ -702,7 +690,7 @@
           {
             "Widget": {
               "Type": "CampaignTitle",
-              "Name": "CampaignButton6Label",
+              "Name": "ScenarioButtonLabel",
               "ViewPort": {
                 "xorigin": -25,
                 "yorigin": 225,
@@ -740,7 +728,6 @@
       "Widget": {
         "Type": "Button",
         "Name": "ScenarioButton7",
-        "SpecialMessage": 0,
         "ViewPort": {
           "xorigin": 1450,
           "yorigin": 790,
@@ -818,7 +805,7 @@
           {
             "Widget": {
               "Type": "CampaignTitle",
-              "Name": "CampaignButton7Label",
+              "Name": "ScenarioButtonLabel",
               "ViewPort": {
                 "xorigin": -25,
                 "yorigin": 225,
@@ -856,7 +843,6 @@
       "Widget": {
         "Type": "Button",
         "Name": "ScenarioButton8",
-        "SpecialMessage": 0,
         "ViewPort": {
           "xorigin": 1900,
           "yorigin": 760,
@@ -934,7 +920,7 @@
           {
             "Widget": {
               "Type": "CampaignTitle",
-              "Name": "CampaignButton8Label",
+              "Name": "ScenarioButtonLabel",
               "ViewPort": {
                 "xorigin": -25,
                 "yorigin": 225,
@@ -972,7 +958,6 @@
       "Widget": {
         "Type": "Button",
         "Name": "ScenarioButton9",
-        "SpecialMessage": 0,
         "ViewPort": {
           "xorigin": 2350,
           "yorigin": 790,
@@ -1050,7 +1035,7 @@
           {
             "Widget": {
               "Type": "CampaignTitle",
-              "Name": "CampaignButton9Label",
+              "Name": "ScenarioButtonLabel",
               "ViewPort": {
                 "xorigin": -25,
                 "yorigin": 225,
@@ -1088,7 +1073,6 @@
       "Widget": {
         "Type": "Button",
         "Name": "ScenarioButton10",
-        "SpecialMessage": 0,
         "ViewPort": {
           "xorigin": 2800,
           "yorigin": 760,
@@ -1166,7 +1150,7 @@
           {
             "Widget": {
               "Type": "CampaignTitle",
-              "Name": "CampaignButton10Label",
+              "Name": "ScenarioButtonLabel",
               "ViewPort": {
                 "xorigin": -25,
                 "yorigin": 225,
@@ -1204,7 +1188,6 @@
       "Widget": {
         "Type": "Button",
         "Name": "ScenarioButton11",
-        "SpecialMessage": 0,
         "ViewPort": {
           "xorigin": 960,
           "yorigin": 1210,
@@ -1282,7 +1265,7 @@
           {
             "Widget": {
               "Type": "CampaignTitle",
-              "Name": "CampaignButton11Label",
+              "Name": "ScenarioButtonLabel",
               "ViewPort": {
                 "xorigin": -25,
                 "yorigin": 225,
@@ -1320,7 +1303,6 @@
       "Widget": {
         "Type": "Button",
         "Name": "ScenarioButton12",
-        "SpecialMessage": 0,
         "ViewPort": {
           "xorigin": 1410,
           "yorigin": 1240,
@@ -1398,7 +1380,7 @@
           {
             "Widget": {
               "Type": "CampaignTitle",
-              "Name": "CampaignButton12Label",
+              "Name": "ScenarioButtonLabel",
               "ViewPort": {
                 "xorigin": -25,
                 "yorigin": 225,
@@ -1436,7 +1418,6 @@
       "Widget": {
         "Type": "Button",
         "Name": "ScenarioButton13",
-        "SpecialMessage": 0,
         "ViewPort": {
           "xorigin": 1860,
           "yorigin": 1210,
@@ -1514,7 +1495,7 @@
           {
             "Widget": {
               "Type": "CampaignTitle",
-              "Name": "CampaignButton13Label",
+              "Name": "ScenarioButtonLabel",
               "ViewPort": {
                 "xorigin": -25,
                 "yorigin": 225,
@@ -1552,7 +1533,6 @@
       "Widget": {
         "Type": "Button",
         "Name": "ScenarioButton14",
-        "SpecialMessage": 0,
         "ViewPort": {
           "xorigin": 2310,
           "yorigin": 1240,
@@ -1630,7 +1610,7 @@
           {
             "Widget": {
               "Type": "CampaignTitle",
-              "Name": "CampaignButton14Label",
+              "Name": "ScenarioButtonLabel",
               "ViewPort": {
                 "xorigin": -25,
                 "yorigin": 225,
@@ -1668,7 +1648,6 @@
       "Widget": {
         "Type": "Button",
         "Name": "ScenarioButton15",
-        "SpecialMessage": 0,
         "ViewPort": {
           "xorigin": 2760,
           "yorigin": 1210,
@@ -1746,7 +1725,7 @@
           {
             "Widget": {
               "Type": "CampaignTitle",
-              "Name": "CampaignButton15Label",
+              "Name": "ScenarioButtonLabel",
               "ViewPort": {
                 "xorigin": -25,
                 "yorigin": 225,

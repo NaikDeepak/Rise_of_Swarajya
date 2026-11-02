@@ -138,21 +138,32 @@ def main():
             if os.path.isdir(mod_scen):
                 shutil.copy2(os.path.join(DEST, fn), os.path.join(mod_scen, fn))
         shutil.copy2(cpath, os.path.join(game_camp, "Rise_of_Swarajya.aoe2campaign"))
-        for ext in ("_layout.json", ".json"):
-            src_j = os.path.join(ROOT, "Rise_of_Swarajya" + ext)
-            if os.path.exists(src_j):
-                shutil.copy2(src_j, os.path.join(game_camp, "Rise_of_Swarajya" + ext))
         # Sync custom storyboard PNGs and Wwise .wem voiceover audio
         src_tex = os.path.join(ROOT, "assets", "textures", "campaign", "swarajya")
         src_snd = os.path.join(ROOT, "assets", "sounds")
         steam_data = os.path.expanduser(
             "~/Library/Application Support/Steam/steamapps/common/AoE2DE/AgeOfEmpires2Data"
         )
+        json_targets = [
+            game_camp,
+            os.path.join(game_profile, "widgetui"),
+        ]
         tex_targets = [os.path.join(game_profile, "widgetui", "textures", "campaign", "swarajya")]
         snd_targets = [os.path.join(game_profile, "resources", "_common", "drs", "sounds")]
         if os.path.isdir(steam_data):
+            json_targets.extend([
+                os.path.join(steam_data, "resources", "_common", "campaign"),
+                os.path.join(steam_data, "widgetui"),
+            ])
             tex_targets.append(os.path.join(steam_data, "widgetui", "textures", "campaign", "swarajya"))
             snd_targets.append(os.path.join(steam_data, "resources", "_common", "drs", "sounds"))
+        for jt in json_targets:
+            os.makedirs(jt, exist_ok=True)
+            for stem in ("Rise_of_Swarajya", CAMPAIGN_NAME):
+                for ext in ("_layout.json", ".json"):
+                    src_j = os.path.join(ROOT, "Rise_of_Swarajya" + ext)
+                    if os.path.exists(src_j):
+                        shutil.copy2(src_j, os.path.join(jt, stem + ext))
             mat_path = os.path.join(steam_data, "widgetui", "materials.json")
             if os.path.isfile(mat_path):
                 mat_data = json.load(open(mat_path, "r", encoding="utf-8"))

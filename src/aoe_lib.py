@@ -17,7 +17,7 @@ from AoE2ScenarioParser.datasets.players import PlayerColorId
 from AoE2ScenarioParser.datasets.trigger_lists import (
     VictoryCondition, DiplomacyState, ActionType, Attribute, PanelLocation,
     Operation, Comparison, ObjectAttribute, ObjectType, TimeUnit,
-    ColorMood,
+    ColorMood, AttackStance,
 )
 import os as _os
 import hashlib as _hashlib
@@ -177,8 +177,6 @@ class Mission:
         p.food, p.wood, p.gold, p.stone = food, wood, gold, stone
         p.population_cap = pop
         p.human = human
-        if not human:
-            p.set_immobile_ai()
         if color is not None:
             # PlayerColorId is 1-based (BLUE=1..ORANGE=8); the scenario file stores 0-7.
             # Writing the raw id gave ORANGE an invalid index 8 and crashed the game.
@@ -598,6 +596,15 @@ class Mission:
                         for dy in range(-4, 5):
                             occupied.add((px + dx, py + dy))
                 placed += 1
+        # Put pre-placed AI units into Defensive Stance at t=1 so they hold their posts
+        # without requiring a custom AI script file that blocks scenario load/teardown.
+        hold_trig = self.trig("AI Defensive Stance", enabled=True)
+        hold_trig.new_condition.timer(timer=1)
+        for pid in range(2, self.pm.active_players + 1):
+            hold_trig.new_effect.change_object_stance(
+                source_player=pid,
+                attack_stance=AttackStance.DEFENSIVE_STANCE,
+            )
         # Sanitize unused effect fields to -1 to match official DE campaign binaries
         from AoE2ScenarioParser.datasets import effects as _asp_effects
         for trig in self.tm.triggers:

@@ -327,6 +327,7 @@ def main():
                 ]
                 slide_obj = {
                     "Duration": round(max(4.5, s_dur), 2),
+                    "FadeOutTime": 0.4,
                     "TextFadeDuration": round(max(3.5, s_dur - 1.0), 2),
                     "String": s_txt,
                     "ImageRect": img_rects[(s_i - 1) % len(img_rects)],
@@ -363,8 +364,9 @@ def main():
     with open(os.path.join(SOUNDS_DIR, "vo_durations.json"), "w") as f:
         json.dump(dur_map, f, indent=2)
 
-    with open(os.path.join(ROOT, "Rise_of_Swarajya.json"), "w") as f:
-        json.dump({"Scenarios": scenarios_json}, f, indent=2)
+    for fn in ("Rise_of_Swarajya.json", "Rise of Swarajya.json"):
+        with open(os.path.join(ROOT, fn), "w") as f:
+            json.dump({"Scenarios": scenarios_json}, f, indent=2)
 
     build_campaign_map_dds()
     build_layout_json()
@@ -556,7 +558,6 @@ def build_layout_json():
                 "Widget": {
                     "Type": "Button",
                     "Name": f"ScenarioButton{idx}",
-                    "SpecialMessage": 1 if idx == 1 else 0,
                     "ViewPort": {
                         "xorigin": x,
                         "yorigin": y,
@@ -582,7 +583,7 @@ def build_layout_json():
                         {
                             "Widget": {
                                 "Type": "CampaignTitle",
-                                "Name": f"CampaignButton{idx}Label",
+                                "Name": "ScenarioButtonLabel",
                                 "ViewPort": {
                                     "xorigin": -25,
                                     "yorigin": 225,
@@ -643,18 +644,13 @@ def build_layout_json():
         )
 
     layout_obj = {
-        "UserMaterials": [
-            {
-                "Name": "CampaignBackgroundSwarajya",
-                "Texture": "textures/campaign/swarajya/swarajya_map.dds",
-            }
-        ],
         "BackgroundMaterial": "CampaignBackgroundSwarajya",
         "UnlockScenarios": True,
         "Widgets": widgets,
     }
-    with open(os.path.join(ROOT, "Rise_of_Swarajya_layout.json"), "w") as f:
-        json.dump(layout_obj, f, indent=2)
+    for fn in ("Rise_of_Swarajya_layout.json", "Rise of Swarajya_layout.json"):
+        with open(os.path.join(ROOT, fn), "w") as f:
+            json.dump(layout_obj, f, indent=2)
 
 
 if __name__ == "__main__":
