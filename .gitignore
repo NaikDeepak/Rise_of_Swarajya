@@ -2,4 +2,9 @@
 .venv/
 __pycache__/
 out/
+assets/sounds/*.wem
+assets/textures/
 
+
+# agent-notepad (local only)
+.collab/

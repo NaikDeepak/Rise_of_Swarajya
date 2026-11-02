@@ -6,19 +6,19 @@
           {
             "Type": "SlideShow",
             "Data": {
-              "SlideBackgroundImage": "textures/campaign/incam3/prithviraj_background.dds",
-              "SlideImageSequence": "textures/campaign/incam3/1/intro/%d.png",
-              "Sound": "spslide3",
+              "SlideBackgroundImage": "textures/campaign/fcam6/prithviraj_background.dds",
+              "SlideImageSequence": "textures/campaign/swarajya/1/intro/%d.png",
+              "Sound": "rs01_intro",
               "Slides": [
                 {
-                  "Duration": 7.6,
-                  "TextFadeDuration": 5.6,
-                  "String": "Act I: The Foundation \u2014 Chapter 1: The First Flame - Torna (1646)",
+                  "Duration": 4.5,
+                  "TextFadeDuration": 3.5,
+                  "String": "Act I: The Foundation \u2014 The First Flame - Torna",
                   "TextRect": {
-                    "x": 1050,
-                    "y": 580,
-                    "width": 1650,
-                    "height": 800
+                    "x": 1020,
+                    "y": 560,
+                    "width": 1680,
+                    "height": 420
                   },
                   "ImageRect": {
                     "x": 910,
@@ -28,80 +28,36 @@
                   }
                 },
                 {
-                  "Duration": 16.0,
-                  "TextFadeDuration": 14.0,
+                  "Duration": 22.72,
+                  "TextFadeDuration": 21.72,
                   "String": "Shivaji, son of Shahaji Raje Bhosale and Jijabai, grew up in Pune amid the Sahyadri hills. With companions from the Maval valleys he resolved to free the land from the Deccan sultanates. Around 1646 he took Torna, reportedly found treasure there, and used it to fortify Murumbdev, renamed Rajgad.",
                   "TextRect": {
-                    "x": 1050,
-                    "y": 580,
-                    "width": 1650,
-                    "height": 800
+                    "x": 1020,
+                    "y": 620,
+                    "width": 1680,
+                    "height": 420
                   }
                 },
                 {
-                  "Duration": 13.1,
-                  "TextFadeDuration": 11.1,
+                  "Duration": 11.92,
+                  "TextFadeDuration": 10.92,
                   "String": "1646. The Deccan bleeds between three thrones: the Adilshahi of Bijapur, the fading Nizamshahi, and the Mughal Empire pressing from the north.",
                   "TextRect": {
-                    "x": 1050,
-                    "y": 580,
-                    "width": 1650,
-                    "height": 800
+                    "x": 1020,
+                    "y": 560,
+                    "width": 1680,
+                    "height": 420
                   }
                 },
                 {
-                  "Duration": 12.9,
-                  "TextFadeDuration": 10.9,
+                  "Duration": 10.0,
+                  "TextFadeDuration": 9.0,
                   "String": "Rajmata Jijabai: Shivba, your father serves the Sultan far away in Bangalore. But these hills and these people deserve a king of their own.",
                   "TextRect": {
-                    "x": 1050,
-                    "y": 580,
-                    "width": 1650,
-                    "height": 800
-                  }
-                },
-                {
-                  "Duration": 11.4,
-                  "TextFadeDuration": 9.4,
-                  "String": "Shivaji Raje Bhosale: At Raireshwar we swore it before Mahadev, Aai: Hindavi Swarajya. Today the oath becomes a fort.",
-                  "TextRect": {
-                    "x": 1050,
-                    "y": 580,
-                    "width": 1650,
-                    "height": 800
-                  }
-                },
-                {
-                  "Duration": 10.2,
-                  "TextFadeDuration": 8.2,
-                  "String": "Tanaji Malusare: Torna stands neglected, Raje. Its killedar sleeps, and Bijapur's eyes are elsewhere.",
-                  "TextRect": {
-                    "x": 1050,
-                    "y": 580,
-                    "width": 1650,
-                    "height": 800
-                  }
-                },
-                {
-                  "Duration": 6.6,
-                  "TextFadeDuration": 4.6,
-                  "String": "Yesaji Kank: Then let us wake him. Har Har Mahadev!",
-                  "TextRect": {
-                    "x": 1050,
-                    "y": 580,
-                    "width": 1650,
-                    "height": 800
-                  }
-                },
-                {
-                  "Duration": 8.5,
-                  "TextFadeDuration": 6.5,
-                  "String": "Lead the Mavalas up the road to Torna and take it. Shivaji Raje must survive.",
-                  "TextRect": {
-                    "x": 1050,
-                    "y": 580,
-                    "width": 1650,
-                    "height": 800
+                    "x": 1020,
+                    "y": 620,
+                    "width": 1680,
+                    "height": 420
                   }
                 }
               ]
@@ -114,58 +70,47 @@
           {
             "Type": "SlideShow",
             "Data": {
-              "SlideBackgroundImage": "textures/campaign/incam3/prithviraj_background.dds",
-              "SlideImageSequence": "textures/campaign/incam3/1/outro/%d.png",
-              "Sound": "spslide3",
+              "SlideBackgroundImage": "textures/campaign/fcam6/prithviraj_background.dds",
+              "SlideImageSequence": "textures/campaign/swarajya/1/outro/%d.png",
+              "Sound": "rs01_outro",
               "Slides": [
                 {
-                  "Duration": 9.1,
-                  "TextFadeDuration": 7.1,
+                  "Duration": 4.5,
+                  "TextFadeDuration": 3.5,
+                  "String": "Torna and Rajgad stand under the saffron Bhagwa Dhwaj.",
+                  "TextRect": {
+                    "x": 1020,
+                    "y": 560,
+                    "width": 1680,
+                    "height": 420
+                  },
+                  "ImageRect": {
+                    "x": 910,
+                    "y": 550,
+                    "width": 2000,
+                    "height": 1048
+                  }
+                },
+                {
+                  "Duration": 6.51,
+                  "TextFadeDuration": 5.51,
                   "String": "Bijapur's hold on the Maval country is broken. The first stones of Swarajya are laid.",
                   "TextRect": {
-                    "x": 1050,
-                    "y": 580,
-                    "width": 1650,
-                    "height": 800
-                  },
-                  "ImageRect": {
-                    "x": 910,
-                    "y": 550,
-                    "width": 2000,
-                    "height": 1048
+                    "x": 1020,
+                    "y": 620,
+                    "width": 1680,
+                    "height": 420
                   }
                 },
                 {
-                  "Duration": 10.0,
-                  "TextFadeDuration": 8.0,
+                  "Duration": 7.73,
+                  "TextFadeDuration": 6.73,
                   "String": "Rajmata Jijabai: A fort is a promise made in stone, Shivba. Keep it, and the people will keep you.",
                   "TextRect": {
-                    "x": 1050,
-                    "y": 580,
-                    "width": 1650,
-                    "height": 800
-                  }
-                },
-                {
-                  "Duration": 8.7,
-                  "TextFadeDuration": 6.7,
-                  "String": "Shivaji Raje Bhosale: Then we will build a hundred promises across the Sahyadri.",
-                  "TextRect": {
-                    "x": 1050,
-                    "y": 580,
-                    "width": 1650,
-                    "height": 800
-                  }
-                },
-                {
-                  "Duration": 9.7,
-                  "TextFadeDuration": 7.7,
-                  "String": "In Bijapur the court laughs at the news of a boy playing at forts. It will not laugh for long.",
-                  "TextRect": {
-                    "x": 1050,
-                    "y": 580,
-                    "width": 1650,
-                    "height": 800
+                    "x": 1020,
+                    "y": 560,
+                    "width": 1680,
+                    "height": 420
                   }
                 }
               ]
@@ -180,19 +125,19 @@
           {
             "Type": "SlideShow",
             "Data": {
-              "SlideBackgroundImage": "textures/campaign/incam3/prithviraj_background.dds",
-              "SlideImageSequence": "textures/campaign/incam3/2/intro/%d.png",
-              "Sound": "spslide3",
+              "SlideBackgroundImage": "textures/campaign/fcam6/prithviraj_background.dds",
+              "SlideImageSequence": "textures/campaign/swarajya/2/intro/%d.png",
+              "Sound": "rs02_intro",
               "Slides": [
                 {
-                  "Duration": 7.6,
-                  "TextFadeDuration": 5.6,
-                  "String": "Act I: The Foundation \u2014 Chapter 2: The Tiger of Pratapgad (1659)",
+                  "Duration": 4.5,
+                  "TextFadeDuration": 3.5,
+                  "String": "Act I: The Foundation \u2014 The Tiger of Pratapgad",
                   "TextRect": {
-                    "x": 1050,
-                    "y": 580,
-                    "width": 1650,
-                    "height": 800
+                    "x": 1020,
+                    "y": 560,
+                    "width": 1680,
+                    "height": 420
                   },
                   "ImageRect": {
                     "x": 910,
@@ -202,80 +147,36 @@
                   }
                 },
                 {
-                  "Duration": 16.0,
-                  "TextFadeDuration": 14.0,
+                  "Duration": 18.73,
+                  "TextFadeDuration": 17.73,
                   "String": "Afzal Khan led a large Bijapuri force against Shivaji in 1659. At a meeting below Pratapgad on 10 November, Afzal Khan attacked Shivaji, who killed him with the wagh nakh. Maratha forces concealed in the forest then routed the leaderless army.",
                   "TextRect": {
-                    "x": 1050,
-                    "y": 580,
-                    "width": 1650,
-                    "height": 800
+                    "x": 1020,
+                    "y": 620,
+                    "width": 1680,
+                    "height": 420
                   }
                 },
                 {
-                  "Duration": 14.0,
-                  "TextFadeDuration": 12.0,
+                  "Duration": 13.4,
+                  "TextFadeDuration": 12.4,
                   "String": "1659. Bijapur has had enough of the rebel Shivaji. General Afzal Khan marches with a vast army, desecrating temples at Tuljapur and Pandharpur on the way.",
                   "TextRect": {
-                    "x": 1050,
-                    "y": 580,
-                    "width": 1650,
-                    "height": 800
+                    "x": 1020,
+                    "y": 560,
+                    "width": 1680,
+                    "height": 420
                   }
                 },
                 {
-                  "Duration": 12.9,
-                  "TextFadeDuration": 10.9,
+                  "Duration": 10.18,
+                  "TextFadeDuration": 9.18,
                   "String": "Rajmata Jijabai: This is the man who killed your elder brother Sambhaji at Kanakgiri. Go with Bhavani's blessing, Shivba. But go armoured.",
                   "TextRect": {
-                    "x": 1050,
-                    "y": 580,
-                    "width": 1650,
-                    "height": 800
-                  }
-                },
-                {
-                  "Duration": 12.9,
-                  "TextFadeDuration": 10.9,
-                  "String": "Bahirji Naik: Raje, my men are in the Khan's camp as water-carriers. He hides a dagger in his sleeve. He means to kill you at the meeting.",
-                  "TextRect": {
-                    "x": 1050,
-                    "y": 580,
-                    "width": 1650,
-                    "height": 800
-                  }
-                },
-                {
-                  "Duration": 10.4,
-                  "TextFadeDuration": 8.4,
-                  "String": "Shivaji Maharaj: Then we meet him as he wishes: two guards each, no weapons in sight. Jiva, stay close.",
-                  "TextRect": {
-                    "x": 1050,
-                    "y": 580,
-                    "width": 1650,
-                    "height": 800
-                  }
-                },
-                {
-                  "Duration": 11.7,
-                  "TextFadeDuration": 9.7,
-                  "String": "Netaji Palkar: My horsemen and Moropant's infantry wait in the Jawali forest. At the cannon's signal, we fall on his army.",
-                  "TextRect": {
-                    "x": 1050,
-                    "y": 580,
-                    "width": 1650,
-                    "height": 800
-                  }
-                },
-                {
-                  "Duration": 10.3,
-                  "TextFadeDuration": 8.3,
-                  "String": "Take Shivaji Maharaj to the pavilion. Do not attack before the meeting: the Adilshahi army is neutral.",
-                  "TextRect": {
-                    "x": 1050,
-                    "y": 580,
-                    "width": 1650,
-                    "height": 800
+                    "x": 1020,
+                    "y": 620,
+                    "width": 1680,
+                    "height": 420
                   }
                 }
               ]
@@ -288,58 +189,47 @@
           {
             "Type": "SlideShow",
             "Data": {
-              "SlideBackgroundImage": "textures/campaign/incam3/prithviraj_background.dds",
-              "SlideImageSequence": "textures/campaign/incam3/2/outro/%d.png",
-              "Sound": "spslide3",
+              "SlideBackgroundImage": "textures/campaign/fcam6/prithviraj_background.dds",
+              "SlideImageSequence": "textures/campaign/swarajya/2/outro/%d.png",
+              "Sound": "rs02_outro",
               "Slides": [
                 {
-                  "Duration": 10.7,
-                  "TextFadeDuration": 8.7,
+                  "Duration": 4.5,
+                  "TextFadeDuration": 3.5,
+                  "String": "Pratapgad's victory makes Shivaji's name known across India.",
+                  "TextRect": {
+                    "x": 1020,
+                    "y": 560,
+                    "width": 1680,
+                    "height": 420
+                  },
+                  "ImageRect": {
+                    "x": 910,
+                    "y": 550,
+                    "width": 2000,
+                    "height": 1048
+                  }
+                },
+                {
+                  "Duration": 8.57,
+                  "TextFadeDuration": 7.57,
                   "String": "The Adilshahi army is shattered in the Jawali forest. Elephants, guns, horses and treasure fall to Swarajya.",
                   "TextRect": {
-                    "x": 1050,
-                    "y": 580,
-                    "width": 1650,
-                    "height": 800
-                  },
-                  "ImageRect": {
-                    "x": 910,
-                    "y": 550,
-                    "width": 2000,
-                    "height": 1048
+                    "x": 1020,
+                    "y": 620,
+                    "width": 1680,
+                    "height": 420
                   }
                 },
                 {
-                  "Duration": 9.6,
-                  "TextFadeDuration": 7.6,
+                  "Duration": 7.11,
+                  "TextFadeDuration": 6.11,
                   "String": "Shivaji Maharaj: Bury Afzal Khan with honour below the fort. Our quarrel ended with his life.",
                   "TextRect": {
-                    "x": 1050,
-                    "y": 580,
-                    "width": 1650,
-                    "height": 800
-                  }
-                },
-                {
-                  "Duration": 10.2,
-                  "TextFadeDuration": 8.2,
-                  "String": "Rajmata Jijabai: Today the whole Deccan learned your name, Shivba. Tomorrow it will learn to fear it.",
-                  "TextRect": {
-                    "x": 1050,
-                    "y": 580,
-                    "width": 1650,
-                    "height": 800
-                  }
-                },
-                {
-                  "Duration": 12.4,
-                  "TextFadeDuration": 10.4,
-                  "String": "Within weeks Maratha cavalry sweeps south to Kolhapur. But Bijapur is not finished: Siddi Jauhar is already gathering a siege army.",
-                  "TextRect": {
-                    "x": 1050,
-                    "y": 580,
-                    "width": 1650,
-                    "height": 800
+                    "x": 1020,
+                    "y": 560,
+                    "width": 1680,
+                    "height": 420
                   }
                 }
               ]
@@ -354,19 +244,19 @@
           {
             "Type": "SlideShow",
             "Data": {
-              "SlideBackgroundImage": "textures/campaign/incam3/prithviraj_background.dds",
-              "SlideImageSequence": "textures/campaign/incam3/3/intro/%d.png",
-              "Sound": "spslide3",
+              "SlideBackgroundImage": "textures/campaign/fcam6/prithviraj_background.dds",
+              "SlideImageSequence": "textures/campaign/swarajya/3/intro/%d.png",
+              "Sound": "rs03_intro",
               "Slides": [
                 {
-                  "Duration": 8.0,
-                  "TextFadeDuration": 6.0,
-                  "String": "Act I: The Foundation \u2014 Chapter 3: The Sacrifice of Pavan Khind (1660)",
+                  "Duration": 4.64,
+                  "TextFadeDuration": 3.64,
+                  "String": "Act I: The Foundation \u2014 The Sacrifice of Pavan Khind",
                   "TextRect": {
-                    "x": 1050,
-                    "y": 580,
-                    "width": 1650,
-                    "height": 800
+                    "x": 1020,
+                    "y": 560,
+                    "width": 1680,
+                    "height": 420
                   },
                   "ImageRect": {
                     "x": 910,
@@ -376,80 +266,36 @@
                   }
                 },
                 {
-                  "Duration": 16.0,
-                  "TextFadeDuration": 14.0,
+                  "Duration": 21.18,
+                  "TextFadeDuration": 20.18,
                   "String": "Besieged in Panhala by Siddi Jauhar, Shivaji escaped on a rainy night towards Vishalgad. Baji Prabhu Deshpande held the Ghod Khind pass with a small force against the pursuing Bijapuri army until Shivaji reached Vishalgad. Baji Prabhu died of his wounds after the signal; the gorge has since been called Pavan Khind.",
                   "TextRect": {
-                    "x": 1050,
-                    "y": 580,
-                    "width": 1650,
-                    "height": 800
+                    "x": 1020,
+                    "y": 620,
+                    "width": 1680,
+                    "height": 420
                   }
                 },
                 {
-                  "Duration": 10.5,
-                  "TextFadeDuration": 8.5,
+                  "Duration": 10.12,
+                  "TextFadeDuration": 9.12,
                   "String": "July 1660. For four months Siddi Jauhar has besieged Panhala. The monsoon rages; escape seems impossible.",
                   "TextRect": {
-                    "x": 1050,
-                    "y": 580,
-                    "width": 1650,
-                    "height": 800
+                    "x": 1020,
+                    "y": 560,
+                    "width": 1680,
+                    "height": 420
                   }
                 },
                 {
-                  "Duration": 8.8,
-                  "TextFadeDuration": 6.8,
+                  "Duration": 6.28,
+                  "TextFadeDuration": 5.28,
                   "String": "Siddi Jauhar: Not a mouse leaves Panhala. When the rains stop, the rebel is mine.",
                   "TextRect": {
-                    "x": 1050,
-                    "y": 580,
-                    "width": 1650,
-                    "height": 800
-                  }
-                },
-                {
-                  "Duration": 12.9,
-                  "TextFadeDuration": 10.9,
-                  "String": "Tonight Shiva Kashid, a barber who resembles Shivaji, rides out openly in a palanquin as a decoy. The real Shivaji slips out with 600 men.",
-                  "TextRect": {
-                    "x": 1050,
-                    "y": 580,
-                    "width": 1650,
-                    "height": 800
-                  }
-                },
-                {
-                  "Duration": 13.6,
-                  "TextFadeDuration": 11.6,
-                  "String": "Baji Prabhu Deshpande: Raje, Vishalgad is a night's march away. I will hold Ghod Khind with three hundred men until I hear your cannon. Three shots.",
-                  "TextRect": {
-                    "x": 1050,
-                    "y": 580,
-                    "width": 1650,
-                    "height": 800
-                  }
-                },
-                {
-                  "Duration": 9.5,
-                  "TextFadeDuration": 7.5,
-                  "String": "Shivaji Maharaj: Baji... I will fire them the moment I reach the walls. Not a breath later.",
-                  "TextRect": {
-                    "x": 1050,
-                    "y": 580,
-                    "width": 1650,
-                    "height": 800
-                  }
-                },
-                {
-                  "Duration": 9.1,
-                  "TextFadeDuration": 7.1,
-                  "String": "Lead Shivaji Maharaj through the gorge to Vishalgad. Move fast: the pursuit is coming.",
-                  "TextRect": {
-                    "x": 1050,
-                    "y": 580,
-                    "width": 1650,
-                    "height": 800
+                    "x": 1020,
+                    "y": 620,
+                    "width": 1680,
+                    "height": 420
                   }
                 }
               ]
@@ -462,36 +308,47 @@
           {
             "Type": "SlideShow",
             "Data": {
-              "SlideBackgroundImage": "textures/campaign/incam3/prithviraj_background.dds",
-              "SlideImageSequence": "textures/campaign/incam3/3/outro/%d.png",
-              "Sound": "spslide3",
+              "SlideBackgroundImage": "textures/campaign/fcam6/prithviraj_background.dds",
+              "SlideImageSequence": "textures/campaign/swarajya/3/outro/%d.png",
+              "Sound": "rs03_outro",
               "Slides": [
                 {
-                  "Duration": 12.2,
-                  "TextFadeDuration": 10.2,
+                  "Duration": 4.5,
+                  "TextFadeDuration": 3.5,
+                  "String": "Shivaji is safe in Vishalgad.",
+                  "TextRect": {
+                    "x": 1020,
+                    "y": 560,
+                    "width": 1680,
+                    "height": 420
+                  },
+                  "ImageRect": {
+                    "x": 910,
+                    "y": 550,
+                    "width": 2000,
+                    "height": 1048
+                  }
+                },
+                {
+                  "Duration": 9.64,
+                  "TextFadeDuration": 8.64,
                   "String": "Shivaji Maharaj: Ghod Khind is no longer a gorge. It is Pavan Khind, purified by the blood of Baji Prabhu and his Bandal Mavalas.",
                   "TextRect": {
-                    "x": 1050,
-                    "y": 580,
-                    "width": 1650,
-                    "height": 800
-                  },
-                  "ImageRect": {
-                    "x": 910,
-                    "y": 550,
-                    "width": 2000,
-                    "height": 1048
+                    "x": 1020,
+                    "y": 620,
+                    "width": 1680,
+                    "height": 420
                   }
                 },
                 {
-                  "Duration": 12.2,
-                  "TextFadeDuration": 10.2,
+                  "Duration": 9.79,
+                  "TextFadeDuration": 8.79,
                   "String": "Shivaji is safe. But the Mughal Empire has watched Bijapur fail. Aurangzeb sends his own uncle, Shaista Khan, to finish the work.",
                   "TextRect": {
-                    "x": 1050,
-                    "y": 580,
-                    "width": 1650,
-                    "height": 800
+                    "x": 1020,
+                    "y": 560,
+                    "width": 1680,
+                    "height": 420
                   }
                 }
               ]
@@ -506,19 +363,19 @@
           {
             "Type": "SlideShow",
             "Data": {
-              "SlideBackgroundImage": "textures/campaign/incam3/prithviraj_background.dds",
-              "SlideImageSequence": "textures/campaign/incam3/4/intro/%d.png",
-              "Sound": "spslide3",
+              "SlideBackgroundImage": "textures/campaign/fcam6/prithviraj_background.dds",
+              "SlideImageSequence": "textures/campaign/swarajya/4/intro/%d.png",
+              "Sound": "rs04_intro",
               "Slides": [
                 {
-                  "Duration": 7.7,
-                  "TextFadeDuration": 5.7,
-                  "String": "Act II: The Defiance \u2014 Chapter 4: The Night of Shaista Khan (1663)",
+                  "Duration": 4.5,
+                  "TextFadeDuration": 3.5,
+                  "String": "Act II: The Defiance \u2014 The Night of Shaista Khan",
                   "TextRect": {
-                    "x": 1050,
-                    "y": 580,
-                    "width": 1650,
-                    "height": 800
+                    "x": 1020,
+                    "y": 560,
+                    "width": 1680,
+                    "height": 420
                   },
                   "ImageRect": {
                     "x": 910,
@@ -528,69 +385,36 @@
                   }
                 },
                 {
-                  "Duration": 16.0,
-                  "TextFadeDuration": 14.0,
+                  "Duration": 20.58,
+                  "TextFadeDuration": 19.58,
                   "String": "Mughal viceroy Shaista Khan occupied Pune and the Lal Mahal from 1660. On a night in April 1663 Shivaji entered with a small party, attacked the Khan in his quarters and cut off his fingers as he escaped. Emperor Aurangzeb recalled the disgraced general.",
                   "TextRect": {
-                    "x": 1050,
-                    "y": 580,
-                    "width": 1650,
-                    "height": 800
+                    "x": 1020,
+                    "y": 620,
+                    "width": 1680,
+                    "height": 420
                   }
                 },
                 {
-                  "Duration": 12.2,
-                  "TextFadeDuration": 10.2,
+                  "Duration": 11.67,
+                  "TextFadeDuration": 10.67,
                   "String": "April 1663. Mughal general Shaista Khan has occupied Pune for three years, living in the Lal Mahal: Shivaji's own childhood home.",
                   "TextRect": {
-                    "x": 1050,
-                    "y": 580,
-                    "width": 1650,
-                    "height": 800
+                    "x": 1020,
+                    "y": 560,
+                    "width": 1680,
+                    "height": 420
                   }
                 },
                 {
-                  "Duration": 10.4,
-                  "TextFadeDuration": 8.4,
+                  "Duration": 8.29,
+                  "TextFadeDuration": 7.29,
                   "String": "Rajmata Jijabai: I raised you in those rooms, Shivba. Now a Mughal sleeps in them. Take back our honour.",
                   "TextRect": {
-                    "x": 1050,
-                    "y": 580,
-                    "width": 1650,
-                    "height": 800
-                  }
-                },
-                {
-                  "Duration": 12.8,
-                  "TextFadeDuration": 10.8,
-                  "String": "Bahirji Naik: It is Ramzan. The camp feasts until midnight and sleeps heavily. A wedding procession has permission to enter town tonight.",
-                  "TextRect": {
-                    "x": 1050,
-                    "y": 580,
-                    "width": 1650,
-                    "height": 800
-                  }
-                },
-                {
-                  "Duration": 8.2,
-                  "TextFadeDuration": 6.2,
-                  "String": "Shivaji Maharaj: Then we are wedding guests. Four hundred of us. Quietly.",
-                  "TextRect": {
-                    "x": 1050,
-                    "y": 580,
-                    "width": 1650,
-                    "height": 800
-                  }
-                },
-                {
-                  "Duration": 13.6,
-                  "TextFadeDuration": 11.6,
-                  "String": "Enter the Lal Mahal compound without raising the alarm. The Mughal army is neutral for now. If you kill too many sentries, the whole camp will wake.",
-                  "TextRect": {
-                    "x": 1050,
-                    "y": 580,
-                    "width": 1650,
-                    "height": 800
+                    "x": 1020,
+                    "y": 620,
+                    "width": 1680,
+                    "height": 420
                   }
                 }
               ]
@@ -603,47 +427,47 @@
           {
             "Type": "SlideShow",
             "Data": {
-              "SlideBackgroundImage": "textures/campaign/incam3/prithviraj_background.dds",
-              "SlideImageSequence": "textures/campaign/incam3/4/outro/%d.png",
-              "Sound": "spslide3",
+              "SlideBackgroundImage": "textures/campaign/fcam6/prithviraj_background.dds",
+              "SlideImageSequence": "textures/campaign/swarajya/4/outro/%d.png",
+              "Sound": "rs04_outro",
               "Slides": [
                 {
-                  "Duration": 10.9,
-                  "TextFadeDuration": 8.9,
+                  "Duration": 4.5,
+                  "TextFadeDuration": 3.5,
+                  "String": "The Mughal grip on Pune is broken.",
+                  "TextRect": {
+                    "x": 1020,
+                    "y": 560,
+                    "width": 1680,
+                    "height": 420
+                  },
+                  "ImageRect": {
+                    "x": 910,
+                    "y": 550,
+                    "width": 2000,
+                    "height": 1048
+                  }
+                },
+                {
+                  "Duration": 7.33,
+                  "TextFadeDuration": 6.33,
                   "String": "Torches blaze on Sinhagad as the raiders vanish into the hills. All India hears of the night at the Lal Mahal.",
                   "TextRect": {
-                    "x": 1050,
-                    "y": 580,
-                    "width": 1650,
-                    "height": 800
-                  },
-                  "ImageRect": {
-                    "x": 910,
-                    "y": 550,
-                    "width": 2000,
-                    "height": 1048
+                    "x": 1020,
+                    "y": 620,
+                    "width": 1680,
+                    "height": 420
                   }
                 },
                 {
-                  "Duration": 10.0,
-                  "TextFadeDuration": 8.0,
+                  "Duration": 7.56,
+                  "TextFadeDuration": 6.56,
                   "String": "Rajmata Jijabai: Three fingers, Shivba. The Emperor's uncle will count them every day of his life.",
                   "TextRect": {
-                    "x": 1050,
-                    "y": 580,
-                    "width": 1650,
-                    "height": 800
-                  }
-                },
-                {
-                  "Duration": 13.2,
-                  "TextFadeDuration": 11.2,
-                  "String": "Aurangzeb recalls the humiliated Shaista Khan to Bengal. Swarajya needs gold to rebuild what the Mughals burned. Shivaji looks north, to Surat.",
-                  "TextRect": {
-                    "x": 1050,
-                    "y": 580,
-                    "width": 1650,
-                    "height": 800
+                    "x": 1020,
+                    "y": 560,
+                    "width": 1680,
+                    "height": 420
                   }
                 }
               ]
@@ -658,19 +482,19 @@
           {
             "Type": "SlideShow",
             "Data": {
-              "SlideBackgroundImage": "textures/campaign/incam3/prithviraj_background.dds",
-              "SlideImageSequence": "textures/campaign/incam3/5/intro/%d.png",
-              "Sound": "spslide3",
+              "SlideBackgroundImage": "textures/campaign/fcam6/prithviraj_background.dds",
+              "SlideImageSequence": "textures/campaign/swarajya/5/intro/%d.png",
+              "Sound": "rs05_intro",
               "Slides": [
                 {
-                  "Duration": 7.3,
-                  "TextFadeDuration": 5.3,
-                  "String": "Act II: The Defiance \u2014 Chapter 5: The Wealth of Surat (1664)",
+                  "Duration": 4.5,
+                  "TextFadeDuration": 3.5,
+                  "String": "Act II: The Defiance \u2014 The Wealth of Surat",
                   "TextRect": {
-                    "x": 1050,
-                    "y": 580,
-                    "width": 1650,
-                    "height": 800
+                    "x": 1020,
+                    "y": 560,
+                    "width": 1680,
+                    "height": 420
                   },
                   "ImageRect": {
                     "x": 910,
@@ -680,69 +504,36 @@
                   }
                 },
                 {
-                  "Duration": 16.0,
-                  "TextFadeDuration": 14.0,
+                  "Duration": 18.94,
+                  "TextFadeDuration": 17.94,
                   "String": "In January 1664 Shivaji raided Surat, the Mughal empire's busiest port, for several days while its governor sheltered in the fort. The plunder financed the Maratha state and navy. The English and Dutch factories defended themselves and were largely left alone.",
                   "TextRect": {
-                    "x": 1050,
-                    "y": 580,
-                    "width": 1650,
-                    "height": 800
+                    "x": 1020,
+                    "y": 620,
+                    "width": 1680,
+                    "height": 420
                   }
                 },
                 {
-                  "Duration": 13.0,
-                  "TextFadeDuration": 11.0,
+                  "Duration": 13.02,
+                  "TextFadeDuration": 12.02,
                   "String": "January 1664. Mughal armies have ravaged Maharashtra for three years. Swarajya needs gold, and Surat, the Mughals' richest port, has plenty.",
                   "TextRect": {
-                    "x": 1050,
-                    "y": 580,
-                    "width": 1650,
-                    "height": 800
+                    "x": 1020,
+                    "y": 560,
+                    "width": 1680,
+                    "height": 420
                   }
                 },
                 {
-                  "Duration": 12.6,
-                  "TextFadeDuration": 10.6,
+                  "Duration": 10.1,
+                  "TextFadeDuration": 9.1,
                   "String": "Bahirji Naik: Raje, I have begged in every lane of Surat. The richest houses are Virji Vora's and Haji Zahid Beg's. The walls are mud.",
                   "TextRect": {
-                    "x": 1050,
-                    "y": 580,
-                    "width": 1650,
-                    "height": 800
-                  }
-                },
-                {
-                  "Duration": 12.9,
-                  "TextFadeDuration": 10.9,
-                  "String": "Shivaji Maharaj: We take from the Emperor's port what his armies took from our villages. No temple, no mosque, no church is to be touched.",
-                  "TextRect": {
-                    "x": 1050,
-                    "y": 580,
-                    "width": 1650,
-                    "height": 800
-                  }
-                },
-                {
-                  "Duration": 8.4,
-                  "TextFadeDuration": 6.4,
-                  "String": "Inayat Khan: Close the castle gates! Let the merchants fend for themselves!",
-                  "TextRect": {
-                    "x": 1050,
-                    "y": 580,
-                    "width": 1650,
-                    "height": 800
-                  }
-                },
-                {
-                  "Duration": 13.2,
-                  "TextFadeDuration": 11.2,
-                  "String": "Collect 3000 gold by sacking the bazaars, then ride home before the Mughal relief army arrives. The English factory is neutral: leave it alone.",
-                  "TextRect": {
-                    "x": 1050,
-                    "y": 580,
-                    "width": 1650,
-                    "height": 800
+                    "x": 1020,
+                    "y": 620,
+                    "width": 1680,
+                    "height": 420
                   }
                 }
               ]
@@ -755,47 +546,47 @@
           {
             "Type": "SlideShow",
             "Data": {
-              "SlideBackgroundImage": "textures/campaign/incam3/prithviraj_background.dds",
-              "SlideImageSequence": "textures/campaign/incam3/5/outro/%d.png",
-              "Sound": "spslide3",
+              "SlideBackgroundImage": "textures/campaign/fcam6/prithviraj_background.dds",
+              "SlideImageSequence": "textures/campaign/swarajya/5/outro/%d.png",
+              "Sound": "rs05_outro",
               "Slides": [
                 {
-                  "Duration": 10.8,
-                  "TextFadeDuration": 8.8,
+                  "Duration": 4.5,
+                  "TextFadeDuration": 3.5,
+                  "String": "Swarajya's coffers overflow.",
+                  "TextRect": {
+                    "x": 1020,
+                    "y": 560,
+                    "width": 1680,
+                    "height": 420
+                  },
+                  "ImageRect": {
+                    "x": 910,
+                    "y": 550,
+                    "width": 2000,
+                    "height": 1048
+                  }
+                },
+                {
+                  "Duration": 7.43,
+                  "TextFadeDuration": 6.43,
                   "String": "The plunder of Surat pays for forts, fleets and soldiers. The Mughals have been struck in their own treasury.",
                   "TextRect": {
-                    "x": 1050,
-                    "y": 580,
-                    "width": 1650,
-                    "height": 800
-                  },
-                  "ImageRect": {
-                    "x": 910,
-                    "y": 550,
-                    "width": 2000,
-                    "height": 1048
+                    "x": 1020,
+                    "y": 620,
+                    "width": 1680,
+                    "height": 420
                   }
                 },
                 {
-                  "Duration": 11.7,
-                  "TextFadeDuration": 9.7,
+                  "Duration": 9.87,
+                  "TextFadeDuration": 8.87,
                   "String": "Aurangzeb is furious. He sends his finest general, the Rajput Mirza Raja Jai Singh, with Diler Khan and an army of 80,000.",
                   "TextRect": {
-                    "x": 1050,
-                    "y": 580,
-                    "width": 1650,
-                    "height": 800
-                  }
-                },
-                {
-                  "Duration": 11.2,
-                  "TextFadeDuration": 9.2,
-                  "String": "Shivaji Maharaj: Jai Singh is no Shaista Khan. He fights with patience, gold and diplomacy. We must guard Purandar.",
-                  "TextRect": {
-                    "x": 1050,
-                    "y": 580,
-                    "width": 1650,
-                    "height": 800
+                    "x": 1020,
+                    "y": 560,
+                    "width": 1680,
+                    "height": 420
                   }
                 }
               ]
@@ -810,19 +601,19 @@
           {
             "Type": "SlideShow",
             "Data": {
-              "SlideBackgroundImage": "textures/campaign/incam3/prithviraj_background.dds",
-              "SlideImageSequence": "textures/campaign/incam3/1/intro/%d.png",
-              "Sound": "spslide3",
+              "SlideBackgroundImage": "textures/campaign/fcam6/prithviraj_background.dds",
+              "SlideImageSequence": "textures/campaign/swarajya/6/intro/%d.png",
+              "Sound": "rs06_intro",
               "Slides": [
                 {
-                  "Duration": 7.5,
-                  "TextFadeDuration": 5.5,
-                  "String": "Act II: The Defiance \u2014 Chapter 6: The Treaty of Purandar (1665)",
+                  "Duration": 4.5,
+                  "TextFadeDuration": 3.5,
+                  "String": "Act II: The Defiance \u2014 The Treaty of Purandar",
                   "TextRect": {
-                    "x": 1050,
-                    "y": 580,
-                    "width": 1650,
-                    "height": 800
+                    "x": 1020,
+                    "y": 560,
+                    "width": 1680,
+                    "height": 420
                   },
                   "ImageRect": {
                     "x": 910,
@@ -832,80 +623,36 @@
                   }
                 },
                 {
-                  "Duration": 16.0,
-                  "TextFadeDuration": 14.0,
+                  "Duration": 26.51,
+                  "TextFadeDuration": 25.51,
                   "String": "In 1665 the Mughal general Mirza Raja Jai Singh besieged Purandar with Diler Khan. Its killedar Murarbaji Deshpande died fighting after refusing Diler Khan's offer to join the Mughals. To save his remaining territory, Shivaji agreed to the Treaty of Purandar (June 1665), ceding 23 forts, and later agreed to visit Aurangzeb at Agra.",
                   "TextRect": {
-                    "x": 1050,
-                    "y": 580,
-                    "width": 1650,
-                    "height": 800
+                    "x": 1020,
+                    "y": 620,
+                    "width": 1680,
+                    "height": 420
                   }
                 },
                 {
-                  "Duration": 11.1,
-                  "TextFadeDuration": 9.1,
+                  "Duration": 11.84,
+                  "TextFadeDuration": 10.84,
                   "String": "1665. After Surat, Aurangzeb sends his best: Mirza Raja Jai Singh of Amber, with Diler Khan and an army of 80,000.",
                   "TextRect": {
-                    "x": 1050,
-                    "y": 580,
-                    "width": 1650,
-                    "height": 800
+                    "x": 1020,
+                    "y": 560,
+                    "width": 1680,
+                    "height": 420
                   }
                 },
                 {
-                  "Duration": 12.1,
-                  "TextFadeDuration": 10.1,
+                  "Duration": 9.58,
+                  "TextFadeDuration": 8.58,
                   "String": "Mirza Raja Jai Singh: Shaista Khan chased Shivaji. I will not chase him. I will take his forts one by one, until he comes to me.",
                   "TextRect": {
-                    "x": 1050,
-                    "y": 580,
-                    "width": 1650,
-                    "height": 800
-                  }
-                },
-                {
-                  "Duration": 8.4,
-                  "TextFadeDuration": 6.4,
-                  "String": "Diler Khan: Purandar first. Give me the guns and it will fall within a week.",
-                  "TextRect": {
-                    "x": 1050,
-                    "y": 580,
-                    "width": 1650,
-                    "height": 800
-                  }
-                },
-                {
-                  "Duration": 10.4,
-                  "TextFadeDuration": 8.4,
-                  "String": "Murarbaji Deshpande: Seven hundred Mavalas hold Purandar. Tell the Pathan he will need more than a week.",
-                  "TextRect": {
-                    "x": 1050,
-                    "y": 580,
-                    "width": 1650,
-                    "height": 800
-                  }
-                },
-                {
-                  "Duration": 10.4,
-                  "TextFadeDuration": 8.4,
-                  "String": "Shivaji Maharaj: Hold, Murarbaji. Every day Purandar stands, I gain a day to save the rest of Swarajya.",
-                  "TextRect": {
-                    "x": 1050,
-                    "y": 580,
-                    "width": 1650,
-                    "height": 800
-                  }
-                },
-                {
-                  "Duration": 8.9,
-                  "TextFadeDuration": 6.9,
-                  "String": "Defend Purandar for 12 minutes. Keep Murarbaji Deshpande alive as long as possible.",
-                  "TextRect": {
-                    "x": 1050,
-                    "y": 580,
-                    "width": 1650,
-                    "height": 800
+                    "x": 1020,
+                    "y": 620,
+                    "width": 1680,
+                    "height": 420
                   }
                 }
               ]
@@ -918,69 +665,47 @@
           {
             "Type": "SlideShow",
             "Data": {
-              "SlideBackgroundImage": "textures/campaign/incam3/prithviraj_background.dds",
-              "SlideImageSequence": "textures/campaign/incam3/1/outro/%d.png",
-              "Sound": "spslide3",
+              "SlideBackgroundImage": "textures/campaign/fcam6/prithviraj_background.dds",
+              "SlideImageSequence": "textures/campaign/swarajya/6/outro/%d.png",
+              "Sound": "rs06_outro",
               "Slides": [
                 {
-                  "Duration": 15.1,
-                  "TextFadeDuration": 13.1,
+                  "Duration": 4.5,
+                  "TextFadeDuration": 3.5,
+                  "String": "Swarajya bends, but does not break.",
+                  "TextRect": {
+                    "x": 1020,
+                    "y": 560,
+                    "width": 1680,
+                    "height": 420
+                  },
+                  "ImageRect": {
+                    "x": 910,
+                    "y": 550,
+                    "width": 2000,
+                    "height": 1048
+                  }
+                },
+                {
+                  "Duration": 12.7,
+                  "TextFadeDuration": 11.7,
                   "String": "Mirza Raja Jai Singh: The Emperor asks for twenty-three of your forts, including Purandar, Sinhagad and Lohagad. You keep twelve, and your son Sambhaji receives a mansab.",
                   "TextRect": {
-                    "x": 1050,
-                    "y": 580,
-                    "width": 1650,
-                    "height": 800
-                  },
-                  "ImageRect": {
-                    "x": 910,
-                    "y": 550,
-                    "width": 2000,
-                    "height": 1048
+                    "x": 1020,
+                    "y": 620,
+                    "width": 1680,
+                    "height": 420
                   }
                 },
                 {
-                  "Duration": 11.5,
-                  "TextFadeDuration": 9.5,
+                  "Duration": 9.29,
+                  "TextFadeDuration": 8.29,
                   "String": "Shivaji Maharaj: Twenty-three forts... the work of twenty years. But my people live, and twelve forts remain. I accept.",
                   "TextRect": {
-                    "x": 1050,
-                    "y": 580,
-                    "width": 1650,
-                    "height": 800
-                  }
-                },
-                {
-                  "Duration": 13.6,
-                  "TextFadeDuration": 11.6,
-                  "String": "Mirza Raja Jai Singh: And one thing more. Come to Agra, to the Emperor's birthday durbar. My son Ram Singh will guarantee your safety with his life.",
-                  "TextRect": {
-                    "x": 1050,
-                    "y": 580,
-                    "width": 1650,
-                    "height": 800
-                  }
-                },
-                {
-                  "Duration": 6.8,
-                  "TextFadeDuration": 4.8,
-                  "String": "Shivaji Maharaj: To Agra, then. Into the tiger's den.",
-                  "TextRect": {
-                    "x": 1050,
-                    "y": 580,
-                    "width": 1650,
-                    "height": 800
-                  }
-                },
-                {
-                  "Duration": 12.5,
-                  "TextFadeDuration": 10.5,
-                  "String": "11 June 1665: the Treaty of Purandar. Shivaji has lost the battle, but not the war. He sets out for Agra with nine-year-old Sambhaji.",
-                  "TextRect": {
-                    "x": 1050,
-                    "y": 580,
-                    "width": 1650,
-                    "height": 800
+                    "x": 1020,
+                    "y": 560,
+                    "width": 1680,
+                    "height": 420
                   }
                 }
               ]
@@ -995,19 +720,19 @@
           {
             "Type": "SlideShow",
             "Data": {
-              "SlideBackgroundImage": "textures/campaign/incam3/prithviraj_background.dds",
-              "SlideImageSequence": "textures/campaign/incam3/2/intro/%d.png",
-              "Sound": "spslide3",
+              "SlideBackgroundImage": "textures/campaign/fcam6/prithviraj_background.dds",
+              "SlideImageSequence": "textures/campaign/swarajya/7/intro/%d.png",
+              "Sound": "rs07_intro",
               "Slides": [
                 {
-                  "Duration": 7.6,
-                  "TextFadeDuration": 5.6,
-                  "String": "Act II: The Defiance \u2014 Chapter 7: The Great Escape - Agra (1666)",
+                  "Duration": 4.5,
+                  "TextFadeDuration": 3.5,
+                  "String": "Act II: The Defiance \u2014 The Great Escape - Agra",
                   "TextRect": {
-                    "x": 1050,
-                    "y": 580,
-                    "width": 1650,
-                    "height": 800
+                    "x": 1020,
+                    "y": 560,
+                    "width": 1680,
+                    "height": 420
                   },
                   "ImageRect": {
                     "x": 910,
@@ -1017,69 +742,36 @@
                   }
                 },
                 {
-                  "Duration": 16.0,
-                  "TextFadeDuration": 14.0,
+                  "Duration": 22.31,
+                  "TextFadeDuration": 21.31,
                   "String": "Placed under house arrest at Agra after an angry exchange at Aurangzeb's court, Shivaji arranged for large baskets of sweets to be sent out daily. On 17 August 1666 he and Sambhaji escaped in them, while Hiroji Farzand lay in his bed. Shivaji reached Rajgad in disguise weeks later.",
                   "TextRect": {
-                    "x": 1050,
-                    "y": 580,
-                    "width": 1650,
-                    "height": 800
+                    "x": 1020,
+                    "y": 620,
+                    "width": 1680,
+                    "height": 420
                   }
                 },
                 {
-                  "Duration": 12.6,
-                  "TextFadeDuration": 10.6,
+                  "Duration": 12.12,
+                  "TextFadeDuration": 11.12,
                   "String": "1666. Under the Treaty of Purandar, Shivaji has come to Aurangzeb's court at Agra. Placed among lesser nobles, he walks out in protest.",
                   "TextRect": {
-                    "x": 1050,
-                    "y": 580,
-                    "width": 1650,
-                    "height": 800
+                    "x": 1020,
+                    "y": 560,
+                    "width": 1680,
+                    "height": 420
                   }
                 },
                 {
-                  "Duration": 11.4,
-                  "TextFadeDuration": 9.4,
+                  "Duration": 9.45,
+                  "TextFadeDuration": 8.45,
                   "String": "Emperor Aurangzeb: The mountain rat insults my Diwan-i-Aam? Let him rest in Ram Singh's haveli. Under guard. Forever.",
                   "TextRect": {
-                    "x": 1050,
-                    "y": 580,
-                    "width": 1650,
-                    "height": 800
-                  }
-                },
-                {
-                  "Duration": 13.0,
-                  "TextFadeDuration": 11.0,
-                  "String": "Shivaji Maharaj: I am ill, Hiroji. Very ill. Send sweets to every Brahmin and fakir in Agra. Every day. In the biggest baskets you can find.",
-                  "TextRect": {
-                    "x": 1050,
-                    "y": 580,
-                    "width": 1650,
-                    "height": 800
-                  }
-                },
-                {
-                  "Duration": 9.6,
-                  "TextFadeDuration": 7.6,
-                  "String": "Hiroji Farzand: The guards checked the first baskets, Raje. Now they only wave them through.",
-                  "TextRect": {
-                    "x": 1050,
-                    "y": 580,
-                    "width": 1650,
-                    "height": 800
-                  }
-                },
-                {
-                  "Duration": 11.6,
-                  "TextFadeDuration": 9.6,
-                  "String": "Walk Shivaji Maharaj to the kitchen courtyard where the baskets are loaded. Hiroji will lie in his bed, wearing his ring.",
-                  "TextRect": {
-                    "x": 1050,
-                    "y": 580,
-                    "width": 1650,
-                    "height": 800
+                    "x": 1020,
+                    "y": 620,
+                    "width": 1680,
+                    "height": 420
                   }
                 }
               ]
@@ -1092,47 +784,47 @@
           {
             "Type": "SlideShow",
             "Data": {
-              "SlideBackgroundImage": "textures/campaign/incam3/prithviraj_background.dds",
-              "SlideImageSequence": "textures/campaign/incam3/2/outro/%d.png",
-              "Sound": "spslide3",
+              "SlideBackgroundImage": "textures/campaign/fcam6/prithviraj_background.dds",
+              "SlideImageSequence": "textures/campaign/swarajya/7/outro/%d.png",
+              "Sound": "rs07_outro",
               "Slides": [
                 {
-                  "Duration": 10.2,
-                  "TextFadeDuration": 8.2,
+                  "Duration": 4.5,
+                  "TextFadeDuration": 3.5,
+                  "String": "Aurangzeb's prisoner has vanished.",
+                  "TextRect": {
+                    "x": 1020,
+                    "y": 560,
+                    "width": 1680,
+                    "height": 420
+                  },
+                  "ImageRect": {
+                    "x": 910,
+                    "y": 550,
+                    "width": 2000,
+                    "height": 1048
+                  }
+                },
+                {
+                  "Duration": 7.87,
+                  "TextFadeDuration": 6.87,
                   "String": "Emperor Aurangzeb: Vanished? From the heart of my capital? Find him! Search every road to the Deccan!",
                   "TextRect": {
-                    "x": 1050,
-                    "y": 580,
-                    "width": 1650,
-                    "height": 800
-                  },
-                  "ImageRect": {
-                    "x": 910,
-                    "y": 550,
-                    "width": 2000,
-                    "height": 1048
+                    "x": 1020,
+                    "y": 620,
+                    "width": 1680,
+                    "height": 420
                   }
                 },
                 {
-                  "Duration": 10.9,
-                  "TextFadeDuration": 8.9,
+                  "Duration": 8.45,
+                  "TextFadeDuration": 7.45,
                   "String": "Rajmata Jijabai: Twenty-five days I waited, and a ragged sadhu knelt at my feet. Only a mother would know him.",
                   "TextRect": {
-                    "x": 1050,
-                    "y": 580,
-                    "width": 1650,
-                    "height": 800
-                  }
-                },
-                {
-                  "Duration": 11.1,
-                  "TextFadeDuration": 9.1,
-                  "String": "Sambhaji is brought home months later. Shivaji now sets about winning back every fort he surrendered at Purandar.",
-                  "TextRect": {
-                    "x": 1050,
-                    "y": 580,
-                    "width": 1650,
-                    "height": 800
+                    "x": 1020,
+                    "y": 560,
+                    "width": 1680,
+                    "height": 420
                   }
                 }
               ]
@@ -1147,19 +839,19 @@
           {
             "Type": "SlideShow",
             "Data": {
-              "SlideBackgroundImage": "textures/campaign/incam3/prithviraj_background.dds",
-              "SlideImageSequence": "textures/campaign/incam3/3/intro/%d.png",
-              "Sound": "spslide3",
+              "SlideBackgroundImage": "textures/campaign/fcam6/prithviraj_background.dds",
+              "SlideImageSequence": "textures/campaign/swarajya/8/intro/%d.png",
+              "Sound": "rs08_intro",
               "Slides": [
                 {
-                  "Duration": 7.2,
-                  "TextFadeDuration": 5.2,
-                  "String": "Act III: The Crown \u2014 Chapter 8: The Lion of Sinhagad (1670)",
+                  "Duration": 4.5,
+                  "TextFadeDuration": 3.5,
+                  "String": "Act III: The Crown \u2014 The Lion of Sinhagad",
                   "TextRect": {
-                    "x": 1050,
-                    "y": 580,
-                    "width": 1650,
-                    "height": 800
+                    "x": 1020,
+                    "y": 560,
+                    "width": 1680,
+                    "height": 420
                   },
                   "ImageRect": {
                     "x": 910,
@@ -1169,69 +861,36 @@
                   }
                 },
                 {
-                  "Duration": 16.0,
-                  "TextFadeDuration": 14.0,
+                  "Duration": 25.61,
+                  "TextFadeDuration": 24.61,
                   "String": "Kondhana, ceded to the Mughals in 1665, was recaptured on the night of 4 February 1670 by Tanaji Malusare, who scaled its western cliffs with his men. Tanaji was killed in combat with the commander Udaybhan; his brother Suryaji completed the capture. Shivaji is said to have mourned: 'Gad aala, pan Sinha gela'.",
                   "TextRect": {
-                    "x": 1050,
-                    "y": 580,
-                    "width": 1650,
-                    "height": 800
+                    "x": 1020,
+                    "y": 620,
+                    "width": 1680,
+                    "height": 420
                   }
                 },
                 {
-                  "Duration": 13.1,
-                  "TextFadeDuration": 11.1,
+                  "Duration": 11.88,
+                  "TextFadeDuration": 10.88,
                   "String": "February 1670. Under the Treaty of Purandar, Shivaji had to give Kondhana fort to the Mughals. Every morning Jijabai looks at it from Rajgad.",
                   "TextRect": {
-                    "x": 1050,
-                    "y": 580,
-                    "width": 1650,
-                    "height": 800
+                    "x": 1020,
+                    "y": 560,
+                    "width": 1680,
+                    "height": 420
                   }
                 },
                 {
-                  "Duration": 10.2,
-                  "TextFadeDuration": 8.2,
+                  "Duration": 7.92,
+                  "TextFadeDuration": 6.92,
                   "String": "Rajmata Jijabai: As long as the Mughal flag flies on Kondhana, I cannot rest. Who will bring it back?",
                   "TextRect": {
-                    "x": 1050,
-                    "y": 580,
-                    "width": 1650,
-                    "height": 800
-                  }
-                },
-                {
-                  "Duration": 9.7,
-                  "TextFadeDuration": 7.7,
-                  "String": "Tanaji Malusare: My son's wedding can wait, Aaisaheb. First Kondhana's wedding, then Rayaba's.",
-                  "TextRect": {
-                    "x": 1050,
-                    "y": 580,
-                    "width": 1650,
-                    "height": 800
-                  }
-                },
-                {
-                  "Duration": 12.6,
-                  "TextFadeDuration": 10.6,
-                  "String": "Shelar Mama: The gates are a wall of Rathod swords. But the Doneghar cliff on the west... nobody guards a cliff that no man can climb.",
-                  "TextRect": {
-                    "x": 1050,
-                    "y": 580,
-                    "width": 1650,
-                    "height": 800
-                  }
-                },
-                {
-                  "Duration": 9.6,
-                  "TextFadeDuration": 7.6,
-                  "String": "Bring Tanaji to the foot of the cliff. On this moonless night his men will climb with ropes.",
-                  "TextRect": {
-                    "x": 1050,
-                    "y": 580,
-                    "width": 1650,
-                    "height": 800
+                    "x": 1020,
+                    "y": 620,
+                    "width": 1680,
+                    "height": 420
                   }
                 }
               ]
@@ -1244,19 +903,19 @@
           {
             "Type": "SlideShow",
             "Data": {
-              "SlideBackgroundImage": "textures/campaign/incam3/prithviraj_background.dds",
-              "SlideImageSequence": "textures/campaign/incam3/3/outro/%d.png",
-              "Sound": "spslide3",
+              "SlideBackgroundImage": "textures/campaign/fcam6/prithviraj_background.dds",
+              "SlideImageSequence": "textures/campaign/swarajya/8/outro/%d.png",
+              "Sound": "rs08_outro",
               "Slides": [
                 {
-                  "Duration": 13.0,
-                  "TextFadeDuration": 11.0,
-                  "String": "Rajmata Jijabai: I asked for a fort and was given a lion's life. Let Rayaba's wedding be held at Rajgad, with all of Swarajya as his family.",
+                  "Duration": 4.5,
+                  "TextFadeDuration": 3.5,
+                  "String": "Kondhana is Sinhagad \u2014 the Lion's Fort.",
                   "TextRect": {
-                    "x": 1050,
-                    "y": 580,
-                    "width": 1650,
-                    "height": 800
+                    "x": 1020,
+                    "y": 560,
+                    "width": 1680,
+                    "height": 420
                   },
                   "ImageRect": {
                     "x": 910,
@@ -1266,14 +925,25 @@
                   }
                 },
                 {
-                  "Duration": 11.8,
-                  "TextFadeDuration": 9.8,
+                  "Duration": 11.11,
+                  "TextFadeDuration": 10.11,
+                  "String": "Rajmata Jijabai: I asked for a fort and was given a lion's life. Let Rayaba's wedding be held at Rajgad, with all of Swarajya as his family.",
+                  "TextRect": {
+                    "x": 1020,
+                    "y": 620,
+                    "width": 1680,
+                    "height": 420
+                  }
+                },
+                {
+                  "Duration": 8.44,
+                  "TextFadeDuration": 7.44,
                   "String": "Within months the Marathas recover fort after fort lost at Purandar. The time has come for Swarajya to have a crowned king.",
                   "TextRect": {
-                    "x": 1050,
-                    "y": 580,
-                    "width": 1650,
-                    "height": 800
+                    "x": 1020,
+                    "y": 560,
+                    "width": 1680,
+                    "height": 420
                   }
                 }
               ]
@@ -1288,19 +958,19 @@
           {
             "Type": "SlideShow",
             "Data": {
-              "SlideBackgroundImage": "textures/campaign/incam3/prithviraj_background.dds",
-              "SlideImageSequence": "textures/campaign/incam3/4/intro/%d.png",
-              "Sound": "spslide3",
+              "SlideBackgroundImage": "textures/campaign/fcam6/prithviraj_background.dds",
+              "SlideImageSequence": "textures/campaign/swarajya/9/intro/%d.png",
+              "Sound": "rs09_intro",
               "Slides": [
                 {
-                  "Duration": 7.9,
-                  "TextFadeDuration": 5.9,
-                  "String": "Act III: The Crown \u2014 Chapter 9: The Crown of Swarajya - Raigad (1674)",
+                  "Duration": 5.01,
+                  "TextFadeDuration": 4.01,
+                  "String": "Act III: The Crown \u2014 The Crown of Swarajya - Raigad",
                   "TextRect": {
-                    "x": 1050,
-                    "y": 580,
-                    "width": 1650,
-                    "height": 800
+                    "x": 1020,
+                    "y": 560,
+                    "width": 1680,
+                    "height": 420
                   },
                   "ImageRect": {
                     "x": 910,
@@ -1310,69 +980,36 @@
                   }
                 },
                 {
-                  "Duration": 16.0,
-                  "TextFadeDuration": 14.0,
+                  "Duration": 20.31,
+                  "TextFadeDuration": 19.31,
                   "String": "On 6 June 1674 Shivaji was crowned Chhatrapati at Raigad by Gaga Bhatt of Varanasi, formally establishing the Maratha kingdom as a sovereign state. He died at Raigad in April 1680, leaving a kingdom of some 300 forts and a navy.",
                   "TextRect": {
-                    "x": 1050,
-                    "y": 580,
-                    "width": 1650,
-                    "height": 800
+                    "x": 1020,
+                    "y": 620,
+                    "width": 1680,
+                    "height": 420
                   }
                 },
                 {
-                  "Duration": 14.1,
-                  "TextFadeDuration": 12.1,
+                  "Duration": 13.34,
+                  "TextFadeDuration": 12.34,
                   "String": "1674. Swarajya stretches from the Konkan coast to the Deccan plateau: some 300 forts and a navy. Yet the sultans and the Mughals still call Shivaji a rebel.",
                   "TextRect": {
-                    "x": 1050,
-                    "y": 580,
-                    "width": 1650,
-                    "height": 800
+                    "x": 1020,
+                    "y": 560,
+                    "width": 1680,
+                    "height": 420
                   }
                 },
                 {
-                  "Duration": 10.4,
-                  "TextFadeDuration": 8.4,
+                  "Duration": 7.65,
+                  "TextFadeDuration": 6.65,
                   "String": "Rajmata Jijabai: A kingdom without a crown is a rebellion, Shivba. Let the world see what we have built.",
                   "TextRect": {
-                    "x": 1050,
-                    "y": 580,
-                    "width": 1650,
-                    "height": 800
-                  }
-                },
-                {
-                  "Duration": 12.3,
-                  "TextFadeDuration": 10.3,
-                  "String": "Shivaji Maharaj: Then let it be done properly: with full Vedic rites, the first coronation of its kind in the Deccan in centuries.",
-                  "TextRect": {
-                    "x": 1050,
-                    "y": 580,
-                    "width": 1650,
-                    "height": 800
-                  }
-                },
-                {
-                  "Duration": 11.4,
-                  "TextFadeDuration": 9.4,
-                  "String": "Gaga Bhatt of Varanasi: I have travelled from Kashi to see the king of the Sahyadri. Bring me safely up the mountain.",
-                  "TextRect": {
-                    "x": 1050,
-                    "y": 580,
-                    "width": 1650,
-                    "height": 800
-                  }
-                },
-                {
-                  "Duration": 11.4,
-                  "TextFadeDuration": 9.4,
-                  "String": "Escort Gaga Bhatt to Raigad, build the Raj Sabha, and guard the rites. Mughal and Siddi raiders will try to stop you.",
-                  "TextRect": {
-                    "x": 1050,
-                    "y": 580,
-                    "width": 1650,
-                    "height": 800
+                    "x": 1020,
+                    "y": 620,
+                    "width": 1680,
+                    "height": 420
                   }
                 }
               ]
@@ -1385,19 +1022,722 @@
           {
             "Type": "SlideShow",
             "Data": {
-              "SlideBackgroundImage": "textures/campaign/incam3/prithviraj_background.dds",
-              "SlideImageSequence": "textures/campaign/incam3/4/outro/%d.png",
-              "Sound": "spslide3",
+              "SlideBackgroundImage": "textures/campaign/fcam6/prithviraj_background.dds",
+              "SlideImageSequence": "textures/campaign/swarajya/9/outro/%d.png",
+              "Sound": "rs09_outro",
               "Slides": [
                 {
-                  "Duration": 8.6,
-                  "TextFadeDuration": 6.6,
+                  "Duration": 4.5,
+                  "TextFadeDuration": 3.5,
+                  "String": "Jai Bhavani! Jai Shivaji! The Chhatrapati reigns.",
+                  "TextRect": {
+                    "x": 1020,
+                    "y": 560,
+                    "width": 1680,
+                    "height": 420
+                  },
+                  "ImageRect": {
+                    "x": 910,
+                    "y": 550,
+                    "width": 2000,
+                    "height": 1048
+                  }
+                },
+                {
+                  "Duration": 6.83,
+                  "TextFadeDuration": 5.83,
                   "String": "Rajmata Jijabai: I have seen my son crowned. Now I can go to Mahadev in peace.",
                   "TextRect": {
-                    "x": 1050,
-                    "y": 580,
-                    "width": 1650,
-                    "height": 800
+                    "x": 1020,
+                    "y": 620,
+                    "width": 1680,
+                    "height": 420
+                  }
+                },
+                {
+                  "Duration": 7.01,
+                  "TextFadeDuration": 6.01,
+                  "String": "Twelve days after the coronation, Rajmata Jijabai dies at Pachad, at the foot of Raigad.",
+                  "TextRect": {
+                    "x": 1020,
+                    "y": 560,
+                    "width": 1680,
+                    "height": 420
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "IntroSequence": {
+        "SequenceItems": [
+          {
+            "Type": "SlideShow",
+            "Data": {
+              "SlideBackgroundImage": "textures/campaign/fcam6/prithviraj_background.dds",
+              "SlideImageSequence": "textures/campaign/swarajya/10/intro/%d.png",
+              "Sound": "rs10_intro",
+              "Slides": [
+                {
+                  "Duration": 4.5,
+                  "TextFadeDuration": 3.5,
+                  "String": "Act IV: The Storm \u2014 The Crown of Conflict",
+                  "TextRect": {
+                    "x": 1020,
+                    "y": 560,
+                    "width": 1680,
+                    "height": 420
+                  },
+                  "ImageRect": {
+                    "x": 910,
+                    "y": 550,
+                    "width": 2000,
+                    "height": 1048
+                  }
+                },
+                {
+                  "Duration": 26.64,
+                  "TextFadeDuration": 25.64,
+                  "String": "On Shivaji's death in April 1680 a group of ministers, with the support of Queen Soyarabai, placed Rajaram on the throne. Sambhaji, then at Panhala, won the support of the commander-in-chief Hambirrao Mohite and took control of Raigad. He was formally crowned on 16 January 1681. The succession dispute left lasting divisions at court.",
+                  "TextRect": {
+                    "x": 1020,
+                    "y": 620,
+                    "width": 1680,
+                    "height": 420
+                  }
+                },
+                {
+                  "Duration": 11.48,
+                  "TextFadeDuration": 10.48,
+                  "String": "April 1680. Chhatrapati Shivaji Maharaj is dead. At Raigad, a council of ministers proclaims his ten-year-old son Rajaram king.",
+                  "TextRect": {
+                    "x": 1020,
+                    "y": 560,
+                    "width": 1680,
+                    "height": 420
+                  }
+                },
+                {
+                  "Duration": 9.58,
+                  "TextFadeDuration": 8.58,
+                  "String": "Annaji Datto: Sambhaji Raje is brave, but rash. He even went over to the Mughals once. The kingdom needs steadier hands.",
+                  "TextRect": {
+                    "x": 1020,
+                    "y": 620,
+                    "width": 1680,
+                    "height": 420
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "OutroSequence": {
+        "SequenceItems": [
+          {
+            "Type": "SlideShow",
+            "Data": {
+              "SlideBackgroundImage": "textures/campaign/fcam6/prithviraj_background.dds",
+              "SlideImageSequence": "textures/campaign/swarajya/10/outro/%d.png",
+              "Sound": "rs10_outro",
+              "Slides": [
+                {
+                  "Duration": 4.5,
+                  "TextFadeDuration": 3.5,
+                  "String": "Sambhaji is Chhatrapati.",
+                  "TextRect": {
+                    "x": 1020,
+                    "y": 560,
+                    "width": 1680,
+                    "height": 420
+                  },
+                  "ImageRect": {
+                    "x": 910,
+                    "y": 550,
+                    "width": 2000,
+                    "height": 1048
+                  }
+                },
+                {
+                  "Duration": 6.71,
+                  "TextFadeDuration": 5.71,
+                  "String": "Maharani Soyarabai: You have the army, the forts and Raigad. What will you do with us?",
+                  "TextRect": {
+                    "x": 1020,
+                    "y": 620,
+                    "width": 1680,
+                    "height": 420
+                  }
+                },
+                {
+                  "Duration": 11.44,
+                  "TextFadeDuration": 10.44,
+                  "String": "Chhatrapati Sambhaji Maharaj: Rajaram is my brother. He stays at my side. The council keeps its seats. Our enemy is in Delhi, not in Raigad.",
+                  "TextRect": {
+                    "x": 1020,
+                    "y": 560,
+                    "width": 1680,
+                    "height": 420
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "IntroSequence": {
+        "SequenceItems": [
+          {
+            "Type": "SlideShow",
+            "Data": {
+              "SlideBackgroundImage": "textures/campaign/fcam6/prithviraj_background.dds",
+              "SlideImageSequence": "textures/campaign/swarajya/11/intro/%d.png",
+              "Sound": "rs11_intro",
+              "Slides": [
+                {
+                  "Duration": 4.5,
+                  "TextFadeDuration": 3.5,
+                  "String": "Act IV: The Storm \u2014 The Riches of Burhanpur",
+                  "TextRect": {
+                    "x": 1020,
+                    "y": 560,
+                    "width": 1680,
+                    "height": 420
+                  },
+                  "ImageRect": {
+                    "x": 910,
+                    "y": 550,
+                    "width": 2000,
+                    "height": 1048
+                  }
+                },
+                {
+                  "Duration": 16.34,
+                  "TextFadeDuration": 15.34,
+                  "String": "In early 1681 Sambhaji Maharaj raided Burhanpur, a major Mughal city on the Tapi, sacking its wealthy suburb Bahadurpura. The raid announced that the new Chhatrapati would continue his father's war against the Mughals.",
+                  "TextRect": {
+                    "x": 1020,
+                    "y": 620,
+                    "width": 1680,
+                    "height": 420
+                  }
+                },
+                {
+                  "Duration": 10.96,
+                  "TextFadeDuration": 9.96,
+                  "String": "1681. Chhatrapati Sambhaji Maharaj sits on his father's throne. He has inherited a kingdom, and every one of its enemies.",
+                  "TextRect": {
+                    "x": 1020,
+                    "y": 560,
+                    "width": 1680,
+                    "height": 420
+                  }
+                },
+                {
+                  "Duration": 9.05,
+                  "TextFadeDuration": 8.05,
+                  "String": "Emperor Aurangzeb: My own son Akbar shelters with the son of Shivaji? Then I will march to the Deccan myself and end them both.",
+                  "TextRect": {
+                    "x": 1020,
+                    "y": 620,
+                    "width": 1680,
+                    "height": 420
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "OutroSequence": {
+        "SequenceItems": [
+          {
+            "Type": "SlideShow",
+            "Data": {
+              "SlideBackgroundImage": "textures/campaign/fcam6/prithviraj_background.dds",
+              "SlideImageSequence": "textures/campaign/swarajya/11/outro/%d.png",
+              "Sound": "rs11_outro",
+              "Slides": [
+                {
+                  "Duration": 4.5,
+                  "TextFadeDuration": 3.5,
+                  "String": "The Mughal Deccan trembles.",
+                  "TextRect": {
+                    "x": 1020,
+                    "y": 560,
+                    "width": 1680,
+                    "height": 420
+                  },
+                  "ImageRect": {
+                    "x": 910,
+                    "y": 550,
+                    "width": 2000,
+                    "height": 1048
+                  }
+                },
+                {
+                  "Duration": 4.5,
+                  "TextFadeDuration": 3.5,
+                  "String": "The raiders vanish into the hills, laden with treasure.",
+                  "TextRect": {
+                    "x": 1020,
+                    "y": 620,
+                    "width": 1680,
+                    "height": 420
+                  }
+                },
+                {
+                  "Duration": 8.12,
+                  "TextFadeDuration": 7.12,
+                  "String": "Hambirrao Mohite: Bahadurpura will burn for three days, Maharaj. The Emperor will hear of it in Ajmer.",
+                  "TextRect": {
+                    "x": 1020,
+                    "y": 560,
+                    "width": 1680,
+                    "height": 420
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "IntroSequence": {
+        "SequenceItems": [
+          {
+            "Type": "SlideShow",
+            "Data": {
+              "SlideBackgroundImage": "textures/campaign/fcam6/prithviraj_background.dds",
+              "SlideImageSequence": "textures/campaign/swarajya/12/intro/%d.png",
+              "Sound": "rs12_intro",
+              "Slides": [
+                {
+                  "Duration": 5.09,
+                  "TextFadeDuration": 4.09,
+                  "String": "Act IV: The Storm \u2014 The Lion Against the Empire - Ramsej",
+                  "TextRect": {
+                    "x": 1020,
+                    "y": 560,
+                    "width": 1680,
+                    "height": 420
+                  },
+                  "ImageRect": {
+                    "x": 910,
+                    "y": 550,
+                    "width": 2000,
+                    "height": 1048
+                  }
+                },
+                {
+                  "Duration": 17.09,
+                  "TextFadeDuration": 16.09,
+                  "String": "Aurangzeb's commanders expected the small fort of Ramsej to fall quickly. Instead its garrison, supported by relief forces sent by Sambhaji Maharaj, resisted for over five years, an early sign of how costly the Deccan war would be for the Mughals.",
+                  "TextRect": {
+                    "x": 1020,
+                    "y": 620,
+                    "width": 1680,
+                    "height": 420
+                  }
+                },
+                {
+                  "Duration": 10.98,
+                  "TextFadeDuration": 9.98,
+                  "String": "1682. Aurangzeb has come to the Deccan with an army of half a million, vowing not to return north until the Marathas are crushed.",
+                  "TextRect": {
+                    "x": 1020,
+                    "y": 560,
+                    "width": 1680,
+                    "height": 420
+                  }
+                },
+                {
+                  "Duration": 8.94,
+                  "TextFadeDuration": 7.94,
+                  "String": "Emperor Aurangzeb: Begin with that little hill fort near Nashik. Ramsej. Shahabuddin Khan says it will fall in a few days.",
+                  "TextRect": {
+                    "x": 1020,
+                    "y": 620,
+                    "width": 1680,
+                    "height": 420
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "OutroSequence": {
+        "SequenceItems": [
+          {
+            "Type": "SlideShow",
+            "Data": {
+              "SlideBackgroundImage": "textures/campaign/fcam6/prithviraj_background.dds",
+              "SlideImageSequence": "textures/campaign/swarajya/12/outro/%d.png",
+              "Sound": "rs12_outro",
+              "Slides": [
+                {
+                  "Duration": 4.5,
+                  "TextFadeDuration": 3.5,
+                  "String": "Ramsej stands.",
+                  "TextRect": {
+                    "x": 1020,
+                    "y": 560,
+                    "width": 1680,
+                    "height": 420
+                  },
+                  "ImageRect": {
+                    "x": 910,
+                    "y": 550,
+                    "width": 2000,
+                    "height": 1048
+                  }
+                },
+                {
+                  "Duration": 8.78,
+                  "TextFadeDuration": 7.78,
+                  "String": "The Mughal siege collapses. Ramsej will hold out for more than five years: Aurangzeb's first, bitter lesson in the Deccan.",
+                  "TextRect": {
+                    "x": 1020,
+                    "y": 620,
+                    "width": 1680,
+                    "height": 420
+                  }
+                },
+                {
+                  "Duration": 8.51,
+                  "TextFadeDuration": 7.51,
+                  "String": "Across the Sahyadri the pattern repeats: the Mughals besiege, the forts hold, Maratha cavalry cuts their supply lines.",
+                  "TextRect": {
+                    "x": 1020,
+                    "y": 560,
+                    "width": 1680,
+                    "height": 420
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "IntroSequence": {
+        "SequenceItems": [
+          {
+            "Type": "SlideShow",
+            "Data": {
+              "SlideBackgroundImage": "textures/campaign/fcam6/prithviraj_background.dds",
+              "SlideImageSequence": "textures/campaign/swarajya/13/intro/%d.png",
+              "Sound": "rs13_intro",
+              "Slides": [
+                {
+                  "Duration": 4.71,
+                  "TextFadeDuration": 3.71,
+                  "String": "Act V: The Last Stand \u2014 The Island Fortress - Janjira",
+                  "TextRect": {
+                    "x": 1020,
+                    "y": 560,
+                    "width": 1680,
+                    "height": 420
+                  },
+                  "ImageRect": {
+                    "x": 910,
+                    "y": 550,
+                    "width": 2000,
+                    "height": 1048
+                  }
+                },
+                {
+                  "Duration": 18.36,
+                  "TextFadeDuration": 17.36,
+                  "String": "The Siddis of Janjira, allied to the Mughals, were a constant threat to the Maratha coast. Sambhaji Maharaj besieged Janjira in 1682 and even tried to build a stone causeway to it, but the fort held. Janjira was never captured by force.",
+                  "TextRect": {
+                    "x": 1020,
+                    "y": 620,
+                    "width": 1680,
+                    "height": 420
+                  }
+                },
+                {
+                  "Duration": 11.66,
+                  "TextFadeDuration": 10.66,
+                  "String": "1682. Just off the Konkan coast stands Janjira, the island fortress of the Siddis: Mughal allies who raid Maratha villages and ships.",
+                  "TextRect": {
+                    "x": 1020,
+                    "y": 560,
+                    "width": 1680,
+                    "height": 420
+                  }
+                },
+                {
+                  "Duration": 10.54,
+                  "TextFadeDuration": 9.54,
+                  "String": "Daulat Khan's flagship: Maharaj, my father served your father's navy. Janjira has never fallen to anyone. Its walls rise straight from the sea.",
+                  "TextRect": {
+                    "x": 1020,
+                    "y": 620,
+                    "width": 1680,
+                    "height": 420
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "OutroSequence": {
+        "SequenceItems": [
+          {
+            "Type": "SlideShow",
+            "Data": {
+              "SlideBackgroundImage": "textures/campaign/fcam6/prithviraj_background.dds",
+              "SlideImageSequence": "textures/campaign/swarajya/13/outro/%d.png",
+              "Sound": "rs13_outro",
+              "Slides": [
+                {
+                  "Duration": 4.5,
+                  "TextFadeDuration": 3.5,
+                  "String": "The Siddi menace is checked.",
+                  "TextRect": {
+                    "x": 1020,
+                    "y": 560,
+                    "width": 1680,
+                    "height": 420
+                  },
+                  "ImageRect": {
+                    "x": 910,
+                    "y": 550,
+                    "width": 2000,
+                    "height": 1048
+                  }
+                },
+                {
+                  "Duration": 8.01,
+                  "TextFadeDuration": 7.01,
+                  "String": "The Siddi threat is checked, but the Portuguese at Goa have let Mughal fleets use their harbours. Sambhaji turns south.",
+                  "TextRect": {
+                    "x": 1020,
+                    "y": 620,
+                    "width": 1680,
+                    "height": 420
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "IntroSequence": {
+        "SequenceItems": [
+          {
+            "Type": "SlideShow",
+            "Data": {
+              "SlideBackgroundImage": "textures/campaign/fcam6/prithviraj_background.dds",
+              "SlideImageSequence": "textures/campaign/swarajya/14/intro/%d.png",
+              "Sound": "rs14_intro",
+              "Slides": [
+                {
+                  "Duration": 4.5,
+                  "TextFadeDuration": 3.5,
+                  "String": "Act V: The Last Stand \u2014 The Gates of Goa",
+                  "TextRect": {
+                    "x": 1020,
+                    "y": 560,
+                    "width": 1680,
+                    "height": 420
+                  },
+                  "ImageRect": {
+                    "x": 910,
+                    "y": 550,
+                    "width": 2000,
+                    "height": 1048
+                  }
+                },
+                {
+                  "Duration": 20.84,
+                  "TextFadeDuration": 19.84,
+                  "String": "In late 1683 Sambhaji Maharaj invaded Portuguese Goa, which had been aiding the Mughals. His forces crossed to Santo Estevao at low tide and took the fort; the Viceroy was wounded in the fighting. The arrival of a Mughal army under Prince Shah Alam forced the Marathas to withdraw.",
+                  "TextRect": {
+                    "x": 1020,
+                    "y": 620,
+                    "width": 1680,
+                    "height": 420
+                  }
+                },
+                {
+                  "Duration": 10.14,
+                  "TextFadeDuration": 9.14,
+                  "String": "1683. The Portuguese of Goa have allied with the Mughals, letting Mughal fleets use their ports and harassing the Konkan.",
+                  "TextRect": {
+                    "x": 1020,
+                    "y": 560,
+                    "width": 1680,
+                    "height": 420
+                  }
+                },
+                {
+                  "Duration": 8.63,
+                  "TextFadeDuration": 7.63,
+                  "String": "Viceroy Francisco de Tavora: The Marathas have no ships to speak of. The rivers protect Goa. We have nothing to fear.",
+                  "TextRect": {
+                    "x": 1020,
+                    "y": 620,
+                    "width": 1680,
+                    "height": 420
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "OutroSequence": {
+        "SequenceItems": [
+          {
+            "Type": "SlideShow",
+            "Data": {
+              "SlideBackgroundImage": "textures/campaign/fcam6/prithviraj_background.dds",
+              "SlideImageSequence": "textures/campaign/swarajya/14/outro/%d.png",
+              "Sound": "rs14_outro",
+              "Slides": [
+                {
+                  "Duration": 4.5,
+                  "TextFadeDuration": 3.5,
+                  "String": "Goa learns to fear the Chhatrapati.",
+                  "TextRect": {
+                    "x": 1020,
+                    "y": 560,
+                    "width": 1680,
+                    "height": 420
+                  },
+                  "ImageRect": {
+                    "x": 910,
+                    "y": 550,
+                    "width": 2000,
+                    "height": 1048
+                  }
+                },
+                {
+                  "Duration": 7.91,
+                  "TextFadeDuration": 6.91,
+                  "String": "Sambhaji withdraws in good order. Goa has been humbled, and the Mughal army must now march through the barren Konkan.",
+                  "TextRect": {
+                    "x": 1020,
+                    "y": 620,
+                    "width": 1680,
+                    "height": 420
+                  }
+                },
+                {
+                  "Duration": 10.96,
+                  "TextFadeDuration": 9.96,
+                  "String": "History: the Goa campaign did not conquer Goa. Prince Shah Alam's arrival forced the Marathas back. But the Portuguese never again openly aided the Mughals at sea.",
+                  "TextRect": {
+                    "x": 1020,
+                    "y": 560,
+                    "width": 1680,
+                    "height": 420
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "IntroSequence": {
+        "SequenceItems": [
+          {
+            "Type": "SlideShow",
+            "Data": {
+              "SlideBackgroundImage": "textures/campaign/fcam6/prithviraj_background.dds",
+              "SlideImageSequence": "textures/campaign/swarajya/15/intro/%d.png",
+              "Sound": "rs15_intro",
+              "Slides": [
+                {
+                  "Duration": 4.5,
+                  "TextFadeDuration": 3.5,
+                  "String": "Act V: The Last Stand \u2014 The Flame That Would Not Die",
+                  "TextRect": {
+                    "x": 1020,
+                    "y": 560,
+                    "width": 1680,
+                    "height": 420
+                  },
+                  "ImageRect": {
+                    "x": 910,
+                    "y": 550,
+                    "width": 2000,
+                    "height": 1048
+                  }
+                },
+                {
+                  "Duration": 27.96,
+                  "TextFadeDuration": 26.96,
+                  "String": "In February 1689 Sambhaji Maharaj was captured at Sangameshwar by Mughal forces under Muqarrab Khan, reportedly after betrayal. He refused Aurangzeb's demands and was executed at Tulapur on 11 March 1689. The Marathas fought on under Rajaram and Tarabai; Aurangzeb died in the Deccan in 1707 without subduing them.",
+                  "TextRect": {
+                    "x": 1020,
+                    "y": 620,
+                    "width": 1680,
+                    "height": 420
+                  }
+                },
+                {
+                  "Duration": 12.7,
+                  "TextFadeDuration": 11.7,
+                  "String": "February 1689. For eight years Sambhaji Maharaj has fought Aurangzeb, the Siddis and the Portuguese at once. Not one major fort has been lost.",
+                  "TextRect": {
+                    "x": 1020,
+                    "y": 560,
+                    "width": 1680,
+                    "height": 420
+                  }
+                },
+                {
+                  "Duration": 9.18,
+                  "TextFadeDuration": 8.18,
+                  "String": "Hambirrao Mohite has fallen in battle at Wai. Bijapur and Golconda are gone. The pressure on the Deccan grows month by month.",
+                  "TextRect": {
+                    "x": 1020,
+                    "y": 620,
+                    "width": 1680,
+                    "height": 420
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "OutroSequence": {
+        "SequenceItems": [
+          {
+            "Type": "SlideShow",
+            "Data": {
+              "SlideBackgroundImage": "textures/campaign/fcam6/prithviraj_background.dds",
+              "SlideImageSequence": "textures/campaign/swarajya/15/outro/%d.png",
+              "Sound": "rs15_outro",
+              "Slides": [
+                {
+                  "Duration": 4.5,
+                  "TextFadeDuration": 3.5,
+                  "String": "Dharmaveer Sambhaji Maharaj ki jai!",
+                  "TextRect": {
+                    "x": 1020,
+                    "y": 560,
+                    "width": 1680,
+                    "height": 420
                   },
                   "ImageRect": {
                     "x": 910,
@@ -1408,1024 +1748,24 @@
                 },
                 {
                   "Duration": 9.3,
-                  "TextFadeDuration": 7.3,
-                  "String": "Twelve days after the coronation, Rajmata Jijabai dies at Pachad, at the foot of Raigad.",
-                  "TextRect": {
-                    "x": 1050,
-                    "y": 580,
-                    "width": 1650,
-                    "height": 800
-                  }
-                },
-                {
-                  "Duration": 11.6,
-                  "TextFadeDuration": 9.6,
-                  "String": "Chhatrapati Shivaji Maharaj rules for six more years, expanding Swarajya south to Jinji. He dies at Raigad in April 1680.",
-                  "TextRect": {
-                    "x": 1050,
-                    "y": 580,
-                    "width": 1650,
-                    "height": 800
-                  }
-                },
-                {
-                  "Duration": 10.7,
-                  "TextFadeDuration": 8.7,
-                  "String": "His son Sambhaji inherits the throne, the forts, and every one of his father's enemies. Aurangzeb is coming.",
-                  "TextRect": {
-                    "x": 1050,
-                    "y": 580,
-                    "width": 1650,
-                    "height": 800
-                  }
-                }
-              ]
-            }
-          }
-        ]
-      }
-    },
-    {
-      "IntroSequence": {
-        "SequenceItems": [
-          {
-            "Type": "SlideShow",
-            "Data": {
-              "SlideBackgroundImage": "textures/campaign/incam2/rajendra_background.dds",
-              "SlideImageSequence": "textures/campaign/incam3/5/intro/%d.png",
-              "Sound": "spslide3",
-              "Slides": [
-                {
-                  "Duration": 7.5,
-                  "TextFadeDuration": 5.5,
-                  "String": "Act IV: The Storm \u2014 Chapter 10: The Crown of Conflict (1680-81)",
-                  "TextRect": {
-                    "x": 1050,
-                    "y": 580,
-                    "width": 1650,
-                    "height": 800
-                  },
-                  "ImageRect": {
-                    "x": 910,
-                    "y": 550,
-                    "width": 2000,
-                    "height": 1048
-                  }
-                },
-                {
-                  "Duration": 16.0,
-                  "TextFadeDuration": 14.0,
-                  "String": "On Shivaji's death in April 1680 a group of ministers, with the support of Queen Soyarabai, placed Rajaram on the throne. Sambhaji, then at Panhala, won the support of the commander-in-chief Hambirrao Mohite and took control of Raigad. He was formally crowned on 16 January 1681. The succession dispute left lasting divisions at court.",
-                  "TextRect": {
-                    "x": 1050,
-                    "y": 580,
-                    "width": 1650,
-                    "height": 800
-                  }
-                },
-                {
-                  "Duration": 12.1,
-                  "TextFadeDuration": 10.1,
-                  "String": "April 1680. Chhatrapati Shivaji Maharaj is dead. At Raigad, a council of ministers proclaims his ten-year-old son Rajaram king.",
-                  "TextRect": {
-                    "x": 1050,
-                    "y": 580,
-                    "width": 1650,
-                    "height": 800
-                  }
-                },
-                {
-                  "Duration": 11.6,
-                  "TextFadeDuration": 9.6,
-                  "String": "Annaji Datto: Sambhaji Raje is brave, but rash. He even went over to the Mughals once. The kingdom needs steadier hands.",
-                  "TextRect": {
-                    "x": 1050,
-                    "y": 580,
-                    "width": 1650,
-                    "height": 800
-                  }
-                },
-                {
-                  "Duration": 10.1,
-                  "TextFadeDuration": 8.1,
-                  "String": "Maharani Soyarabai: Rajaram is Shivaji's son too. Let him be crowned, and let the council guide him.",
-                  "TextRect": {
-                    "x": 1050,
-                    "y": 580,
-                    "width": 1650,
-                    "height": 800
-                  }
-                },
-                {
-                  "Duration": 11.1,
-                  "TextFadeDuration": 9.1,
-                  "String": "Kavi Kalash: Raje, the army will not follow a child and a council. Everything turns on one man: Hambirrao Mohite.",
-                  "TextRect": {
-                    "x": 1050,
-                    "y": 580,
-                    "width": 1650,
-                    "height": 800
-                  }
-                },
-                {
-                  "Duration": 13.7,
-                  "TextFadeDuration": 11.7,
-                  "String": "Chhatrapati Sambhaji Maharaj: Then I will go to Hambirrao myself. I will not draw my sword on my father's people. Swarajya cannot survive a civil war.",
-                  "TextRect": {
-                    "x": 1050,
-                    "y": 580,
-                    "width": 1650,
-                    "height": 800
-                  }
-                },
-                {
-                  "Duration": 12.9,
-                  "TextFadeDuration": 10.9,
-                  "String": "Win over Hambirrao Mohite, rally the killedars of Rajgad and Pratapgad, and enter Raigad. Never attack the council: they are Marathas too.",
-                  "TextRect": {
-                    "x": 1050,
-                    "y": 580,
-                    "width": 1650,
-                    "height": 800
-                  }
-                }
-              ]
-            }
-          }
-        ]
-      },
-      "OutroSequence": {
-        "SequenceItems": [
-          {
-            "Type": "SlideShow",
-            "Data": {
-              "SlideBackgroundImage": "textures/campaign/incam2/rajendra_background.dds",
-              "SlideImageSequence": "textures/campaign/incam3/5/outro/%d.png",
-              "Sound": "spslide3",
-              "Slides": [
-                {
-                  "Duration": 9.1,
-                  "TextFadeDuration": 7.1,
-                  "String": "Maharani Soyarabai: You have the army, the forts and Raigad. What will you do with us?",
-                  "TextRect": {
-                    "x": 1050,
-                    "y": 580,
-                    "width": 1650,
-                    "height": 800
-                  },
-                  "ImageRect": {
-                    "x": 910,
-                    "y": 550,
-                    "width": 2000,
-                    "height": 1048
-                  }
-                },
-                {
-                  "Duration": 13.0,
-                  "TextFadeDuration": 11.0,
-                  "String": "Chhatrapati Sambhaji Maharaj: Rajaram is my brother. He stays at my side. The council keeps its seats. Our enemy is in Delhi, not in Raigad.",
-                  "TextRect": {
-                    "x": 1050,
-                    "y": 580,
-                    "width": 1650,
-                    "height": 800
-                  }
-                },
-                {
-                  "Duration": 13.0,
-                  "TextFadeDuration": 11.0,
-                  "String": "16 January 1681. Sambhaji is crowned Chhatrapati at Raigad. Within months a plot against him is uncovered; the reconciliation will not last.",
-                  "TextRect": {
-                    "x": 1050,
-                    "y": 580,
-                    "width": 1650,
-                    "height": 800
-                  }
-                },
-                {
-                  "Duration": 10.4,
-                  "TextFadeDuration": 8.4,
-                  "String": "Kavi Kalash: Aurangzeb's rebel son, Prince Akbar, has fled south and asks for your protection, Maharaj.",
-                  "TextRect": {
-                    "x": 1050,
-                    "y": 580,
-                    "width": 1650,
-                    "height": 800
-                  }
-                },
-                {
-                  "Duration": 10.4,
-                  "TextFadeDuration": 8.4,
-                  "String": "Chhatrapati Sambhaji Maharaj: Then the Emperor will come for both of us. Let us strike first. Burhanpur.",
-                  "TextRect": {
-                    "x": 1050,
-                    "y": 580,
-                    "width": 1650,
-                    "height": 800
-                  }
-                }
-              ]
-            }
-          }
-        ]
-      }
-    },
-    {
-      "IntroSequence": {
-        "SequenceItems": [
-          {
-            "Type": "SlideShow",
-            "Data": {
-              "SlideBackgroundImage": "textures/campaign/incam2/rajendra_background.dds",
-              "SlideImageSequence": "textures/campaign/incam3/1/intro/%d.png",
-              "Sound": "spslide3",
-              "Slides": [
-                {
-                  "Duration": 7.4,
-                  "TextFadeDuration": 5.4,
-                  "String": "Act IV: The Storm \u2014 Chapter 11: The Riches of Burhanpur (1681)",
-                  "TextRect": {
-                    "x": 1050,
-                    "y": 580,
-                    "width": 1650,
-                    "height": 800
-                  },
-                  "ImageRect": {
-                    "x": 910,
-                    "y": 550,
-                    "width": 2000,
-                    "height": 1048
-                  }
-                },
-                {
-                  "Duration": 16.0,
-                  "TextFadeDuration": 14.0,
-                  "String": "In early 1681 Sambhaji Maharaj raided Burhanpur, a major Mughal city on the Tapi, sacking its wealthy suburb Bahadurpura. The raid announced that the new Chhatrapati would continue his father's war against the Mughals.",
-                  "TextRect": {
-                    "x": 1050,
-                    "y": 580,
-                    "width": 1650,
-                    "height": 800
-                  }
-                },
-                {
-                  "Duration": 11.6,
-                  "TextFadeDuration": 9.6,
-                  "String": "1681. Chhatrapati Sambhaji Maharaj sits on his father's throne. He has inherited a kingdom, and every one of its enemies.",
-                  "TextRect": {
-                    "x": 1050,
-                    "y": 580,
-                    "width": 1650,
-                    "height": 800
-                  }
-                },
-                {
-                  "Duration": 12.1,
-                  "TextFadeDuration": 10.1,
-                  "String": "Emperor Aurangzeb: My own son Akbar shelters with the son of Shivaji? Then I will march to the Deccan myself and end them both.",
-                  "TextRect": {
-                    "x": 1050,
-                    "y": 580,
-                    "width": 1650,
-                    "height": 800
-                  }
-                },
-                {
-                  "Duration": 11.6,
-                  "TextFadeDuration": 9.6,
-                  "String": "Chhatrapati Sambhaji Maharaj: Before the Emperor comes to us, we go to him. Burhanpur: the gateway of the Mughal Deccan.",
-                  "TextRect": {
-                    "x": 1050,
-                    "y": 580,
-                    "width": 1650,
-                    "height": 800
-                  }
-                },
-                {
-                  "Duration": 12.4,
-                  "TextFadeDuration": 10.4,
-                  "String": "Hambirrao Mohite: The walled city is too strong, Maharaj. But Bahadurpura, the merchants' quarter across the Tapi, sleeps unguarded.",
-                  "TextRect": {
-                    "x": 1050,
-                    "y": 580,
-                    "width": 1650,
-                    "height": 800
-                  }
-                },
-                {
-                  "Duration": 10.1,
-                  "TextFadeDuration": 8.1,
-                  "String": "Burn the five bazaars of Bahadurpura, then ride back to Salher before Khan Jahan's army catches you.",
-                  "TextRect": {
-                    "x": 1050,
-                    "y": 580,
-                    "width": 1650,
-                    "height": 800
-                  }
-                }
-              ]
-            }
-          }
-        ]
-      },
-      "OutroSequence": {
-        "SequenceItems": [
-          {
-            "Type": "SlideShow",
-            "Data": {
-              "SlideBackgroundImage": "textures/campaign/incam2/rajendra_background.dds",
-              "SlideImageSequence": "textures/campaign/incam3/1/outro/%d.png",
-              "Sound": "spslide3",
-              "Slides": [
-                {
-                  "Duration": 6.9,
-                  "TextFadeDuration": 4.9,
-                  "String": "The raiders vanish into the hills, laden with treasure.",
-                  "TextRect": {
-                    "x": 1050,
-                    "y": 580,
-                    "width": 1650,
-                    "height": 800
-                  },
-                  "ImageRect": {
-                    "x": 910,
-                    "y": 550,
-                    "width": 2000,
-                    "height": 1048
-                  }
-                },
-                {
-                  "Duration": 10.3,
                   "TextFadeDuration": 8.3,
-                  "String": "Hambirrao Mohite: Bahadurpura will burn for three days, Maharaj. The Emperor will hear of it in Ajmer.",
-                  "TextRect": {
-                    "x": 1050,
-                    "y": 580,
-                    "width": 1650,
-                    "height": 800
-                  }
-                },
-                {
-                  "Duration": 12.4,
-                  "TextFadeDuration": 10.4,
-                  "String": "He does. In 1682 Aurangzeb arrives in the Deccan with the largest army the subcontinent has seen. He will never return to the north.",
-                  "TextRect": {
-                    "x": 1050,
-                    "y": 580,
-                    "width": 1650,
-                    "height": 800
-                  }
-                }
-              ]
-            }
-          }
-        ]
-      }
-    },
-    {
-      "IntroSequence": {
-        "SequenceItems": [
-          {
-            "Type": "SlideShow",
-            "Data": {
-              "SlideBackgroundImage": "textures/campaign/incam2/rajendra_background.dds",
-              "SlideImageSequence": "textures/campaign/incam3/2/intro/%d.png",
-              "Sound": "spslide3",
-              "Slides": [
-                {
-                  "Duration": 8.4,
-                  "TextFadeDuration": 6.4,
-                  "String": "Act IV: The Storm \u2014 Chapter 12: The Lion Against the Empire - Ramsej (1682)",
-                  "TextRect": {
-                    "x": 1050,
-                    "y": 580,
-                    "width": 1650,
-                    "height": 800
-                  },
-                  "ImageRect": {
-                    "x": 910,
-                    "y": 550,
-                    "width": 2000,
-                    "height": 1048
-                  }
-                },
-                {
-                  "Duration": 16.0,
-                  "TextFadeDuration": 14.0,
-                  "String": "Aurangzeb's commanders expected the small fort of Ramsej to fall quickly. Instead its garrison, supported by relief forces sent by Sambhaji Maharaj, resisted for over five years, an early sign of how costly the Deccan war would be for the Mughals.",
-                  "TextRect": {
-                    "x": 1050,
-                    "y": 580,
-                    "width": 1650,
-                    "height": 800
-                  }
-                },
-                {
-                  "Duration": 12.2,
-                  "TextFadeDuration": 10.2,
-                  "String": "1682. Aurangzeb has come to the Deccan with an army of half a million, vowing not to return north until the Marathas are crushed.",
-                  "TextRect": {
-                    "x": 1050,
-                    "y": 580,
-                    "width": 1650,
-                    "height": 800
-                  }
-                },
-                {
-                  "Duration": 11.7,
-                  "TextFadeDuration": 9.7,
-                  "String": "Emperor Aurangzeb: Begin with that little hill fort near Nashik. Ramsej. Shahabuddin Khan says it will fall in a few days.",
-                  "TextRect": {
-                    "x": 1050,
-                    "y": 580,
-                    "width": 1650,
-                    "height": 800
-                  }
-                },
-                {
-                  "Duration": 11.0,
-                  "TextFadeDuration": 9.0,
-                  "String": "Killedar Suryaji: A few days? Let them come. Every Maratha fort is a mountain, and every mountain is a fortress.",
-                  "TextRect": {
-                    "x": 1050,
-                    "y": 580,
-                    "width": 1650,
-                    "height": 800
-                  }
-                },
-                {
-                  "Duration": 11.9,
-                  "TextFadeDuration": 9.9,
-                  "String": "Hambirrao Mohite: Hold, Suryaji. The Chhatrapati is sending Rupaji Bhosale and Manaji More with the cavalry. Fifteen minutes.",
-                  "TextRect": {
-                    "x": 1050,
-                    "y": 580,
-                    "width": 1650,
-                    "height": 800
-                  }
-                },
-                {
-                  "Duration": 8.0,
-                  "TextFadeDuration": 6.0,
-                  "String": "Hold Ramsej until the relief force arrives, then smash the siege camp.",
-                  "TextRect": {
-                    "x": 1050,
-                    "y": 580,
-                    "width": 1650,
-                    "height": 800
-                  }
-                }
-              ]
-            }
-          }
-        ]
-      },
-      "OutroSequence": {
-        "SequenceItems": [
-          {
-            "Type": "SlideShow",
-            "Data": {
-              "SlideBackgroundImage": "textures/campaign/incam2/rajendra_background.dds",
-              "SlideImageSequence": "textures/campaign/incam3/2/outro/%d.png",
-              "Sound": "spslide3",
-              "Slides": [
-                {
-                  "Duration": 11.7,
-                  "TextFadeDuration": 9.7,
-                  "String": "The Mughal siege collapses. Ramsej will hold out for more than five years: Aurangzeb's first, bitter lesson in the Deccan.",
-                  "TextRect": {
-                    "x": 1050,
-                    "y": 580,
-                    "width": 1650,
-                    "height": 800
-                  },
-                  "ImageRect": {
-                    "x": 910,
-                    "y": 550,
-                    "width": 2000,
-                    "height": 1048
-                  }
-                },
-                {
-                  "Duration": 11.4,
-                  "TextFadeDuration": 9.4,
-                  "String": "Across the Sahyadri the pattern repeats: the Mughals besiege, the forts hold, Maratha cavalry cuts their supply lines.",
-                  "TextRect": {
-                    "x": 1050,
-                    "y": 580,
-                    "width": 1650,
-                    "height": 800
-                  }
-                },
-                {
-                  "Duration": 12.4,
-                  "TextFadeDuration": 10.4,
-                  "String": "Chhatrapati Sambhaji Maharaj: The Emperor's land army is stalled. Now he turns to the sea, and to his allies the Siddis of Janjira.",
-                  "TextRect": {
-                    "x": 1050,
-                    "y": 580,
-                    "width": 1650,
-                    "height": 800
-                  }
-                }
-              ]
-            }
-          }
-        ]
-      }
-    },
-    {
-      "IntroSequence": {
-        "SequenceItems": [
-          {
-            "Type": "SlideShow",
-            "Data": {
-              "SlideBackgroundImage": "textures/campaign/incam2/rajendra_background.dds",
-              "SlideImageSequence": "textures/campaign/incam3/3/intro/%d.png",
-              "Sound": "spslide3",
-              "Slides": [
-                {
-                  "Duration": 8.1,
-                  "TextFadeDuration": 6.1,
-                  "String": "Act V: The Last Stand \u2014 Chapter 13: The Island Fortress - Janjira (1682)",
-                  "TextRect": {
-                    "x": 1050,
-                    "y": 580,
-                    "width": 1650,
-                    "height": 800
-                  },
-                  "ImageRect": {
-                    "x": 910,
-                    "y": 550,
-                    "width": 2000,
-                    "height": 1048
-                  }
-                },
-                {
-                  "Duration": 16.0,
-                  "TextFadeDuration": 14.0,
-                  "String": "The Siddis of Janjira, allied to the Mughals, were a constant threat to the Maratha coast. Sambhaji Maharaj besieged Janjira in 1682 and even tried to build a stone causeway to it, but the fort held. Janjira was never captured by force.",
-                  "TextRect": {
-                    "x": 1050,
-                    "y": 580,
-                    "width": 1650,
-                    "height": 800
-                  }
-                },
-                {
-                  "Duration": 12.5,
-                  "TextFadeDuration": 10.5,
-                  "String": "1682. Just off the Konkan coast stands Janjira, the island fortress of the Siddis: Mughal allies who raid Maratha villages and ships.",
-                  "TextRect": {
-                    "x": 1050,
-                    "y": 580,
-                    "width": 1650,
-                    "height": 800
-                  }
-                },
-                {
-                  "Duration": 13.2,
-                  "TextFadeDuration": 11.2,
-                  "String": "Daulat Khan's flagship: Maharaj, my father served your father's navy. Janjira has never fallen to anyone. Its walls rise straight from the sea.",
-                  "TextRect": {
-                    "x": 1050,
-                    "y": 580,
-                    "width": 1650,
-                    "height": 800
-                  }
-                },
-                {
-                  "Duration": 14.4,
-                  "TextFadeDuration": 12.4,
-                  "String": "Chhatrapati Sambhaji Maharaj: My father built Padmadurg right under their noses. I will finish what he began, and if I must, I will build a road across the sea.",
-                  "TextRect": {
-                    "x": 1050,
-                    "y": 580,
-                    "width": 1650,
-                    "height": 800
-                  }
-                },
-                {
-                  "Duration": 12.9,
-                  "TextFadeDuration": 10.9,
-                  "String": "First cut the Siddis off from their supplies: burn the docks at Danda-Rajpuri. Then silence the bombard towers that guard Janjira's walls.",
-                  "TextRect": {
-                    "x": 1050,
-                    "y": 580,
-                    "width": 1650,
-                    "height": 800
-                  }
-                }
-              ]
-            }
-          }
-        ]
-      },
-      "OutroSequence": {
-        "SequenceItems": [
-          {
-            "Type": "SlideShow",
-            "Data": {
-              "SlideBackgroundImage": "textures/campaign/incam2/rajendra_background.dds",
-              "SlideImageSequence": "textures/campaign/incam3/3/outro/%d.png",
-              "Sound": "spslide3",
-              "Slides": [
-                {
-                  "Duration": 11.5,
-                  "TextFadeDuration": 9.5,
-                  "String": "The Siddi threat is checked, but the Portuguese at Goa have let Mughal fleets use their harbours. Sambhaji turns south.",
-                  "TextRect": {
-                    "x": 1050,
-                    "y": 580,
-                    "width": 1650,
-                    "height": 800
-                  },
-                  "ImageRect": {
-                    "x": 910,
-                    "y": 550,
-                    "width": 2000,
-                    "height": 1048
-                  }
-                }
-              ]
-            }
-          }
-        ]
-      }
-    },
-    {
-      "IntroSequence": {
-        "SequenceItems": [
-          {
-            "Type": "SlideShow",
-            "Data": {
-              "SlideBackgroundImage": "textures/campaign/incam2/rajendra_background.dds",
-              "SlideImageSequence": "textures/campaign/incam3/4/intro/%d.png",
-              "Sound": "spslide3",
-              "Slides": [
-                {
-                  "Duration": 7.2,
-                  "TextFadeDuration": 5.2,
-                  "String": "Act V: The Last Stand \u2014 Chapter 14: The Gates of Goa (1683)",
-                  "TextRect": {
-                    "x": 1050,
-                    "y": 580,
-                    "width": 1650,
-                    "height": 800
-                  },
-                  "ImageRect": {
-                    "x": 910,
-                    "y": 550,
-                    "width": 2000,
-                    "height": 1048
-                  }
-                },
-                {
-                  "Duration": 16.0,
-                  "TextFadeDuration": 14.0,
-                  "String": "In late 1683 Sambhaji Maharaj invaded Portuguese Goa, which had been aiding the Mughals. His forces crossed to Santo Estevao at low tide and took the fort; the Viceroy was wounded in the fighting. The arrival of a Mughal army under Prince Shah Alam forced the Marathas to withdraw.",
-                  "TextRect": {
-                    "x": 1050,
-                    "y": 580,
-                    "width": 1650,
-                    "height": 800
-                  }
-                },
-                {
-                  "Duration": 11.6,
-                  "TextFadeDuration": 9.6,
-                  "String": "1683. The Portuguese of Goa have allied with the Mughals, letting Mughal fleets use their ports and harassing the Konkan.",
-                  "TextRect": {
-                    "x": 1050,
-                    "y": 580,
-                    "width": 1650,
-                    "height": 800
-                  }
-                },
-                {
-                  "Duration": 11.4,
-                  "TextFadeDuration": 9.4,
-                  "String": "Viceroy Francisco de Tavora: The Marathas have no ships to speak of. The rivers protect Goa. We have nothing to fear.",
-                  "TextRect": {
-                    "x": 1050,
-                    "y": 580,
-                    "width": 1650,
-                    "height": 800
-                  }
-                },
-                {
-                  "Duration": 11.6,
-                  "TextFadeDuration": 9.6,
-                  "String": "Kavi Kalash: Maharaj, the fishermen say the tide drops very low tonight. The channel to Santo Estevao becomes knee-deep.",
-                  "TextRect": {
-                    "x": 1050,
-                    "y": 580,
-                    "width": 1650,
-                    "height": 800
-                  }
-                },
-                {
-                  "Duration": 8.8,
-                  "TextFadeDuration": 6.8,
-                  "String": "Chhatrapati Sambhaji Maharaj: Then we walk across the sea. Bombards to the front.",
-                  "TextRect": {
-                    "x": 1050,
-                    "y": 580,
-                    "width": 1650,
-                    "height": 800
-                  }
-                },
-                {
-                  "Duration": 10.8,
-                  "TextFadeDuration": 8.8,
-                  "String": "Capture the island fort. The Viceroy himself leads the defence: wound him and the Portuguese will lose heart.",
-                  "TextRect": {
-                    "x": 1050,
-                    "y": 580,
-                    "width": 1650,
-                    "height": 800
-                  }
-                }
-              ]
-            }
-          }
-        ]
-      },
-      "OutroSequence": {
-        "SequenceItems": [
-          {
-            "Type": "SlideShow",
-            "Data": {
-              "SlideBackgroundImage": "textures/campaign/incam2/rajendra_background.dds",
-              "SlideImageSequence": "textures/campaign/incam3/4/outro/%d.png",
-              "Sound": "spslide3",
-              "Slides": [
-                {
-                  "Duration": 11.4,
-                  "TextFadeDuration": 9.4,
-                  "String": "Sambhaji withdraws in good order. Goa has been humbled, and the Mughal army must now march through the barren Konkan.",
-                  "TextRect": {
-                    "x": 1050,
-                    "y": 580,
-                    "width": 1650,
-                    "height": 800
-                  },
-                  "ImageRect": {
-                    "x": 910,
-                    "y": 550,
-                    "width": 2000,
-                    "height": 1048
-                  }
-                },
-                {
-                  "Duration": 14.6,
-                  "TextFadeDuration": 12.6,
-                  "String": "History: the Goa campaign did not conquer Goa. Prince Shah Alam's arrival forced the Marathas back. But the Portuguese never again openly aided the Mughals at sea.",
-                  "TextRect": {
-                    "x": 1050,
-                    "y": 580,
-                    "width": 1650,
-                    "height": 800
-                  }
-                },
-                {
-                  "Duration": 10.9,
-                  "TextFadeDuration": 8.9,
-                  "String": "Six more years of war follow. Bijapur and Golconda fall to Aurangzeb. Swarajya stands alone against the Empire.",
-                  "TextRect": {
-                    "x": 1050,
-                    "y": 580,
-                    "width": 1650,
-                    "height": 800
-                  }
-                }
-              ]
-            }
-          }
-        ]
-      }
-    },
-    {
-      "IntroSequence": {
-        "SequenceItems": [
-          {
-            "Type": "SlideShow",
-            "Data": {
-              "SlideBackgroundImage": "textures/campaign/incam2/rajendra_background.dds",
-              "SlideImageSequence": "textures/campaign/incam3/5/intro/%d.png",
-              "Sound": "spslide3",
-              "Slides": [
-                {
-                  "Duration": 8.1,
-                  "TextFadeDuration": 6.1,
-                  "String": "Act V: The Last Stand \u2014 Chapter 15: The Flame That Would Not Die (1689)",
-                  "TextRect": {
-                    "x": 1050,
-                    "y": 580,
-                    "width": 1650,
-                    "height": 800
-                  },
-                  "ImageRect": {
-                    "x": 910,
-                    "y": 550,
-                    "width": 2000,
-                    "height": 1048
-                  }
-                },
-                {
-                  "Duration": 16.0,
-                  "TextFadeDuration": 14.0,
-                  "String": "In February 1689 Sambhaji Maharaj was captured at Sangameshwar by Mughal forces under Muqarrab Khan, reportedly after betrayal. He refused Aurangzeb's demands and was executed at Tulapur on 11 March 1689. The Marathas fought on under Rajaram and Tarabai; Aurangzeb died in the Deccan in 1707 without subduing them.",
-                  "TextRect": {
-                    "x": 1050,
-                    "y": 580,
-                    "width": 1650,
-                    "height": 800
-                  }
-                },
-                {
-                  "Duration": 13.1,
-                  "TextFadeDuration": 11.1,
-                  "String": "February 1689. For eight years Sambhaji Maharaj has fought Aurangzeb, the Siddis and the Portuguese at once. Not one major fort has been lost.",
-                  "TextRect": {
-                    "x": 1050,
-                    "y": 580,
-                    "width": 1650,
-                    "height": 800
-                  }
-                },
-                {
-                  "Duration": 11.9,
-                  "TextFadeDuration": 9.9,
-                  "String": "Hambirrao Mohite has fallen in battle at Wai. Bijapur and Golconda are gone. The pressure on the Deccan grows month by month.",
-                  "TextRect": {
-                    "x": 1050,
-                    "y": 580,
-                    "width": 1650,
-                    "height": 800
-                  }
-                },
-                {
-                  "Duration": 11.1,
-                  "TextFadeDuration": 9.1,
-                  "String": "Kavi Kalash: The council at Sangameshwar is done, Maharaj. We should ride for Raigad tonight, by the hidden road.",
-                  "TextRect": {
-                    "x": 1050,
-                    "y": 580,
-                    "width": 1650,
-                    "height": 800
-                  }
-                },
-                {
-                  "Duration": 12.7,
-                  "TextFadeDuration": 10.7,
-                  "String": "But word of the Chhatrapati's route has reached the Mughals, through disaffected men and failures of watch that historians still debate.",
-                  "TextRect": {
-                    "x": 1050,
-                    "y": 580,
-                    "width": 1650,
-                    "height": 800
-                  }
-                },
-                {
-                  "Duration": 9.8,
-                  "TextFadeDuration": 7.8,
-                  "String": "Mhaloji Ghorpade: Horsemen on both rivers! Muqarrab Khan's cavalry! We are surrounded, Maharaj!",
-                  "TextRect": {
-                    "x": 1050,
-                    "y": 580,
-                    "width": 1650,
-                    "height": 800
-                  }
-                },
-                {
-                  "Duration": 11.9,
-                  "TextFadeDuration": 9.9,
-                  "String": "Chhatrapati Sambhaji Maharaj: Then Raigad must be warned. Yesubai and Rajaram must carry on the war. Send the messenger. Now.",
-                  "TextRect": {
-                    "x": 1050,
-                    "y": 580,
-                    "width": 1650,
-                    "height": 800
-                  }
-                }
-              ]
-            }
-          }
-        ]
-      },
-      "OutroSequence": {
-        "SequenceItems": [
-          {
-            "Type": "SlideShow",
-            "Data": {
-              "SlideBackgroundImage": "textures/campaign/incam2/rajendra_background.dds",
-              "SlideImageSequence": "textures/campaign/incam3/5/outro/%d.png",
-              "Sound": "spslide3",
-              "Slides": [
-                {
-                  "Duration": 12.4,
-                  "TextFadeDuration": 10.4,
                   "String": "Brought before Aurangzeb at Bahadurgad, Sambhaji Maharaj is offered his life in exchange for his forts, his treasure and his faith.",
                   "TextRect": {
-                    "x": 1050,
-                    "y": 580,
-                    "width": 1650,
-                    "height": 800
-                  },
-                  "ImageRect": {
-                    "x": 910,
-                    "y": 550,
-                    "width": 2000,
-                    "height": 1048
+                    "x": 1020,
+                    "y": 620,
+                    "width": 1680,
+                    "height": 420
                   }
                 },
                 {
-                  "Duration": 12.6,
-                  "TextFadeDuration": 10.6,
+                  "Duration": 11.96,
+                  "TextFadeDuration": 10.96,
                   "String": "He refuses. For weeks he and Kavi Kalash endure torture without yielding. On 11 March 1689 they are executed at Tulapur, on the Bhima.",
                   "TextRect": {
-                    "x": 1050,
-                    "y": 580,
-                    "width": 1650,
-                    "height": 800
-                  }
-                },
-                {
-                  "Duration": 11.1,
-                  "TextFadeDuration": 9.1,
-                  "String": "The king was gone. The emperor believed the war was over. But Swarajya was not a kingdom held together by one man.",
-                  "TextRect": {
-                    "x": 1050,
-                    "y": 580,
-                    "width": 1650,
-                    "height": 800
-                  }
-                },
-                {
-                  "Duration": 8.7,
-                  "TextFadeDuration": 6.7,
-                  "String": "It was an idea that had taken root in the Sahyadris. And the struggle continued.",
-                  "TextRect": {
-                    "x": 1050,
-                    "y": 580,
-                    "width": 1650,
-                    "height": 800
-                  }
-                },
-                {
-                  "Duration": 12.2,
-                  "TextFadeDuration": 10.2,
-                  "String": "At Raigad, Maharani Yesubai sends young Rajaram Maharaj south to Jinji, while she stays to hold the capital and is taken captive.",
-                  "TextRect": {
-                    "x": 1050,
-                    "y": 580,
-                    "width": 1650,
-                    "height": 800
-                  }
-                },
-                {
-                  "Duration": 15.1,
-                  "TextFadeDuration": 13.1,
-                  "String": "Santaji Ghorpade and Dhanaji Jadhav ride out with the cavalry, striking Mughal camps across the Deccan. At Tulapur, Santaji even cuts the ropes of the Emperor's own tent.",
-                  "TextRect": {
-                    "x": 1050,
-                    "y": 580,
-                    "width": 1650,
-                    "height": 800
-                  }
-                },
-                {
-                  "Duration": 12.1,
-                  "TextFadeDuration": 10.1,
-                  "String": "And when Rajaram dies in 1700, Maharani Tarabai takes up the fight for her young son, leading the Marathas for seven more years.",
-                  "TextRect": {
-                    "x": 1050,
-                    "y": 580,
-                    "width": 1650,
-                    "height": 800
-                  }
-                },
-                {
-                  "Duration": 13.1,
-                  "TextFadeDuration": 11.1,
-                  "String": "Aurangzeb never returned north. He died in the Deccan in 1707, his treasury empty. Within decades, Maratha horsemen rode to Attock and Delhi.",
-                  "TextRect": {
-                    "x": 1050,
-                    "y": 580,
-                    "width": 1650,
-                    "height": 800
-                  }
-                },
-                {
-                  "Duration": 11.3,
-                  "TextFadeDuration": 9.3,
-                  "String": "History remembers Sambhaji Maharaj as Dharmaveer: the hero who would not yield. The flame of Swarajya would not die.",
-                  "TextRect": {
-                    "x": 1050,
-                    "y": 580,
-                    "width": 1650,
-                    "height": 800
+                    "x": 1020,
+                    "y": 560,
+                    "width": 1680,
+                    "height": 420
                   }
                 }
               ]

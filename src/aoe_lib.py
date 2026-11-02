@@ -20,9 +20,14 @@ from AoE2ScenarioParser.datasets.trigger_lists import (
     ColorMood,
 )
 import os as _os
+import hashlib as _hashlib
+import json as _json
 
 # Campaign driver can map generator filenames to final campaign filenames and chapter titles.
 RENAME = {}      # old filename -> (new filename, chapter heading)
+VO_REGISTRY = {} # vo_name -> (speaker, text)
+_VO_MAN_PATH = _os.path.join(_os.path.dirname(_os.path.dirname(_os.path.abspath(__file__))), "assets", "sounds", "vo_durations.json")
+VO_DURATIONS = _json.load(open(_VO_MAN_PATH)) if _os.path.exists(_VO_MAN_PATH) else {}
 
 # Portraits for characters who speak in narration but are not on the map.
 PORTRAITS = {
@@ -172,6 +177,8 @@ class Mission:
         p.food, p.wood, p.gold, p.stone = food, wood, gold, stone
         p.population_cap = pop
         p.human = human
+        if not human:
+            p.set_immobile_ai()
         if color is not None:
             # PlayerColorId is 1-based (BLUE=1..ORANGE=8); the scenario file stores 0-7.
             # Writing the raw id gave ORANGE an invalid index 8 and crashed the game.
@@ -200,7 +207,7 @@ class Mission:
         x = max(1, min(self.size - 2, x))     # keep every object inside the map
         y = max(1, min(self.size - 2, y))
         u = self.um.add_unit(pid, cid, x + 0.5, y + 0.5, rotation=rot)
-        if const in SHIPS:
+        if const in SHIPS or const in (B.DOCK, B.HARBOR):
             self._ship_units.append((x, y))
         else:
             self._land_units.append((x, y, FOOT.get(const, 0)))
@@ -261,9 +268,15 @@ class Mission:
     def line(self, trig, who, text, secs=None, cam=None, panel=PanelLocation.TOP, named=True):
         """One line of narration/dialogue: portrait + speaker name, optional map reveal at cam.
         named=False shows the portrait without a 'Name:' prefix (narration about someone)."""
-        secs = secs or max(7, min(16, len(text) // 13 + 3))
+        speaker = who if isinstance(who, str) else "Narrator"
+        vo_hash = _hashlib.md5(f"{speaker}|{text}".encode("utf-8")).hexdigest()[:10]
+        vo_name = f"sw_vo_{vo_hash}"
+        VO_REGISTRY[vo_name] = (speaker, text)
+        base_secs = secs or max(7, min(16, len(text) // 13 + 3))
+        vo_dur = VO_DURATIONS.get(vo_name, 0)
+        secs = max(base_secs, int(math.ceil(vo_dur)) + 2) if vo_dur else base_secs
         msg = f"{who}: {text}" if (isinstance(who, str) and named) else text
-        kw = {}
+        kw = {"sound_name": vo_name, "play_sound": 1}
         pid = self._portrait(who)
         if pid is not None:
             kw["object_list_unit_id"] = pid
@@ -349,6 +362,7 @@ class Mission:
         trig.new_effect.display_instructions(
             source_player=1, message=msg, display_time=time,
             instruction_panel_position=PanelLocation.TOP)
+        trig.new_effect.send_chat(source_player=1, message=msg)
 
     def victory(self, trig, msg=None, epilogue=None):
         """Declare victory, optionally after a chain of epilogue lines (post-mission narration)."""
@@ -388,8 +402,15 @@ class Mission:
     def wave(self, name, pid, after, comp, sx, sy, tx, ty, enabled=True, msg=None,
              repeat_every=None):
         """Spawn a war band at (sx,sy) after `after` seconds and send it to (tx,ty)."""
+        gate = None
+        if repeat_every and after > repeat_every:
+            gate = self.trig(name + " (start)", enabled=enabled)
+            gate.new_condition.timer(timer=after - repeat_every)
+            enabled = False
         t = self.trig(name, enabled=enabled, looping=bool(repeat_every))
         t.new_condition.timer(timer=after if not repeat_every else repeat_every)
+        if gate is not None:
+            gate.new_effect.activate_trigger(trigger_id=t.trigger_id)
         off = 0
         for const, n in comp:
             self.spawn(t, pid, const, n, sx, sy + off)
@@ -402,7 +423,7 @@ class Mission:
         t.new_effect.activate_trigger(trigger_id=go.trigger_id)
         if repeat_every:
             go.new_effect.deactivate_trigger(trigger_id=go.trigger_id)
-        return t
+        return gate if gate is not None else t
 
     def area_task(self, trig, pid, area, tx, ty, action=ActionType.ATTACK_MOVE):
         x1, y1, x2, y2 = area
@@ -417,6 +438,9 @@ class Mission:
     def resource(self, trig, pid, attr, amount):
         trig.new_effect.modify_resource(quantity=amount, tribute_list=attr,
                                         source_player=pid, operation=Operation.ADD)
+
+    def dead(self, trig, unit):
+        trig.new_condition.destroy_object(unit_object=unit.reference_id)
 
     def cleared(self, trig, pid, area, otype=ObjectType.MILITARY, const=None):
         """Condition: player pid has no objects of otype (or const) left in area."""
@@ -532,6 +556,48 @@ class Mission:
             if t.terrain_id in WATER or t.terrain_id in (T.SHALLOWS, T.BEACH):
                 t.elevation = 0
         self.smooth()
+        # Populate safe Gaia resource clusters (Gold, Stone, Forage, Deer) on open land
+        occupied = set()
+        for u in self.um.get_all_units():
+            ux, uy = int(u.x), int(u.y)
+            for dx in range(-5, 6):
+                for dy in range(-5, 6):
+                    occupied.add((ux + dx, uy + dy))
+        for rtype, count, cluster in (
+            (O.GOLD_MINE, 4, 5),
+            (O.STONE_MINE, 3, 4),
+            (O.FORAGE_BUSH, 3, 6),
+            (U.DEER, 3, 4),
+        ):
+            placed = 0
+            for _ in range(200):
+                if placed >= count:
+                    break
+                rx = self.rng.randint(14, self.size - 16)
+                ry = self.rng.randint(14, self.size - 16)
+                if (rx, ry) in occupied:
+                    continue
+                t0 = self.tile(rx, ry)
+                if t0 is None or t0.terrain_id in WATER or t0.terrain_id in FOREST or t0.elevation > 2:
+                    continue
+                ok = True
+                pts = []
+                for k in range(cluster):
+                    px, py = rx + (k % 3), ry + (k // 3)
+                    tk = self.tile(px, py)
+                    if tk is None or (px, py) in occupied or tk.terrain_id in WATER or tk.terrain_id in FOREST:
+                        ok = False
+                        break
+                    pts.append((px, py))
+                if not ok:
+                    continue
+                cid = rtype.ID if hasattr(rtype, "ID") else int(rtype)
+                for px, py in pts:
+                    self.um.add_unit(0, cid, px + 0.5, py + 0.5, rotation=0.0)
+                    for dx in range(-4, 5):
+                        for dy in range(-4, 5):
+                            occupied.add((px + dx, py + dy))
+                placed += 1
         # Sanitize unused effect fields to -1 to match official DE campaign binaries
         from AoE2ScenarioParser.datasets import effects as _asp_effects
         for trig in self.tm.triggers:

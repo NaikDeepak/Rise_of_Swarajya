@@ -141,6 +141,28 @@ def main():
             src_j = os.path.join(ROOT, "Rise_of_Swarajya" + ext)
             if os.path.exists(src_j):
                 shutil.copy2(src_j, os.path.join(game_camp, "Rise_of_Swarajya" + ext))
+        # Sync custom storyboard PNGs and Wwise .wem voiceover audio
+        src_tex = os.path.join(ROOT, "assets", "textures", "campaign", "swarajya")
+        src_snd = os.path.join(ROOT, "assets", "sounds")
+        steam_data = os.path.expanduser(
+            "~/Library/Application Support/Steam/steamapps/common/AoE2DE/AgeOfEmpires2Data"
+        )
+        tex_targets = [os.path.join(game_profile, "widgetui", "textures", "campaign", "swarajya")]
+        snd_targets = [os.path.join(game_profile, "resources", "_common", "drs", "sounds")]
+        if os.path.isdir(steam_data):
+            tex_targets.append(os.path.join(steam_data, "widgetui", "textures", "campaign", "swarajya"))
+            snd_targets.append(os.path.join(steam_data, "resources", "_common", "drs", "sounds"))
+        if os.path.isdir(src_tex):
+            for tt in tex_targets:
+                if os.path.isdir(tt):
+                    shutil.rmtree(tt)
+                shutil.copytree(src_tex, tt)
+        if os.path.isdir(src_snd):
+            for st in snd_targets:
+                os.makedirs(st, exist_ok=True)
+                for fn in os.listdir(src_snd):
+                    if fn.endswith(".wem"):
+                        shutil.copy2(os.path.join(src_snd, fn), os.path.join(st, fn))
         print("synced to in-game folder:", game_scen)
 
 

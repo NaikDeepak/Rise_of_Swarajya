@@ -95,20 +95,18 @@ def crown_of_conflict():
     m.arrive(r1, sambhaji, rajgad)
     m.handover(r1, 3, 1, rajgad, ObjectType.BUILDING)
     m.handover(r1, 3, 1, rajgad, ObjectType.MILITARY)
+    m.set_var(r1, 1, 1)
     m.say(r1, "Rajgad's killedar opens the gates: 'Shivaji Maharaj's son is our king.'", 10)
     m.chain(o1, r1)
     r2 = m.trig("Pratapgad declares", enabled=False)
     m.arrive(r2, sambhaji, prat)
     m.handover(r2, 3, 1, prat, ObjectType.BUILDING)
     m.handover(r2, 3, 1, prat, ObjectType.MILITARY)
+    m.set_var(r2, 2, 1)
     m.say(r2, "Pratapgad, where Shivaji faced Afzal Khan, raises its flag for his son.", 10)
     m.chain(o1, r2)
-    for t in (r1, r2):
-        t.new_effect.activate_trigger(trigger_id=o2.trigger_id)
-    o2.new_condition.objects_in_area(quantity=1, object_list=B.WATCH_TOWER.ID, source_player=1,
-                                     area_x1=50, area_y1=24, area_x2=62, area_y2=36)
-    o2.new_condition.objects_in_area(quantity=1, object_list=B.WATCH_TOWER.ID, source_player=1,
-                                     area_x1=18, area_y1=34, area_x2=30, area_y2=46)
+    m.need_var(o2, 1, 1)
+    m.need_var(o2, 2, 1)
     m.say(o2, "With the army and the forts behind him, the council can no longer refuse. March on Raigad.", 10)
 
     o3 = m.objective("Obj 3: Raigad", "Bring Sambhaji Raje to the gates of Raigad.", 3, enabled=False)

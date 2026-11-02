@@ -71,7 +71,7 @@ def pratapgad():
                  desc="Netaji Palkar. Sarnaubat of the cavalry, called 'the second Shivaji' for his speed.")
     m.hero_setup("Afzal Khan", hp=300, desc="Afzal Khan. Towering Adilshahi general who has sworn to bring Shivaji back to Bijapur in chains.")
     m.mood(ColorMood.JUNGLE)
-    m.story([
+    _, last_s = m.story([
         "1659. Bijapur has had enough of the rebel Shivaji. General Afzal Khan marches with a vast army, desecrating temples at Tuljapur and Pandharpur on the way.",
         ("Rajmata Jijabai", "This is the man who killed your elder brother Sambhaji at Kanakgiri. Go with Bhavani's blessing, Shivba. But go armoured."),
         ("Bahirji Naik", "Raje, my men are in the Khan's camp as water-carriers. He hides a dagger in his sleeve. He means to kill you at the meeting.", (96, 104)),
@@ -79,10 +79,11 @@ def pratapgad():
         ("Netaji Palkar", "My horsemen and Moropant's infantry wait in the Jawali forest. At the cannon's signal, we fall on his army.", (64, 38)),
         "Take Shivaji Maharaj to the pavilion. Do not attack before the meeting: the Adilshahi army is neutral.",
     ])
-    intel = m.trig("Bahirji: Jawali paths")
-    intel.new_condition.timer(timer=40)
+    intel = m.trig("Bahirji: Jawali paths", enabled=False)
+    intel.new_condition.timer(timer=8)
     m.reveal(intel, [(64, 38), (40, 72), (72, 64), (96, 108)])
     m.line(intel, "Bahirji Naik", "I have marked our hidden bands and the Khan's camp at Par. The forest paths are yours, Raje.")
+    m.chain(last_s, intel)
 
     o1 = m.objective("Obj 1: The meeting", "Bring Shivaji Maharaj to the pavilion at the foot of Pratapgad.", 1)
     m.arrive(o1, shivaji, pav)
@@ -308,17 +309,18 @@ def lal_mahal():
     m.hero_setup("Babaji Deshpande", hp=120, attack=2, desc="Babaji Deshpande. Chimnaji's brother, Shivaji's guide in the dark.")
     m.hero_setup("Shaista Khan", desc="Shaista Khan. Aurangzeb's maternal uncle, Mughal viceroy of the Deccan, asleep in Shivaji's own house.")
     m.mood(ColorMood.NIGHT)
-    m.story([
+    _, last_s = m.story([
         "April 1663. Mughal general Shaista Khan has occupied Pune for three years, living in the Lal Mahal: Shivaji's own childhood home.",
         ("Rajmata Jijabai", "I raised you in those rooms, Shivba. Now a Mughal sleeps in them. Take back our honour."),
         ("Bahirji Naik", "It is Ramzan. The camp feasts until midnight and sleeps heavily. A wedding procession has permission to enter town tonight.", (50, 46)),
         ("Shivaji Maharaj", "Then we are wedding guests. Four hundred of us. Quietly."),
         "Enter the Lal Mahal compound without raising the alarm. The Mughal army is neutral for now. If you kill too many sentries, the whole camp will wake.",
     ])
-    intel = m.trig("Bahirji: Pune lanes")
-    intel.new_condition.timer(timer=30)
+    intel = m.trig("Bahirji: Pune lanes", enabled=False)
+    intel.new_condition.timer(timer=8)
     m.reveal(intel, [(50, 46), (25, 30), (25, 70), (50, 80)])
     m.line(intel, "Bahirji Naik", "The guard posts are marked, Raje. The kitchen wall on the south side is old and cracked.")
+    m.chain(last_s, intel)
 
     alarm = m.trig("Alarm")
     alarm.new_condition.own_fewer_objects(quantity=initial_mil - 4, source_player=2,
@@ -444,24 +446,25 @@ def surat():
                  desc="Bahirji Naik. Spent weeks in Surat posing as a beggar, mapping every warehouse.")
     m.hero_setup("Netaji Palkar", hp=200, attack=4, melee_armor=1,
                  desc="Netaji Palkar. Sarnaubat of the Maratha cavalry. Excellent mobility and raiding.")
-    m.story([
+    _, last_s = m.story([
         "January 1664. Mughal armies have ravaged Maharashtra for three years. Swarajya needs gold, and Surat, the Mughals' richest port, has plenty.",
         ("Bahirji Naik", "Raje, I have begged in every lane of Surat. The richest houses are Virji Vora's and Haji Zahid Beg's. The walls are mud.", (60, 56)),
         ("Shivaji Maharaj", "We take from the Emperor's port what his armies took from our villages. No temple, no mosque, no church is to be touched."),
         ("Inayat Khan", "Close the castle gates! Let the merchants fend for themselves!", (36, 74)),
         "Collect 3000 gold by sacking the bazaars, then ride home before the Mughal relief army arrives. The English factory is neutral: leave it alone.",
     ])
-    intel = m.trig("Bahirji: Surat map")
-    intel.new_condition.timer(timer=25)
+    intel = m.trig("Bahirji: Surat map", enabled=False)
+    intel.new_condition.timer(timer=8)
     m.reveal(intel, [(48, 44), (72, 44), (46, 64), (74, 66), (60, 40), (60, 70)])
     m.line(intel, "Bahirji Naik", "Every warehouse is marked on your map. Strike fast and keep away from the castle guns.")
+    m.chain(last_s, intel)
 
     names = ["Mirza Ali", "Virji Vora", "Haji Zahid Beg", "spice market", "cloth market", "jewellers"]
     for mk, nm in zip(markets, names):
         t = m.trig(f"Loot: {nm}")
         t.new_condition.destroy_object(unit_object=mk.reference_id)
-        m.gold(t, 1, 600)
-        m.say(t, f"The {nm} warehouses are emptied: +600 gold.", 6)
+        m.gold(t, 1, 750)
+        m.say(t, f"The {nm} warehouses are emptied: +750 gold.", 6)
 
     o1 = m.objective("Obj 1: Treasury", "Collect 3000 gold from Surat's bazaars.", 1)
     o1.new_condition.accumulate_attribute(quantity=3000, attribute=Attribute.GOLD_STORAGE, source_player=1)
@@ -670,11 +673,11 @@ def agra():
 
     # Ram Singh's haveli where Shivaji is confined
     m.blob(T.GRASS_FOUNDATION, 42, 52, 4, 0)
-    m.ring_walls(2, 42, 52, 5, wall=B.PALISADE_WALL, gaps=(90,))
+    m.ring_walls(2, 42, 52, 5, wall=B.PALISADE_WALL, gaps=(70, 90, 110))
     shivaji = m.unit(1, H.PRITHVIRAJ, 41, 51, name="Shivaji Maharaj")
     sambhaji = m.unit(1, U.VILLAGER_MALE, 43, 51, name="Sambhaji Raje (age 9)")
     hiroji = m.unit(1, U.VILLAGER_MALE, 42, 53, name="Hiroji Farzand")
-    m.group(2, U.LONG_SWORDSMAN, 4, 42, 60, cols=4)
+    m.group(2, U.LONG_SWORDSMAN, 4, 35, 58, cols=2)
     m.camera(1, 42, 52)
     kitchen = (44, 58, 50, 64)
     m.blob(T.DIRT_1, 47, 61, 2, 0)
@@ -817,7 +820,7 @@ def sinhagad():
     m.arrive(o1, tanaji, cliff)
     o1.new_effect.deactivate_trigger(trigger_id=early.trigger_id)
     m.say(o1, "Rope by rope, the Mavalas climb the sheer cliff in the dark and drop inside the walls!", 10)
-    m.teleport_area(o1, 1, (18, 34, 38, 54), 46, 48)
+    m.teleport_area(o1, 1, (10, 30, 40, 98), 46, 48)
 
     o2 = m.objective("Obj 2: Udaybhan", "Defeat Udaybhan Rathod, the fort commander.", 2, enabled=False)
     o2.new_condition.destroy_object(unit_object=udaybhan.reference_id)

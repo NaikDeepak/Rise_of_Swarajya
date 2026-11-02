@@ -74,8 +74,10 @@ def build():
         "Lead the Mavalas up the road to Torna and take it. Shivaji Raje must survive.",
     ])
 
-    o1 = m.objective("Obj 1: Seize Torna", "Defeat the garrison of Torna fort.", 1)
+    o1 = m.objective("Obj 1: Seize Torna", "Defeat the Killedar and garrison of Torna fort.", 1)
+    m.dead(o1, killedar)
     m.cleared(o1, 2, torna)
+    m.present(o1, 1, torna, otype=ObjectType.MILITARY, qty=1)
     m.handover(o1, 2, 1, torna, ObjectType.BUILDING)
     m.say(o1, "Torna is ours! In its ruins the Mavalas find a buried treasure — gold and stone for a new capital.", 12)
     m.gold(o1, 1, 800)
