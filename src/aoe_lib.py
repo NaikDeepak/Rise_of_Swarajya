@@ -252,8 +252,14 @@ class Mission:
             return self.heroes[who][1].unit_const
         return PORTRAITS.get(who)
 
+    def _cam_move(self, trig, x, y):
+        trig.new_effect.create_object(
+            source_player=1, object_list_unit_id=O.MAP_REVEALER.ID,
+            location_x=int(x), location_y=int(y)
+        )
+
     def line(self, trig, who, text, secs=None, cam=None, panel=PanelLocation.TOP, named=True):
-        """One line of narration/dialogue: portrait + speaker name, optional camera move.
+        """One line of narration/dialogue: portrait + speaker name, optional map reveal at cam.
         named=False shows the portrait without a 'Name:' prefix (narration about someone)."""
         secs = secs or max(7, min(16, len(text) // 13 + 3))
         msg = f"{who}: {text}" if (isinstance(who, str) and named) else text
@@ -263,9 +269,9 @@ class Mission:
             kw["object_list_unit_id"] = pid
         trig.new_effect.display_instructions(source_player=1, message=msg, display_time=secs,
                                              instruction_panel_position=panel, **kw)
+        trig.new_effect.send_chat(source_player=1, message=msg)
         if cam is not None:
-            trig.new_effect.change_view(source_player=1, location_x=int(cam[0]),
-                                        location_y=int(cam[1]), scroll=0, quantity=0)
+            self._cam_move(trig, cam[0], cam[1])
         return secs
 
     def story(self, lines, start_delay=1, gap=None, first_trigger_name="Story", enabled=True):
@@ -287,12 +293,6 @@ class Mission:
             else:
                 first = t
             prev = t
-        if prev is not None and cam is not None and self._home_cam:
-            back = self.trig(f"{first_trigger_name} camera home", enabled=False)
-            back.new_condition.timer(timer=prev_secs)
-            back.new_effect.change_view(source_player=1, location_x=self._home_cam[0],
-                                        location_y=self._home_cam[1], scroll=0, quantity=0)
-            prev.new_effect.activate_trigger(trigger_id=back.trigger_id)
         return first, prev
 
     def mood(self, color_mood, after=0, name="Setup: atmosphere"):
@@ -532,6 +532,15 @@ class Mission:
             if t.terrain_id in WATER or t.terrain_id in (T.SHALLOWS, T.BEACH):
                 t.elevation = 0
         self.smooth()
+        # Sanitize unused effect fields to -1 to match official DE campaign binaries
+        from AoE2ScenarioParser.datasets import effects as _asp_effects
+        for trig in self.tm.triggers:
+            for eff in trig.effects:
+                used = _asp_effects.attributes.get(eff.effect_type, ())
+                if "operation" not in used:
+                    eff.operation = -1
+                if "variable" not in used:
+                    eff.variable = -1
         # Campaign naming: final filename + chapter heading on the briefing screen
         if self.filename in RENAME:
             new, heading = RENAME[self.filename]

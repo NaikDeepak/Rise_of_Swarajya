@@ -3,6 +3,7 @@
 Usage:  python campaign.py            (writes into ../out/campaign)
 """
 import os
+import shutil
 import struct
 import sys
 
@@ -13,7 +14,9 @@ import shivaji_missions as sw
 import sambhaji_missions as sb
 
 CAMPAIGN_NAME = "Rise of Swarajya"
+ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
 DEST = os.path.join(OUT, "campaign")
+SCENARIOS_DIR = os.path.join(ROOT, "scenarios")
 
 # (builder, generator filename, final filename, act, chapter title, year)
 CHAPTERS = [
@@ -107,6 +110,38 @@ def main():
     write_campaign(cpath, CAMPAIGN_NAME, scenarios)
     name, entries = read_campaign(cpath)
     print("campaign:", name, len(entries), "scenarios,", os.path.getsize(cpath), "bytes")
+    os.makedirs(SCENARIOS_DIR, exist_ok=True)
+    for _, _, new, *_ in CHAPTERS:
+        fn = new + ".aoe2scenario"
+        shutil.copy2(os.path.join(DEST, fn), os.path.join(SCENARIOS_DIR, fn))
+    shutil.copy2(cpath, os.path.join(ROOT, "Rise_of_Swarajya.aoe2campaign"))
+    game_profile = os.path.expanduser(
+        "~/Library/Application Support/Feral Interactive/Age Of Empires II/VFS/User/Games/Age of Empires 2 DE/76561198054484915"
+    )
+    if os.path.isdir(game_profile):
+        game_scen = os.path.join(game_profile, "resources", "_common", "scenario")
+        game_camp = os.path.join(game_profile, "resources", "_common", "campaign")
+        mod_camp = os.path.join(game_profile, "mods", "local", "Rise of Swarajya", "resources", "_common", "campaign")
+        mod_scen = os.path.join(game_profile, "mods", "local", "Rise of Swarajya", "resources", "_common", "scenario")
+        os.makedirs(game_scen, exist_ok=True)
+        os.makedirs(game_camp, exist_ok=True)
+        # Remove any duplicate .aoe2campaign files from resources/_common/campaign or mods/local
+        for d in (game_camp, mod_camp):
+            if os.path.isdir(d):
+                for old_f in os.listdir(d):
+                    if "Swarajya" in old_f:
+                        os.remove(os.path.join(d, old_f))
+        for _, _, new, *_ in CHAPTERS:
+            fn = new + ".aoe2scenario"
+            shutil.copy2(os.path.join(DEST, fn), os.path.join(game_scen, fn))
+            if os.path.isdir(mod_scen):
+                shutil.copy2(os.path.join(DEST, fn), os.path.join(mod_scen, fn))
+        shutil.copy2(cpath, os.path.join(game_camp, "Rise_of_Swarajya.aoe2campaign"))
+        for ext in ("_layout.json", ".json"):
+            src_j = os.path.join(ROOT, "Rise_of_Swarajya" + ext)
+            if os.path.exists(src_j):
+                shutil.copy2(src_j, os.path.join(game_camp, "Rise_of_Swarajya" + ext))
+        print("synced to in-game folder:", game_scen)
 
 
 if __name__ == "__main__":

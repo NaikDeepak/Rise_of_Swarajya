@@ -3,7 +3,10 @@
 # Copies files only. Never deletes or overwrites anything except earlier copies of these same files.
 cd "$(dirname "$0")"
 BASE="$HOME/Library/Application Support/Feral Interactive/Age Of Empires II/VFS/User/Games/Age of Empires 2 DE"
-PROFILE=$(ls -d "$BASE"/*/ 2>/dev/null | grep -E '/[0-9]+/$' | head -1)
+PROFILE=$(ls -d "$BASE"/*/ 2>/dev/null | grep -E '/[1-9][0-9]*/$' | head -1)
+if [ -z "$PROFILE" ]; then
+  PROFILE=$(ls -d "$BASE"/*/ 2>/dev/null | grep -E '/[0-9]+/$' | head -1)
+fi
 if [ -z "$PROFILE" ]; then
   echo "Could not find your AoE2 DE profile folder under:"
   echo "  $BASE"
