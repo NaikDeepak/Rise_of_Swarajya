@@ -61,5 +61,13 @@ Status Legend:
 
 ---
 
+## Phase 8: Binary-Level Fixes for Resign/Quit Return Path, Fast Scenario Load & Storyboard Slideshows
+- `[DONE]` **Fix Stuck on `"Game Paused"` on Resign / Quit Current Game (`0x102cd7d7c..0x102cd7e0c`, `src/campaign.py`, `Install_Rise_of_Swarajya.command`):** Disassembled `CampaignScenarioSelection` return path in `Age Of Empires II` (`arm64`) and verified that when returning from a campaign scenario (via *Resign*, *Quit Current Game*, or *Victory*), the engine reads the 256-byte internal `CAMPAIGN_NAME` (`"Rise of Swarajya"` with spaces) and reloads `resources/_common/campaign/Rise of Swarajya.aoe2campaign`. Installed `Rise of Swarajya.aoe2campaign` (matching `CAMPAIGN_NAME` byte-for-byte) in `resources/_common/campaign/` and set per-scenario metadata tuples to `(fn, fn)` matching all official and custom DE campaigns.
+- `[DONE]` **Fix Storyboard Slideshow (`IntroSequence` / `OutroSequence`) Lookup (`0x102cd5500..0x102cd56d8`, `src/build_assets.py`, `src/campaign.py`):** Verified from `0x102cd5504..0x102cd552c` that the engine resolves `<CAMPAIGN_NAME>.json` (`resources/_common/campaign/Rise of Swarajya.json` with spaces) and indexes `Scenarios[idx].IntroSequence`. Generated and synced both `Rise of Swarajya.json` and `Rise_of_Swarajya.json` (plus `_layout.json` variants) across `resources/_common/campaign/` and `widgetui/` in both the User Profile and `AgeOfEmpires2Data`.
+- `[DONE]` **Fix Slow Scenario Load via DE v1.46+ `Files.ai_files` (`AI2Struct`) & `Fe Immobile AI` (`0x1033e2238`, `0x102ccad04`, `src/aoe_lib.py`):** Prevented the engine from compiling the 250,000-line `PromiDE` standard skirmish AI 7 times on scenario load by setting `human=False`, `ai_type=0` (`Custom AI`), and `personality="Fe Immobile AI.ai"` on Players 2–8, keeping `PlayerDataTwo.ai_files` empty (`ai_per_file_text=""` so `SaveMemoryToFile` is never called), embedding Forgotten Empires' 35-line `Fe Immobile AI.per` inside `Files.ai_files` (`AI2Struct`), and syncing `Fe Immobile AI.ai` + `Fe Immobile AI.per` to `resources/_common/ai/`.
+- `[DONE]` **Zero-Deletion Backup Archive (`backups/`):** Replaced all file deletions with non-destructive moves to `backups/` (`backups/superseded_game_files/` and `backups/build_out_archive/`), documented in `backups/README.md`.
+
+---
+
 ## User Playtest Notes / Future Additions
 *(Add any playtest feedback or new ideas below)*

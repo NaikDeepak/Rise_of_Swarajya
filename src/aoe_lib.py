@@ -29,6 +29,44 @@ VO_REGISTRY = {} # vo_name -> (speaker, text)
 _VO_MAN_PATH = _os.path.join(_os.path.dirname(_os.path.dirname(_os.path.abspath(__file__))), "assets", "sounds", "vo_durations.json")
 VO_DURATIONS = _json.load(open(_VO_MAN_PATH)) if _os.path.exists(_VO_MAN_PATH) else {}
 
+# Official Forgotten Empires Immobile AI script (embedded in Files.ai_files as AI2Struct,
+# matching official DE campaigns incam1..3, acam1, rcam1 and custom DE campaigns).
+FE_IMMOBILE_AI_PER = """(defrule
+\t(true)
+=>
+\t(set-strategic-number sn-maximum-food-drop-distance 0)
+\t(set-strategic-number sn-maximum-wood-drop-distance 0)
+\t(set-strategic-number sn-maximum-gold-drop-distance 0)
+\t(set-strategic-number sn-maximum-hunt-drop-distance 0)
+\t(set-strategic-number sn-maximum-stone-drop-distance 0)
+\t(set-strategic-number sn-food-gatherer-percentage 0)
+\t(set-strategic-number sn-wood-gatherer-percentage 0)
+\t(set-strategic-number sn-gold-gatherer-percentage 0)
+\t(set-strategic-number sn-stone-gatherer-percentage 0)
+\t(set-strategic-number sn-cap-civilian-explorers 0)
+\t(set-strategic-number sn-percent-civilian-explorers 0) 
+\t(disable-self)
+)
+
+(defrule
+\t(true)
+=>
+\t(set-strategic-number sn-percent-enemy-sighted-response 100)
+\t(set-strategic-number sn-hits-before-alliance-change 25)
+\t(set-strategic-number sn-percent-attack-soldiers 0)
+\t(set-strategic-number sn-task-ungrouped-soldiers 0)
+\t(set-strategic-number sn-number-attack-groups 0)
+\t(set-strategic-number sn-enemy-sighted-response-distance 10)
+\t(set-strategic-number sn-total-number-explorers 0)
+\t(set-strategic-number sn-relic-return-distance 0)
+\t(set-strategic-number sn-minimum-town-size 0)
+\t(set-strategic-number sn-maximum-town-size 0)
+\t(set-strategic-number sn-mill-max-distance 0)
+\t(set-strategic-number sn-Wonders-on-map 0)
+\t(disable-self)
+)
+"""
+
 # Portraits for characters who speak in narration but are not on the map.
 PORTRAITS = {
     "Rajmata Jijabai": H.SANYOGITA.ID,
@@ -177,6 +215,14 @@ class Mission:
         p.food, p.wood, p.gold, p.stone = food, wood, gold, stone
         p.population_cap = pop
         p.human = human
+        if human:
+            p.ai_type = 1
+            p.personality = "PromiDE"
+            p.ai_script = ""
+        else:
+            p.ai_type = 0
+            p.personality = "Fe Immobile AI.ai"
+            p.ai_script = ""
         if color is not None:
             # PlayerColorId is 1-based (BLUE=1..ORANGE=8); the scenario file stores 0-7.
             # Writing the raw id gave ORANGE an invalid index 8 and crashed the game.
@@ -596,8 +642,32 @@ class Mission:
                         for dy in range(-4, 5):
                             occupied.add((px + dx, py + dy))
                 placed += 1
-        # Put pre-placed AI units into Defensive Stance at t=1 so they hold their posts
-        # without requiring a custom AI script file that blocks scenario load/teardown.
+        # Configure DE v1.46+ Files.ai_files (AI2Struct) with Fe Immobile AI.per and
+        # ensure every non-human player slot (1..8) uses Fe Immobile AI.ai with empty
+        # PlayerDataTwo.ai_files so the engine never compiles 250k-line PromiDE for AI slots.
+        from AoE2ScenarioParser.sections.aoe2_file_section import AoE2FileSection
+        for pid in range(1, 9):
+            p = self.pm.players[pid]
+            if pid == 1:
+                p.human = True
+                p.ai_type = 1
+                p.personality = "PromiDE"
+                p.ai_script = ""
+            else:
+                p.human = False
+                p.ai_type = 0
+                p.personality = "Fe Immobile AI.ai"
+                p.ai_script = ""
+        files_sec = self.s.sections["Files"]
+        files_sec.ai_files_present = 1
+        files_sec.number_of_ai_files = 1
+        ai_entry = AoE2FileSection.from_model(
+            files_sec.struct_models["AI2Struct"], files_sec._uuid, set_defaults=True
+        )
+        ai_entry.ai_file_name = "Fe Immobile AI.per"
+        ai_entry.ai_file = FE_IMMOBILE_AI_PER
+        files_sec.ai_files = [ai_entry]
+        # Put pre-placed AI units into Defensive Stance at t=1 so they hold their posts.
         hold_trig = self.trig("AI Defensive Stance", enabled=True)
         hold_trig.new_condition.timer(timer=1)
         for pid in range(2, self.pm.active_players + 1):

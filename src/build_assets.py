@@ -268,10 +268,10 @@ def main():
     # Choose background per Act so each Act has rich Indian parchment art (no Mughal backgrounds)
     act_bg = {
         "Act I: The Foundation": "textures/campaign/fcam6/prithviraj_background.dds",
-        "Act II: The Storm": "textures/campaign/incam3/devapala_background.dds",
-        "Act III: The Chhatrapati": "textures/campaign/fcam6/prithviraj_background.dds",
-        "Act IV: The Chhava": "textures/campaign/incam2/rajendra_background.dds",
-        "Act V: Total War": "textures/campaign/fcam6/prithviraj_background.dds",
+        "Act II: The Defiance": "textures/campaign/incam3/devapala_background.dds",
+        "Act III: The Crown": "textures/campaign/fcam6/prithviraj_background.dds",
+        "Act IV: The Storm": "textures/campaign/incam2/rajendra_background.dds",
+        "Act V: The Last Stand": "textures/campaign/fcam6/prithviraj_background.dds",
     }
 
     scenarios_json = []
@@ -307,8 +307,6 @@ def main():
             # Generate 1.png .. N.png in assets/textures/campaign/swarajya/<idx>/<sub>/
             seq_dir = os.path.join(TEX_DIR, str(idx), sub)
             os.makedirs(seq_dir, exist_ok=True)
-            for old_png in glob.glob(os.path.join(seq_dir, "*.png")):
-                os.remove(old_png)
 
             slides_arr = []
             for s_i, (s_txt, s_dur) in enumerate(zip(texts, slide_durs), 1):
@@ -318,19 +316,11 @@ def main():
                 custom_im = draw_maratha_emblem(im, idx, s_i, is_outro=(sub == "outro"))
                 custom_im.save(os.path.join(seq_dir, f"{s_i}.png"))
 
-                # Smooth pan/zoom ImageRect per slide (JSON Kungfu SlideShow technique)
-                img_rects = [
-                    {"x": 910, "y": 540, "width": 2000, "height": 1048},
-                    {"x": 945, "y": 525, "width": 2036, "height": 1066},
-                    {"x": 885, "y": 555, "width": 2000, "height": 1048},
-                    {"x": 925, "y": 535, "width": 2020, "height": 1058},
-                ]
                 slide_obj = {
                     "Duration": round(max(4.5, s_dur), 2),
                     "FadeOutTime": 0.4,
                     "TextFadeDuration": round(max(3.5, s_dur - 1.0), 2),
                     "String": s_txt,
-                    "ImageRect": img_rects[(s_i - 1) % len(img_rects)],
                     "TextRect": {
                         "x": 1020,
                         "y": 560 if s_i % 2 == 1 else 620,
@@ -338,6 +328,8 @@ def main():
                         "height": 420,
                     },
                 }
+                if s_i == 1:
+                    slide_obj["ImageRect"] = {"x": 910, "y": 550, "width": 2000, "height": 1048}
                 slides_arr.append(slide_obj)
 
             scen_entry[seq_key] = {
@@ -355,11 +347,21 @@ def main():
             }
         scenarios_json.append(scen_entry)
 
-    # Prune any old sw_vo_*.wem files no longer referenced in VO_REGISTRY
+    # Move any old sw_vo_*.wem files no longer referenced in VO_REGISTRY to backups/wem_backup/
     active_wems = {f"{k}.wem" for k in aoe_lib.VO_REGISTRY} | {f"rs{i:02d}_{s}.wem" for i in range(1, 16) for s in ("intro", "outro")}
+    wem_backup_dir = os.path.join(ROOT, "backups", "wem_backup")
     for wem_file in glob.glob(os.path.join(SOUNDS_DIR, "*.wem")):
         if os.path.basename(wem_file) not in active_wems:
-            os.remove(wem_file)
+            os.makedirs(wem_backup_dir, exist_ok=True)
+            shutil.move(wem_file, os.path.join(wem_backup_dir, os.path.basename(wem_file)))
+
+    # Write Fe Immobile AI.ai and Fe Immobile AI.per into assets/ai/
+    ai_dir = os.path.join(ROOT, "assets", "ai")
+    os.makedirs(ai_dir, exist_ok=True)
+    with open(os.path.join(ai_dir, "Fe Immobile AI.ai"), "w", encoding="utf-8") as f:
+        f.write("")
+    with open(os.path.join(ai_dir, "Fe Immobile AI.per"), "w", encoding="utf-8") as f:
+        f.write(aoe_lib.FE_IMMOBILE_AI_PER)
 
     with open(os.path.join(SOUNDS_DIR, "vo_durations.json"), "w") as f:
         json.dump(dur_map, f, indent=2)

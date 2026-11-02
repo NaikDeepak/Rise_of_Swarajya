@@ -106,8 +106,8 @@ def main():
     for _, _, new, _, title, _ in CHAPTERS:
         fn = new + ".aoe2scenario"
         data = open(os.path.join(DEST, fn), "rb").read()
-        scenarios.append((new.replace("_", " ")[5:], fn, data))
-    cpath = os.path.join(DEST, "Rise_of_Swarajya.aoe2campaign")
+        scenarios.append((fn, fn, data))
+    cpath = os.path.join(DEST, f"{CAMPAIGN_NAME}.aoe2campaign")
     write_campaign(cpath, CAMPAIGN_NAME, scenarios)
     name, entries = read_campaign(cpath)
     print("campaign:", name, len(entries), "scenarios,", os.path.getsize(cpath), "bytes")
@@ -115,6 +115,7 @@ def main():
     for _, _, new, *_ in CHAPTERS:
         fn = new + ".aoe2scenario"
         shutil.copy2(os.path.join(DEST, fn), os.path.join(SCENARIOS_DIR, fn))
+    shutil.copy2(cpath, os.path.join(ROOT, f"{CAMPAIGN_NAME}.aoe2campaign"))
     shutil.copy2(cpath, os.path.join(ROOT, "Rise_of_Swarajya.aoe2campaign"))
     game_profile = os.path.expanduser(
         "~/Library/Application Support/Feral Interactive/Age Of Empires II/VFS/User/Games/Age of Empires 2 DE/76561198054484915"
@@ -126,21 +127,26 @@ def main():
         mod_scen = os.path.join(game_profile, "mods", "local", "Rise of Swarajya", "resources", "_common", "scenario")
         os.makedirs(game_scen, exist_ok=True)
         os.makedirs(game_camp, exist_ok=True)
-        # Remove any duplicate .aoe2campaign files from resources/_common/campaign or mods/local
-        for d in (game_camp, mod_camp):
+        # Move any superseded underscore .aoe2campaign files to backups/superseded_game_files/ (never delete)
+        backup_dir = os.path.join(ROOT, "backups", "superseded_game_files")
+        for label, d in (("profile_campaign", game_camp), ("mod_campaign", mod_camp)):
             if os.path.isdir(d):
                 for old_f in os.listdir(d):
-                    if "Swarajya" in old_f:
-                        os.remove(os.path.join(d, old_f))
+                    if old_f == "Rise_of_Swarajya.aoe2campaign" or (label == "mod_campaign" and "Swarajya" in old_f):
+                        os.makedirs(os.path.join(backup_dir, label), exist_ok=True)
+                        shutil.move(os.path.join(d, old_f), os.path.join(backup_dir, label, old_f))
         for _, _, new, *_ in CHAPTERS:
             fn = new + ".aoe2scenario"
             shutil.copy2(os.path.join(DEST, fn), os.path.join(game_scen, fn))
             if os.path.isdir(mod_scen):
                 shutil.copy2(os.path.join(DEST, fn), os.path.join(mod_scen, fn))
-        shutil.copy2(cpath, os.path.join(game_camp, "Rise_of_Swarajya.aoe2campaign"))
-        # Sync custom storyboard PNGs and Wwise .wem voiceover audio
+        # The engine looks up <CAMPAIGN_NAME>.aoe2campaign ("Rise of Swarajya.aoe2campaign") when
+        # returning to CampaignScenarioSelection on Resign / Quit Current Game / Victory.
+        shutil.copy2(cpath, os.path.join(game_camp, f"{CAMPAIGN_NAME}.aoe2campaign"))
+        # Sync custom storyboard PNGs, Wwise .wem voiceover audio, and Fe Immobile AI scripts
         src_tex = os.path.join(ROOT, "assets", "textures", "campaign", "swarajya")
         src_snd = os.path.join(ROOT, "assets", "sounds")
+        src_ai = os.path.join(ROOT, "assets", "ai")
         steam_data = os.path.expanduser(
             "~/Library/Application Support/Steam/steamapps/common/AoE2DE/AgeOfEmpires2Data"
         )
@@ -150,6 +156,7 @@ def main():
         ]
         tex_targets = [os.path.join(game_profile, "widgetui", "textures", "campaign", "swarajya")]
         snd_targets = [os.path.join(game_profile, "resources", "_common", "drs", "sounds")]
+        ai_targets = [os.path.join(game_profile, "resources", "_common", "ai")]
         if os.path.isdir(steam_data):
             json_targets.extend([
                 os.path.join(steam_data, "resources", "_common", "campaign"),
@@ -157,6 +164,7 @@ def main():
             ])
             tex_targets.append(os.path.join(steam_data, "widgetui", "textures", "campaign", "swarajya"))
             snd_targets.append(os.path.join(steam_data, "resources", "_common", "drs", "sounds"))
+            ai_targets.append(os.path.join(steam_data, "resources", "_common", "ai"))
         for jt in json_targets:
             os.makedirs(jt, exist_ok=True)
             for stem in ("Rise_of_Swarajya", CAMPAIGN_NAME):
@@ -194,15 +202,18 @@ def main():
                         json.dump(mat_data, mf, indent=2)
         if os.path.isdir(src_tex):
             for tt in tex_targets:
-                if os.path.isdir(tt):
-                    shutil.rmtree(tt)
-                shutil.copytree(src_tex, tt)
+                shutil.copytree(src_tex, tt, dirs_exist_ok=True)
         if os.path.isdir(src_snd):
             for st in snd_targets:
                 os.makedirs(st, exist_ok=True)
                 for fn in os.listdir(src_snd):
                     if fn.endswith(".wem"):
                         shutil.copy2(os.path.join(src_snd, fn), os.path.join(st, fn))
+        if os.path.isdir(src_ai):
+            for at in ai_targets:
+                os.makedirs(at, exist_ok=True)
+                for fn in os.listdir(src_ai):
+                    shutil.copy2(os.path.join(src_ai, fn), os.path.join(at, fn))
         print("synced to in-game folder:", game_scen)
 
 
