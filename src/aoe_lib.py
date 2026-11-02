@@ -306,52 +306,42 @@ class Mission:
         return PORTRAITS.get(who)
 
     def _cam_move(self, trig, x, y):
-        trig.new_effect.create_object(
-            source_player=1, object_list_unit_id=O.MAP_REVEALER.ID,
-            location_x=int(x), location_y=int(y)
-        )
+        pass
 
     def line(self, trig, who, text, secs=None, cam=None, panel=PanelLocation.TOP, named=True):
-        """One line of narration/dialogue: portrait + speaker name, optional map reveal at cam.
+        """One line of narration/dialogue: portrait + speaker name.
         named=False shows the portrait without a 'Name:' prefix (narration about someone)."""
         speaker = who if isinstance(who, str) else "Narrator"
-        vo_hash = _hashlib.md5(f"{speaker}|{text}".encode("utf-8")).hexdigest()[:10]
-        vo_name = f"sw_vo_{vo_hash}"
-        VO_REGISTRY[vo_name] = (speaker, text)
         base_secs = secs or max(7, min(16, len(text) // 13 + 3))
-        vo_dur = VO_DURATIONS.get(vo_name, 0)
-        secs = max(base_secs, int(math.ceil(vo_dur)) + 2) if vo_dur else base_secs
         msg = f"{who}: {text}" if (isinstance(who, str) and named) else text
-        kw = {"sound_name": vo_name, "play_sound": 1}
+        kw = {}
         pid = self._portrait(who)
         if pid is not None:
             kw["object_list_unit_id"] = pid
-        trig.new_effect.display_instructions(source_player=1, message=msg, display_time=secs,
+        trig.new_effect.display_instructions(source_player=1, message=msg, display_time=base_secs,
                                              instruction_panel_position=panel, **kw)
-        trig.new_effect.send_chat(source_player=1, message=msg)
-        if cam is not None:
-            self._cam_move(trig, cam[0], cam[1])
-        return secs
+        return base_secs
 
     def story(self, lines, start_delay=1, gap=None, first_trigger_name="Story", enabled=True):
-        """Chain of timed narration lines. Each line is a string (narrator) or a tuple
-        (speaker, text) / (speaker, text, (cam_x, cam_y)). Returns (first, last) trigger."""
+        """Chain of timed narration lines matching official DE campaign structure.
+        Each chained trigger waits for the previous line's display duration."""
         first = prev = None
-        prev_secs = start_delay
         for i, item in enumerate(lines):
             if isinstance(item, str):
-                who, text, cam = None, item, None
+                who, text = None, item
             else:
                 who, text = item[0], item[1]
-                cam = item[2] if len(item) > 2 else None
             t = self.trig(f"{first_trigger_name} {i + 1}", enabled=(i == 0 and enabled))
-            t.new_condition.timer(timer=start_delay if i == 0 else prev_secs)
-            prev_secs = self.line(t, who, text, gap, cam)
-            if prev is not None:
-                prev.new_effect.activate_trigger(trigger_id=t.trigger_id)
-            else:
+            line_secs = self.line(t, who, text, gap)
+            if i == 0:
+                t.new_condition.timer(timer=start_delay)
                 first = t
+            else:
+                # Timer condition is evaluated once trigger is activated by previous line
+                t.new_condition.timer(timer=prev_secs)
+                prev.new_effect.activate_trigger(trigger_id=t.trigger_id)
             prev = t
+            prev_secs = line_secs
         return first, prev
 
     def mood(self, color_mood, after=0, name="Setup: atmosphere"):
@@ -408,7 +398,6 @@ class Mission:
         trig.new_effect.display_instructions(
             source_player=1, message=msg, display_time=time,
             instruction_panel_position=PanelLocation.TOP)
-        trig.new_effect.send_chat(source_player=1, message=msg)
 
     def victory(self, trig, msg=None, epilogue=None):
         """Declare victory, optionally after a chain of epilogue lines (post-mission narration)."""
@@ -669,14 +658,6 @@ class Mission:
         ai_entry.ai_file_name = "Fe Immobile AI.per"
         ai_entry.ai_file = FE_IMMOBILE_AI_PER
         files_sec.ai_files = [ai_entry]
-        # Put pre-placed AI units into Defensive Stance at t=1 so they hold their posts.
-        hold_trig = self.trig("AI Defensive Stance", enabled=True)
-        hold_trig.new_condition.timer(timer=1)
-        for pid in range(2, self.pm.active_players + 1):
-            hold_trig.new_effect.change_object_stance(
-                source_player=pid,
-                attack_stance=AttackStance.DEFENSIVE_STANCE,
-            )
         # Sanitize unused effect fields to -1 to match official DE campaign binaries
         from AoE2ScenarioParser.datasets import effects as _asp_effects
         for trig in self.tm.triggers:
