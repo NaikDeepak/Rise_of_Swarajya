@@ -265,7 +265,7 @@ class Mission:
                                              instruction_panel_position=panel, **kw)
         if cam is not None:
             trig.new_effect.change_view(source_player=1, location_x=int(cam[0]),
-                                        location_y=int(cam[1]), scroll=1)
+                                        location_y=int(cam[1]), scroll=0, quantity=0)
         return secs
 
     def story(self, lines, start_delay=1, gap=None, first_trigger_name="Story", enabled=True):
@@ -291,7 +291,7 @@ class Mission:
             back = self.trig(f"{first_trigger_name} camera home", enabled=False)
             back.new_condition.timer(timer=prev_secs)
             back.new_effect.change_view(source_player=1, location_x=self._home_cam[0],
-                                        location_y=self._home_cam[1], scroll=1)
+                                        location_y=self._home_cam[1], scroll=0, quantity=0)
             prev.new_effect.activate_trigger(trigger_id=back.trigger_id)
         return first, prev
 
