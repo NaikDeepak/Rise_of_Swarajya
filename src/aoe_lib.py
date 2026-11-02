@@ -31,14 +31,16 @@ VO_DURATIONS = _json.load(open(_VO_MAN_PATH)) if _os.path.exists(_VO_MAN_PATH) e
 
 # Official Forgotten Empires Immobile AI script (embedded in Files.ai_files as AI2Struct,
 # matching official DE campaigns incam1..3, acam1, rcam1 and custom DE campaigns).
-FE_IMMOBILE_AI_PER = """(defrule
+FE_IMMOBILE_AI_PER = """;Ai that's always immobile
+
+(defrule ;villagers
 \t(true)
 =>
-\t(set-strategic-number sn-maximum-food-drop-distance 0)
-\t(set-strategic-number sn-maximum-wood-drop-distance 0)
-\t(set-strategic-number sn-maximum-gold-drop-distance 0)
-\t(set-strategic-number sn-maximum-hunt-drop-distance 0)
-\t(set-strategic-number sn-maximum-stone-drop-distance 0)
+\t(set-strategic-number sn-maximum-food-drop-distance -2)
+\t(set-strategic-number sn-maximum-wood-drop-distance -2)
+\t(set-strategic-number sn-maximum-gold-drop-distance -2)
+\t(set-strategic-number sn-maximum-hunt-drop-distance -2)
+\t(set-strategic-number sn-maximum-stone-drop-distance -2)
 \t(set-strategic-number sn-food-gatherer-percentage 0)
 \t(set-strategic-number sn-wood-gatherer-percentage 0)
 \t(set-strategic-number sn-gold-gatherer-percentage 0)
@@ -47,22 +49,22 @@ FE_IMMOBILE_AI_PER = """(defrule
 \t(set-strategic-number sn-percent-civilian-explorers 0) 
 \t(disable-self)
 )
-
-(defrule
+(defrule ;military
 \t(true)
 =>
 \t(set-strategic-number sn-percent-enemy-sighted-response 100)
 \t(set-strategic-number sn-hits-before-alliance-change 25)
+\t(set-strategic-number sn-number-explore-groups 0)
 \t(set-strategic-number sn-percent-attack-soldiers 0)
 \t(set-strategic-number sn-task-ungrouped-soldiers 0)
 \t(set-strategic-number sn-number-attack-groups 0)
-\t(set-strategic-number sn-enemy-sighted-response-distance 10)
+\t(set-strategic-number sn-enemy-sighted-response-distance 0)
+\t(set-strategic-number sn-sentry-distance 0)
+\t(set-strategic-number sn-defense-distance 0)
+\t(set-strategic-number sn-minimum-town-size 1)
+\t(set-strategic-number sn-maximum-town-size 1)
 \t(set-strategic-number sn-total-number-explorers 0)
 \t(set-strategic-number sn-relic-return-distance 0)
-\t(set-strategic-number sn-minimum-town-size 0)
-\t(set-strategic-number sn-maximum-town-size 0)
-\t(set-strategic-number sn-mill-max-distance 0)
-\t(set-strategic-number sn-Wonders-on-map 0)
 \t(disable-self)
 )
 """
