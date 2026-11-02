@@ -69,7 +69,7 @@ def build():
         "1646. The Deccan bleeds between three thrones: the Adilshahi of Bijapur, the fading Nizamshahi, and the Mughal Empire pressing from the north.",
         ("Rajmata Jijabai Aaisaheb", "Shivba Raje, your father Shahaji Raje serves far away in Bangalore. But these hills and these people deserve a righteous Chhatrapati of their own."),
         ("Chhatrapati Shivaji Maharaj", "At Raireshwar we swore it before Mahadev, Aaisaheb: Hindavi Swarajya. Today the sacred oath becomes a fort."),
-        ("Tanaji Malusare", "Torna stands neglected, Raje. Its killedar sleeps, and Bijapur's eyes are elsewhere.", (60, 40)),
+        ("Tanaji Malusare", "Torna stands neglected, Raje. Its killedar sleeps, and Bijapur's eyes are elsewhere."),
         ("Yesaji Kank", "Then let us wake him. Har Har Mahadev!"),
         "Lead the Mavalas up the road to Torna and take it. Chhatrapati Shivaji Maharaj must survive.",
     ])
