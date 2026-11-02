@@ -25,7 +25,7 @@ def pratapgad():
     m.diplomacy(2, 3, DiplomacyState.NEUTRAL)
 
     fort = fort_on_hill(m, 1, 28, 30, r=7, h=6, towers=4, gate_angles=(45,))
-    shivaji = m.unit(1, H.PRITHVIRAJ, 32, 34, name="Shivaji Maharaj")
+    shivaji = m.unit(1, H.PRITHVIRAJ, 32, 34, name="Chhatrapati Shivaji Maharaj")
     jiva = m.unit(1, U.CHAMPION, 33, 35, name="Jiva Mahala")
     m.group(1, U.CHAMPION, 6, 26, 28, cols=3)
     m.group(1, U.ARCHER, 6, 30, 26, cols=3)
@@ -61,33 +61,33 @@ def pratapgad():
     m.group(2, U.BOMBARD_CANNON, 2, 108, 106, cols=2, spacing=2)
 
     bahirji = m.unit(1, U.SCOUT_CAVALRY, 36, 30, name="Bahirji Naik")
-    m.hero_setup("Shivaji Maharaj", hp=200, attack=3, melee_armor=2,
-                 desc="Shivaji Maharaj. Under his robe: a steel chainmail coat. On his fingers: the wagh nakh, tiger claws.")
+    m.hero_setup("Chhatrapati Shivaji Maharaj", hp=200, attack=3, melee_armor=2,
+                 desc="Chhatrapati Shivaji Maharaj. Under his robe: a steel chainmail coat. On his fingers: the wagh nakh, tiger claws.")
     m.hero_setup("Jiva Mahala", hp=250, attack=8, melee_armor=2,
-                 desc="Jiva Mahala. Shivaji's personal bodyguard, a master of the dandpatta. 'Hota Jiva mhanun vachla Shiva.'")
+                 desc="Jiva Mahala. Chhatrapati Shivaji Maharaj's personal bodyguard, a master of the dandpatta. 'Hota Jiva mhanun vachla Shiva.'")
     m.hero_setup("Bahirji Naik", hp=60,
-                 desc="Bahirji Naik. Chief of Shivaji's intelligence. Master of disguise; knows every hidden path in Jawali.")
+                 desc="Bahirji Naik. Chief of Chhatrapati Shivaji Maharaj's intelligence. Master of disguise; knows every hidden path in Jawali.")
     m.hero_setup("Netaji Palkar", hp=150, attack=3,
-                 desc="Netaji Palkar. Sarnaubat of the cavalry, called 'the second Shivaji' for his speed.")
-    m.hero_setup("Afzal Khan", hp=300, desc="Afzal Khan. Towering Adilshahi general who has sworn to bring Shivaji back to Bijapur in chains.")
+                 desc="Sarnaubat Netaji Palkar. Commander of the Maratha cavalry, famed as the 'Prati-Shivaji Maharaj' for his lightning speed.")
+    m.hero_setup("Afzal Khan", hp=300, desc="Afzal Khan. Towering Adilshahi general who marches from Bijapur into the Jawali valley.")
     m.mood(ColorMood.JUNGLE)
     _, last_s = m.story([
-        "1659. Bijapur has had enough of the rebel Shivaji. General Afzal Khan marches with a vast army, desecrating temples at Tuljapur and Pandharpur on the way.",
-        ("Rajmata Jijabai", "This is the man who killed your elder brother Sambhaji at Kanakgiri. Go with Bhavani's blessing, Shivba. But go armoured."),
-        ("Bahirji Naik", "Raje, my men are in the Khan's camp as water-carriers. He hides a dagger in his sleeve. He means to kill you at the meeting.", (96, 104)),
-        ("Shivaji Maharaj", "Then we meet him as he wishes: two guards each, no weapons in sight. Jiva, stay close.", (48, 51)),
+        "1659. Alarmed by the rise of Hindavi Swarajya under Chhatrapati Shivaji Maharaj, Bijapur sends General Afzal Khan with a vast army, desecrating temples at Tuljapur and Pandharpur on the way.",
+        ("Rajmata Jijabai Aaisaheb", "This is the man who treacherously slew your elder brother Sambhaji Raje at Kanakgiri. Go with Bhavani Mata's blessing, Shivba Raje. But go armoured."),
+        ("Bahirji Naik", "Maharaj, my men are in the Khan's camp as water-carriers. He hides a dagger in his sleeve. He plans treachery at the meeting.", (96, 104)),
+        ("Chhatrapati Shivaji Maharaj", "Then we meet him as he wishes: two guards each, no weapons in sight. Jiva, stay close.", (48, 51)),
         ("Netaji Palkar", "My horsemen and Moropant's infantry wait in the Jawali forest. At the cannon's signal, we fall on his army.", (64, 38)),
-        "Take Shivaji Maharaj to the pavilion. Do not attack before the meeting: the Adilshahi army is neutral.",
+        "Take Chhatrapati Shivaji Maharaj to the pavilion. Do not attack before the meeting: the Adilshahi army is neutral.",
     ])
     intel = m.trig("Bahirji: Jawali paths", enabled=False)
     intel.new_condition.timer(timer=8)
     m.reveal(intel, [(64, 38), (40, 72), (72, 64), (96, 108)])
-    m.line(intel, "Bahirji Naik", "I have marked our hidden bands and the Khan's camp at Par. The forest paths are yours, Raje.")
+    m.line(intel, "Bahirji Naik", "I have marked our hidden bands and the Khan's camp at Par. The forest paths are yours, Maharaj.")
     m.chain(last_s, intel)
 
-    o1 = m.objective("Obj 1: The meeting", "Bring Shivaji Maharaj to the pavilion at the foot of Pratapgad.", 1)
+    o1 = m.objective("Obj 1: The meeting", "Bring Chhatrapati Shivaji Maharaj to the pavilion at the foot of Pratapgad.", 1)
     m.arrive(o1, shivaji, pav)
-    m.say(o1, "Afzal Khan embraces Shivaji and strikes with a hidden dagger — the armour holds! The tiger claws answer. Afzal Khan falls. The fort's cannon fires the signal!", 14)
+    m.say(o1, "Afzal Khan embraces Chhatrapati Shivaji Maharaj and strikes with a hidden dagger — the chainmail holds! The wagh nakh tiger claws answer. Afzal Khan falls. Pratapgad's cannon fires the signal!", 14)
     m.kill(o1, 2, afzal)
     m.set_diplo(o1, 1, 2, DiplomacyState.ENEMY)
     m.handover(o1, 3, 1, (0, 0, 119, 119), ObjectType.MILITARY)
@@ -95,7 +95,7 @@ def pratapgad():
 
     o2 = m.objective("Obj 2: Sayyed Banda", "Defeat Sayyed Banda, Afzal Khan's bodyguard.", 2, enabled=False)
     o2.new_condition.destroy_object(unit_object=banda.reference_id)
-    m.say(o2, "Jiva Mahala cuts down Sayyed Banda. 'Hota Jiva mhanun vachla Shiva' — because Jiva was there, Shiva lived.", 12)
+    m.say(o2, "Jiva Mahala cuts down Sayyed Banda in a flash. 'Hota Jiva mhanun vachla Shiva' — because Jiva was there, Shivaji Maharaj was protected.", 12)
     m.chain(o1, o2)
 
     o3 = m.objective("Obj 3: Rout the army", "Destroy Afzal Khan's camp buildings near Par, south-east.", 3, enabled=False)
@@ -103,22 +103,22 @@ def pratapgad():
     m.chain(o1, o3)
     win = m.trig("Victory", enabled=False)
     win.new_condition.timer(timer=3)
-    m.victory(win, "The Adilshahi army is shattered in the Jawali forest. Elephants, guns, horses and treasure fall to Swarajya.", epilogue=[
-        ("Shivaji Maharaj", "Bury Afzal Khan with honour below the fort. Our quarrel ended with his life."),
-        ("Rajmata Jijabai", "Today the whole Deccan learned your name, Shivba. Tomorrow it will learn to fear it."),
-        "Within weeks Maratha cavalry sweeps south to Kolhapur. But Bijapur is not finished: Siddi Jauhar is already gathering a siege army.",
+    m.victory(win, "The Adilshahi army is shattered in the Jawali forest. Elephants, guns, horses and treasure fall to Hindavi Swarajya.", epilogue=[
+        ("Chhatrapati Shivaji Maharaj", "Bury Afzal Khan with chivalrous honour below the fort. Our quarrel ended with his life."),
+        ("Rajmata Jijabai Aaisaheb", "Today the whole Deccan learned your name, Shivba Raje. Tomorrow it will bow before Hindavi Swarajya."),
+        "Within weeks Maratha cavalry sweeps south to Kolhapur. In Bijapur, Siddi Jauhar is dispatched with another siege army.",
     ])
     m.chain(o3, win)
 
     ca = m.wave("Counterattack", 2, 240, [(U.KNIGHT, 6), (U.LONG_SWORDSMAN, 8), (U.CROSSBOWMAN, 6)],
                 100, 80, 28, 34, enabled=False)
     m.chain(o1, ca)
-    m.hero_loss(shivaji, 2, "Shivaji Maharaj")
+    m.hero_loss(shivaji, 2, "Chhatrapati Shivaji Maharaj")
     m.texts(
-        instructions="November 1659. Meet Afzal Khan at the pavilion below Pratapgad. When the signal fires, your hidden bands in the Jawali forest join you. Destroy the Adilshahi camp. Shivaji Maharaj must survive.",
-        history="Afzal Khan led a large Bijapuri force against Shivaji in 1659. At a meeting below Pratapgad on 10 November, Afzal Khan attacked Shivaji, who killed him with the wagh nakh. Maratha forces concealed in the forest then routed the leaderless army.",
+        instructions="November 1659. Meet Afzal Khan at the pavilion below Pratapgad. When the signal fires, your hidden bands in the Jawali forest join you. Destroy the Adilshahi camp. Chhatrapati Shivaji Maharaj must survive.",
+        history="Afzal Khan led a large Bijapuri force against Chhatrapati Shivaji Maharaj in 1659. At a meeting below Pratapgad on 10 November 1659, Afzal Khan treacherously attacked Chhatrapati Shivaji Maharaj, who slew him in self-defence with the wagh nakh. Maratha forces concealed in the Jawali forest then routed the Adilshahi army.",
         hints="Do not attack before the meeting — the Adilshahi army is neutral until the signal.\nCavalry and elephants are slow in the jungle: ambush them in the trees.\nJiva Mahala is strong — use him against Sayyed Banda.",
-        victory="Pratapgad's victory makes Shivaji's name known across India.",
+        victory="Pratapgad's glorious victory makes Chhatrapati Shivaji Maharaj's name resound across India.",
         loss="Treachery has won the day.",
     )
     return m.finish(OUT)
@@ -167,8 +167,8 @@ def pavan_khind():
     jauhar = m.unit(2, H.SHAH, 42, 132, name="Siddi Jauhar")
     m.group(2, U.BOMBARD_CANNON, 3, 34, 118, cols=3, spacing=2)
 
-    # Shivaji's escape column, slipped out on a stormy night (NE of the ring)
-    shivaji = m.unit(1, H.PRITHVIRAJ, 44, 100, name="Shivaji Maharaj")
+    # Chhatrapati Shivaji Maharaj's escape column, slipped out on a stormy night (NE of the ring)
+    shivaji = m.unit(1, H.PRITHVIRAJ, 44, 100, name="Chhatrapati Shivaji Maharaj")
     baji = m.unit(1, U.ELITE_URUMI_SWORDSMAN, 46, 98, name="Baji Prabhu Deshpande")
     fulaji = m.unit(1, U.CHAMPION, 47, 100, name="Phulaji Prabhu")
     m.group(1, U.LIGHT_CAVALRY, 6, 41, 102, cols=3)
@@ -190,32 +190,32 @@ def pavan_khind():
     surve = m.unit(3, U.KNIGHT, 112, 32, name="Suryarao Surve")
     blockade = (96, 14, 120, 46)
 
-    m.hero_setup("Shivaji Maharaj", hp=200, attack=3, melee_armor=2,
-                 desc="Shivaji Maharaj. Escaping besieged Panhala through the monsoon night.")
+    m.hero_setup("Chhatrapati Shivaji Maharaj", hp=200, attack=3, melee_armor=2,
+                 desc="Chhatrapati Shivaji Maharaj. Leading the breakout from besieged Panhala through the monsoon night.")
     m.hero_setup("Baji Prabhu Deshpande", hp=700, attack=6, melee_armor=5, pierce_armor=4,
-                 desc="Baji Prabhu Deshpande. Deshpande of Hirdas Maval, sworn to hold Ghod Khind until Vishalgad's cannon fires. His survival is not required.")
+                 desc="Veer Baji Prabhu Deshpande. Deshpande of Hirdas Maval, sworn to hold Ghod Khind until Vishalgad's cannon fires. His survival is not required.")
     m.hero_setup("Phulaji Prabhu", hp=200, attack=3, melee_armor=2,
-                 desc="Phulaji Prabhu. Baji Prabhu's brother, who stands beside him in the gorge.")
+                 desc="Veer Phulaji Prabhu. Baji Prabhu's brother, who stands beside him in the gorge.")
     m.hero_setup("Siddi Jauhar", hp=300, desc="Siddi Jauhar. Adilshahi general who has besieged Panhala for four months.")
     m.mood(ColorMood.MISTY)
     m.story([
-        "July 1660. For four months Siddi Jauhar has besieged Panhala. The monsoon rages; escape seems impossible.",
-        ("Siddi Jauhar", "Not a mouse leaves Panhala. When the rains stop, the rebel is mine.", (42, 132)),
-        "Tonight Shiva Kashid, a barber who resembles Shivaji, rides out openly in a palanquin as a decoy. The real Shivaji slips out with 600 men.",
-        ("Baji Prabhu Deshpande", "Raje, Vishalgad is a night's march away. I will hold Ghod Khind with three hundred men until I hear your cannon. Three shots.", (70, 70)),
-        ("Shivaji Maharaj", "Baji... I will fire them the moment I reach the walls. Not a breath later."),
-        "Lead Shivaji Maharaj through the gorge to Vishalgad. Move fast: the pursuit is coming.",
+        "July 1660. For four months Siddi Jauhar has besieged Panhala. The monsoon rages across the Sahyadri.",
+        ("Siddi Jauhar", "Watch every ridge around Panhala. When the rains stop, our siege guns will press the fort.", (42, 132)),
+        "Tonight Veer Shiva Kashid, who bears the noble likeness of Chhatrapati Shivaji Maharaj, rides out openly in a royal palanquin as a decoy, while Chhatrapati Shivaji Maharaj marches toward Vishalgad with 600 Mavalas.",
+        ("Baji Prabhu Deshpande", "Maharaj, Vishalgad is a night's march away. I will hold Ghod Khind with three hundred Mavalas until I hear your cannon. Three shots.", (70, 70)),
+        ("Chhatrapati Shivaji Maharaj", "Baji... I will fire them the moment I reach the walls. Not a breath later."),
+        "Lead Chhatrapati Shivaji Maharaj through the gorge to Vishalgad. Move fast: the pursuit is coming.",
     ])
 
     alarm = m.trig("Ruse discovered")
     alarm.new_condition.timer(timer=90)
-    m.say(alarm, "The decoy is unmasked! Shiva Kashid goes to his death with a smile. Siddi Masud's cavalry pursues Shivaji into the night.")
+    m.say(alarm, "The decoy is discovered! Veer Shiva Kashid embraces martyrdom with a smile for Swarajya. Siddi Masud's cavalry rides out into the night.")
     p1 = m.wave("Pursuit 1", 2, 1, [(U.KNIGHT, 6), (U.LIGHT_CAVALRY, 6)], 30, 92, 70, 70, enabled=False)
     m.chain(alarm, p1)
 
-    o1 = m.objective("Obj 1: Ghod Khind", "Bring Shivaji Maharaj through Ghod Khind, the narrow gorge.", 1)
+    o1 = m.objective("Obj 1: Ghod Khind", "Bring Chhatrapati Shivaji Maharaj through Ghod Khind, the narrow gorge.", 1)
     m.arrive(o1, shivaji, gorge)
-    m.say(o1, "Baji Prabhu: 'Go, Raje! I will hold this pass until I hear Vishalgad's cannon.' Leave the rearguard here and ride on.", 14)
+    m.say(o1, "Baji Prabhu: 'Ride on, Maharaj! I will hold this pass until I hear Vishalgad's cannon.' Leave the rearguard here and ride on.", 14)
     for i, (comp, delay) in enumerate([([(U.KNIGHT, 8), (U.LONG_SWORDSMAN, 8)], 30),
                                        ([(U.CROSSBOWMAN, 10), (U.KNIGHT, 6)], 120),
                                        ([(U.LONG_SWORDSMAN, 12), (U.CAVALIER, 6)], 210),
@@ -227,29 +227,29 @@ def pavan_khind():
     m.cleared(o2, 3, blockade)
     m.chain(o1, o2)
 
-    o3 = m.objective("Obj 3: Vishalgad", "Bring Shivaji Maharaj into Vishalgad fort.", 3, enabled=False)
+    o3 = m.objective("Obj 3: Vishalgad", "Bring Chhatrapati Shivaji Maharaj into Vishalgad fort.", 3, enabled=False)
     m.arrive(o3, shivaji, vg)
     m.chain(o2, o3)
-    m.say(o3, "Three cannon shots echo across the Sahyadri. In the gorge, the wounded Baji Prabhu hears them and falls at peace. Ghod Khind is now Pavan Khind — the sacred pass.", 16)
+    m.say(o3, "Three cannon shots echo across the Sahyadri. In the gorge, the valiant Baji Prabhu hears them and breathes his last in peace. Ghod Khind becomes Pavan Khind — the sacred pass.", 16)
     win = m.trig("Victory", enabled=False)
     win.new_condition.timer(timer=16)
     m.victory(win, epilogue=[
-        ("Shivaji Maharaj", "Ghod Khind is no longer a gorge. It is Pavan Khind, purified by the blood of Baji Prabhu and his Bandal Mavalas."),
-        "Shivaji is safe. But the Mughal Empire has watched Bijapur fail. Aurangzeb sends his own uncle, Shaista Khan, to finish the work.",
+        ("Chhatrapati Shivaji Maharaj", "Ghod Khind is no longer a gorge. It is Pavan Khind, sanctified by the sacred blood of Veer Baji Prabhu and his Bandal Mavalas."),
+        "Chhatrapati Shivaji Maharaj reaches Vishalgad safely. Seeing Bijapur falter, Mughal Emperor Aurangzeb sends his maternal uncle, Shaista Khan, into the Deccan.",
     ])
     m.chain(o3, win)
 
     bp = m.trig("Baji Prabhu falls")
     bp.new_condition.destroy_object(unit_object=baji.reference_id)
-    m.say(bp, "Baji Prabhu Deshpande has fallen in the gorge. His sacrifice buys Shivaji precious time.", 10)
+    m.say(bp, "Veer Baji Prabhu Deshpande has attained martyrdom in the gorge, buying Chhatrapati Shivaji Maharaj precious time.", 10)
 
-    m.hero_loss(shivaji, 2, "Shivaji Maharaj")
+    m.hero_loss(shivaji, 2, "Chhatrapati Shivaji Maharaj")
     m.texts(
-        instructions="13 July 1660. Escape from besieged Panhala. Reach Ghod Khind, leave Baji Prabhu's rearguard to hold it, break the Surve–Dalvi blockade and enter Vishalgad. Shivaji Maharaj must survive.",
-        history="Besieged in Panhala by Siddi Jauhar, Shivaji escaped on a rainy night towards Vishalgad. Baji Prabhu Deshpande held the Ghod Khind pass with a small force against the pursuing Bijapuri army until Shivaji reached Vishalgad. Baji Prabhu died of his wounds after the signal; the gorge has since been called Pavan Khind.",
-        hints="Don't fight the siege ring — run.\nSplit your army at the gorge: infantry stays, cavalry rides with Shivaji.\nThe gorge is only a few tiles wide; spearmen there can hold off cavalry.",
-        victory="Shivaji is safe in Vishalgad.",
-        loss="The pursuit catches Shivaji. The sacrifice was in vain.",
+        instructions="13 July 1660. Break out from besieged Panhala. Reach Ghod Khind, leave Baji Prabhu's rearguard to hold it, break the Surve–Dalvi blockade and enter Vishalgad. Chhatrapati Shivaji Maharaj must survive.",
+        history="Besieged in Panhala by Siddi Jauhar, Chhatrapati Shivaji Maharaj marched out on a stormy monsoon night towards Vishalgad while Veer Shiva Kashid gave his life as a decoy. Veer Baji Prabhu Deshpande and his Bandal Mavalas held the narrow Ghod Khind pass against the pursuing Adilshahi army until Chhatrapati Shivaji Maharaj reached Vishalgad and fired three cannon shots. Baji Prabhu attained martyrdom after hearing the signal; the pass has ever since been revered as Pavan Khind.",
+        hints="Don't fight the siege ring — ride towards Ghod Khind.\nSplit your army at the gorge: infantry stays, cavalry rides with Chhatrapati Shivaji Maharaj.\nThe gorge is only a few tiles wide; spearmen there can hold off cavalry.",
+        victory="Chhatrapati Shivaji Maharaj is safe in Vishalgad. Veer Baji Prabhu's sacrifice is immortal.",
+        loss="The enemy blockade was not broken in time.",
     )
     return m.finish(OUT)
 
@@ -290,7 +290,7 @@ def lal_mahal():
     m.unit(2, B.BARRACKS, 15, 45)
     initial_mil = 4 + 5 * 7 + 4 + 8
 
-    shivaji = m.unit(1, H.PRITHVIRAJ, 6, 52, name="Shivaji Maharaj")
+    shivaji = m.unit(1, H.PRITHVIRAJ, 6, 52, name="Chhatrapati Shivaji Maharaj")
     m.unit(1, U.CHAMPION, 7, 50, name="Chimnaji Deshpande")
     m.unit(1, U.CHAMPION, 7, 54, name="Babaji Deshpande")
     m.group(1, U.CHAMPION, 10, 3, 48, cols=5)
@@ -301,25 +301,25 @@ def lal_mahal():
     m.unit(0, O.FLAG_A, 50, 96)
 
     bahirji = m.unit(1, U.SCOUT_CAVALRY, 5, 46, name="Bahirji Naik")
-    m.hero_setup("Shivaji Maharaj", hp=200, attack=4, melee_armor=2,
-                 desc="Shivaji Maharaj. Returning by night to the Lal Mahal, the house where he grew up.")
+    m.hero_setup("Chhatrapati Shivaji Maharaj", hp=200, attack=4, melee_armor=2,
+                 desc="Chhatrapati Shivaji Maharaj. Returning by night to the Lal Mahal in Pune, the palace where he grew up.")
     m.hero_setup("Bahirji Naik", hp=60,
-                 desc="Bahirji Naik. Has lived in Pune for weeks disguised as a beggar. He knows the gap in the kitchen wall.")
+                 desc="Bahirji Naik. Has scouted Pune for weeks disguised as a mendicant. He knows the gap in the kitchen wall.")
     m.hero_setup("Chimnaji Deshpande", hp=120, attack=2, desc="Chimnaji Deshpande. Grew up in Pune; knows every lane.")
-    m.hero_setup("Babaji Deshpande", hp=120, attack=2, desc="Babaji Deshpande. Chimnaji's brother, Shivaji's guide in the dark.")
-    m.hero_setup("Shaista Khan", desc="Shaista Khan. Aurangzeb's maternal uncle, Mughal viceroy of the Deccan, asleep in Shivaji's own house.")
+    m.hero_setup("Babaji Deshpande", hp=120, attack=2, desc="Babaji Deshpande. Chimnaji's brother, Chhatrapati Shivaji Maharaj's guide in the night.")
+    m.hero_setup("Shaista Khan", desc="Shaista Khan. Aurangzeb's maternal uncle, Mughal viceroy of the Deccan, occupying the Lal Mahal.")
     m.mood(ColorMood.NIGHT)
     _, last_s = m.story([
-        "April 1663. Mughal general Shaista Khan has occupied Pune for three years, living in the Lal Mahal: Shivaji's own childhood home.",
-        ("Rajmata Jijabai", "I raised you in those rooms, Shivba. Now a Mughal sleeps in them. Take back our honour."),
+        "April 1663. Mughal general Shaista Khan has occupied Pune for three years, quartering himself inside the Lal Mahal: Chhatrapati Shivaji Maharaj's own childhood residence.",
+        ("Rajmata Jijabai Aaisaheb", "I raised you in those rooms, Shivba Raje. Now a Mughal general occupies them. Restore our honour."),
         ("Bahirji Naik", "It is Ramzan. The camp feasts until midnight and sleeps heavily. A wedding procession has permission to enter town tonight.", (50, 46)),
-        ("Shivaji Maharaj", "Then we are wedding guests. Four hundred of us. Quietly."),
+        ("Chhatrapati Shivaji Maharaj", "Then we enter as wedding guests. Four hundred Mavalas. Swift and silent."),
         "Enter the Lal Mahal compound without raising the alarm. The Mughal army is neutral for now. If you kill too many sentries, the whole camp will wake.",
     ])
     intel = m.trig("Bahirji: Pune lanes", enabled=False)
     intel.new_condition.timer(timer=8)
     m.reveal(intel, [(50, 46), (25, 30), (25, 70), (50, 80)])
-    m.line(intel, "Bahirji Naik", "The guard posts are marked, Raje. The kitchen wall on the south side is old and cracked.")
+    m.line(intel, "Bahirji Naik", "The guard posts are marked, Maharaj. The kitchen wall on the south side can be breached.")
     m.chain(last_s, intel)
 
     alarm = m.trig("Alarm")
@@ -333,15 +333,15 @@ def lal_mahal():
                                    operation=Operation.SET, object_attributes=ObjectAttribute.HIT_POINTS)
     m.set_hp(hp, 2, shaista, 1200)
 
-    o1 = m.objective("Obj 1: Into the Lal Mahal", "Bring Shivaji Maharaj inside the Lal Mahal compound.", 1)
+    o1 = m.objective("Obj 1: Into the Lal Mahal", "Bring Chhatrapati Shivaji Maharaj inside the Lal Mahal compound.", 1)
     m.arrive(o1, shivaji, compound)
-    m.say(o1, "Through a breach in the kitchen wall! Shaista Khan wakes and runs for a window — strike him before he escapes!", 12)
+    m.say(o1, "Through a breach in the kitchen wall! Shaista Khan wakes in panic and runs for a window — strike him before he escapes!", 12)
     m.set_diplo(o1, 1, 2, DiplomacyState.ENEMY)
     m.move(o1, 2, shaista, 95, 5)
 
     o2 = m.objective("Obj 2: Strike Shaista Khan", "Wound Shaista Khan before he flees north-east.", 2, enabled=False)
     m.hp_below(o2, shaista, 900)
-    m.say(o2, "Shivaji's sword takes three of Shaista Khan's fingers as he drops from the window. Humiliated, he leaves the Deccan.", 12)
+    m.say(o2, "Chhatrapati Shivaji Maharaj's Bhavani sword takes three of Shaista Khan's fingers as he leaps from the window. Humiliated, he flees the Deccan.", 12)
     m.teleport(o2, 2, shaista, *hold)
     m.chain(o1, o2)
 
@@ -356,16 +356,16 @@ def lal_mahal():
     o2b.new_condition.destroy_object(unit_object=shaista.reference_id)
     o2b.new_effect.deactivate_trigger(trigger_id=fled.trigger_id)
     o2b.new_effect.deactivate_trigger(trigger_id=o2.trigger_id)
-    m.say(o2b, "Shaista Khan is cut down in the Lal Mahal! Now escape!", 10)
+    m.say(o2b, "Shaista Khan is struck down in the Lal Mahal! Ride for Sinhagad!", 10)
     m.chain(o1, o2b)
 
-    o3 = m.objective("Obj 3: Ride for Sinhagad", "Escape with Shivaji Maharaj to the Sinhagad road (south).", 3, enabled=False)
+    o3 = m.objective("Obj 3: Ride for Sinhagad", "Return with Chhatrapati Shivaji Maharaj to the Sinhagad road (south).", 3, enabled=False)
     m.arrive(o3, shivaji, sinhagad)
     m.chain(o2, o3)
     m.chain(o2b, o3)
-    m.victory(o3, "Torches blaze on Sinhagad as the raiders vanish into the hills. All India hears of the night at the Lal Mahal.", epilogue=[
-        ("Rajmata Jijabai", "Three fingers, Shivba. The Emperor's uncle will count them every day of his life."),
-        "Aurangzeb recalls the humiliated Shaista Khan to Bengal. Swarajya needs gold to rebuild what the Mughals burned. Shivaji looks north, to Surat.",
+    m.victory(o3, "Decoy torches blaze on the hills as Chhatrapati Shivaji Maharaj rides back in triumph. All India marvels at the daring strike on the Lal Mahal.", epilogue=[
+        ("Rajmata Jijabai Aaisaheb", "Three fingers, Shivba Raje. The Emperor's uncle will remember the justice of Swarajya every day of his life."),
+        "Aurangzeb recalls the humiliated Shaista Khan to Bengal. To rebuild the villages ravaged by Mughal armies, Chhatrapati Shivaji Maharaj turns north toward Surat.",
     ])
     for i, d in enumerate((20, 90, 160)):
         w = m.wave(f"Pursuit {i + 1}", 2, d, [(U.CAVALIER, 6), (U.ELITE_GHULAM, 4)], 84, 40, 50, 90,
@@ -373,11 +373,11 @@ def lal_mahal():
         m.chain(o2, w)
         m.chain(o2b, w)
 
-    m.hero_loss(shivaji, 2, "Shivaji Maharaj")
+    m.hero_loss(shivaji, 2, "Chhatrapati Shivaji Maharaj")
     m.texts(
-        instructions="5 April 1663, Pune. Slip into town under cover of a wedding procession, reach the Lal Mahal, wound Shaista Khan and escape to Sinhagad. Shivaji Maharaj must survive.",
-        history="Mughal viceroy Shaista Khan occupied Pune and the Lal Mahal from 1660. On a night in April 1663 Shivaji entered with a small party, attacked the Khan in his quarters and cut off his fingers as he escaped. Emperor Aurangzeb recalled the disgraced general.",
-        hints="Avoid the Mughal patrols: the army is neutral but killing sentries triggers the alarm.\nCavalry are best for catching the fleeing Khan.\nAfter the strike, run — don't fight the whole camp.",
+        instructions="5 April 1663, Pune. Slip into town under cover of a wedding procession, reach the Lal Mahal, wound Shaista Khan and return to Sinhagad. Chhatrapati Shivaji Maharaj must survive.",
+        history="Mughal viceroy Shaista Khan occupied Pune and the Lal Mahal from 1660. On the night of 5 April 1663, Chhatrapati Shivaji Maharaj entered Pune with a select band of Mavalas, struck Shaista Khan's quarters inside the Lal Mahal, and severed three of the Khan's fingers as he fled through a window. Emperor Aurangzeb transferred the disgraced general to Bengal.",
+        hints="Avoid the Mughal patrols: the army is neutral but killing sentries triggers the alarm.\nCavalry are best for catching the fleeing Khan.\nAfter the strike, ride south to the Sinhagad road.",
         victory="The Mughal grip on Pune is broken.",
         loss="The raid has failed.",
     )
@@ -430,7 +430,7 @@ def surat():
     m.unit(3, B.GUARD_TOWER, 78, 36, name="English factory")
     m.group(3, U.HAND_CANNONEER, 6, 78, 40, cols=3)
 
-    shivaji = m.unit(1, H.PRITHVIRAJ, 108, 108, name="Shivaji Maharaj")
+    shivaji = m.unit(1, H.PRITHVIRAJ, 108, 108, name="Chhatrapati Shivaji Maharaj")
     m.group(1, U.ELITE_SHRIVAMSHA_RIDER, 12, 100, 104, cols=4)
     m.group(1, U.LIGHT_CAVALRY, 12, 110, 98, cols=4)
     m.group(1, U.CAVALRY_ARCHER, 8, 104, 112, cols=4)
@@ -440,23 +440,23 @@ def surat():
 
     bahirji = m.unit(1, U.SCOUT_CAVALRY, 112, 104, name="Bahirji Naik")
     netaji = m.unit(1, U.HUSSAR, 104, 100, name="Netaji Palkar")
-    m.hero_setup("Shivaji Maharaj", hp=200, attack=3, melee_armor=2,
-                 desc="Shivaji Maharaj. Striking the Mughal treasury itself to pay for Swarajya's forts.")
+    m.hero_setup("Chhatrapati Shivaji Maharaj", hp=200, attack=3, melee_armor=2,
+                 desc="Chhatrapati Shivaji Maharaj. Striking the Mughal treasury itself to rebuild and fortify Hindavi Swarajya.")
     m.hero_setup("Bahirji Naik", hp=60,
-                 desc="Bahirji Naik. Spent weeks in Surat posing as a beggar, mapping every warehouse.")
+                 desc="Bahirji Naik. Reconnoitred every lane of Surat in disguise, mapping every Mughal warehouse.")
     m.hero_setup("Netaji Palkar", hp=200, attack=4, melee_armor=1,
-                 desc="Netaji Palkar. Sarnaubat of the Maratha cavalry. Excellent mobility and raiding.")
+                 desc="Sarnaubat Netaji Palkar. Commander of the Maratha cavalry. Unmatched in mobility and swift expeditions.")
     _, last_s = m.story([
-        "January 1664. Mughal armies have ravaged Maharashtra for three years. Swarajya needs gold, and Surat, the Mughals' richest port, has plenty.",
-        ("Bahirji Naik", "Raje, I have begged in every lane of Surat. The richest houses are Virji Vora's and Haji Zahid Beg's. The walls are mud.", (60, 56)),
-        ("Shivaji Maharaj", "We take from the Emperor's port what his armies took from our villages. No temple, no mosque, no church is to be touched."),
+        "January 1664. Mughal armies have ravaged Maharashtra for three years. Swarajya needs gold to rebuild its forts and villages, and Surat, the Mughal Empire's richest port, holds the imperial treasury.",
+        ("Bahirji Naik", "Maharaj, I have walked every lane of Surat. The richest imperial warehouses are Virji Vora's and Haji Zahid Beg's. The outer walls are weak.", (60, 56)),
+        ("Chhatrapati Shivaji Maharaj", "We reclaim from the Emperor's treasury what his armies plundered from our villages. No temple, no mosque, no church, and no women or children are ever to be harmed."),
         ("Inayat Khan", "Close the castle gates! Let the merchants fend for themselves!", (36, 74)),
-        "Collect 3000 gold by sacking the bazaars, then ride home before the Mughal relief army arrives. The English factory is neutral: leave it alone.",
+        "Collect 3000 gold from the imperial bazaars, then ride home before the Mughal relief army arrives. The English factory is neutral: leave it alone.",
     ])
     intel = m.trig("Bahirji: Surat map", enabled=False)
     intel.new_condition.timer(timer=8)
     m.reveal(intel, [(48, 44), (72, 44), (46, 64), (74, 66), (60, 40), (60, 70)])
-    m.line(intel, "Bahirji Naik", "Every warehouse is marked on your map. Strike fast and keep away from the castle guns.")
+    m.line(intel, "Bahirji Naik", "Every warehouse is marked on your map, Maharaj. Strike fast and keep clear of the castle guns.")
     m.chain(last_s, intel)
 
     names = ["Mirza Ali", "Virji Vora", "Haji Zahid Beg", "spice market", "cloth market", "jewellers"]
@@ -468,13 +468,13 @@ def surat():
 
     o1 = m.objective("Obj 1: Treasury", "Collect 3000 gold from Surat's bazaars.", 1)
     o1.new_condition.accumulate_attribute(quantity=3000, attribute=Attribute.GOLD_STORAGE, source_player=1)
-    m.say(o1, "The carts are full — gold, pearls and silk. Ride home!", 10)
-    o2 = m.objective("Obj 2: Ride home", "Bring Shivaji Maharaj back to the south-east corner.", 2, enabled=False)
+    m.say(o1, "The treasury carts are full — gold, pearls and silk for Swarajya. Ride home!", 10)
+    o2 = m.objective("Obj 2: Ride home", "Bring Chhatrapati Shivaji Maharaj back to the south-east corner.", 2, enabled=False)
     m.arrive(o2, shivaji, home)
     m.chain(o1, o2)
-    m.victory(o2, "The plunder of Surat pays for forts, fleets and soldiers. The Mughals have been struck in their own treasury.", epilogue=[
-        "Aurangzeb is furious. He sends his finest general, the Rajput Mirza Raja Jai Singh, with Diler Khan and an army of 80,000.",
-        ("Shivaji Maharaj", "Jai Singh is no Shaista Khan. He fights with patience, gold and diplomacy. We must guard Purandar."),
+    m.victory(o2, "The wealth of Surat finances the forts, navy and soldiers of Hindavi Swarajya. The Mughal Empire has been struck in its own treasury.", epilogue=[
+        "Stung by the loss of Surat, Aurangzeb dispatches his ablest Rajput general, Mirza Raja Jai Singh, with Diler Khan and an army of 80,000.",
+        ("Chhatrapati Shivaji Maharaj", "Jai Singh is no Shaista Khan. He fights with patience, gold and diplomacy. We must stand ready at Purandar."),
     ])
 
     relief = m.trig("Relief army")
@@ -489,13 +489,13 @@ def surat():
     warn.new_condition.timer(timer=1)
     m.timer_display(warn, 600, "Mughal relief army arrives in: %d")
 
-    m.hero_loss(shivaji, 2, "Shivaji Maharaj")
+    m.hero_loss(shivaji, 2, "Chhatrapati Shivaji Maharaj")
     m.texts(
-        instructions="January 1664. Sack the bazaars and customs house of Surat to collect 3000 gold, then return to the south-east corner. A Mughal relief army arrives in 10 minutes. Shivaji Maharaj must survive.",
-        history="In January 1664 Shivaji raided Surat, the Mughal empire's busiest port, for several days while its governor sheltered in the fort. The plunder financed the Maratha state and navy. The English and Dutch factories defended themselves and were largely left alone.",
-        hints="Each bazaar gives 600 gold when destroyed.\nThe castle has long range — stay out of it.\nThe English factory is neutral and well defended.",
-        victory="Swarajya's coffers overflow.",
-        loss="Surat becomes Shivaji's grave.",
+        instructions="January 1664. Recover 3000 gold from the imperial bazaars and customs house of Surat, then return to the south-east corner. A Mughal relief army arrives in 10 minutes. Chhatrapati Shivaji Maharaj must survive.",
+        history="In January 1664 Chhatrapati Shivaji Maharaj led a swift expedition to Surat, the Mughal Empire's wealthiest port, while its Mughal governor sheltered inside the fort. Strict orders were given to spare all places of worship, women, children, and the poor, including the revered charitable merchant Mohandas Parekh. The recovered treasury financed the forts and navy of Hindavi Swarajya.",
+        hints="Each bazaar gives 750 gold when destroyed.\nThe castle has long range — stay out of it.\nThe English factory is neutral and well defended.",
+        victory="Swarajya's treasury is restored.",
+        loss="The Mughal relief army has surrounded the expedition.",
     )
     return m.finish(OUT)
 
@@ -534,7 +534,7 @@ def purandar():
     m.group(1, U.ARBALESTER, 4, 57, 52, cols=2)
     m.camera(1, 40, 64)
 
-    shivaji = m.unit(1, H.PRITHVIRAJ, 12, 108, name="Shivaji Maharaj")
+    shivaji = m.unit(1, H.PRITHVIRAJ, 12, 108, name="Chhatrapati Shivaji Maharaj")
     m.group(1, U.LIGHT_CAVALRY, 6, 14, 104, cols=3)
 
     # Jai Singh's great camp (NE)
@@ -553,21 +553,21 @@ def purandar():
         m.unit(0, O.TORCH_A, fx, fy)
 
     m.hero_setup("Murarbaji Deshpande", hp=900, attack=6, melee_armor=4, pierce_armor=3,
-                 desc="Murarbaji Deshpande. Killedar of Purandar. High morale, ferocious in defence. Keep him alive as long as you can.")
-    m.hero_setup("Shivaji Maharaj", hp=200, desc="Shivaji Maharaj. Watching from Rajgad as the empire's finest general closes the net.")
+                 desc="Veer Murarbaji Deshpande. Killedar of Purandar. Unyielding in defence of Swarajya. Keep him alive as long as you can.")
+    m.hero_setup("Chhatrapati Shivaji Maharaj", hp=200, desc="Chhatrapati Shivaji Maharaj. Directing the defence of Swarajya from Rajgad against the Mughal offensive.")
     m.hero_setup("Mirza Raja Jai Singh", hp=400,
-                 desc="Mirza Raja Jai Singh I of Amber. Aurangzeb's most able general: patient, honourable and relentless.")
+                 desc="Mirza Raja Jai Singh I of Amber. Aurangzeb's most able general: patient, diplomatic and relentless.")
     m.hero_setup("Diler Khan", hp=500, attack=6,
                  desc="Diler Khan. Pathan commander leading the assault on Purandar.")
     m.mood(ColorMood.SUMMER)
 
     m.story([
-        "1665. After Surat, Aurangzeb sends his best: Mirza Raja Jai Singh of Amber, with Diler Khan and an army of 80,000.",
-        ("Mirza Raja Jai Singh", "Shaista Khan chased Shivaji. I will not chase him. I will take his forts one by one, until he comes to me.", (98, 26)),
+        "1665. After Surat, Aurangzeb dispatches his ablest commander: Mirza Raja Jai Singh of Amber, with Diler Khan and an army of 80,000.",
+        ("Mirza Raja Jai Singh", "Shaista Khan chased Shivaji Raje through the hills. I will instead besiege the forts one by one, until we negotiate.", (98, 26)),
         ("Diler Khan", "Purandar first. Give me the guns and it will fall within a week.", (40, 64)),
-        ("Murarbaji Deshpande", "Seven hundred Mavalas hold Purandar. Tell the Pathan he will need more than a week."),
-        ("Shivaji Maharaj", "Hold, Murarbaji. Every day Purandar stands, I gain a day to save the rest of Swarajya."),
-        "Defend Purandar for 12 minutes. Keep Murarbaji Deshpande alive as long as possible.",
+        ("Murarbaji Deshpande", "Seven hundred Mavalas hold Purandar. Tell the Pathan he will need more than an empire to move us."),
+        ("Chhatrapati Shivaji Maharaj", "Hold firm, Murarbaji. Every day Purandar stands, we buy time to safeguard the people of Swarajya."),
+        "Defend Purandar for 12 minutes. Keep Veer Murarbaji Deshpande alive as long as possible.",
     ])
 
     o1 = m.objective("Obj 1: Hold Purandar", "Keep Purandar's castle standing for 12 minutes.", 1)
@@ -580,21 +580,21 @@ def purandar():
     om.new_condition.timer(timer=720)
     om.new_condition.objects_in_area(quantity=1, object_list=H.MIHIRA_BHOJA.ID, source_player=1,
                                      area_x1=0, area_y1=0, area_x2=119, area_y2=119)
-    m.line(om, "Murarbaji Deshpande", "Purandar still stands, Raje! They will sing of this siege in every village of the Maval.")
+    m.line(om, "Murarbaji Deshpande", "Purandar still stands, Maharaj! They will sing of this siege in every village of the Maval.")
 
     fall = m.trig("Murarbaji falls")
     fall.new_condition.destroy_object(unit_object=murar.reference_id)
-    m.line(fall, "Diler Khan", "What a warrior! Surrender, Murarbaji, and I will make you a commander in the Emperor's army!")
+    m.line(fall, "Diler Khan", "Has the Deccan ever seen such a swordsman! Yield, Murarbaji, and the Emperor himself will honour you!")
     fall2 = m.trig("Murarbaji falls 2", enabled=False)
     fall2.new_condition.timer(timer=8)
-    m.say(fall2, "Murarbaji refused, charged Diler Khan's guard with his last breath, and fell. His men fight on in the ruins.", 12)
+    m.say(fall2, "Veer Murarbaji spurned the offer, charged Diler Khan's guard with his last breath, and attained martyrdom. His Mavalas fight on!", 12)
     m.chain(fall, fall2)
     o1.new_effect.deactivate_trigger(trigger_id=fall.trigger_id)
 
     vfall = m.trig("Vajragad falls")
     vfall.new_condition.timer(timer=360)
     m.handover(vfall, 1, 2, vaj, ObjectType.BUILDING)
-    m.say(vfall, "Mughal guns have dragged themselves onto Vajragad! From its height they can fire down into Purandar.", 12)
+    m.say(vfall, "Mughal guns have been hauled onto Vajragad! From its height they fire toward Purandar.", 12)
 
     for i in range(6):
         comp = [(U.ELITE_GHULAM, 6 + i), (U.HAND_CANNONEER, 6)]
@@ -615,26 +615,26 @@ def purandar():
 
     # ---- Ceasefire and treaty
     m.set_diplo(o1, 1, 2, DiplomacyState.NEUTRAL)
-    m.line(o1, "Mirza Raja Jai Singh", "Enough blood. Tell Shivaji Raje: come to my tent under my personal guarantee of safety. Let us talk as Rajputs and Marathas.", 14)
-    o2 = m.objective("Obj 2: The treaty", "Bring Shivaji Maharaj to Jai Singh's pavilion to negotiate.", 3, enabled=False)
+    m.line(o1, "Mirza Raja Jai Singh", "Enough blood has flowed. Tell Chhatrapati Shivaji Maharaj: come to my pavilion under my solemn Rajput word of honour.", 14)
+    o2 = m.objective("Obj 2: The treaty", "Bring Chhatrapati Shivaji Maharaj to Jai Singh's pavilion to negotiate.", 3, enabled=False)
     m.arrive(o2, shivaji, tent)
     m.chain(o1, o2)
     m.teleport(o2, 2, jai, 78, 82)
     m.move(o1, 2, jai, 78, 82)
 
     m.victory(o2, epilogue=[
-        ("Mirza Raja Jai Singh", "The Emperor asks for twenty-three of your forts, including Purandar, Sinhagad and Lohagad. You keep twelve, and your son Sambhaji receives a mansab."),
-        ("Shivaji Maharaj", "Twenty-three forts... the work of twenty years. But my people live, and twelve forts remain. I accept."),
-        ("Mirza Raja Jai Singh", "And one thing more. Come to Agra, to the Emperor's birthday durbar. My son Ram Singh will guarantee your safety with his life."),
-        ("Shivaji Maharaj", "To Agra, then. Into the tiger's den."),
-        "11 June 1665: the Treaty of Purandar. Shivaji has lost the battle, but not the war. He sets out for Agra with nine-year-old Sambhaji.",
+        ("Mirza Raja Jai Singh", "The Emperor asks for twenty-three forts, including Purandar, Kondhana and Lohagad. Twelve remain with you, and young Sambhaji Raje is offered a mansab."),
+        ("Chhatrapati Shivaji Maharaj", "Twenty-three forts... the labour of twenty years. Yet to spare my people from devastation, I accept this truce today so Swarajya may rise stronger tomorrow."),
+        ("Mirza Raja Jai Singh", "And one thing more. Come to Agra, to the imperial durbar. My son Ram Singh guarantees your safety on his Rajput honour."),
+        ("Chhatrapati Shivaji Maharaj", "To Agra, then. Into the lion's den."),
+        "11 June 1665: the Treaty of Purandar. Chhatrapati Shivaji Maharaj steps back one pace only to leap forward two. He sets out for Agra with nine-year-old Sambhaji Raje.",
     ])
-    m.hero_loss(shivaji, 2, "Shivaji Maharaj")
+    m.hero_loss(shivaji, 2, "Chhatrapati Shivaji Maharaj")
     m.texts(
-        instructions="1665. Defend Purandar against the army of Mirza Raja Jai Singh and Diler Khan for 12 minutes. Keep Murarbaji Deshpande alive as long as possible. Then bring Shivaji Maharaj to the treaty pavilion. Purandar's castle and Shivaji Maharaj must survive.",
-        history="In 1665 the Mughal general Mirza Raja Jai Singh besieged Purandar with Diler Khan. Its killedar Murarbaji Deshpande died fighting after refusing Diler Khan's offer to join the Mughals. To save his remaining territory, Shivaji agreed to the Treaty of Purandar (June 1665), ceding 23 forts, and later agreed to visit Aurangzeb at Agra.",
-        hints="Repair the castle with villagers between assaults.\nKill the bombard cannons first.\nMurarbaji is strong but not invincible: pull him back when wounded.\nShivaji can stay safely in the south-west until the treaty.",
-        victory="Swarajya bends, but does not break.",
+        instructions="1665. Defend Purandar against the army of Mirza Raja Jai Singh and Diler Khan for 12 minutes. Keep Veer Murarbaji Deshpande alive as long as possible. Then bring Chhatrapati Shivaji Maharaj to the treaty pavilion. Purandar's castle and Chhatrapati Shivaji Maharaj must survive.",
+        history="In 1665 the Mughal general Mirza Raja Jai Singh besieged Purandar with Diler Khan. Its heroic killedar Veer Murarbaji Deshpande fought with unmatched valour and attained martyrdom after spurning Diler Khan's offer to join the Mughals. To protect his people from further devastation, Chhatrapati Shivaji Maharaj concluded the Treaty of Purandar (June 1665), temporarily ceding 23 forts, and later travelled to Agra.",
+        hints="Repair the castle with villagers between assaults.\nDestroy the bombard cannons first.\nMurarbaji Deshpande is strong: pull him back to heal when wounded.\nChhatrapati Shivaji Maharaj can remain safely in the south-west until the treaty.",
+        victory="Swarajya bends like a bow, only to loose its arrow further.",
         loss="Purandar is lost.",
     )
     return m.finish(OUT)
@@ -671,10 +671,10 @@ def agra():
     m.unit(2, B.STABLE, 60, 62)
     m.unit(2, B.BARRACKS, 30, 62)
 
-    # Ram Singh's haveli where Shivaji is confined
+    # Ram Singh's haveli where Chhatrapati Shivaji Maharaj is confined
     m.blob(T.GRASS_FOUNDATION, 42, 52, 4, 0)
     m.ring_walls(2, 42, 52, 5, wall=B.PALISADE_WALL, gaps=(70, 90, 110))
-    shivaji = m.unit(1, H.PRITHVIRAJ, 41, 51, name="Shivaji Maharaj")
+    shivaji = m.unit(1, H.PRITHVIRAJ, 41, 51, name="Chhatrapati Shivaji Maharaj")
     sambhaji = m.unit(1, U.VILLAGER_MALE, 43, 51, name="Sambhaji Raje (age 9)")
     hiroji = m.unit(1, U.VILLAGER_MALE, 42, 53, name="Hiroji Farzand")
     m.group(2, U.LONG_SWORDSMAN, 4, 35, 58, cols=2)
@@ -690,22 +690,22 @@ def agra():
     m.unit(0, O.FLAG_A, 5, 5)
 
     madari = m.unit(1, U.VILLAGER_MALE, 40, 53, name="Madari Mehtar")
-    m.hero_setup("Shivaji Maharaj", hp=200, desc="Shivaji Maharaj. A prisoner in a golden cage, with no army, only wits.")
-    m.hero_setup("Hiroji Farzand", desc="Hiroji Farzand. Shivaji's half-brother in looks. He will lie in the royal bed wearing Shivaji's ring.")
-    m.hero_setup("Madari Mehtar", desc="Madari Mehtar. A loyal young servant who stays behind to massage 'Shivaji's' feet and fool the guards.")
-    m.hero_setup("Sambhaji Raje (age 9)", desc="Sambhaji Raje, nine years old, held hostage with his father.")
+    m.hero_setup("Chhatrapati Shivaji Maharaj", hp=200, desc="Chhatrapati Shivaji Maharaj. Surrounded by Mughal guards in Agra, matching an empire with supreme statecraft and wisdom.")
+    m.hero_setup("Hiroji Farzand", desc="Veer Hiroji Farzand. Devoted companion who resembles Chhatrapati Shivaji Maharaj and risks his life lying in the royal bed wearing the royal ring.")
+    m.hero_setup("Madari Mehtar", desc="Madari Mehtar. Loyal attendant who stays behind in the haveli to fool the Mughal guards.")
+    m.hero_setup("Sambhaji Raje (age 9)", desc="Yuvaraj Sambhaji Raje, nine years old, accompanying his father Chhatrapati Shivaji Maharaj.")
     m.mood(ColorMood.EVENING)
     m.story([
-        "1666. Under the Treaty of Purandar, Shivaji has come to Aurangzeb's court at Agra. Placed among lesser nobles, he walks out in protest.",
-        ("Emperor Aurangzeb", "The mountain rat insults my Diwan-i-Aam? Let him rest in Ram Singh's haveli. Under guard. Forever.", (30, 30)),
-        ("Shivaji Maharaj", "I am ill, Hiroji. Very ill. Send sweets to every Brahmin and fakir in Agra. Every day. In the biggest baskets you can find."),
-        ("Hiroji Farzand", "The guards checked the first baskets, Raje. Now they only wave them through."),
-        "Walk Shivaji Maharaj to the kitchen courtyard where the baskets are loaded. Hiroji will lie in his bed, wearing his ring.",
+        "1666. Under the Treaty of Purandar, Chhatrapati Shivaji Maharaj arrives at Aurangzeb's court in Agra. When the Mughal court fails to accord him the sovereign honour due to a king, Chhatrapati Shivaji Maharaj thunders in defiance and walks out of the Diwan-i-Aam.",
+        ("Emperor Aurangzeb", "He defies the imperial Diwan-i-Aam to my face? Surround Ram Singh's haveli with Fulad Khan's guards. He does not leave Agra.", (30, 30)),
+        ("Chhatrapati Shivaji Maharaj", "I am ill, Hiroji. Very ill. Send sweets to the Brahmins and fakirs of Agra every day — in the largest kavads and baskets you can find."),
+        ("Hiroji Farzand", "The guards searched the first baskets, Maharaj. Now they wave them through without a glance."),
+        "Bring Chhatrapati Shivaji Maharaj to the kitchen courtyard where the baskets are loaded. Hiroji Farzand will take his place in the bed, wearing the royal ring.",
     ])
 
-    o1 = m.objective("Obj 1: The baskets", "Bring Shivaji Maharaj to the kitchen courtyard (south of the haveli).", 1)
+    o1 = m.objective("Obj 1: The baskets", "Bring Chhatrapati Shivaji Maharaj to the kitchen courtyard (south of the haveli).", 1)
     m.arrive(o1, shivaji, kitchen)
-    m.say(o1, "Shivaji and Sambhaji climb into the baskets. Carry them out of Agra and north-west to Mathura!", 12)
+    m.say(o1, "Chhatrapati Shivaji Maharaj and young Sambhaji Raje step into the sweet-baskets. Carry them out of Agra and north-west to Mathura!", 12)
     m.teleport(o1, 1, shivaji, *hold)
     m.teleport(o1, 1, sambhaji, hold[0], hold[1])
     m.give(o1, 4, 1, basket)
@@ -714,7 +714,7 @@ def agra():
 
     disc = m.trig("Escape discovered", enabled=False)
     disc.new_condition.timer(timer=150)
-    m.say(disc, "Fulad Khan finds Hiroji in the bed! 'He is gone!' Mughal horsemen ride out of every gate!")
+    m.say(disc, "Fulad Khan enters the chamber and finds Hiroji Farzand! 'Shivaji Raje has escaped!' Mughal horsemen ride out of every gate!")
     m.set_diplo(disc, 1, 2, DiplomacyState.ENEMY)
     m.chain(o1, disc)
     for i, d in enumerate((1, 60, 120)):
@@ -732,13 +732,13 @@ def agra():
     m.chain(o1, alt)
     for t in (o2, alt):
         m.teleport(t, 1, shivaji, 6, 6)
-        m.say(t, "At Mathura, Shivaji shaves his beard and becomes a wandering sadhu. Sambhaji stays hidden with trusted Brahmins. Twenty-five days later, Shivaji is home at Rajgad.", 16)
+        m.say(t, "At Mathura, Chhatrapati Shivaji Maharaj dons the robes of a wandering Gosavi ascetic, entrusting young Sambhaji Raje to loyal Brahmin families. Days later, Chhatrapati Shivaji Maharaj returns safely to Rajgad.", 16)
     fin = m.trig("Victory", enabled=False)
     fin.new_condition.timer(timer=14)
     m.victory(fin, epilogue=[
-        ("Emperor Aurangzeb", "Vanished? From the heart of my capital? Find him! Search every road to the Deccan!"),
-        ("Rajmata Jijabai", "Twenty-five days I waited, and a ragged sadhu knelt at my feet. Only a mother would know him."),
-        "Sambhaji is brought home months later. Shivaji now sets about winning back every fort he surrendered at Purandar.",
+        ("Emperor Aurangzeb", "Vanished? From the heart of my capital? Search every road from Agra to the Sahyadri!"),
+        ("Rajmata Jijabai Aaisaheb", "Twenty-five days I prayed to Bhavani Mata, and a dust-covered Gosavi bowed at my feet. A mother's eyes knew her Shivba Raje at once."),
+        "Young Sambhaji Raje returns safely home soon after. Chhatrapati Shivaji Maharaj now prepares to reclaim every fort ceded at Purandar.",
     ])
     m.chain(o2, fin)
     m.chain(alt, fin)
@@ -746,17 +746,17 @@ def agra():
     lost = m.trig("Both baskets lost", enabled=False)
     lost.new_condition.destroy_object(unit_object=basket.reference_id)
     lost.new_condition.destroy_object(unit_object=basket2.reference_id)
-    m.say(lost, "The baskets are seized. Shivaji is recaptured.")
+    m.say(lost, "The Mughal patrols have blocked the Mathura road.")
     lost.new_effect.declare_victory(source_player=2, enabled=1)
     m.chain(o1, lost)
 
-    m.hero_loss(shivaji, 2, "Shivaji Maharaj")
+    m.hero_loss(shivaji, 2, "Chhatrapati Shivaji Maharaj")
     m.texts(
-        instructions="August 1666, Agra. Walk Shivaji to the kitchen courtyard, then smuggle the baskets out of the city to Mathura (north-west corner). The guards are neutral — until the escape is discovered.",
-        history="Placed under house arrest at Agra after an angry exchange at Aurangzeb's court, Shivaji arranged for large baskets of sweets to be sent out daily. On 17 August 1666 he and Sambhaji escaped in them, while Hiroji Farzand lay in his bed. Shivaji reached Rajgad in disguise weeks later.",
+        instructions="August 1666, Agra. Bring Chhatrapati Shivaji Maharaj to the kitchen courtyard, then escort the sweet-baskets out of the city to Mathura (north-west corner). The guards are neutral — until the escape is discovered.",
+        history="Placed under heavy guard at Agra after boldly protesting at Aurangzeb's court, Chhatrapati Shivaji Maharaj arranged for large baskets of sweets to be sent out daily for charity. On 17 August 1666, Chhatrapati Shivaji Maharaj and young Sambhaji Raje escaped in the baskets while Veer Hiroji Farzand and Madari Mehtar stayed behind to deceive the guards. Travelling in disguise as a Gosavi ascetic, Chhatrapati Shivaji Maharaj returned triumphantly to Rajgad.",
         hints="Two baskets — only one needs to reach Mathura.\nMeet your agents (yellow cavalry, east) for an escort.\nOnce the alarm sounds, take the shortest route out.",
-        victory="Aurangzeb's prisoner has vanished.",
-        loss="Shivaji remains Aurangzeb's prisoner.",
+        victory="Chhatrapati Shivaji Maharaj has outwitted the Mughal Emperor in his own capital.",
+        loss="The road from Agra was blocked.",
     )
     return m.finish(OUT)
 
@@ -804,16 +804,16 @@ def sinhagad():
     m.hero_setup("Udaybhan Rathod", hp=500, attack=4, desc="Udaybhan Rathod. Rajput killedar of Kondhana for the Mughals, a formidable duelist.")
     m.mood(ColorMood.DARKNESS)
     m.story([
-        "February 1670. Under the Treaty of Purandar, Shivaji had to give Kondhana fort to the Mughals. Every morning Jijabai looks at it from Rajgad.",
-        ("Rajmata Jijabai", "As long as the Mughal flag flies on Kondhana, I cannot rest. Who will bring it back?"),
-        ("Tanaji Malusare", "My son's wedding can wait, Aaisaheb. First Kondhana's wedding, then Rayaba's."),
-        ("Shelar Mama", "The gates are a wall of Rathod swords. But the Doneghar cliff on the west... nobody guards a cliff that no man can climb.", (28, 44)),
-        "Bring Tanaji to the foot of the cliff. On this moonless night his men will climb with ropes.",
+        "February 1670. Under the Treaty of Purandar, Chhatrapati Shivaji Maharaj had ceded Kondhana fort to the Mughals. Every morning Rajmata Jijabai Aaisaheb gazes at it from Rajgad.",
+        ("Rajmata Jijabai Aaisaheb", "So long as the Mughal flag flies over Kondhana, my heart cannot rest. Who will bring Kondhana back to Swarajya?"),
+        ("Tanaji Malusare", "My son Rayaba's wedding can wait, Aaisaheb. 'Aadhi lagin Kondhanyache, mag mazya Rayabache' — first the marriage of Kondhana, then Rayaba's!"),
+        ("Shelar Mama", "The gates bristle with Rathod swords. But the Doneghar cliff on the west... no sentry guards a precipice that only eagles dare scale.", (28, 44)),
+        "Bring Subhedar Tanaji Malusare to the foot of the cliff. On this moonless night his Mavalas will scale the rock face with ropes.",
     ])
 
     early = m.trig("Tanaji falls before the climb")
     early.new_condition.destroy_object(unit_object=tanaji.reference_id)
-    m.say(early, "Tanaji has fallen before the assault. The attack collapses.")
+    m.say(early, "Subhedar Tanaji Malusare has fallen before the climb. The assault collapses.")
     early.new_effect.declare_victory(source_player=2, enabled=1)
 
     o1 = m.objective("Obj 1: The cliff", "Bring Tanaji Malusare to the foot of the western cliff (torch).", 1)
@@ -828,19 +828,19 @@ def sinhagad():
 
     td = m.trig("Tanaji falls", enabled=False)
     td.new_condition.destroy_object(unit_object=tanaji.reference_id)
-    m.say(td, "Tanaji and Udaybhan clash in a terrible duel. Tanaji falls! Suryaji cuts the climbing ropes: 'There is no way back — fight!'", 12)
+    m.say(td, "Subhedar Tanaji Malusare and Udaybhan clash in a fierce duel. Tanaji attains martyrdom! Suryaji Malusare rallies the Mavalas: 'The ropes are cut — fight for your Subhedar!'", 12)
     m.chain(o1, td)
 
     o3 = m.objective("Obj 3: Capture Kondhana", "Destroy the fort garrison.", 3, enabled=False)
     m.cleared(o3, 2, fort)
     m.handover(o3, 2, 1, fort, ObjectType.BUILDING)
     m.chain(o1, o3)
-    m.say(o3, "Bonfires announce the victory to Rajgad. Shivaji grieves: 'Gad aala, pan Sinha gela' — the fort is won, but the lion is gone. Kondhana is renamed Sinhagad.", 16)
+    m.say(o3, "Bonfires announce the victory to Rajgad. Chhatrapati Shivaji Maharaj mourns his beloved friend: 'Gad aala, pan Sinha gela' — the fort is won, but the Lion is gone. Kondhana is forever honoured as Sinhagad.", 16)
     fin = m.trig("Victory", enabled=False)
     fin.new_condition.timer(timer=16)
     m.victory(fin, epilogue=[
-        ("Rajmata Jijabai", "I asked for a fort and was given a lion's life. Let Rayaba's wedding be held at Rajgad, with all of Swarajya as his family."),
-        "Within months the Marathas recover fort after fort lost at Purandar. The time has come for Swarajya to have a crowned king.",
+        ("Rajmata Jijabai Aaisaheb", "I asked for a fort and a Lion gave his life for Swarajya. Let Rayaba's wedding be celebrated with royal honour, with Chhatrapati Shivaji Maharaj himself standing as his father."),
+        "Within months the Marathas recover fort after fort across the Sahyadri. The hour has come for Hindavi Swarajya to crown its sovereign Chhatrapati.",
     ])
     m.chain(o3, fin)
 
@@ -850,9 +850,9 @@ def sinhagad():
     lose.new_effect.declare_victory(source_player=2, enabled=1)
 
     m.texts(
-        instructions="4 February 1670. Bring Tanaji Malusare to the western cliff of Kondhana to climb in at night. Defeat Udaybhan Rathod and wipe out the garrison.",
-        history="Kondhana, ceded to the Mughals in 1665, was recaptured on the night of 4 February 1670 by Tanaji Malusare, who scaled its western cliffs with his men. Tanaji was killed in combat with the commander Udaybhan; his brother Suryaji completed the capture. Shivaji is said to have mourned: 'Gad aala, pan Sinha gela'.",
-        hints="Don't attack the gates — the cliff is the only way in.\nThe climbers land in the middle of the garrison: fight in a tight group.\nKeep Suryaji and Shelar Mama alive to lead after Tanaji.",
+        instructions="4 February 1670. Bring Subhedar Tanaji Malusare to the western cliff of Kondhana to scale the precipice at night. Defeat Udaybhan Rathod and the Mughal garrison.",
+        history="Kondhana, ceded under the Treaty of Purandar in 1665, was recaptured on the night of 4 February 1670 by Subhedar Tanaji Malusare, who scaled its sheer western cliff with 300 Mavalas. Tanaji Malusare fought heroically and attained martyrdom in single combat against Udaybhan Rathod; his brother Suryaji Malusare and Shelar Mama completed the victory. Chhatrapati Shivaji Maharaj immortalized his sacrifice with the words: 'Gad aala, pan Sinha gela' — and Kondhana became Sinhagad, the Lion's Fort.",
+        hints="Don't attack the gates — the cliff is the only way in.\nThe climbers land in the middle of the garrison: fight in a tight group.\nKeep Suryaji and Shelar Mama alive to lead the Mavalas.",
         victory="Kondhana is Sinhagad — the Lion's Fort.",
         loss="The assault on Kondhana has failed.",
     )
@@ -887,7 +887,7 @@ def raigad():
     raigad_area = (58, 48, 82, 72)
     m.ring_walls(1, 70, 60, 12, gaps=(90,))
     m.unit(1, B.CASTLE, 63, 55, name="Raigad")
-    shivaji = m.unit(1, H.PRITHVIRAJ, 70, 66, name="Shivaji Maharaj")
+    shivaji = m.unit(1, H.PRITHVIRAJ, 70, 66, name="Chhatrapati Shivaji Maharaj")
     m.unit(1, B.TOWN_CENTER, 70, 80)
     m.group(1, U.VILLAGER_MALE, 12, 66, 84, cols=6)
     m.group(1, U.VILLAGER_FEMALE, 8, 66, 87, cols=4)
@@ -901,12 +901,12 @@ def raigad():
     m.camera(1, 70, 66)
 
     gaga = m.unit(1, U.MONK, 134, 120, name="Gaga Bhatt of Varanasi")
-    jijabai = m.unit(1, H.SANYOGITA, 72, 64, name="Rajmata Jijabai")
-    m.hero_setup("Shivaji Maharaj", hp=250, attack=4, melee_armor=2,
-                 desc="Shivaji Maharaj, about to become Chhatrapati: the sovereign of Swarajya.")
-    m.hero_setup("Rajmata Jijabai", hp=200,
-                 desc="Rajmata Jijabai. The ideological and emotional foundation of Swarajya. She has waited her whole life for this day.")
-    m.hero_setup("Gaga Bhatt of Varanasi", hp=150, desc="Gaga Bhatt. The great Sanskrit scholar of Varanasi who will perform the coronation.")
+    jijabai = m.unit(1, H.SANYOGITA, 72, 64, name="Rajmata Jijabai Aaisaheb")
+    m.hero_setup("Chhatrapati Shivaji Maharaj", hp=250, attack=4, melee_armor=2,
+                 desc="Chhatrapati Shivaji Maharaj, ascending the golden Simhasan at Raigad as the sovereign Chhatrapati of Hindavi Swarajya.")
+    m.hero_setup("Rajmata Jijabai Aaisaheb", hp=200,
+                 desc="Rajmata Jijabai Aaisaheb. The guiding light and spiritual foundation of Hindavi Swarajya. She has waited her whole life to behold this sacred day.")
+    m.hero_setup("Gaga Bhatt of Varanasi", hp=150, desc="Pandit Gaga Bhatt. The revered Sanskrit scholar of Varanasi who officiates the Shivrajyabhishek.")
     m.group(1, U.MONK, 2, 132, 122, cols=2)
     m.group(1, U.LIGHT_CAVALRY, 3, 132, 118, cols=3)
 
@@ -921,20 +921,20 @@ def raigad():
     m.unit(3, B.DOCK, 11, 124)
 
     m.story([
-        "1674. Swarajya stretches from the Konkan coast to the Deccan plateau: some 300 forts and a navy. Yet the sultans and the Mughals still call Shivaji a rebel.",
-        ("Rajmata Jijabai", "A kingdom without a crown is a rebellion, Shivba. Let the world see what we have built."),
-        ("Shivaji Maharaj", "Then let it be done properly: with full Vedic rites, the first coronation of its kind in the Deccan in centuries."),
-        ("Gaga Bhatt of Varanasi", "I have travelled from Kashi to see the king of the Sahyadri. Bring me safely up the mountain.", (134, 120)),
-        "Escort Gaga Bhatt to Raigad, build the Raj Sabha, and guard the rites. Mughal and Siddi raiders will try to stop you.",
+        "1674. Hindavi Swarajya stretches from the Konkan coast to the Deccan plateau, guarded by 300 hill forts and a sovereign navy. At Raigad, preparations begin for the sacred Shivrajyabhishek.",
+        ("Rajmata Jijabai Aaisaheb", "Swarajya stands unconquered, Shivba Raje. Now ascend the Simhasan so the world beholds a sovereign Chhatrapati."),
+        ("Chhatrapati Shivaji Maharaj", "Then let it be consecrated with full Vedic rites at Raigad, inaugurating a new sovereign era for our people."),
+        ("Gaga Bhatt of Varanasi", "I have journeyed from Kashi to anoint the Chhatrapati of the Sahyadri. Escort me safely up the sacred mountain.", (134, 120)),
+        "Escort Pandit Gaga Bhatt to Raigad, build the Raj Sabha, and guard the coronation rites against Mughal and Siddi incursions.",
     ])
 
     o1 = m.objective("Obj 1: Gaga Bhatt", "Escort Gaga Bhatt from the eastern road to the Raigad plateau.", 1)
     m.arrive(o1, gaga, raigad_area)
-    m.say(o1, "Gaga Bhatt arrives. Now build the Raj Sabha — the great coronation hall — on Raigad.", 10)
+    m.say(o1, "Pandit Gaga Bhatt arrives at Raigad. Now raise the Raj Sabha — the great coronation hall — on the plateau.", 10)
     o2 = m.objective("Obj 2: Raj Sabha", "Build a Wonder (the Raj Sabha) on the Raigad plateau.", 2, enabled=False)
     m.present(o2, 1, raigad_area, const=B.WONDER)
     m.chain(o1, o2)
-    m.say(o2, "The hall stands complete. Guard Raigad while the rites are performed!", 10)
+    m.say(o2, "The Raj Sabha stands resplendent. Guard Raigad while the Vedic coronation rites are performed!", 10)
     o3 = m.objective("Obj 3: The rites", "Defend Raigad for 5 minutes while the coronation rites are performed.", 3, enabled=False)
     o3.new_condition.timer(timer=300)
     m.chain(o2, o3)
@@ -942,14 +942,14 @@ def raigad():
     show.new_condition.timer(timer=1)
     m.timer_display(show, 300, "Coronation completes in: %d", slot=1)
     m.chain(o2, show)
-    m.say(o3, "6 June 1674. To the sound of conch shells and cannon, Shivaji is crowned Chhatrapati — sovereign of Hindavi Swarajya. A new era, the Rajyabhishek Shaka, begins.", 16)
+    m.say(o3, "6 June 1674 — Jyeshtha Shuddha Trayodashi. To the roar of conch shells, dhol-tasha, and cannon, Chhatrapati Shivaji Maharaj ascends the thirty-two-maund golden Simhasan as Shakakarta Chhatrapati — sovereign of Hindavi Swarajya. The Rajyabhishek Shaka era begins!", 16)
     fin = m.trig("Victory", enabled=False)
     fin.new_condition.timer(timer=16)
     m.victory(fin, epilogue=[
-        ("Rajmata Jijabai", "I have seen my son crowned. Now I can go to Mahadev in peace."),
-        "Twelve days after the coronation, Rajmata Jijabai dies at Pachad, at the foot of Raigad.",
-        "Chhatrapati Shivaji Maharaj rules for six more years, expanding Swarajya south to Jinji. He dies at Raigad in April 1680.",
-        "His son Sambhaji inherits the throne, the forts, and every one of his father's enemies. Aurangzeb is coming.",
+        ("Rajmata Jijabai Aaisaheb", "My eyes have beheld my Shivba Raje crowned Chhatrapati of Hindavi Swarajya. My life's tapasya is fulfilled."),
+        "Twelve days after the coronation, Rajmata Jijabai Aaisaheb attains heavenly abode at Pachad, at the foot of Raigad.",
+        "Chhatrapati Shivaji Maharaj reigns for six more glorious years, extending Swarajya south through the Dakshin Digvijaya to Jinji and Vellore, before attaining Mahaparinirvan at Raigad in April 1680.",
+        "His valiant son Chhatrapati Sambhaji Maharaj inherits the sacred throne, the forts, and the duty of defending Hindavi Swarajya against the full might of Aurangzeb's empire.",
     ])
     m.chain(o3, fin)
 
@@ -963,13 +963,13 @@ def raigad():
                                        area_x1=58, area_y1=48, area_x2=82, area_y2=72, inverted=1)
     m.say(lose, "Raigad has fallen.")
     lose.new_effect.declare_victory(source_player=2, enabled=1)
-    m.hero_loss(shivaji, 2, "Shivaji Maharaj")
+    m.hero_loss(shivaji, 2, "Chhatrapati Shivaji Maharaj")
     m.texts(
-        instructions="1674. Escort Gaga Bhatt to Raigad, build the Raj Sabha (a Wonder) on the plateau, and hold out for five minutes while the coronation rites are performed. Mughal and Siddi raids will come. Raigad castle and Shivaji Maharaj must survive.",
-        history="On 6 June 1674 Shivaji was crowned Chhatrapati at Raigad by Gaga Bhatt of Varanasi, formally establishing the Maratha kingdom as a sovereign state. He died at Raigad in April 1680, leaving a kingdom of some 300 forts and a navy.",
+        instructions="1674. Escort Pandit Gaga Bhatt to Raigad, build the Raj Sabha (a Wonder) on the plateau, and defend Raigad for five minutes while the Shivrajyabhishek rites are performed. Raigad castle and Chhatrapati Shivaji Maharaj must survive.",
+        history="On 6 June 1674 (Jyeshtha Shuddha Trayodashi), Chhatrapati Shivaji Maharaj was crowned Chhatrapati on the golden Simhasan at Raigad with Vedic rites officiated by Pandit Gaga Bhatt of Varanasi, inaugurating the Rajyabhishek Shaka and proclaiming Hindavi Swarajya a sovereign realm. Chhatrapati Shivaji Maharaj reigned until April 1680, leaving an unconquered kingdom of 300 forts, the Ashta Pradhan council, and a strong Maratha navy.",
         hints="Grow the economy first: the Wonder needs 1000 food, wood, stone and gold.\nThe Mughal raids come every 4 minutes from the north-east.\nPalisades and towers on the plateau's ramp make defence easier.",
-        victory="Jai Bhavani! Jai Shivaji! The Chhatrapati reigns.",
-        loss="The dream of a crowned Swarajya fades.",
+        victory="Praudh Pratap Purandar, Kshatriya Kulavantas, Sinhasanadhishwar, Maharajadhiraj Yogi Raj, Shrimant Chhatrapati Shivaji Maharaj ki Jai!",
+        loss="Raigad was breached.",
     )
     return m.finish(OUT)
 

@@ -1,6 +1,6 @@
 # Rise of Swarajya — AoE II DE campaign (1646–1689)
 
-15 chapters in 5 acts. Shivaji Maharaj builds Swarajya (1–9); Sambhaji Maharaj defends it (10–15).
+15 chapters in 5 acts. Chhatrapati Shivaji Maharaj builds Hindavi Swarajya (1–9); Chhatrapati Sambhaji Maharaj defends it (10–15).
 
 ## Install (Mac, Feral build)
 
@@ -43,14 +43,14 @@ Open `Rise_of_Swarajya_Codex.html` in any browser for the illustrated campaign b
 ## What changed from the first version
 
 - **Crash fix.** Player colours were written as 1–8; the game expects 0–7. Saffron became invalid colour 8. Fixed in `aoe_lib.player()`.
-- **Two new chapters:** Purandar (siege, Murarbaji's stand, treaty, decision to go to Agra) and The Crown of Conflict (succession: win Hambirrao, rally forts, enter Raigad without civil war).
-- **Cinematic openings:** dialogue with hero portraits, camera tours of key locations.
+- **Two new chapters:** Purandar (siege, Veer Murarbaji Deshpande's stand, treaty, decision to travel to Agra) and The Crown of Conflict (succession: win over Sarsenapati Hambirrao Mohite, rally forts, enter Raigad without civil war).
+- **Cinematic openings:** dialogue with hero portraits, camera reveals of key locations, custom Maratha storyboard illustrations, and full spoken narration/voiceovers.
 - **Epilogues** after every victory, like the original campaigns.
-- **Heroes** with real stat boosts and lore text: Baji Prabhu, Tanaji, Jiva Mahala, Murarbaji, Bahirji Naik, Netaji Palkar, Hambirrao, Kavi Kalash, Jijabai and more.
+- **Heroes** with real stat boosts and lore text: Chhatrapati Shivaji Maharaj, Chhatrapati Sambhaji Maharaj, Rajmata Jijabai Aaisaheb, Veer Baji Prabhu Deshpande, Subhedar Tanaji Malusare, Veer Jiva Mahala, Veer Murarbaji Deshpande, Bahirji Naik, Sarnaubat Netaji Palkar, Sarsenapati Hambirrao Mohite, Kavi Kalash, and more.
 - **Bahirji Naik's intelligence** reveals enemy camps and paths (Pratapgad, Lal Mahal, Surat).
 - **Lighting per chapter:** monsoon mist, night, darkness, twilight.
 - **Marathas civilization:** Gurjaras renamed "Marathas" with cavalry LOS, raiding vs buildings, cheaper infantry, stronger forts.
-- Final chapter ends with the narrator's lines and introduces Rajaram, Yesubai, Santaji, Dhanaji and Tarabai.
+- Final chapter honours Dharmaveer Chhatrapati Sambhaji Maharaj and introduces Chhatrapati Rajaram Maharaj, Maharani Yesubai Aaisaheb, Senapati Santaji Ghorpade, Senapati Dhanaji Jadhav, and Maharani Tarabai Aaisaheb.
 
 ## Known limits
 

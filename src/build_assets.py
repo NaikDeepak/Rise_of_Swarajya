@@ -59,12 +59,22 @@ def clean_tts_text(text: str) -> str:
     return (
         text.replace("—", ", ")
         .replace("–", ", ")
+        .replace("Chhatrapati", "Chhatra-pati")
+        .replace("Maharaj", "Mahaaraaj")
+        .replace("Aaisaheb", "Aai-saaheb")
+        .replace("Dharmaveer", "Dharma-veer")
         .replace("Swarajya", "Swaraajya")
         .replace("Raje", "Raajay")
         .replace("Shivba", "Shivbaa")
         .replace("Mavalas", "Maavalaas")
         .replace("Maval", "Maaval")
         .replace("Sahyadri", "Sahyaadri")
+        .replace("Simhasan", "Simhaasan")
+        .replace("Rajgad", "Raaj-gad")
+        .replace("Raigad", "Raai-gad")
+        .replace("Pratapgad", "Prataap-gad")
+        .replace("Sinhagad", "Sinha-gad")
+        .replace("Vishalgad", "Vishaal-gad")
     )
 
 
@@ -97,32 +107,47 @@ def build_vo_line(item):
 
 
 def draw_maratha_emblem(im: Image.Image, chapter_idx: int, slide_idx: int, is_outro: bool):
-    """Add hand-drawn ink-wash Maratha fort / Bhagwa Dhwaj banner accent to a 2000x1048 LA slide."""
+    """Add hand-drawn ink-wash Maratha fort / Bhagwa Dhwaj / octagonal Rajmudra accent to a 2000x1048 LA slide."""
     la = im.convert("RGBA")
     overlay = Image.new("RGBA", (2000, 1048), (0, 0, 0, 0))
     d = ImageDraw.Draw(overlay)
 
-    # Subtle ink-wash Sahyadri fort silhouette or Bhagwa Dhwaj standard on slide 1
-    if slide_idx == 1:
-        # Staff and forked Bhagwa Dhwaj banner silhouette in dark ink on left/right margin
-        bx = 260 if not is_outro else 1680
-        by = 220
-        d.line([(bx, by), (bx, by + 560)], fill=(25, 25, 25, 190), width=7)
-        # Forked swallowtail banner
+    bx = 250 if (slide_idx % 2 == 1 and not is_outro) else 1720
+    by = 210
+
+    if slide_idx in (1, 3):
+        # Staff and forked Bhagwa Dhwaj banner silhouette in classical ink-wash on margin
+        d.line([(bx, by), (bx, by + 560)], fill=(25, 25, 25, 195), width=7)
+        # Kalash finial atop flagpole
+        d.ellipse([bx - 9, by - 18, bx + 9, by], fill=(30, 30, 30, 200))
+        # Forked swallowtail Bhagwa Dhwaj banner
+        direction = 1 if bx < 1000 else -1
         pts = [
-            (bx + 4, by + 16),
-            (bx + 210, by + 48),
-            (bx + 150, by + 105),
-            (bx + 220, by + 165),
-            (bx + 4, by + 195),
+            (bx + 4 * direction, by + 16),
+            (bx + 215 * direction, by + 48),
+            (bx + 150 * direction, by + 105),
+            (bx + 225 * direction, by + 165),
+            (bx + 4 * direction, by + 195),
         ]
-        d.polygon(pts, fill=(40, 40, 40, 135), outline=(20, 20, 20, 200))
-        # Fort battlements at base of staff
+        d.polygon(pts, fill=(40, 40, 40, 140), outline=(20, 20, 20, 205))
+        # Sahyadri fort battlements (buruj) at base of flagpole
         base_y = by + 520
         for crenel in range(-4, 5):
             cx = bx + crenel * 26
-            d.rectangle([cx - 10, base_y - 22, cx + 10, base_y], fill=(35, 35, 35, 150))
-        d.rectangle([bx - 115, base_y, bx + 115, base_y + 45], fill=(30, 30, 30, 165))
+            d.rectangle([cx - 10, base_y - 22, cx + 10, base_y], fill=(35, 35, 35, 155))
+        d.rectangle([bx - 115, base_y, bx + 115, base_y + 45], fill=(30, 30, 30, 170))
+    else:
+        # Octagonal Rajmudra royal seal silhouette in ink-wash
+        cx, cy = bx, by + 220
+        for r_oct, alpha in ((110, 175), (96, 145)):
+            oct_pts = [
+                (
+                    cx + r_oct * math.cos(math.radians(22.5 + 45 * k)),
+                    cy + r_oct * math.sin(math.radians(22.5 + 45 * k)),
+                )
+                for k in range(8)
+            ]
+            d.polygon(oct_pts, outline=(25, 25, 25, alpha), width=4)
 
     comp = Image.alpha_composite(la, overlay)
     gray = comp.convert("L")
@@ -130,14 +155,41 @@ def draw_maratha_emblem(im: Image.Image, chapter_idx: int, slide_idx: int, is_ou
     return Image.merge("LA", (gray, alpha))
 
 
-def collect_base_indian_slides():
-    """Collect the 2000x1048 ink-wash PNG slides from fcam6, incam1, incam2, incam3."""
-    pools = {}
-    for c in ("fcam6", "incam1", "incam2", "incam3"):
-        p = sorted(glob.glob(os.path.join(GAME_DATA_CAMPAIGN_TEX, c, "**", "*.png"), recursive=True))
-        if p:
-            pools[c] = p
-    return pools
+# Strictly curated whitelist of verified, dignified Indian warrior/king/fort/temple/fleet ink-wash illustrations
+# (Excludes all rakshasa/demon myth slides and Mughal slides)
+CURATED_SLIDES = {
+    "king": "fcam6/2/intro/2.png",          # Regal bearded Indian king seated in royal robes & turban
+    "swordsman": "fcam6/1/intro/4.png",     # Warrior with talwar & round shield before the rising sun
+    "spearman": "fcam6/1/outro/1.png",      # Mustachioed warrior holding a bhala spear
+    "cavalry": "incam2/1/intro/6.png",      # Warrior-king on rearing warhorse raising his sword
+    "rider": "incam2/1/outro/1.png",        # Lone horseman galloping at full speed through the pass
+    "temple": "incam2/1/outro/6.png",       # Sacred temple mandapa with warriors standing before it
+    "valley": "incam2/1/intro/5.png",       # Mountain range & river valley with temple
+    "fire": "fcam6/1/intro/2.png",          # Sacred Agni fire
+    "bard": "fcam6/1/intro/5.png",          # Shahir / bard playing tanpura
+    "sea_king": "incam2/3/intro/3.png",     # King on horseback gazing at ships on the sea
+    "fleet": "incam2/3/intro/4.png",        # Indian warships under sail on the ocean
+    "night_palace": "incam2/3/outro/2.png", # Palace pavilion under the crescent moon at night
+    "enemy_gen": "fcam6/4/intro/4.png",     # Armoured opposing general with shield
+}
+
+CHAPTER_SLIDE_THEMES = {
+    1: (["temple", "king", "swordsman", "valley"], ["swordsman", "king", "fire"]),                # Torna
+    2: (["valley", "enemy_gen", "king", "swordsman"], ["swordsman", "cavalry", "king"]),           # Pratapgad
+    3: (["valley", "rider", "spearman", "swordsman"], ["spearman", "king", "fire"]),               # Pavan Khind
+    4: (["night_palace", "king", "rider", "swordsman"], ["swordsman", "rider", "king"]),           # Lal Mahal
+    5: (["sea_king", "rider", "cavalry", "swordsman"], ["cavalry", "king", "bard"]),               # Surat
+    6: (["valley", "spearman", "enemy_gen", "king"], ["king", "spearman", "bard"]),                # Purandar
+    7: (["night_palace", "king", "rider", "temple"], ["rider", "king", "fire"]),                   # Agra
+    8: (["night_palace", "swordsman", "spearman", "valley"], ["swordsman", "fire", "king"]),       # Sinhagad
+    9: (["temple", "king", "fire", "cavalry"], ["king", "temple", "fire"]),                        # Raigad
+    10: (["king", "cavalry", "rider", "temple"], ["cavalry", "king", "fire"]),                     # Crown of Conflict
+    11: (["cavalry", "rider", "swordsman", "valley"], ["cavalry", "king", "fire"]),                # Burhanpur
+    12: (["valley", "spearman", "swordsman", "cavalry"], ["spearman", "cavalry", "king"]),         # Ramsej
+    13: (["sea_king", "fleet", "swordsman", "cavalry"], ["fleet", "sea_king", "king"]),            # Janjira
+    14: (["sea_king", "fleet", "cavalry", "swordsman"], ["cavalry", "sea_king", "king"]),          # Goa
+    15: (["king", "cavalry", "rider", "swordsman"], ["fire", "cavalry", "king"]),                  # Sangameshwar
+}
 
 
 def main():
@@ -211,19 +263,13 @@ def main():
     aoe_lib.VO_DURATIONS.update(dur_map)
 
     # 3. Build storyboard narrations (rs01_intro.wem .. rs15_outro.wem) + custom PNG slides + Rise_of_Swarajya.json
-    pools = collect_base_indian_slides()
-    all_pool = (
-        pools.get("fcam6", []) +
-        pools.get("incam1", []) +
-        pools.get("incam2", []) +
-        pools.get("incam3", [])
-    )
+    import hashlib
 
-    # Choose background per Act so each Act has rich Indian parchment art
+    # Choose background per Act so each Act has rich Indian parchment art (no Mughal backgrounds)
     act_bg = {
         "Act I: The Foundation": "textures/campaign/fcam6/prithviraj_background.dds",
-        "Act II: The Storm": "textures/campaign/incam1/babur_background.dds",
-        "Act III: The Chhatrapati": "textures/campaign/incam3/devapala_background.dds",
+        "Act II: The Storm": "textures/campaign/incam3/devapala_background.dds",
+        "Act III: The Chhatrapati": "textures/campaign/fcam6/prithviraj_background.dds",
         "Act IV: The Chhava": "textures/campaign/incam2/rajendra_background.dds",
         "Act V: Total War": "textures/campaign/fcam6/prithviraj_background.dds",
     }
@@ -235,13 +281,15 @@ def main():
     for idx, new, act, title, intro_texts, outro_texts in chapter_meta:
         bg_dds = act_bg.get(act, "textures/campaign/fcam6/prithviraj_background.dds")
         scen_entry = {}
-        for seq_key, sub, texts in (
-            ("IntroSequence", "intro", intro_texts),
-            ("OutroSequence", "outro", outro_texts),
+        intro_themes, outro_themes = CHAPTER_SLIDE_THEMES[idx]
+        for seq_key, sub, texts, themes in (
+            ("IntroSequence", "intro", intro_texts, intro_themes),
+            ("OutroSequence", "outro", outro_texts, outro_themes),
         ):
             snd_name = f"rs{idx:02d}_{sub}"
             wem_path = os.path.join(SOUNDS_DIR, f"{snd_name}.wem")
-            dur_cache_key = f"__slide_{snd_name}"
+            txt_hash = hashlib.md5("||".join(texts).encode("utf-8")).hexdigest()[:8]
+            dur_cache_key = f"__slide_{snd_name}_{txt_hash}"
 
             slide_durs = dur_map.get(dur_cache_key)
             if not slide_durs or len(slide_durs) != len(texts) or not os.path.exists(wem_path):
@@ -264,7 +312,8 @@ def main():
 
             slides_arr = []
             for s_i, (s_txt, s_dur) in enumerate(zip(texts, slide_durs), 1):
-                src_png = all_pool[(idx * 7 + s_i * 3 + (0 if sub == "intro" else 11)) % len(all_pool)]
+                theme_key = themes[(s_i - 1) % len(themes)]
+                src_png = os.path.join(GAME_DATA_CAMPAIGN_TEX, CURATED_SLIDES[theme_key])
                 im = Image.open(src_png)
                 custom_im = draw_maratha_emblem(im, idx, s_i, is_outro=(sub == "outro"))
                 custom_im.save(os.path.join(seq_dir, f"{s_i}.png"))
@@ -303,6 +352,12 @@ def main():
                 ]
             }
         scenarios_json.append(scen_entry)
+
+    # Prune any old sw_vo_*.wem files no longer referenced in VO_REGISTRY
+    active_wems = {f"{k}.wem" for k in aoe_lib.VO_REGISTRY} | {f"rs{i:02d}_{s}.wem" for i in range(1, 16) for s in ("intro", "outro")}
+    for wem_file in glob.glob(os.path.join(SOUNDS_DIR, "*.wem")):
+        if os.path.basename(wem_file) not in active_wems:
+            os.remove(wem_file)
 
     with open(os.path.join(SOUNDS_DIR, "vo_durations.json"), "w") as f:
         json.dump(dur_map, f, indent=2)
