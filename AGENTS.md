@@ -1,3 +1,6 @@
+## Known issues
+Read `docs/KNOWLEDGEBASE.md` before changing `src/aoe_lib.py`, triggers, unit placement or in-game text. Add an entry there for every new freeze, crash, soft-lock or text fix.
+
 # Working with other agents (shared notepad)
 
 <!-- agent-notepad protocol. Copy this section into your repo's AGENTS.md (Codex and Antigravity read AGENTS.md
