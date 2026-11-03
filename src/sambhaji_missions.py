@@ -70,7 +70,7 @@ def crown_of_conflict():
     m.group(3, U.ARBALESTER, 6, 98, 24, cols=3)
     m.group(3, U.CHAMPION, 6, 90, 18, cols=3)
     m.hero_setup("Hambirrao Mohite", hp=300, attack=5, melee_armor=2,
-                 desc="Sarsenapati Hambirrao Mohite. Commander-in-chief of the Maratha army, Maharani Soyarabai's brother, and staunch pillar of Swarajya.")
+                 desc="Sarsenapati Hambirrao Mohite. Commander-in-chief of the Maratha army, and brother of Maharani Soyarabai.")
     m.hero_setup("Annaji Datto", desc="Annaji Datto. Senior minister at Raigad who favours a regency council.")
     m.hero_setup("Maharani Soyarabai", desc="Maharani Soyarabai. Queen of Chhatrapati Shivaji Maharaj and mother of young Rajaram Raje.")
 
@@ -207,7 +207,7 @@ def burhanpur():
     o1 = m.objective("Obj 1: Bahadurpura", "Destroy the five bazaars of Bahadurpura.", 1)
     m.cleared(o1, 2, bp, const=B.MARKET)
     m.gold(o1, 1, 2500)
-    m.say(o1, "Bahadurpura's imperial warehouses are emptied. The Deccan beholds the fierce valour of Chhatrapati Sambhaji Maharaj. Ride for Salher!", 12)
+    m.say(o1, "Bahadurpura's imperial warehouses are emptied. The Deccan has seen what Chhatrapati Sambhaji Maharaj can do. Ride for Salher!", 12)
     o2 = m.objective("Obj 2: Salher", "Return Chhatrapati Sambhaji Maharaj to Salher fort (south-west).", 2, enabled=False)
     m.arrive(o2, sambhaji, salher)
     m.chain(o1, o2)
@@ -226,8 +226,8 @@ def burhanpur():
     m.hero_loss(sambhaji, 3, "Chhatrapati Sambhaji Maharaj")
     m.texts(
         instructions="1681. Destroy the five bazaars of Bahadurpura, then return Chhatrapati Sambhaji Maharaj to Salher fort. A Mughal army arrives in 7 minutes.",
-        history="In early 1681 Chhatrapati Sambhaji Maharaj and Sarsenapati Hambirrao Mohite led a lightning strike on Burhanpur, the rich Mughal provincial capital on the Tapi river, capturing the treasury of Bahadurpura. The expedition announced to all India that the new Chhatrapati possessed the same daring and strategic genius as his father.",
-        hints="Ignore the walled city — its fort is too strong.\nCavalry archers are good against the bazaar guards.\nWatch the timer and leave in time.",
+        history="In early 1681 Chhatrapati Sambhaji Maharaj and Sarsenapati Hambirrao Mohite led a lightning strike on Burhanpur, the rich Mughal provincial capital on the Tapi river, capturing the treasury of Bahadurpura. The raid showed all of India that the new Chhatrapati was as daring as his father.",
+        hints="Ignore the walled city. Its fort is too strong.\nCavalry archers are good against the bazaar guards.\nWatch the timer and leave in time.",
         victory="The Mughal Deccan trembles before Chhatrapati Sambhaji Maharaj.",
         loss="The expedition was intercepted.",
     )
@@ -416,7 +416,7 @@ def janjira():
     m.hero_loss(sambhaji, 2, "Chhatrapati Sambhaji Maharaj")
     m.texts(
         instructions="1682. Destroy the two Siddi docks at Danda-Rajpuri, then destroy every Bombard Tower guarding the island fort of Janjira. Chhatrapati Sambhaji Maharaj must survive.",
-        history="The Siddis of Janjira, allied to the Mughals, threatened the Konkan coast. In 1682 Chhatrapati Sambhaji Maharaj bombarded Janjira, attempted the audacious feat of building a stone causeway across the sea channel, and confined the Siddi fleet with the Maratha navy based at Padmadurg.",
+        history="The Siddis of Janjira, allied to the Mughals, threatened the Konkan coast. In 1682 Chhatrapati Sambhaji Maharaj bombarded Janjira, even tried to build a stone causeway across the sea channel, and confined the Siddi fleet with the Maratha navy based at Padmadurg.",
         hints="Fire ships and cannon galleons beat galleons and towers.\nBuild a strong navy before attacking the island.\nKeep some infantry home for Siddi landings.",
         victory="The Siddi menace is checked.",
         loss="The Konkan coast is lost.",
@@ -505,7 +505,7 @@ def goa():
     o3 = m.objective("Obj 3: Withdraw", "Bring Chhatrapati Sambhaji Maharaj to the south-east corner to confront Shah Alam's column.", 3, enabled=False)
     m.arrive(o3, sambhaji, retreat)
     m.chain(o1, o3)
-    m.victory(o3, "Chhatrapati Sambhaji Maharaj redeploys his victorious army in perfect order. Goa has been humbled, and the Portuguese never again dare aid the Mughals openly.", epilogue=[
+    m.victory(o3, "Chhatrapati Sambhaji Maharaj pulls his army back in good order. Goa has been humbled.", epilogue=[
         "Having shattered Portuguese pride at Santo Estevao, Chhatrapati Sambhaji Maharaj turns to meet Shah Alam's Mughal army in the Konkan passes, forcing the Mughal prince into a disastrous retreat.",
         "Six more years of relentless war follow. Even after Bijapur and Golconda fall to Aurangzeb, Hindavi Swarajya under Chhatrapati Sambhaji Maharaj stands undefeated.",
     ])
@@ -519,8 +519,8 @@ def goa():
     m.hero_loss(sambhaji, 2, "Chhatrapati Sambhaji Maharaj")
     m.texts(
         instructions="1683. Charge across the low-tide fords and destroy the Portuguese fort of Santo Estevao. Optionally wound the Viceroy. Then move to the south-east corner before Shah Alam's Mughal army arrives. Chhatrapati Sambhaji Maharaj must survive.",
-        history="In late 1683 Chhatrapati Sambhaji Maharaj marched against Portuguese Goa for aiding the Mughals. Leading his cavalry across the tidal channel at low water, Chhatrapati Sambhaji Maharaj stormed the island fortress of Santo Estevao and routed the Viceroy Count of Alvor, bringing Portuguese Goa to the brink of total fall before pivoting to repel Prince Shah Alam's army.",
-        hints="Use the shallow fords — your army can't swim.\nBombard cannons outrange the island's towers.\nRegroup in the south-east once the fort falls.",
+        history="In late 1683 Chhatrapati Sambhaji Maharaj marched against Portuguese Goa for aiding the Mughals. Leading his cavalry across the tidal channel at low water, Chhatrapati Sambhaji Maharaj stormed the island fortress of Santo Estevao and routed the Viceroy Count of Alvor, came close to taking Goa itself, then turned to face Prince Shah Alam's army.",
+        hints="Use the shallow fords. Your army can't swim.\nBombard cannons outrange the island's towers.\nRegroup in the south-east once the fort falls.",
         victory="Goa bows before the valour of Chhatrapati Sambhaji Maharaj.",
         loss="The Goa offensive was halted.",
     )
@@ -565,12 +565,12 @@ def sangameshwar():
     m.hero_setup("Mhaloji Ghorpade", hp=300, attack=5, melee_armor=2, desc="Senapati Mhaloji Ghorpade. Veteran commander and father of Santaji Ghorpade, who gives his life defending his Chhatrapati.")
     m.mood(ColorMood.TWILIGHT)
     m.story([
-        "February 1689. For nine undefeated years Chhatrapati Sambhaji Maharaj has fought Aurangzeb, the Siddis and the Portuguese on every front. Over 120 battles fought — and not a single battle or major fort lost.",
+        "February 1689. For nine undefeated years Chhatrapati Sambhaji Maharaj has fought Aurangzeb, the Siddis and the Portuguese on every front. More than 120 battles, and he has not lost one, nor a single major fort.",
         "Sarsenapati Hambirrao Mohite attained martyrdom in his victorious battle at Wai. Now Chhatrapati Sambhaji Maharaj holds court briefly at Sangameshwar before riding to Raigad.",
         ("Kavi Kalash", "The judicial council at Sangameshwar is complete, Maharaj. We should ride for Raigad tonight by the ghat road."),
         "Through treachery in the passes, Muqarrab Khan's Mughal cavalry has learned of the Chhatrapati's small escort at Sangameshwar.",
         ("Mhaloji Ghorpade", "Horsemen on both rivers! Muqarrab Khan's detachment! We are outnumbered ten to one, Maharaj!", (50, 20)),
-        (SAMBHAJI_NAME, "Then Raigad must be warned first! Maharani Yesubai and Rajaram Raje must safeguard Swarajya. Ride out with the messenger — we will hold the pass here!"),
+        (SAMBHAJI_NAME, "Then Raigad must be warned first! Maharani Yesubai and Rajaram Raje must safeguard Swarajya. Ride out with the messenger. We will hold the pass here!"),
     ])
 
     o1 = m.objective("Obj 1: Warn Raigad", "Bring the royal messenger to the Raigad road (south-west corner).", 1)
@@ -593,14 +593,14 @@ def sangameshwar():
     m.say(o2, "Senapati Mhaloji Ghorpade attains martyrdom fighting to his last breath. Outnumbered after a fierce stand, Chhatrapati Sambhaji Maharaj and Kavi Kalash are captured.", 12)
     epi = [
         "Brought before Aurangzeb at Bahadurgad, Chhatrapati Sambhaji Maharaj is demanded to surrender all his forts, his treasury, and his Dharma.",
-        "The Chhava of Chhatrapati Shivaji Maharaj roars back in defiance, refusing even if offered the Emperor's own throne. For forty days he and Kavi Kalash endure unimaginable torment without bowing their heads for an instant, attaining sacred martyrdom at Tulapur on 11 March 1689.",
-        "Aurangzeb thought the martyrdom of the Chhatrapati would extinguish Hindavi Swarajya. Instead, the supreme sacrifice of Dharmaveer Chhatrapati Sambhaji Maharaj ignited a sacred fire in every Maratha heart.",
-        "Every hill, every valley, and every Mavala of Maharashtra rose to avenge their beloved Chhatrapati.",
-        "At Raigad, Maharani Yesubai Aaisaheb counselled Chhatrapati Rajaram Maharaj to carry the war south to Jinji, while she resolutely held the capital and endured decades of captivity with unbroken dignity.",
-        "Senapati Santaji Ghorpade and Senapati Dhanaji Jadhav unleashed relentless lightning warfare across the Deccan — even riding into Tulapur at night to sever the golden ropes of Aurangzeb's own imperial tent.",
-        "And when Chhatrapati Rajaram Maharaj passed in 1700, the lion-hearted Maharani Tarabai Aaisaheb took the reins of Swarajya on horseback, driving the Mughal armies back across the rivers.",
-        "Aurangzeb never returned to Delhi. He died broken in Maharashtra in 1707, his treasury exhausted and his empire crumbling — while the saffron Bhagwa Dhwaj of Hindavi Swarajya flew triumphant from the Sahyadri to Attock and Delhi.",
-        "History bows forever before Dharmaveer Chhatrapati Sambhaji Maharaj — the Chhava who gave his life, but never yielded his Dharma or his Swarajya. Har Har Mahadev!",
+        "The Chhava of Chhatrapati Shivaji Maharaj roars back in defiance, refusing even if offered the Emperor's own throne. For forty days he and Kavi Kalash are tortured, and neither bows his head. They are put to death at Tulapur on 11 March 1689.",
+        "Aurangzeb expected the Chhatrapati's death to end Hindavi Swarajya. He was wrong. Word of how Dharmaveer Chhatrapati Sambhaji Maharaj died spread to every Maratha village.",
+        "The Mavalas rose across Maharashtra to avenge their Chhatrapati.",
+        "At Raigad, Maharani Yesubai Aaisaheb counselled Chhatrapati Rajaram Maharaj to carry the war south to Jinji, while she held the capital. When Raigad fell, she spent nearly thirty years as a Mughal captive.",
+        "Senapati Santaji Ghorpade and Senapati Dhanaji Jadhav raided across the Deccan, once riding into the Mughal camp at Tulapur by night to cut the golden ropes of Aurangzeb's own tent.",
+        "And when Chhatrapati Rajaram Maharaj passed in 1700, Maharani Tarabai Aaisaheb took command of Swarajya and led the war against the Mughals from the saddle.",
+        "Aurangzeb never returned to Delhi. He died in Maharashtra in 1707, his treasury empty and his empire failing. Fifty years later the Bhagwa Dhwaj would fly as far north as Attock.",
+        "Dharmaveer Chhatrapati Sambhaji Maharaj, the Chhava, gave his life and never gave up his Dharma or his Swarajya. Har Har Mahadev!",
     ]
     prev = o2
     for i, line in enumerate(epi):
@@ -624,7 +624,7 @@ def sangameshwar():
     m.hero_loss(sambhaji, 2, "Chhatrapati Sambhaji Maharaj")
     m.texts(
         instructions="February 1689, Sangameshwar. Escort the royal messenger to the Raigad road (south-west corner), then hold Sangameshwar for 5 minutes. Chhatrapati Sambhaji Maharaj and the messenger must survive.",
-        history="In February 1689, after nine undefeated years of defending Hindavi Swarajya against the Mughal Empire, the Siddis, and the Portuguese, Chhatrapati Sambhaji Maharaj was ambushed at Sangameshwar by Muqarrab Khan's forces. Refusing to surrender his Dharma or a single fort of Swarajya, Dharmaveer Chhatrapati Sambhaji Maharaj and Kavi Kalash attained immortal martyrdom at Tulapur on 11 March 1689. Inspired by his supreme sacrifice, the Marathas under Maharani Yesubai, Chhatrapati Rajaram Maharaj, Santaji Ghorpade, Dhanaji Jadhav, and Maharani Tarabai shattered Aurangzeb's invasion, and Aurangzeb died defeated in the Deccan in 1707.",
+        history="In February 1689, after nine undefeated years of defending Hindavi Swarajya against the Mughal Empire, the Siddis, and the Portuguese, Chhatrapati Sambhaji Maharaj was ambushed at Sangameshwar by Muqarrab Khan's forces. Refusing to surrender his Dharma or a single fort of Swarajya, Dharmaveer Chhatrapati Sambhaji Maharaj and Kavi Kalash attained martyrdom at Tulapur on 11 March 1689. Inspired by his sacrifice, the Marathas under Maharani Yesubai, Chhatrapati Rajaram Maharaj, Santaji Ghorpade, Dhanaji Jadhav, and Maharani Tarabai shattered Aurangzeb's invasion, and Aurangzeb died defeated in the Deccan in 1707.",
         hints="Send the messenger immediately, with an escort.\nPalisades and the town centre help the defence.\nThe enemy cavalry comes from both northern corners.",
         victory="Dharmaveer Chhatrapati Sambhaji Maharaj ki Jai!",
         loss="Raigad was not warned in time.",
