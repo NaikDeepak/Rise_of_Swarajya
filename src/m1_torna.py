@@ -22,7 +22,7 @@ def build():
     m.diplomacy(2, 3, DiplomacyState.NEUTRAL)
 
     # --- Shivaji Raje's band (Maval valley, SW)
-    shivaji = m.unit(1, H.PRITHVIRAJ, 14, 104, name="Chhatrapati Shivaji Maharaj")
+    shivaji = m.unit(1, H.PRITHVIRAJ, 14, 104, name="Shivaji Raje")
     tanaji = m.unit(1, U.CHAMPION, 16, 102, name="Tanaji Malusare")
     yesaji = m.unit(1, U.CHAMPION, 12, 102, name="Yesaji Kank")
     baji = m.unit(1, U.LIGHT_CAVALRY, 16, 106, name="Baji Pasalkar")
@@ -59,35 +59,35 @@ def build():
 
     # ----------------------------------------------------------- triggers
     m.mood(ColorMood.SPRING)
-    m.hero_setup("Chhatrapati Shivaji Maharaj", hp=150, attack=2,
-                 desc="Chhatrapati Shivaji Maharaj (Shivaji Raje Bhosale, age 16). Son of Shahaji Raje Bhosale and Rajmata Jijabai Aaisaheb. Sworn at Raireshwar to found Hindavi Swarajya.")
+    m.hero_setup("Shivaji Raje", hp=150, attack=2,
+                 desc="Shivaji Raje Bhosale, age 16. Son of Shahaji Raje Bhosale and Rajmata Jijabai Aaisaheb. By tradition, he swore at Raireshwar to found Hindavi Swarajya.")
     m.hero_setup("Tanaji Malusare", hp=80, attack=2,
                  desc="Subhedar Tanaji Malusare. Childhood companion of Shivaji Raje from Godoli. A lion in close combat.")
     m.hero_setup("Yesaji Kank", hp=80, melee_armor=1,
                  desc="Sarnaubat Yesaji Kank. Trusted companion of the Raireshwar oath, famed for his valor and strength.")
     m.story([
-        "1646. The Deccan bleeds between three thrones: the Adilshahi of Bijapur, the fading Nizamshahi, and the Mughal Empire pressing from the north.",
-        ("Rajmata Jijabai Aaisaheb", "Shivba Raje, your father Shahaji Raje serves far away in Bangalore. But these hills and these people deserve a righteous Chhatrapati of their own."),
-        ("Chhatrapati Shivaji Maharaj", "At Raireshwar we swore it before Mahadev, Aaisaheb: Hindavi Swarajya. Today the sacred oath becomes a fort."),
+        "1646. The Nizamshahi is gone, its lands shared out between the Mughals and the Adilshahi of Bijapur. The Maval hills answer to Bijapur.",
+        ("Rajmata Jijabai Aaisaheb", "Shivba Raje, your father Shahaji Raje serves far away in Bangalore. But these hills and these people deserve a ruler of their own."),
+        ("Shivaji Raje", "Before Mahadev we promised Swarajya, Aaisaheb. Today that promise becomes a fort."),
         ("Tanaji Malusare", "Torna stands neglected, Raje. Its killedar sleeps, and Bijapur's eyes are elsewhere."),
         ("Yesaji Kank", "Then let us wake him. Har Har Mahadev!"),
-        "Lead the Mavalas up the road to Torna and take it. Chhatrapati Shivaji Maharaj must survive.",
+        "Lead the Mavalas up the road to Torna and take it. Shivaji Raje must survive.",
     ])
 
-    o1 = m.objective("Obj 1: Seize Torna", "Defeat the Killedar and garrison of Torna fort.", 1)
+    o1 = m.objective("Obj 1: Seize Torna", "Defeat the killedar and garrison of Torna, then bring your troops into the fort.", 1)
     m.dead(o1, killedar)
     m.cleared(o1, 2, torna)
     m.present(o1, 1, torna, otype=ObjectType.MILITARY, qty=1)
     m.handover(o1, 2, 1, torna, ObjectType.BUILDING)
-    m.say(o1, "Torna is ours! In its foundations the Mavalas uncover Bhavani Mata's blessing: treasure enough to raise a new capital.", 12)
+    m.say(o1, "Torna is ours! Repairing the walls, the Mavalas unearth a buried treasure. Tradition calls it Bhavani Mata's blessing. It will pay for a new fort.", 12)
     m.gold(o1, 1, 800)
     m.resource(o1, 1, Attribute.STONE_STORAGE, 900)
     m.resource(o1, 1, Attribute.WOOD_STORAGE, 400)
     m.spawn(o1, 1, U.VILLAGER_MALE, 8, 56, 50)
 
-    o2 = m.objective("Obj 2: Raise Rajgad", "Build a Castle on Murumbdev hill (the flag in the east). It will become Rajgad.", 2, enabled=False)
+    o2 = m.objective("Obj 2: Raise Rajgad", "Fortify Murumbdev hill (the flag in the east) by building a Castle there. This is the beginning of Rajgad.", 2, enabled=False)
     m.present(o2, 1, rajgad, const=B.CASTLE)
-    m.say(o2, "Murumbdev becomes Rajgad, the King of Forts. It will be the capital of Hindavi Swarajya for 25 years.", 12)
+    m.say(o2, "Work begins on Murumbdev, the fort that will become Rajgad. It will be the capital of Swarajya for more than two decades.", 12)
     m.chain(o1, o2)
 
     o3 = m.objective("Obj 3: Drive out Bijapur", "Destroy every Adilshahi building at the north-east outpost.", 3, enabled=False)
@@ -96,17 +96,17 @@ def build():
 
     win = m.trig("Victory", enabled=False)
     win.new_condition.timer(timer=3)
-    m.victory(win, "Bijapur's hold on the Maval country is broken. The first stones of Hindavi Swarajya are laid.", epilogue=[
-        ("Rajmata Jijabai Aaisaheb", "A fort is a promise made in stone, Shivba Raje. Keep it, and the people will keep you in their hearts forever."),
-        ("Chhatrapati Shivaji Maharaj", "Then we will build a hundred promises across the Sahyadri, Aaisaheb."),
-        "Word reaches Bijapur that Shivaji Raje has raised the Bhagwa Dhwaj over Torna and Rajgad. The Sultan begins to worry.",
+    m.victory(win, "With Torna taken and Murumbdev fortified, Shivaji Raje has his first foothold in the Maval country.", epilogue=[
+        ("Rajmata Jijabai Aaisaheb", "Shivba, a fort is a promise in stone. Keep faith with the people who build it, and they will keep faith with you."),
+        ("Shivaji Raje", "Then Torna is only the first, Aaisaheb. The Sahyadri have many more hills."),
+        "News of Torna and Murumbdev reaches Bijapur.",
     ])
     m.chain(o3, win)
 
     # Bijapur notices the loss and counter-attacks
     alert = m.trig("Bijapur alerted", enabled=False)
     alert.new_condition.timer(timer=240)
-    m.line(alert, "Killedar of Torna", "Shivaji Raje has seized Torna! Bijapur's outpost sends horsemen to retake the fort!")
+    m.line(alert, "Adilshahi outpost commander", "Torna has fallen to Shivaji Raje! Horsemen, ride out and take it back!")
     m.chain(o1, alert)
     w1 = m.wave("Wave 1", 2, 1, [(U.KNIGHT, 4), (U.ARCHER, 6), (U.SPEARMAN, 6)], 100, 30, 60, 46,
                 enabled=False)
@@ -118,14 +118,14 @@ def build():
                 95, 82, enabled=False)
     m.chain(alert, w3)
 
-    m.hero_loss(shivaji, 2, "Chhatrapati Shivaji Maharaj")
+    m.hero_loss(shivaji, 2, "Shivaji Raje")
 
     m.texts(
-        instructions="1646, Maval country. Seize Torna from Bijapur, raise a new fort on Murumbdev hill (Rajgad), then drive the Adilshahi outpost out of the valley. Chhatrapati Shivaji Maharaj must survive.",
-        history="Chhatrapati Shivaji Maharaj, son of Shahaji Raje Bhosale and Rajmata Jijabai Aaisaheb, grew up in Pune amid the Sahyadri hills. With his devoted companions from the Maval valleys, Shivaji Raje took the sacred oath of Hindavi Swarajya at Raireshwar. In 1646, at the age of sixteen, Shivaji Raje captured Torna (Prachandagad) and fortified Murumbdev as Rajgad, the first capital of Swarajya.",
-        hints="Use the hills: archers on high ground deal extra damage.\nKeep Chhatrapati Shivaji Maharaj protected behind the spearmen.\nCastle Age is unlocked: you need 650 stone for a Castle.",
-        victory="The Bhagwa Dhwaj flies over Torna and Rajgad. Jai Bhavani! Jai Shivaji Maharaj!",
-        loss="Chhatrapati Shivaji Maharaj was wounded on the battlefield.",
+        instructions="1646, Maval country. Seize Torna from Bijapur, fortify Murumbdev hill as Rajgad, then drive the Adilshahi outpost out of the valley. Shivaji Raje must survive.",
+        history="Shivaji Raje, son of Shahaji Raje Bhosale and Rajmata Jijabai Aaisaheb, grew up in Pune among the Sahyadri hills. Tradition holds that he and his companions from the Maval valleys swore at the Raireshwar temple to found Hindavi Swarajya. Around 1646, at about sixteen, Shivaji Raje took Torna (Prachandagad) and began fortifying nearby Murumbdev, which became Rajgad, his first capital.",
+        hints="Use the hills: archers on high ground deal extra damage.\nKeep Shivaji Raje protected behind the spearmen.\nCastle Age is unlocked: you need 650 stone for a Castle.",
+        victory="The Bhagwa Dhwaj flies over Torna and Rajgad. Har Har Mahadev!",
+        loss="Shivaji Raje has fallen in battle.",
     )
     return m.finish(OUT)
 
