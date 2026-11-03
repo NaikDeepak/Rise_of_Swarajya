@@ -17,7 +17,9 @@ import sambhaji_missions as sb
 CAMPAIGN_NAME = "Rise of Swarajya"
 ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
 DEST = os.path.join(OUT, "campaign")
-SCENARIOS_DIR = os.path.join(ROOT, "scenarios")
+# The generated 15-chapter campaign is archived; rebuilds of it land there (tag v1-generated).
+ARCHIVE_DIR = os.path.join(ROOT, "archive", "v1-generated")
+SCENARIOS_DIR = os.path.join(ARCHIVE_DIR, "scenarios")
 
 # (builder, generator filename, final filename, act, chapter title, year)
 CHAPTERS = [
@@ -115,8 +117,8 @@ def main():
     for _, _, new, *_ in CHAPTERS:
         fn = new + ".aoe2scenario"
         shutil.copy2(os.path.join(DEST, fn), os.path.join(SCENARIOS_DIR, fn))
-    shutil.copy2(cpath, os.path.join(ROOT, f"{CAMPAIGN_NAME}.aoe2campaign"))
-    shutil.copy2(cpath, os.path.join(ROOT, "Rise_of_Swarajya.aoe2campaign"))
+    shutil.copy2(cpath, os.path.join(ARCHIVE_DIR, f"{CAMPAIGN_NAME}.aoe2campaign"))
+    shutil.copy2(cpath, os.path.join(ARCHIVE_DIR, "Rise_of_Swarajya.aoe2campaign"))
     game_profile = os.path.expanduser(
         "~/Library/Application Support/Feral Interactive/Age Of Empires II/VFS/User/Games/Age of Empires 2 DE/76561198054484915"
     )
