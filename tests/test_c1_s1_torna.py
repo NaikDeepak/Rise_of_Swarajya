@@ -164,6 +164,14 @@ def test_10_spawn_points_on_land(s):
                 assert tile(s, x + dx, y + dy).terrain_id not in WET, f"{name} ({x + dx},{y + dy}) is water"
 
 
+def test_11_ai_scripts(s):
+    """Edge: no player may keep one of Babur's own AI scripts; the immobile AI must be embedded."""
+    names = [s.player_manager.players[i].personality for i in (1, 2, 3)]
+    assert all(n == ch.IMMOBILE_AI for n in names), f"AI scripts {names}"
+    embedded = [a.ai_file_name for a in s.sections["Files"].ai_files]
+    assert "Fe Immobile AI.per" in embedded, f"immobile AI not embedded: {embedded}"
+
+
 if __name__ == "__main__":
     failed = 0
     stage_a = read(ch.build(STAGE_A_OUT, stage="A"))
@@ -173,7 +181,8 @@ if __name__ == "__main__":
              ("4 P2 buildings", test_4_p2_buildings_placed, full), ("5 names", test_5_names, full),
              ("6 objective chain", test_6_objective_chain, full), ("7 loss", test_7_loss, full),
              ("8 text verbatim", test_8_text_verbatim, full), ("9 outpost area", test_9_outpost_covers_buildings, full),
-             ("10 spawn on land", test_10_spawn_points_on_land, full)]
+             ("10 spawn on land", test_10_spawn_points_on_land, full),
+             ("11 AI scripts", test_11_ai_scripts, full)]
     for name, fn, s in cases:
         try:
             fn(s)

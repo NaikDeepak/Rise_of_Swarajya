@@ -81,9 +81,18 @@ def stage_a(m):
 
 
 # ------------------------------------------------------------------ stage B
-def set_player(m, pid, name, civ, food, wood, gold, stone, age):
-    """Name, civ, resources and age only. AI settings stay as the official template has them."""
+IMMOBILE_AI = "Fe Immobile AI.ai"   # embedded in Babur 1 already; the template uses it for two players
+
+
+def set_player(m, pid, name, civ, food, wood, gold, stone, age, ai=None):
+    """Name, civ, resources and age; the AI script only when given.
+
+    Player 1 keeps the template's settings. Players 2 and 3 must not keep Babur's own scripts
+    (Samarkand's and the Uzbek army's): RS01's garrisons hold still and attacks come from triggers.
+    """
     p = m.pm.players[pid]
+    if ai is not None:
+        p.personality = ai
     p.tribe_name = name
     p.civilization = civ
     p.lock_civ = True
@@ -94,8 +103,9 @@ def set_player(m, pid, name, civ, food, wood, gold, stone, age):
 def stage_b(m):
     # Players, as in RS01 (swarajya() and m.player() would replace the template's AI settings)
     set_player(m, 1, "Swarajya", MARATHA, 300, 300, 0, 0, StartingAge.CASTLE_AGE)
-    set_player(m, 2, "Adilshahi Sultanate (Bijapur)", ADILSHAHI, 1500, 1500, 1000, 500, StartingAge.CASTLE_AGE)
-    set_player(m, 3, "Maval villages", MARATHA, 200, 200, 100, 200, StartingAge.CASTLE_AGE)
+    set_player(m, 2, "Adilshahi Sultanate (Bijapur)", ADILSHAHI, 1500, 1500, 1000, 500, StartingAge.CASTLE_AGE,
+               ai=IMMOBILE_AI)
+    set_player(m, 3, "Maval villages", MARATHA, 200, 200, 100, 200, StartingAge.CASTLE_AGE, ai=IMMOBILE_AI)
     m.diplomacy(1, 2, DiplomacyState.ENEMY)
     m.diplomacy(1, 3, DiplomacyState.ALLY)
     m.diplomacy(2, 3, DiplomacyState.NEUTRAL)
