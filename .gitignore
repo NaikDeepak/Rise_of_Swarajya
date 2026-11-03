@@ -9,3 +9,6 @@ assets/textures/
 
 # agent-notepad (local only)
 .collab/
+
+# AoE2ScenarioParser debug dump on parse failure
+error_file.txt
