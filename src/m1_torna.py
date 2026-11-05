@@ -79,15 +79,15 @@ def build():
     m.cleared(o1, 2, torna)
     m.present(o1, 1, torna, otype=ObjectType.MILITARY, qty=1)
     m.handover(o1, 2, 1, torna, ObjectType.BUILDING)
-    m.say(o1, "Torna is ours! In its foundations the Mavalas uncover Bhavani Mata's blessing — treasure to raise a new capital.", 12)
+    m.say(o1, "Torna is ours! In its foundations the Mavalas uncover Bhavani Mata's blessing: treasure enough to raise a new capital.", 12)
     m.gold(o1, 1, 800)
     m.resource(o1, 1, Attribute.STONE_STORAGE, 900)
     m.resource(o1, 1, Attribute.WOOD_STORAGE, 400)
     m.spawn(o1, 1, U.VILLAGER_MALE, 8, 56, 50)
 
-    o2 = m.objective("Obj 2: Raise Rajgad", "Build a Castle on Murumbdev hill (the flag in the east) — it will become Rajgad.", 2, enabled=False)
+    o2 = m.objective("Obj 2: Raise Rajgad", "Build a Castle on Murumbdev hill (the flag in the east). It will become Rajgad.", 2, enabled=False)
     m.present(o2, 1, rajgad, const=B.CASTLE)
-    m.say(o2, "Murumbdev becomes Rajgad — the King of Forts. It will stand as the proud capital of Hindavi Swarajya for 25 years.", 12)
+    m.say(o2, "Murumbdev becomes Rajgad, the King of Forts. It will be the capital of Hindavi Swarajya for 25 years.", 12)
     m.chain(o1, o2)
 
     o3 = m.objective("Obj 3: Drive out Bijapur", "Destroy every Adilshahi building at the north-east outpost.", 3, enabled=False)
@@ -99,7 +99,7 @@ def build():
     m.victory(win, "Bijapur's hold on the Maval country is broken. The first stones of Hindavi Swarajya are laid.", epilogue=[
         ("Rajmata Jijabai Aaisaheb", "A fort is a promise made in stone, Shivba Raje. Keep it, and the people will keep you in their hearts forever."),
         ("Chhatrapati Shivaji Maharaj", "Then we will build a hundred promises across the Sahyadri, Aaisaheb."),
-        "Word reaches Bijapur that Shivaji Raje has raised the sacred Bhagwa Dhwaj over Torna and Rajgad. The dawn of Hindavi Swarajya has arrived.",
+        "Word reaches Bijapur that Shivaji Raje has raised the Bhagwa Dhwaj over Torna and Rajgad. The Sultan begins to worry.",
     ])
     m.chain(o3, win)
 
@@ -124,7 +124,7 @@ def build():
         instructions="1646, Maval country. Seize Torna from Bijapur, raise a new fort on Murumbdev hill (Rajgad), then drive the Adilshahi outpost out of the valley. Chhatrapati Shivaji Maharaj must survive.",
         history="Chhatrapati Shivaji Maharaj, son of Shahaji Raje Bhosale and Rajmata Jijabai Aaisaheb, grew up in Pune amid the Sahyadri hills. With his devoted companions from the Maval valleys, Shivaji Raje took the sacred oath of Hindavi Swarajya at Raireshwar. In 1646, at the age of sixteen, Shivaji Raje captured Torna (Prachandagad) and fortified Murumbdev as Rajgad, the first capital of Swarajya.",
         hints="Use the hills: archers on high ground deal extra damage.\nKeep Chhatrapati Shivaji Maharaj protected behind the spearmen.\nCastle Age is unlocked: you need 650 stone for a Castle.",
-        victory="Torna and Rajgad stand proud under the saffron Bhagwa Dhwaj. Jai Bhavani! Jai Shivaji Maharaj!",
+        victory="The Bhagwa Dhwaj flies over Torna and Rajgad. Jai Bhavani! Jai Shivaji Maharaj!",
         loss="Chhatrapati Shivaji Maharaj was wounded on the battlefield.",
     )
     return m.finish(OUT)

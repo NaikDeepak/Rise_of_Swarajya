@@ -200,7 +200,7 @@ def main():
     tmp_out = tempfile.mkdtemp()
     chapter_meta = []
     for _, old, new, act, title, year in CHAPTERS:
-        aoe_lib.RENAME[old] = (new + ".aoe2scenario", f"Rise of Swarajya — {act}\n{title} ({year})")
+        aoe_lib.RENAME[old] = (new + ".aoe2scenario", f"Rise of Swarajya | {act}\n{title} ({year})")
 
     import m1_torna
     import shivaji_missions as sm
@@ -235,13 +235,13 @@ def main():
                         epilogue_lines.append(e.message)
 
         intro_texts = [
-            f"{act} — {title}",
+            f"{act} | {title}",
             history if history else brief,
             story_lines[0] if len(story_lines) > 0 else brief,
             story_lines[1] if len(story_lines) > 1 else f"Objective: {brief}",
         ]
         outro_texts = [
-            victory_txt if victory_txt else f"{title} — Victory for Swarajya.",
+            victory_txt if victory_txt else f"{title}: Victory for Swarajya.",
         ] + (epilogue_lines[:2] if epilogue_lines else ["The saffron Bhagwa Dhwaj flies high above the Sahyadri."])
 
         chapter_meta.append((idx, new, act, title, intro_texts, outro_texts))
