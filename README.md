@@ -9,8 +9,8 @@ If macOS blocks it: right-click → Open → Open.
 
 It copies (never deletes):
 
-- `scenarios/RS01…RS15.aoe2scenario` → `…/Age of Empires 2 DE/<steam-id>/resources/_common/scenario/`
-- `Rise_of_Swarajya.aoe2campaign` → `…/resources/_common/campaign/`
+- `archive/v1-generated/scenarios/RS01…RS15.aoe2scenario` → `…/Age of Empires 2 DE/<steam-id>/resources/_common/scenario/`
+- `archive/v1-generated/Rise_of_Swarajya.aoe2campaign` → `…/resources/_common/campaign/`
 
 Play: **Campaigns → Custom Campaigns → Rise of Swarajya**.
 Single chapter: **Single Player → Skirmish → Game Mode: Scenario**.

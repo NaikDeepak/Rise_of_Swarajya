@@ -130,6 +130,36 @@ class Mission:
         self._home_cam = None
         self.s.option_manager.victory_condition = VictoryCondition.CUSTOM
 
+    @classmethod
+    def from_template(cls, path, filename, title):
+        """Start from an existing (official) scenario instead of the parser's blank default.
+
+        The map, units, players, AI and header come from `path` unchanged; nothing is reset.
+        Scenarios built from `AoE2DEScenario.from_default()` stall on Quit, official ones do not.
+        """
+        logging.disable(logging.CRITICAL)
+        m = cls.__new__(cls)
+        m.s = AoE2DEScenario.from_file(path)
+        m.filename = filename
+        m.title = title
+        m.size = m.s.map_manager.map_size
+        m.rng = random.Random(1)
+        m.base = None
+        m.um = m.s.unit_manager
+        m.tm = m.s.trigger_manager
+        m.pm = m.s.player_manager
+        m._land_units = [(u.x, u.y, 1) for u in m.um.get_all_units()]
+        m._ship_units = []
+        m._chain_ix = 0
+        m.heroes = {}
+        m._home_cam = None
+        return m
+
+    def save(self, path):
+        """Write the scenario as is. Unlike finish(), adds no resources, AI files or header edits."""
+        self.s.write_to_file(path)
+        return path
+
     # ------------------------------------------------------------ terrain
     def tile(self, x, y):
         if 0 <= x < self.size and 0 <= y < self.size:
@@ -563,12 +593,15 @@ class Mission:
 
     # ------------------------------------------------------------ messages
     def texts(self, instructions, history, hints, victory, loss, scouts=""):
+        """Briefing texts. `loss` is accepted but never written: a non-empty scenario loss text
+        hangs the game on "Game Paused" when the player quits (KNOWLEDGEBASE 1.6). Show the defeat
+        message from the loss trigger instead (`hero_loss` already does)."""
         mm = self.s.message_manager
         mm.instructions = instructions
         mm.history = history
         mm.hints = hints
         mm.victory = victory
-        mm.loss = loss
+        mm.loss = ""
         mm.scouts = scouts
 
     # ------------------------------------------------------------ finish

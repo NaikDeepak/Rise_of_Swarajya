@@ -14,7 +14,7 @@
                   "Duration": 4.5,
                   "FadeOutTime": 0.4,
                   "TextFadeDuration": 3.5,
-                  "String": "Act I: The Foundation \u2014 The First Flame - Torna",
+                  "String": "Act I: The Foundation | The First Flame - Torna",
                   "TextRect": {
                     "x": 1020,
                     "y": 560,
@@ -79,10 +79,10 @@
               "Sound": "rs01_outro",
               "Slides": [
                 {
-                  "Duration": 7.43,
+                  "Duration": 7.11,
                   "FadeOutTime": 0.4,
-                  "TextFadeDuration": 6.43,
-                  "String": "Torna and Rajgad stand proud under the saffron Bhagwa Dhwaj. Jai Bhavani! Jai Shivaji Maharaj!",
+                  "TextFadeDuration": 6.11,
+                  "String": "The saffron Bhagwa Dhwaj flies over Torna and Rajgad. Jai Bhavani! Jai Shivaji Maharaj!",
                   "TextRect": {
                     "x": 1020,
                     "y": 560,
@@ -140,7 +140,7 @@
                   "Duration": 4.5,
                   "FadeOutTime": 0.4,
                   "TextFadeDuration": 3.5,
-                  "String": "Act I: The Foundation \u2014 The Tiger of Pratapgad",
+                  "String": "Act I: The Foundation | The Tiger of Pratapgad",
                   "TextRect": {
                     "x": 1020,
                     "y": 560,
@@ -205,10 +205,10 @@
               "Sound": "rs02_outro",
               "Slides": [
                 {
-                  "Duration": 6.55,
+                  "Duration": 5.95,
                   "FadeOutTime": 0.4,
-                  "TextFadeDuration": 5.55,
-                  "String": "Pratapgad's glorious victory makes Chhatrapati Shivaji Maharaj's name resound across India.",
+                  "TextFadeDuration": 4.95,
+                  "String": "After Pratapgad, all of India knows the name of Chhatrapati Shivaji Maharaj.",
                   "TextRect": {
                     "x": 1020,
                     "y": 560,
@@ -263,10 +263,10 @@
               "Sound": "rs03_intro",
               "Slides": [
                 {
-                  "Duration": 4.64,
+                  "Duration": 4.5,
                   "FadeOutTime": 0.4,
-                  "TextFadeDuration": 3.64,
-                  "String": "Act I: The Foundation \u2014 The Sacrifice of Pavan Khind",
+                  "TextFadeDuration": 3.5,
+                  "String": "Act I: The Foundation | The Sacrifice of Pavan Khind",
                   "TextRect": {
                     "x": 1020,
                     "y": 560,
@@ -392,7 +392,7 @@
                   "Duration": 4.5,
                   "FadeOutTime": 0.4,
                   "TextFadeDuration": 3.5,
-                  "String": "Act II: The Defiance \u2014 The Night of Shaista Khan",
+                  "String": "Act II: The Defiance | The Night of Shaista Khan",
                   "TextRect": {
                     "x": 1020,
                     "y": 560,
@@ -518,7 +518,7 @@
                   "Duration": 4.5,
                   "FadeOutTime": 0.4,
                   "TextFadeDuration": 3.5,
-                  "String": "Act II: The Defiance \u2014 The Wealth of Surat",
+                  "String": "Act II: The Defiance | The Wealth of Surat",
                   "TextRect": {
                     "x": 1020,
                     "y": 560,
@@ -644,7 +644,7 @@
                   "Duration": 4.5,
                   "FadeOutTime": 0.4,
                   "TextFadeDuration": 3.5,
-                  "String": "Act II: The Defiance \u2014 The Treaty of Purandar",
+                  "String": "Act II: The Defiance | The Treaty of Purandar",
                   "TextRect": {
                     "x": 1020,
                     "y": 560,
@@ -770,7 +770,7 @@
                   "Duration": 4.5,
                   "FadeOutTime": 0.4,
                   "TextFadeDuration": 3.5,
-                  "String": "Act II: The Defiance \u2014 The Great Escape - Agra",
+                  "String": "Act II: The Defiance | The Great Escape - Agra",
                   "TextRect": {
                     "x": 1020,
                     "y": 560,
@@ -785,10 +785,10 @@
                   }
                 },
                 {
-                  "Duration": 33.7,
+                  "Duration": 33.03,
                   "FadeOutTime": 0.4,
-                  "TextFadeDuration": 32.7,
-                  "String": "Placed under heavy guard at Agra after boldly protesting at Aurangzeb's court, Chhatrapati Shivaji Maharaj arranged for large baskets of sweets to be sent out daily for charity. On 17 August 1666, Chhatrapati Shivaji Maharaj and young Sambhaji Raje escaped in the baskets while Veer Hiroji Farzand and Madari Mehtar stayed behind to deceive the guards. Travelling in disguise as a Gosavi ascetic, Chhatrapati Shivaji Maharaj returned triumphantly to Rajgad.",
+                  "TextFadeDuration": 32.03,
+                  "String": "Placed under heavy guard at Agra after boldly protesting at Aurangzeb's court, Chhatrapati Shivaji Maharaj arranged for large baskets of sweets to be sent out daily for charity. On 17 August 1666, Chhatrapati Shivaji Maharaj and young Sambhaji Raje escaped in the baskets while Veer Hiroji Farzand and Madari Mehtar stayed behind to deceive the guards. Travelling in disguise as a Gosavi ascetic, Chhatrapati Shivaji Maharaj made it home to Rajgad.",
                   "TextRect": {
                     "x": 1020,
                     "y": 620,
@@ -896,7 +896,7 @@
                   "Duration": 4.5,
                   "FadeOutTime": 0.4,
                   "TextFadeDuration": 3.5,
-                  "String": "Act III: The Crown \u2014 The Lion of Sinhagad",
+                  "String": "Act III: The Crown | The Lion of Sinhagad",
                   "TextRect": {
                     "x": 1020,
                     "y": 560,
@@ -911,10 +911,10 @@
                   }
                 },
                 {
-                  "Duration": 38.77,
+                  "Duration": 37.15,
                   "FadeOutTime": 0.4,
-                  "TextFadeDuration": 37.77,
-                  "String": "Kondhana, ceded under the Treaty of Purandar in 1665, was recaptured on the night of 4 February 1670 by Subhedar Tanaji Malusare, who scaled its sheer western cliff with 300 Mavalas. Tanaji Malusare fought heroically and attained martyrdom in single combat against Udaybhan Rathod; his brother Suryaji Malusare and Shelar Mama completed the victory. Chhatrapati Shivaji Maharaj immortalized his sacrifice with the words: 'Gad aala, pan Sinha gela' \u2014 and Kondhana became Sinhagad, the Lion's Fort.",
+                  "TextFadeDuration": 36.15,
+                  "String": "Kondhana, ceded under the Treaty of Purandar in 1665, was recaptured on the night of 4 February 1670 by Subhedar Tanaji Malusare, who scaled its sheer western cliff with 300 Mavalas. Tanaji Malusare fought heroically and attained martyrdom in single combat against Udaybhan Rathod; his brother Suryaji Malusare and Shelar Mama completed the victory. Chhatrapati Shivaji Maharaj mourned him with the words 'Gad aala, pan Sinha gela', and Kondhana became Sinhagad, the Lion's Fort.",
                   "TextRect": {
                     "x": 1020,
                     "y": 620,
@@ -964,7 +964,7 @@
                   "Duration": 4.5,
                   "FadeOutTime": 0.4,
                   "TextFadeDuration": 3.5,
-                  "String": "Kondhana is Sinhagad \u2014 the Lion's Fort.",
+                  "String": "Kondhana is now Sinhagad, the Lion's Fort.",
                   "TextRect": {
                     "x": 1020,
                     "y": 560,
@@ -1019,10 +1019,10 @@
               "Sound": "rs09_intro",
               "Slides": [
                 {
-                  "Duration": 5.07,
+                  "Duration": 4.67,
                   "FadeOutTime": 0.4,
-                  "TextFadeDuration": 4.07,
-                  "String": "Act III: The Crown \u2014 The Crown of Swarajya - Raigad",
+                  "TextFadeDuration": 3.67,
+                  "String": "Act III: The Crown | The Crown of Swarajya - Raigad",
                   "TextRect": {
                     "x": 1020,
                     "y": 560,
@@ -1148,7 +1148,7 @@
                   "Duration": 4.5,
                   "FadeOutTime": 0.4,
                   "TextFadeDuration": 3.5,
-                  "String": "Act IV: The Storm \u2014 The Crown of Conflict",
+                  "String": "Act IV: The Storm | The Crown of Conflict",
                   "TextRect": {
                     "x": 1020,
                     "y": 560,
@@ -1274,7 +1274,7 @@
                   "Duration": 4.5,
                   "FadeOutTime": 0.4,
                   "TextFadeDuration": 3.5,
-                  "String": "Act IV: The Storm \u2014 The Riches of Burhanpur",
+                  "String": "Act IV: The Storm | The Riches of Burhanpur",
                   "TextRect": {
                     "x": 1020,
                     "y": 560,
@@ -1289,10 +1289,10 @@
                   }
                 },
                 {
-                  "Duration": 23.53,
+                  "Duration": 20.96,
                   "FadeOutTime": 0.4,
-                  "TextFadeDuration": 22.53,
-                  "String": "In early 1681 Chhatrapati Sambhaji Maharaj and Sarsenapati Hambirrao Mohite led a lightning strike on Burhanpur, the rich Mughal provincial capital on the Tapi river, capturing the treasury of Bahadurpura. The expedition announced to all India that the new Chhatrapati possessed the same daring and strategic genius as his father.",
+                  "TextFadeDuration": 19.96,
+                  "String": "In early 1681 Chhatrapati Sambhaji Maharaj and Sarsenapati Hambirrao Mohite led a lightning strike on Burhanpur, the rich Mughal provincial capital on the Tapi river, capturing the treasury of Bahadurpura. The raid showed all of India that the new Chhatrapati was as daring as his father.",
                   "TextRect": {
                     "x": 1020,
                     "y": 620,
@@ -1397,10 +1397,10 @@
               "Sound": "rs12_intro",
               "Slides": [
                 {
-                  "Duration": 5.09,
+                  "Duration": 4.68,
                   "FadeOutTime": 0.4,
-                  "TextFadeDuration": 4.09,
-                  "String": "Act IV: The Storm \u2014 The Lion Against the Empire - Ramsej",
+                  "TextFadeDuration": 3.68,
+                  "String": "Act IV: The Storm | The Lion Against the Empire - Ramsej",
                   "TextRect": {
                     "x": 1020,
                     "y": 560,
@@ -1523,10 +1523,10 @@
               "Sound": "rs13_intro",
               "Slides": [
                 {
-                  "Duration": 4.71,
+                  "Duration": 4.5,
                   "FadeOutTime": 0.4,
-                  "TextFadeDuration": 3.71,
-                  "String": "Act V: The Last Stand \u2014 The Island Fortress - Janjira",
+                  "TextFadeDuration": 3.5,
+                  "String": "Act V: The Last Stand | The Island Fortress - Janjira",
                   "TextRect": {
                     "x": 1020,
                     "y": 560,
@@ -1541,10 +1541,10 @@
                   }
                 },
                 {
-                  "Duration": 20.67,
+                  "Duration": 19.64,
                   "FadeOutTime": 0.4,
-                  "TextFadeDuration": 19.67,
-                  "String": "The Siddis of Janjira, allied to the Mughals, threatened the Konkan coast. In 1682 Chhatrapati Sambhaji Maharaj bombarded Janjira, attempted the audacious feat of building a stone causeway across the sea channel, and confined the Siddi fleet with the Maratha navy based at Padmadurg.",
+                  "TextFadeDuration": 18.64,
+                  "String": "The Siddis of Janjira, allied to the Mughals, threatened the Konkan coast. In 1682 Chhatrapati Sambhaji Maharaj bombarded Janjira, even tried to build a stone causeway across the sea channel, and confined the Siddi fleet with the Maratha navy based at Padmadurg.",
                   "TextRect": {
                     "x": 1020,
                     "y": 620,
@@ -1640,7 +1640,7 @@
                   "Duration": 4.5,
                   "FadeOutTime": 0.4,
                   "TextFadeDuration": 3.5,
-                  "String": "Act V: The Last Stand \u2014 The Gates of Goa",
+                  "String": "Act V: The Last Stand | The Gates of Goa",
                   "TextRect": {
                     "x": 1020,
                     "y": 560,
@@ -1655,10 +1655,10 @@
                   }
                 },
                 {
-                  "Duration": 26.82,
+                  "Duration": 25.95,
                   "FadeOutTime": 0.4,
-                  "TextFadeDuration": 25.82,
-                  "String": "In late 1683 Chhatrapati Sambhaji Maharaj marched against Portuguese Goa for aiding the Mughals. Leading his cavalry across the tidal channel at low water, Chhatrapati Sambhaji Maharaj stormed the island fortress of Santo Estevao and routed the Viceroy Count of Alvor, bringing Portuguese Goa to the brink of total fall before pivoting to repel Prince Shah Alam's army.",
+                  "TextFadeDuration": 24.95,
+                  "String": "In late 1683 Chhatrapati Sambhaji Maharaj marched against Portuguese Goa for aiding the Mughals. Leading his cavalry across the tidal channel at low water, Chhatrapati Sambhaji Maharaj stormed the island fortress of Santo Estevao and routed the Viceroy Count of Alvor, came close to taking Goa itself, then turned to face Prince Shah Alam's army.",
                   "TextRect": {
                     "x": 1020,
                     "y": 620,
@@ -1723,10 +1723,10 @@
                   }
                 },
                 {
-                  "Duration": 11.07,
+                  "Duration": 6.4,
                   "FadeOutTime": 0.4,
-                  "TextFadeDuration": 10.07,
-                  "String": "Chhatrapati Sambhaji Maharaj redeploys his victorious army in perfect order. Goa has been humbled, and the Portuguese never again dare aid the Mughals openly.",
+                  "TextFadeDuration": 5.4,
+                  "String": "Chhatrapati Sambhaji Maharaj pulls his army back in good order. Goa has been humbled.",
                   "TextRect": {
                     "x": 1020,
                     "y": 620,
@@ -1766,7 +1766,7 @@
                   "Duration": 4.5,
                   "FadeOutTime": 0.4,
                   "TextFadeDuration": 3.5,
-                  "String": "Act V: The Last Stand \u2014 The Flame That Would Not Die",
+                  "String": "Act V: The Last Stand | The Flame That Would Not Die",
                   "TextRect": {
                     "x": 1020,
                     "y": 560,
@@ -1781,10 +1781,10 @@
                   }
                 },
                 {
-                  "Duration": 51.3,
+                  "Duration": 50.33,
                   "FadeOutTime": 0.4,
-                  "TextFadeDuration": 50.3,
-                  "String": "In February 1689, after nine undefeated years of defending Hindavi Swarajya against the Mughal Empire, the Siddis, and the Portuguese, Chhatrapati Sambhaji Maharaj was ambushed at Sangameshwar by Muqarrab Khan's forces. Refusing to surrender his Dharma or a single fort of Swarajya, Dharmaveer Chhatrapati Sambhaji Maharaj and Kavi Kalash attained immortal martyrdom at Tulapur on 11 March 1689. Inspired by his supreme sacrifice, the Marathas under Maharani Yesubai, Chhatrapati Rajaram Maharaj, Santaji Ghorpade, Dhanaji Jadhav, and Maharani Tarabai shattered Aurangzeb's invasion, and Aurangzeb died defeated in the Deccan in 1707.",
+                  "TextFadeDuration": 49.33,
+                  "String": "In February 1689, after nine undefeated years of defending Hindavi Swarajya against the Mughal Empire, the Siddis, and the Portuguese, Chhatrapati Sambhaji Maharaj was ambushed at Sangameshwar by Muqarrab Khan's forces. Refusing to surrender his Dharma or a single fort of Swarajya, Dharmaveer Chhatrapati Sambhaji Maharaj and Kavi Kalash attained martyrdom at Tulapur on 11 March 1689. Inspired by his sacrifice, the Marathas under Maharani Yesubai, Chhatrapati Rajaram Maharaj, Santaji Ghorpade, Dhanaji Jadhav, and Maharani Tarabai shattered Aurangzeb's invasion, and Aurangzeb died defeated in the Deccan in 1707.",
                   "TextRect": {
                     "x": 1020,
                     "y": 620,
@@ -1793,10 +1793,10 @@
                   }
                 },
                 {
-                  "Duration": 17.59,
+                  "Duration": 18.31,
                   "FadeOutTime": 0.4,
-                  "TextFadeDuration": 16.59,
-                  "String": "February 1689. For nine undefeated years Chhatrapati Sambhaji Maharaj has fought Aurangzeb, the Siddis and the Portuguese on every front. Over 120 battles fought \u2014 and not a single battle or major fort lost.",
+                  "TextFadeDuration": 17.31,
+                  "String": "February 1689. For nine undefeated years Chhatrapati Sambhaji Maharaj has fought Aurangzeb, the Siddis and the Portuguese on every front. More than 120 battles, and he has not lost one, nor a single major fort.",
                   "TextRect": {
                     "x": 1020,
                     "y": 560,
@@ -1861,10 +1861,10 @@
                   }
                 },
                 {
-                  "Duration": 20.73,
+                  "Duration": 18.59,
                   "FadeOutTime": 0.4,
-                  "TextFadeDuration": 19.73,
-                  "String": "The Chhava of Chhatrapati Shivaji Maharaj roars back in defiance, refusing even if offered the Emperor's own throne. For forty days he and Kavi Kalash endure unimaginable torment without bowing their heads for an instant, attaining sacred martyrdom at Tulapur on 11 March 1689.",
+                  "TextFadeDuration": 17.59,
+                  "String": "The Chhava of Chhatrapati Shivaji Maharaj roars back in defiance, refusing even if offered the Emperor's own throne. For forty days he and Kavi Kalash are tortured, and neither bows his head. They are put to death at Tulapur on 11 March 1689.",
                   "TextRect": {
                     "x": 1020,
                     "y": 560,

@@ -18,8 +18,9 @@ CP="${PROFILE}resources/_common/campaign"
 AI="${PROFILE}resources/_common/ai"
 WU="${PROFILE}widgetui"
 mkdir -p "$SC" "$CP" "$AI" "$WU"
-cp scenarios/RS*.aoe2scenario "$SC/"
-cp "Rise of Swarajya.aoe2campaign" "$CP/Rise of Swarajya.aoe2campaign"
+V1="archive/v1-generated"   # the generated 15-chapter campaign (tag v1-generated)
+cp "$V1"/scenarios/RS*.aoe2scenario "$SC/"
+cp "$V1/Rise of Swarajya.aoe2campaign" "$CP/Rise of Swarajya.aoe2campaign"
 cp assets/ai/* "$AI/" 2>/dev/null || true
 cp "Rise_of_Swarajya.json" "$CP/Rise_of_Swarajya.json"
 cp "Rise_of_Swarajya.json" "$CP/Rise of Swarajya.json"
