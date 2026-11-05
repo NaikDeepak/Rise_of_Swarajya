@@ -593,12 +593,15 @@ class Mission:
 
     # ------------------------------------------------------------ messages
     def texts(self, instructions, history, hints, victory, loss, scouts=""):
+        """Briefing texts. `loss` is accepted but never written: a non-empty scenario loss text
+        hangs the game on "Game Paused" when the player quits (KNOWLEDGEBASE 1.6). Show the defeat
+        message from the loss trigger instead (`hero_loss` already does)."""
         mm = self.s.message_manager
         mm.instructions = instructions
         mm.history = history
         mm.hints = hints
         mm.victory = victory
-        mm.loss = loss
+        mm.loss = ""
         mm.scouts = scouts
 
     # ------------------------------------------------------------ finish

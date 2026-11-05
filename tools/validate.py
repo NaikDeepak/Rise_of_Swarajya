@@ -39,6 +39,8 @@ def check(path):
             r = getattr(c, "unit_object", -1)
             if r not in (-1, None) and r not in refs:
                 issues.append(f"{t.name}: condition refs missing unit {r}")
+    if s.message_manager.loss:
+        issues.append("scenario loss text is set (Quit hangs, KNOWLEDGEBASE 1.6)")
     objs = [t for t in T if t.display_as_objective]
     first = [t for t in T if t.enabled and t.name.startswith("Story 1")]
     wins = sum(1 for t in T for e in t.effects if e.effect_type == EffectId.DECLARE_VICTORY and e.source_player == 1)

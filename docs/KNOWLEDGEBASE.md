@@ -75,6 +75,21 @@ The engine on the Mac Feral build has no error dialog. Bad data usually shows up
   `Rise_of_Swarajya.aoe2campaign`, and set each scenario's metadata tuple to `(fn, fn)` like official campaigns do.
 - **Rule:** keep both filenames in sync. `campaign.py` writes both. Never rename the campaign without renaming every file the engine looks up.
 
+### 1.6 Scenario loss text hangs Quit on "Game Paused"
+- **Symptom:** Quit (Quit Current Game, Resign) hung on "Game Paused (F3)". Every scenario in
+  `archive/v1-generated/` did it, and so did C1-S1 rebuilt on the official Babur 1 map. Not fixed by 1.5.
+- **Cause:** the scenario's **loss text** (`message_manager.loss`, set by `Mission.texts(loss=...)`).
+  Quitting counts as a defeat and the engine hangs showing it. Official campaigns leave it empty.
+- **How it was found (2026-11-05, in-game bisection on Babur 1, Mac Feral build):** stage A (no triggers) and
+  stage B (map and units) quit fine. Trigger groups and single triggers all quit fine (tests 7-12).
+  `texts()` alone stalled (13). Instructions, history, hints and victory text alone were fine (15-17, 20);
+  loss text alone stalled (19). Full Torna with every trigger and text except the loss text quit fine (21).
+  Clearing the hints/scouts string-table ids did not help (14).
+- **Fix:** `Mission.texts()` accepts `loss` but always writes an empty loss text (`src/aoe_lib.py`).
+  The defeat message comes from the loss trigger (`hero_loss`). `tools/validate.py` flags a set loss text.
+- **Rule:** never set the scenario loss text. Put defeat messages in the trigger that declares the defeat.
+  The victory text is safe.
+
 ---
 
 ## 2. Triggers and pacing

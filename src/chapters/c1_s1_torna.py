@@ -148,14 +148,28 @@ def stage_b(m):
 
 
 # ------------------------------------------------------------------ stage C
-def stage_c(m):
-    """RS01's triggers and text (src/m1_torna.py at d03840c); only coordinates differ."""
+def stage_c(m, setup=True, story=True, gameplay=True):
+    """RS01's triggers and text (src/m1_torna.py at d03840c); only coordinates differ.
+
+    The three switches build one trigger group at a time, for bisecting problems in-game:
+    setup (names, civ bonuses, lighting, hero stats), story (opening dialogue),
+    gameplay (objectives, victory, counter-attack, defeat, briefing texts).
+    """
     b = m.band
     m.rename(1, b["shivaji"], "Shivaji Raje")
     m.rename(1, b["tanaji"], "Tanaji Malusare")
     m.rename(1, b["yesaji"], "Yesaji Kank")
     m.rename(1, b["baji"], "Baji Pasalkar")
     m.rename(2, m.killedar, "Killedar of Torna")
+    if setup:
+        _setup(m)
+    if story:
+        _story(m)
+    if gameplay:
+        _gameplay(m)
+
+
+def _setup(m):
     maratha_identity(m, 1)
     m.mood(ColorMood.SPRING)
     m.hero_setup("Shivaji Raje", hp=150, attack=2,
@@ -164,6 +178,9 @@ def stage_c(m):
                  desc="Subhedar Tanaji Malusare. Childhood companion of Shivaji Raje from Godoli. A lion in close combat.")
     m.hero_setup("Yesaji Kank", hp=80, melee_armor=1,
                  desc="Sarnaubat Yesaji Kank. Trusted companion of the Raireshwar oath, famed for his valor and strength.")
+
+
+def _story(m):
     m.story([
         "1646. The Nizamshahi is gone, its lands shared out between the Mughals and the Adilshahi of Bijapur. The Maval hills answer to Bijapur.",
         ("Rajmata Jijabai Aaisaheb", "Shivba Raje, your father Shahaji Raje serves far away in Bangalore. But these hills and these people deserve a ruler of their own."),
@@ -173,6 +190,9 @@ def stage_c(m):
         "Lead the Mavalas up the road to Torna and take it. Shivaji Raje must survive.",
     ])
 
+
+def _gameplay(m):
+    b = m.band
     o1 = m.objective("Obj 1: Seize Torna", "Defeat the killedar and garrison of Torna, then bring your troops into the fort.", 1)
     m.dead(o1, m.killedar)
     m.cleared(o1, 2, TORNA_BOX)

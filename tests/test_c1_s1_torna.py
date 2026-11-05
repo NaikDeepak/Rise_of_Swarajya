@@ -133,7 +133,7 @@ def _shown(s):
             if e.message and len(e.message) > 30:
                 out.add(e.message)
     mm = s.message_manager
-    out |= {(mm.instructions or "").split("\n\n")[-1], mm.history, mm.hints, mm.victory, mm.loss}
+    out |= {(mm.instructions or "").split("\n\n")[-1], mm.history, mm.hints, mm.victory}  # loss: see test 12
     return {x for x in out if x}
 
 
@@ -172,6 +172,13 @@ def test_11_ai_scripts(s):
     assert "Fe Immobile AI.per" in embedded, f"immobile AI not embedded: {embedded}"
 
 
+def test_12_no_loss_text(s):
+    """A scenario loss text hangs Quit on "Game Paused" (KNOWLEDGEBASE 1.6); the loss trigger shows it instead."""
+    assert not s.message_manager.loss, f"loss text set: {s.message_manager.loss!r}"
+    loss = _by_name(s)["Loss: Shivaji Raje has fallen"]
+    assert any(e.message for e in loss.effects), "loss trigger shows no defeat message"
+
+
 if __name__ == "__main__":
     failed = 0
     stage_a = read(ch.build(STAGE_A_OUT, stage="A"))
@@ -182,7 +189,7 @@ if __name__ == "__main__":
              ("6 objective chain", test_6_objective_chain, full), ("7 loss", test_7_loss, full),
              ("8 text verbatim", test_8_text_verbatim, full), ("9 outpost area", test_9_outpost_covers_buildings, full),
              ("10 spawn on land", test_10_spawn_points_on_land, full),
-             ("11 AI scripts", test_11_ai_scripts, full)]
+             ("11 AI scripts", test_11_ai_scripts, full), ("12 no loss text", test_12_no_loss_text, full)]
     for name, fn, s in cases:
         try:
             fn(s)
