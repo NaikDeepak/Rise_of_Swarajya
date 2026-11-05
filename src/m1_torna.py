@@ -41,7 +41,7 @@ def build():
     m.group(2, U.ARCHER, 6, 63, 37, cols=3)
     m.group(2, U.MAN_AT_ARMS, 4, 56, 42, cols=2)
     killedar = m.unit(2, U.LONG_SWORDSMAN, 61, 39, name="Killedar of Torna")
-    m.unit(0, O.TREASURE_CHEST, 59, 41)
+    m.unit(0, O.RELIC, 59, 41)
 
     # --- Murumbdev hill: future Rajgad
     m.hill(95, 82, 5, 6, flat_terrain=T.DIRT_1)

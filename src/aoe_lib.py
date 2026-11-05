@@ -193,7 +193,8 @@ class Mission:
                 self.hill(ax + (bx - ax) * i / steps, ay + (by - ay) * i / steps, width, h)
 
     def smooth(self):
-        """Guarantee neighbouring tiles differ by at most 1 in elevation."""
+        """Guarantee neighbouring tiles (diagonals included) differ by at most 1 in elevation.
+        A diagonal jump of 2 sends the engine's screen-to-tile lookup into an endless loop."""
         n = self.size
         changed = True
         while changed:
@@ -201,7 +202,8 @@ class Mission:
             for x in range(n):
                 for y in range(n):
                     t = self.tile(x, y)
-                    for dx, dy in ((1, 0), (0, 1), (-1, 0), (0, -1)):
+                    for dx, dy in ((1, 0), (0, 1), (-1, 0), (0, -1),
+                                   (1, 1), (1, -1), (-1, 1), (-1, -1)):
                         o = self.tile(x + dx, y + dy)
                         if o is not None and t.elevation - o.elevation > 1:
                             t.elevation = o.elevation + 1
